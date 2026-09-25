@@ -1,0 +1,235 @@
+set,language,category,text,expected,predicted_raw,confidence,band,raw_correct,expected_canonical,canonical_correct,router_intent,router_correct,semantic_override,latency_ms,in_corpus,nearest_corpus_similarity,nearest_corpus_split,nearest_corpus_text
+challenge,ru,challenge_booking,Mje docter ke pas jana h,book_appointment,book_appointment,0.9977,high,True,book_appointment,True,book_appointment,True,False,9340.59,False,0.571,val,docter ke pas jana th
+challenge,ru,challenge_booking,mje doctor ke pas jana h,book_appointment,book_appointment,0.9977,high,True,book_appointment,True,book_appointment,True,False,14.03,False,0.833,train,doctor ke pas jana h
+challenge,ru,challenge_booking,mujhe doctor ke paas jana hai,book_appointment,book_appointment,0.9977,high,True,book_appointment,True,book_appointment,True,False,11.27,False,0.833,train,doctor ke paas jana hai
+challenge,ru,challenge_booking,mje dr ke pas jana h,book_appointment,book_appointment,0.9977,high,True,book_appointment,True,book_appointment,True,False,11.42,False,0.571,train,doctor ke pas jana h
+challenge,ru,challenge_booking,doctor ke pas jana hai,book_appointment,book_appointment,0.9977,high,True,book_appointment,True,book_appointment,True,False,13.07,False,0.714,train,doctor sahib ke pas jana hai na
+challenge,ru,challenge_booking,docter ko dikhana h,book_appointment,book_appointment,0.9977,high,True,book_appointment,True,book_appointment,True,False,9.43,False,0.6,train,docter ko dikhana hai
+challenge,ru,challenge_booking,mje doctor ko dikhana h,book_appointment,book_appointment,0.9977,high,True,book_appointment,True,book_appointment,True,False,12.43,False,0.8,train,doctor ko dikhana h
+challenge,ru,challenge_booking,mujhe doctor se milna hai,book_appointment,book_appointment,0.9977,high,True,book_appointment,True,book_appointment,True,False,10.84,False,0.833,test,sir mujhe doctor se milna hai
+challenge,ru,challenge_booking,doctor se milna h,book_appointment,book_appointment,0.9977,high,True,book_appointment,True,book_appointment,True,False,10.67,False,0.8,train,doctor sahib se milna h
+challenge,ru,challenge_booking,mje doctor se check karwana h,book_appointment,book_appointment,0.9977,high,True,book_appointment,True,book_appointment,True,False,13.65,False,0.833,train,doctor se check karwana h
+challenge,ru,challenge_booking,mujhe doctor ka time chahiye,book_appointment,book_appointment,0.9977,high,True,book_appointment,True,book_appointment,True,False,9.01,False,0.833,train,baji mujhe doctor ka time chahiye
+challenge,ru,challenge_booking,doctor ki appointment chahiye,book_appointment,book_appointment,0.9977,high,True,book_appointment,True,book_appointment,True,False,13.3,False,0.8,train,doctor sahab ki appointment chahiye
+challenge,ru,challenge_booking,mje appointment chahiye,book_appointment,book_appointment,0.9976,high,True,book_appointment,True,book_appointment,True,False,12.06,False,0.667,val,appointment chahiye
+challenge,ru,challenge_booking,appointment book karni h,book_appointment,book_appointment,0.9975,high,True,book_appointment,True,book_appointment,True,False,11.02,False,0.6,train,appointment book karni he
+challenge,ru,challenge_booking,mera time laga dein,book_appointment,book_appointment,0.9976,high,True,book_appointment,True,book_appointment,True,False,10.72,False,0.75,train,time laga dein
+challenge,ru,challenge_lookalike,doctor ki fee kitni hai?,doctor_fee,doctor_fee,0.989,high,True,doctor_information,True,doctor_information,True,False,8.65,False,0.667,train,docter ki fee kitni hai
+challenge,ru,challenge_lookalike,mje doctor ki fee batao,doctor_fee,doctor_fee,0.98,high,True,doctor_information,True,doctor_information,True,False,9.93,False,0.3,test,mje doctor sahib ki appointment book karni hy
+challenge,ru,challenge_lookalike,doctor ki qualification kya hai?,doctor_information|doctor_qualifications,doctor_qualifications,0.9894,high,True,doctor_information,True,doctor_information,True,False,12.21,False,0.667,train,doctor ki specialty kya hai
+challenge,ru,challenge_lookalike,mje doctor ki degree batao,doctor_information|doctor_qualifications,doctor_qualifications,0.9897,high,True,doctor_information,True,doctor_information,True,False,8.13,False,0.3,test,mje doctor sahib ki appointment book karni hy
+challenge,ru,challenge_lookalike,doctor available hain?,check_availability,check_availability,0.8716,high,True,doctor_availability,True,doctor_availability,True,False,9.86,False,0.6,train,doctor kab available hote hain
+challenge,ru,challenge_lookalike,dr ahmed kal clinic mein honge?,doctor_unavailable|check_availability,check_availability,0.9874,high,True,doctor_availability,True,doctor_availability,True,False,12.84,False,0.571,val,dr ahmed kal available honge
+challenge,ru,challenge_lookalike,doctor ka address kya hai?,clinic_location,clinic_location,0.9742,high,True,clinic_information,True,clinic_information,True,False,8.22,False,0.667,train,bachon ka doctor hai kya
+challenge,ru,challenge_lookalike,doctor change karna hai,change_doctor,change_doctor,0.9931,high,True,reschedule_appointment,True,reschedule_appointment,True,False,11.55,False,0.8,train,doctor sahab change karna hai
+challenge,ru,challenge_lookalike,mje doctor badalna hai,change_doctor,change_doctor,0.993,high,True,reschedule_appointment,True,reschedule_appointment,True,False,10.62,False,0.6,train,mujhe doctor badalna hai
+challenge,ru,challenge_lookalike,dr ahmed ki jagah dr ali chahiye,change_doctor,change_doctor,0.9852,high,True,reschedule_appointment,True,reschedule_appointment,True,False,7.96,False,0.571,train,dr ahmed ki appointment chahiye
+challenge,ru,challenge_lookalike,appointment cancel karni hai,cancel_appointment,cancel_appointment,0.9891,high,True,cancel_appointment,True,cancel_appointment,True,False,10.5,False,0.5,train,doctor ki appointment karni hai
+challenge,ru,challenge_lookalike,mera appointment reschedule kar dein,reschedule_appointment|change_date|change_time,reschedule_appointment,0.994,high,True,reschedule_appointment,True,reschedule_appointment,True,False,10.77,False,0.429,train,mera daktar change kar dein
+challenge,ru,challenge_lookalike,meri appointment kab hai,appointment_status,appointment_status,0.9812,high,True,check_appointment,True,check_appointment,True,False,8.31,False,0.571,train,mje yaad nahi meri appointment kab hai
+challenge,ru,challenge_lookalike,mujhe abhi doctor ke paas jana hai seene mein dard hai,emergency,emergency,0.5449,medium,True,emergency,True,emergency,True,False,11.01,False,0.818,train,seene mein bohat dard hai doctor ke paas jana hai abhi
+audit,ru,normal,Mujhe doctor ka appointment lena hai,book_appointment,book_appointment,0.9977,high,True,book_appointment,True,book_appointment,True,False,10.05,False,0.5,train,appointment lena hai
+audit,ru,normal,Mujhe doctor ko dikhana hai,book_appointment,book_appointment,0.9977,high,True,book_appointment,True,book_appointment,True,False,8.46,False,0.833,train,mujhe bachay ko doctor ko dikhana hai
+audit,ru,short,Doctor se milna hai,book_appointment,book_appointment,0.9975,high,True,book_appointment,True,book_appointment,True,False,9.37,False,0.8,train,doctor sahab se milna hai
+audit,ru,misspelled,Mje doctor se milna h,book_appointment,book_appointment,0.9977,high,True,book_appointment,True,book_appointment,True,False,9.84,False,0.667,train,doctor sahib se milna h
+audit,ru,normal,Appointment book karni hai,book_appointment,book_appointment,0.997,high,True,book_appointment,True,book_appointment,True,False,8.31,False,0.8,train,appointment book karni hai na
+audit,ru,normal,Dr Ahmed se milna hai,book_appointment,book_appointment,0.9976,high,True,book_appointment,True,book_appointment,True,False,10.63,False,0.571,train,dr asim se milna urgent hai
+audit,ru,normal,Mujhe Dr Ahmed ka appointment chahiye,book_appointment,book_appointment,0.9977,high,True,book_appointment,True,book_appointment,True,False,9.93,False,0.571,train,dr ahmed ki appointment chahiye
+audit,en,normal,I'd like to book an appointment with a doctor,book_appointment,book_appointment,0.9974,high,True,book_appointment,True,book_appointment,True,False,7.86,False,0.538,train,i would like to book an appointment with dr asim
+audit,en,normal,Can I get an appointment for tomorrow,book_appointment,book_appointment,0.9961,high,True,book_appointment,True,book_appointment,True,False,11.18,False,0.75,train,can i get an appointment for saturday
+audit,ur,normal,مجھے ڈاکٹر کو دکھانا ہے,book_appointment,book_appointment,0.9976,high,True,book_appointment,True,book_appointment,True,False,10.0,False,0.8,train,ڈاکٹر کو دکھانا ہے
+audit,ur,normal,ڈاکٹر صاحب سے ملنے کا وقت چاہیے,book_appointment,book_appointment,0.9966,high,True,book_appointment,True,book_appointment,True,False,8.1,False,0.857,val,ڈاکٹر سے ملنے کا وقت چاہیے
+audit,mix,normal,Mujhe kal ke liye appointment book karwani hai please,book_appointment,book_appointment,0.9971,high,True,book_appointment,True,book_appointment,True,False,10.66,False,0.333,train,appointment karwani hai
+audit,ru,informal,bhai ek appointment chahiye thi,book_appointment,book_appointment,0.9976,high,True,book_appointment,True,book_appointment,True,False,10.02,False,0.5,train,ji appointment chahiye thi
+audit,ru,robustness,muje doctor k pas jana h,book_appointment,book_appointment,0.9977,high,True,book_appointment,True,book_appointment,True,False,9.05,False,0.714,train,mujhe doctor k pas jana h
+audit,ru,robustness,mjhe dr ke paas jana hai,book_appointment,book_appointment,0.9977,high,True,book_appointment,True,book_appointment,True,False,9.85,False,0.714,train,dr asim ke paas jana hai
+audit,ru,robustness,mjy doctor ka time chahiye,book_appointment,book_appointment,0.9977,high,True,book_appointment,True,book_appointment,True,False,10.51,False,0.833,train,mjy doctor sahab ka time chahiye
+audit,ru,robustness,mje dokter ke pass jana hy,book_appointment,book_appointment,0.9978,high,True,book_appointment,True,book_appointment,True,False,8.01,False,0.714,train,mje dokter ke pass jana tha
+audit,ru,robustness,mujhe dctr se milna h,book_appointment,book_appointment,0.9977,high,True,book_appointment,True,book_appointment,True,False,10.62,False,0.667,train,muje dctr se milna h
+audit,ru,robustness,muje docter ko dikhana hai,book_appointment,book_appointment,0.9977,high,True,book_appointment,True,book_appointment,True,False,10.37,False,0.8,train,docter ko dikhana hai
+audit,ru,robustness,mjhe dr se checkup karwana h,book_appointment,book_appointment,0.9977,high,True,book_appointment,True,book_appointment,True,False,9.18,False,0.714,train,mjhe dr se checkup karwana hy
+audit,ru,robustness,mje apointment chahiye doctor ki,book_appointment,book_appointment,0.9974,high,True,book_appointment,True,book_appointment,True,False,10.45,False,0.5,val,apointment chahiye doctor ka
+audit,ru,robustness,mjy dctr k paas jana hy,book_appointment,book_appointment,0.9977,high,True,book_appointment,True,book_appointment,True,False,8.92,False,0.571,train,daktar k paas jana hy
+audit,ru,normal,Meri appointment cancel kar dein,cancel_appointment,cancel_appointment,0.9894,high,True,cancel_appointment,True,cancel_appointment,True,False,9.19,False,0.429,train,meri apointment cancel kr dein
+audit,ru,misspelled,Mje apna appointment cancel karna h,cancel_appointment,cancel_appointment,0.9895,high,True,cancel_appointment,True,cancel_appointment,True,False,10.93,False,0.375,train,mje appointment postpone karni h
+audit,ru,normal,Kal wali appointment cancel kar dein,cancel_appointment,cancel_appointment,0.9895,high,True,cancel_appointment,True,cancel_appointment,True,False,8.35,False,0.571,train,kal wali appointment hata dein
+audit,en,normal,Please cancel my appointment,cancel_appointment,cancel_appointment,0.9896,high,True,cancel_appointment,True,cancel_appointment,True,False,9.98,False,0.6,train,postpone my appointment please
+audit,en,informal,"I won't be able to come, cancel it please",cancel_appointment,cancel_appointment,0.9897,high,True,cancel_appointment,True,cancel_appointment,True,False,12.04,False,0.308,train,i can t come cancel my booking
+audit,ur,normal,میری اپائنٹمنٹ منسوخ کر دیں,cancel_appointment,cancel_appointment,0.8703,high,True,cancel_appointment,True,cancel_appointment,True,False,8.36,False,0.5,train,اپائنٹمنٹ آگے کر دیں
+audit,ru,normal,Dr Ahmed wali booking cancel kar dein,cancel_appointment,cancel_appointment,0.9894,high,True,cancel_appointment,True,cancel_appointment,True,False,9.75,False,0.4,train,mujhe dr ahmed ke paas kar dein
+audit,ru,misspelled,"mje ab nahi aana, appointment cancel kr dain",cancel_appointment,cancel_appointment,0.9894,high,True,cancel_appointment,True,cancel_appointment,True,False,10.09,False,0.273,train,ab zaroorat nahi cancel kar dein
+audit,ru,normal,Meri appointment change karni hai,reschedule_appointment|change_date|change_time,reschedule_appointment,0.9881,high,True,reschedule_appointment,True,reschedule_appointment,True,False,8.75,False,0.667,train,meri appointment reschedule karni hai
+audit,ru,normal,Appointment doosre din kar dein,reschedule_appointment|change_date,reschedule_appointment,0.9939,high,True,reschedule_appointment,True,reschedule_appointment,True,False,10.03,False,0.5,val,din change kar dein
+audit,ru,normal,Mera time change kar dein,change_time|reschedule_appointment,change_time,0.9679,high,True,reschedule_appointment,True,reschedule_appointment,True,False,11.95,False,0.667,train,mera daktar change kar dein
+audit,ru,misspelled,Mje appointment reschedule karni h,reschedule_appointment,reschedule_appointment,0.9937,high,True,reschedule_appointment,True,reschedule_appointment,True,False,7.8,False,0.667,train,mje appointment postpone karni h
+audit,en,normal,Can we move my appointment to next week,reschedule_appointment|change_date,reschedule_appointment,0.994,high,True,reschedule_appointment,True,reschedule_appointment,True,False,9.87,False,0.625,train,can we move my appointment
+audit,ur,normal,میری اپائنٹمنٹ کسی اور دن رکھ دیں,reschedule_appointment|change_date,book_appointment,0.7141,medium,False,reschedule_appointment,False,book_appointment,False,False,10.33,False,0.556,train,میری بکنگ کسی اور دن کر دیں
+audit,mix,informal,appointment aage kar dein please,reschedule_appointment|change_date,appointment_confirmation,0.8405,high,False,reschedule_appointment,False,confirm,False,False,7.88,False,0.5,train,appointment aage barha dein
+audit,ru,negation,"cancel nahi karni, bas din badal dein",reschedule_appointment|change_date,reschedule_appointment,0.9939,high,True,reschedule_appointment,True,reschedule_appointment,True,False,9.37,False,0.333,train,appointment cancel mat karein bas din change kar dein
+audit,ru,normal,Monday ki jagah Wednesday kar dein,change_date|reschedule_appointment,change_date,0.9825,high,True,reschedule_appointment,True,reschedule_appointment,True,False,11.35,False,0.5,train,monday kar dein
+audit,en,normal,I need a different day for my visit,change_date|reschedule_appointment,reschedule_appointment,0.9909,high,True,reschedule_appointment,True,reschedule_appointment,True,False,7.88,False,0.5,train,i need a doctor for my child
+audit,ru,normal,4 baje ki bajaye 6 baje kar dein,change_time|reschedule_appointment,change_time,0.9869,high,True,reschedule_appointment,True,reschedule_appointment,True,False,9.78,False,0.375,test,10 baje kar dein
+audit,en,normal,Can I come a bit earlier in the day,change_time|reschedule_appointment,change_time,0.9806,high,True,reschedule_appointment,True,reschedule_appointment,True,False,10.62,False,0.444,train,can i come earlier
+audit,ur,normal,وقت بدل دیں مہربانی,change_time|reschedule_appointment,change_time,0.6349,medium,True,reschedule_appointment,True,reschedule_appointment,True,False,8.19,False,0.75,train,وقت بدل دیں
+audit,ru,normal,Mera appointment kis din hai?,appointment_status,appointment_status,0.9778,high,True,check_appointment,True,check_appointment,True,False,9.56,False,0.667,train,mera apoinment kis din hai
+audit,ru,short,Mera time kya hai?,appointment_status,clinic_timing,0.6831,medium,False,check_appointment,False,clinic_information,False,False,8.65,False,0.429,train,kya mera appointment lag gaya hai
+audit,ru,similar,Appointment confirm hai?,appointment_status,appointment_confirmation,0.8941,high,False,check_appointment,False,confirm,False,False,8.43,False,0.5,train,appointment banwani hai
+audit,en,normal,When is my appointment,appointment_status,appointment_status,0.9787,high,True,check_appointment,True,check_appointment,True,False,10.02,False,0.6,train,is my appointment confirmed
+audit,en,normal,Do I have any booking this week,appointment_status,appointment_status,0.9801,high,True,check_appointment,True,check_appointment,True,False,11.48,False,0.333,train,how do i put this
+audit,ur,normal,میری اپائنٹمنٹ کس وقت ہے,appointment_status,appointment_status,0.9817,high,True,check_appointment,True,check_appointment,True,False,8.43,False,0.571,train,میری اپائنٹمنٹ کس دن کی ہے
+audit,ru,misspelled,mje bata dein meri booking kab ki hai,appointment_status,appointment_status,0.9819,high,True,check_appointment,True,check_appointment,True,False,9.92,False,0.364,train,mje yaad nahi meri appointment kab hai
+audit,ru,informal,kya meri appointment ho gayi thi?,appointment_status,appointment_status,0.9783,high,True,check_appointment,True,check_appointment,True,False,11.95,False,0.714,train,kya meri appointment confirm ho gayi
+audit,ru,normal,Ji haan yehi time book kar dein,appointment_confirmation|confirm,appointment_confirmation,0.9568,high,True,confirm,True,confirm,True,False,7.92,False,0.444,train,ji haan appointment confirm kar dein
+audit,en,normal,Yes please confirm the booking,appointment_confirmation|confirm,appointment_confirmation,0.9879,high,True,confirm,True,confirm,True,False,9.38,False,0.429,train,yes please confirm my appointment
+audit,ur,normal,ٹھیک ہے، یہ بکنگ پکی کر دیں,appointment_confirmation|confirm,appointment_confirmation,0.9863,high,True,confirm,True,confirm,True,False,10.52,False,0.5,train,ٹھیک ہے بک کر دیں
+audit,ru,similar,Dr Ahmed kal clinic mein hain?,check_availability|doctor_unavailable,check_availability,0.9845,high,True,doctor_availability,True,doctor_availability,True,False,7.9,False,0.429,train,dr ahmed kaun hain
+audit,ru,normal,Kya Dr Sara aaj baithi hain,check_availability|doctor_unavailable,check_availability,0.991,high,True,doctor_availability,True,doctor_availability,True,False,9.33,False,0.571,train,dr sara available hain kya
+audit,en,normal,Is Dr Ahmed free on Friday,check_availability,check_availability,0.9902,high,True,doctor_availability,True,doctor_availability,True,False,11.53,False,0.714,train,is dr ahmed available on friday
+audit,ur,normal,کل ڈاکٹر صاحب دستیاب ہوں گے,check_availability|doctor_unavailable,check_availability,0.9909,high,True,doctor_availability,True,doctor_availability,True,False,8.06,False,0.375,train,ڈاکٹر حمزہ کل ملیں گے
+audit,ru,normal,kal shaam ka koi time khali hai kya,check_availability,check_availability,0.9871,high,True,doctor_availability,True,doctor_availability,True,False,9.9,False,0.444,train,kal ka koi slot hai
+audit,ru,similar,dr ahmed monday ko milenge?,check_availability|doctor_unavailable,check_availability,0.9169,high,True,doctor_availability,True,doctor_availability,True,False,9.08,False,0.375,train,is dr ahmed available on monday
+audit,ru,normal,doctor sahab kis din available hote hain,check_availability,check_availability,0.9909,high,True,doctor_availability,True,doctor_availability,True,False,8.35,False,0.5,train,doctor kab available hote hain
+audit,ru,normal,Kya Dr Ahmed chutti par hain,doctor_unavailable|check_availability,doctor_unavailable,0.9881,high,True,doctor_availability,True,doctor_availability,True,False,9.75,False,0.571,train,kya doctor chutti par hain
+audit,ru,normal,Suna hai doctor sahab kal nahi aayenge,doctor_unavailable,doctor_unavailable,0.9598,high,True,doctor_availability,True,doctor_availability,True,False,9.87,False,0.333,train,doctor sahab se milna hai
+audit,en,normal,Is the doctor on leave this week,doctor_unavailable|check_availability,doctor_unavailable,0.7839,medium,True,doctor_availability,True,doctor_availability,True,False,7.99,False,0.714,train,is the doctor on leave
+audit,ur,normal,ڈاکٹر صاحب آج کلینک نہیں آئے؟,doctor_unavailable|check_availability,doctor_unavailable,0.5399,low,True,doctor_availability,True,unknown_intent,False,False,9.56,False,0.375,test,ڈاکٹر آج کو نہیں بیٹھتے
+audit,ru,similar,Mujhe doctor change karna hai,change_doctor,change_doctor,0.9932,high,True,reschedule_appointment,True,reschedule_appointment,True,False,12.93,False,0.667,train,doctor sahab change karna hai
+audit,en,normal,I want a different doctor for my appointment,change_doctor,book_appointment,0.959,high,False,reschedule_appointment,False,book_appointment,False,False,8.23,False,0.5,train,i need a doctor for my child
+audit,ur,normal,میرا ڈاکٹر تبدیل کر دیں,change_doctor,change_doctor,0.9928,high,True,reschedule_appointment,True,reschedule_appointment,True,False,11.05,False,0.8,train,ڈاکٹر تبدیل کر دیں
+audit,ru,normal,Dr Sara ke bajaye Dr Hamza kar dein,change_doctor,change_doctor,0.9925,high,True,reschedule_appointment,True,reschedule_appointment,True,False,10.51,False,0.556,train,mujhe dr hamza ke paas kar dein
+audit,ru,misspelled,mera dr badal do,change_doctor,change_doctor,0.9883,high,True,reschedule_appointment,True,reschedule_appointment,True,False,7.86,False,0.333,test,mera time badal dein
+audit,ru,ambiguous,kisi aur doctor ko dikhana hai,change_doctor|book_appointment,change_doctor,0.9924,high,True,book_appointment|reschedule_appointment,True,reschedule_appointment,True,False,11.01,False,0.667,train,doctor ko dikhana hai
+audit,ru,normal,Dr Ahmed ki consultation fee kya hai,doctor_fee,doctor_fee,0.9878,high,True,doctor_information,True,doctor_information,True,False,10.4,False,0.625,train,dr ahmed ki fees kya hai
+audit,en,normal,How much does the doctor charge,doctor_fee,doctor_fee,0.9893,high,True,doctor_information,True,doctor_information,True,False,7.85,False,0.571,train,how much does he charge
+audit,ur,normal,ڈاکٹر صاحب کی فیس کتنی ہے,doctor_fee,doctor_fee,0.9886,high,True,doctor_information,True,doctor_information,True,False,12.63,False,0.714,train,ڈاکٹر حمزہ کی فیس کتنی ہے
+audit,ru,similar,checkup ke kitne paise lagte hain,doctor_fee,doctor_fee,0.9848,high,True,doctor_information,True,doctor_information,True,False,9.96,False,0.556,train,dr hamza ki checkup ke kitne paise hain
+audit,ru,misspelled,docter ki fes kitni h,doctor_fee,doctor_fee,0.9888,high,True,doctor_information,True,doctor_information,True,False,9.35,False,0.429,train,docter ki fee kitni hai
+audit,ru,normal,Dr Ahmed ne kahan se parhai ki hai,doctor_qualifications,doctor_qualifications,0.9374,high,True,doctor_information,True,doctor_information,True,False,11.22,False,0.4,train,dr ahmed ki fees kya hai
+audit,en,normal,What degrees does Dr Sara have,doctor_qualifications,doctor_qualifications,0.9904,high,True,doctor_information,True,doctor_information,True,False,8.68,False,0.375,train,does dr asim have availability
+audit,ur,normal,ڈاکٹر صاحب کتنے تجربہ کار ہیں,doctor_qualifications|doctor_information,doctor_qualifications,0.8109,high,True,doctor_information,True,doctor_information,True,False,9.18,False,0.5,train,ڈاکٹر صاحب کتنے پیسے لیتے ہیں
+audit,ru,ambiguous,dr sahab MBBS hain ya specialist,doctor_qualifications|doctor_specialization,doctor_specialization,0.4546,low,True,doctor_information,True,unknown_intent,False,False,8.63,False,0.3,train,dr ahmed kis cheez ke specialist hain
+audit,ru,normal,Doctor kis cheez ke specialist hain?,doctor_specialization,doctor_specialization,0.9886,high,True,doctor_information,True,doctor_information,True,False,9.78,False,0.625,train,dr ahmed kis cheez ke specialist hain
+audit,ru,normal,Dr Ahmed kis bimari ke doctor hain,doctor_specialization,doctor_specialization,0.4444,low,True,doctor_information,True,unknown_intent,False,False,9.18,False,0.556,train,dr ahmed kis cheez ke specialist hain
+audit,en,normal,Is Dr Sara a child specialist,doctor_specialization,doctor_specialization,0.989,high,True,doctor_information,True,doctor_information,True,False,10.58,False,0.714,train,is dr sara a heart specialist
+audit,ur,normal,ڈاکٹر صاحب کس چیز کے ماہر ہیں,doctor_specialization,doctor_specialization,0.9889,high,True,doctor_information,True,doctor_information,True,False,9.73,False,0.75,train,ڈاکٹر احمد کس چیز کے ماہر ہیں
+audit,ru,normal,Dr Ahmed ke baare mein batayein,doctor_information,doctor_information,0.9907,high,True,doctor_information,True,doctor_information,True,False,10.01,False,0.714,train,dr asim ke baare mein batayein
+audit,en,normal,Tell me about Dr Hamza,doctor_information,doctor_information,0.9907,high,True,doctor_information,True,doctor_information,True,False,10.31,False,0.667,train,tell me about dr asim
+audit,ur,normal,ڈاکٹر احمد کون ہیں,doctor_information,doctor_information,0.9907,high,True,doctor_information,True,doctor_information,True,False,8.88,False,0.6,train,ڈاکٹر حمزہ کون ہیں
+audit,ru,normal,Bachon ka doctor kaun hai aapke paas,find_doctor|doctor_specialization,find_doctor,0.9505,high,True,doctor_information,True,doctor_information,True,False,9.73,False,0.5,train,bachon ka doctor hai kya
+audit,en,normal,Which doctors do you have at the clinic,find_doctor,find_doctor,0.9812,high,True,doctor_information,True,doctor_information,True,False,10.8,False,0.625,train,which doctors do you have
+audit,ur,normal,آپ کے پاس کون کون سے ڈاکٹر ہیں,find_doctor,find_doctor,0.9867,high,True,doctor_information,True,doctor_information,True,False,8.8,False,1.0,train,آپ کے پاس کون سے ڈاکٹر ہیں
+audit,ru,normal,skin ke liye koi doctor hai?,find_doctor|doctor_specialization,find_doctor,0.9819,high,True,doctor_information,True,doctor_information,True,False,9.84,False,0.375,train,doctor ke paas jana hai
+audit,ru,short,Clinic kahan hai?,clinic_location,clinic_location,0.9805,high,True,clinic_information,True,clinic_information,True,False,12.38,False,0.6,train,clinic kahan hai location kya hai
+audit,ru,normal,Doctor ka clinic address kya hai?,clinic_location,clinic_location,0.9798,high,True,clinic_information,True,clinic_information,True,False,8.12,False,0.571,train,clinic ka pata kya hai
+audit,en,normal,Where is the clinic located,clinic_location,clinic_location,0.9815,high,True,clinic_information,True,clinic_information,True,False,9.73,False,0.8,train,where is the clinic
+audit,ur,normal,کلینک کا پتہ کیا ہے,clinic_location,clinic_timing,0.7868,medium,False,clinic_information,True,clinic_information,True,False,11.51,False,0.5,val,کلینک کا پتہ پلیز
+audit,ru,normal,clinic tak kaise pohanchna hai,clinic_location,clinic_location,0.9806,high,True,clinic_information,True,clinic_information,True,False,7.98,False,0.6,train,kaise pohanchna hai
+audit,ru,normal,Clinic kis waqt khulta hai?,clinic_timing,clinic_timing,0.9847,high,True,clinic_information,True,clinic_information,True,False,9.32,False,0.429,train,kis ilaqe mein hai clinic
+audit,ru,normal,Clinic ki timing kya hai?,clinic_timing,clinic_timing,0.9744,high,True,clinic_information,True,clinic_information,True,False,10.82,False,0.5,train,salam clinic hai kya
+audit,en,normal,What are your opening hours,clinic_timing,clinic_timing,0.9846,high,True,clinic_information,True,clinic_information,True,False,8.07,False,0.667,train,what are your working hours
+audit,ur,normal,کلینک کب تک کھلا رہتا ہے,clinic_timing,clinic_timing,0.7633,medium,True,clinic_information,True,clinic_information,True,False,9.9,False,0.5,train,کس وقت تک کھلا رہتا ہے
+audit,ru,normal,shaam ko clinic kitne baje tak khula hai,clinic_timing,clinic_timing,0.9689,high,True,clinic_information,True,clinic_information,True,False,10.89,False,0.444,train,clinic kitne baje khulta hai
+audit,ru,normal,Kya clinic Sunday ko band hota hai,clinic_closed|clinic_timing,clinic_closed,0.9842,high,True,clinic_information,True,clinic_information,True,False,8.21,False,0.5,train,kya clinic aaj band hai
+audit,en,normal,Is the clinic closed on public holidays,clinic_closed,clinic_closed,0.9851,high,True,clinic_information,True,clinic_information,True,False,11.97,False,0.75,train,is the clinic shut on public holidays
+audit,ur,normal,کیا آج کلینک بند ہے,clinic_closed,clinic_closed,0.9846,high,True,clinic_information,True,clinic_information,True,False,9.51,False,1.0,train,کیا کلینک آج بند ہے
+audit,ru,ambiguous,eid pe clinic khula hoga?,clinic_closed|clinic_timing,clinic_timing,0.9784,high,True,clinic_information,True,clinic_information,True,False,7.89,False,0.25,train,evening mein clinic khula hai
+audit,ru,normal,Mere abbu behosh ho gaye hain,emergency,emergency,0.9894,high,True,emergency,True,emergency,True,False,10.85,False,0.4,train,mere abbu gir gaye hain abhi madad chahiye
+audit,ru,normal,seene mein shadeed dard ho raha hai,emergency,emergency,0.9583,high,True,emergency,True,emergency,True,False,9.97,False,0.75,test,seene mein bohot dard ho raha hai
+audit,en,normal,My child is not breathing properly,emergency,emergency,0.969,high,True,emergency,True,emergency,True,False,7.86,False,0.25,train,is my appointment confirmed
+audit,ur,normal,بچے کو بہت تیز بخار اور جھٹکے لگ رہے ہیں,emergency,emergency,0.9801,high,True,emergency,True,emergency,True,False,11.1,False,0.818,train,بچے کو تیز بخار ہے اور جھٹکے لگ رہے ہیں
+audit,ru,similar,mje abhi dr ke pas jana h bleeding nahi ruk rahi,emergency,emergency,0.9907,high,True,emergency,True,emergency,True,False,10.55,False,0.375,train,bachay ka khoon nahi ruk raha doctor ke pas jana h
+audit,ru,similar,"doctor se foran milna hai, accident ho gaya hai",emergency,emergency,0.9931,high,True,emergency,True,emergency,True,False,7.78,False,0.5,train,accident ho gaya hai
+audit,en,similar,"I need a doctor right now, my wife collapsed",emergency,emergency,0.9931,high,True,emergency,True,emergency,True,False,11.78,False,0.5,train,i need to see a doctor right now my chest hurts badly
+audit,ru,normal,Assalam o Alaikum,greeting,greeting,0.9828,high,True,greeting,True,greeting,True,False,10.03,False,0.75,val,assalam o alaikum ji
+audit,en,short,Hello,greeting,greeting,0.9829,high,True,greeting,True,greeting,True,False,7.92,False,1.0,train,hello hello
+audit,ur,normal,السلام علیکم,greeting,greeting,0.9831,high,True,greeting,True,greeting,True,False,9.1,False,0.667,train,السلام علیکم جی
+audit,ru,informal,aoa ji,greeting,confirm,0.6603,medium,False,greeting,False,confirm,False,False,12.35,False,0.333,train,haan ji
+audit,en,normal,"Hi, good morning",greeting,greeting,0.9831,high,True,greeting,True,greeting,True,False,7.9,False,0.667,train,good morning
+audit,ru,normal,Allah Hafiz,goodbye,thank_you,0.8682,high,False,goodbye,False,thanks,False,False,12.3,False,0.5,train,chalo ji allah hafiz
+audit,ru,normal,Khuda hafiz ji,goodbye,goodbye,0.9866,high,True,goodbye,True,goodbye,True,False,9.95,False,0.75,val,acha ji khuda hafiz
+audit,ur,normal,اللہ حافظ,goodbye,goodbye,0.9291,high,True,goodbye,True,goodbye,True,False,7.94,False,0.5,train,چلو جی اللہ حافظ
+audit,ru,informal,theek hai phir baat hoti hai,goodbye,repeat_information,0.8814,high,False,goodbye,False,repeat,False,False,11.26,False,0.429,val,theek hai phir milte hain
+audit,ru,short,Shukriya,thank_you,thank_you,0.9681,high,True,thanks,True,thanks,True,False,9.57,False,0.5,train,bohot bohot shukriya
+audit,en,short,Thank you,thank_you,thank_you,0.9863,high,True,thanks,True,thanks,True,False,7.86,False,0.667,train,perfect thank you
+audit,ru,normal,bohat meherbani aapki,thank_you,thank_you,0.9856,high,True,thanks,True,thanks,True,False,10.46,False,0.333,train,meherbani
+audit,ur,short,شکریہ,thank_you,confirm,0.9192,high,False,thanks,False,confirm,False,False,10.08,False,0.5,train,بہت بہت شکریہ
+audit,ru,short,Help chahiye,help,help,0.9865,high,True,help,True,help,True,False,7.79,False,0.333,val,appointment chahiye
+audit,en,normal,What can I do on this call,help,help,0.9661,high,True,help,True,help,True,False,11.74,False,0.375,test,what can you do
+audit,ur,normal,مجھے آپ کی مدد چاہیے,help,help,0.9843,high,True,help,True,help,True,False,10.01,False,0.6,train,مجھے مدد چاہیے
+audit,ru,normal,yeh system kaise use karun,help,help,0.9877,high,True,help,True,help,True,False,7.85,False,0.429,train,yeh system kaise chalta hai
+audit,ru,short,Haan,confirm,confirm,0.9879,high,True,confirm,True,confirm,True,False,10.92,False,0.5,train,haan ji
+audit,ru,short,Ji kar dein,confirm|appointment_confirmation,confirm,0.9803,high,True,confirm,True,confirm,True,False,10.48,False,0.75,test,ji final kar dein
+audit,ru,normal,ji bilkul theek hai,confirm,confirm,0.9863,high,True,confirm,True,confirm,True,False,7.82,False,0.6,train,acha theek hai ji
+audit,en,normal,"Yes, that's right",confirm,confirm,0.9881,high,True,confirm,True,confirm,True,False,11.14,False,0.4,train,yes that works
+audit,ur,short,جی ٹھیک ہے,confirm,confirm,0.9881,high,True,confirm,True,confirm,True,False,9.34,False,0.75,train,اچھا ٹھیک ہے جی
+audit,ru,short,Nahi,deny,deny,0.9857,high,True,deny,True,deny,True,False,7.87,False,0.5,train,bilkul nahi
+audit,ru,normal,nahi ji rehne dein,deny,deny,0.9148,high,True,deny,True,deny,True,False,11.09,False,0.5,train,ji nahi
+audit,en,normal,"No, that's not what I want",deny,deny,0.9858,high,True,deny,True,deny,True,False,10.31,False,0.5,train,i do not want that
+audit,ur,normal,نہیں، یہ نہیں چاہیے,deny,deny,0.9856,high,True,deny,True,deny,True,False,7.85,False,0.667,train,نہیں چاہیے
+audit,ru,short,Dobara bata dein,repeat_information,repeat_information,0.9697,high,True,repeat,True,repeat,True,False,10.87,False,0.286,train,dr hamza ki dr ki fee bata dein
+audit,ru,ambiguous,Mujhe samajh nahi aya,repeat_information|help|unclear_request,help,0.9876,high,True,help|repeat|unknown_intent,True,help,True,False,10.17,False,0.5,train,mujhe samajh nahi aa raha
+audit,en,normal,Can you say that again,repeat_information,repeat_information,0.986,high,True,repeat,True,repeat,True,False,7.93,False,0.5,train,can you repeat that
+audit,ur,short,دوبارہ بتا دیں,repeat_information,repeat_information,0.8519,high,True,repeat,True,repeat,True,False,9.72,False,0.25,val,دوبارہ کہیں
+audit,ru,normal,awaz kat rahi hai phir se boliye,repeat_information,repeat_information,0.9857,high,True,repeat,True,repeat,True,False,10.56,False,0.444,train,kat kat ke awaz aa rahi hai
+audit,ru,ambiguous,hmmm acha,unclear_request|confirm,unclear_request,0.9867,high,True,confirm|unknown_intent,True,unknown_intent,True,False,7.79,False,0.25,train,hmm acha to
+audit,ru,short,ek second ruko,unclear_request,unclear_request,0.9863,high,True,unknown_intent,True,unknown_intent,True,False,9.22,False,0.333,train,ruko ruko
+audit,ru,informal,wo matlab pata nahi,unclear_request,unclear_request,0.7008,medium,True,unknown_intent,True,unknown_intent,True,False,9.28,False,0.5,train,pata nahi
+audit,en,informal,umm let me think,unclear_request,unclear_request,0.9868,high,True,unknown_intent,True,unknown_intent,True,False,8.17,False,0.6,train,uh let me think
+audit,ur,short,ایک سیکنڈ رکیں,unclear_request,unclear_request,0.9706,high,True,unknown_intent,True,unknown_intent,True,False,9.82,False,0.25,train,ایک لمحہ
+audit,ru,out_of_domain,aaj mausam kaisa hai,unclear_request,clinic_closed,0.7993,medium,False,unknown_intent,False,clinic_information,False,False,12.13,False,0.333,train,chutti hai kya aaj
+audit,en,out_of_domain,can you order me a pizza,unclear_request,help,0.4578,low,False,unknown_intent,False,unknown_intent,True,False,8.27,False,0.429,val,can you assist me
+audit,ru,normal,Mera naam Ali Raza hai,provide_patient_name,provide_patient_name,0.9908,high,True,provide_info,True,provide_info,True,False,9.82,False,0.5,train,mera naam ahmed hai
+audit,en,normal,My name is Sana Khan,provide_patient_name,provide_patient_name,0.9912,high,True,provide_info,True,provide_info,True,False,10.48,False,0.5,train,my name is ayesha
+audit,ur,normal,میرا نام فاطمہ ہے,provide_patient_name,provide_patient_name,0.9913,high,True,provide_info,True,provide_info,True,False,7.96,False,0.6,train,میرا نام بلال ہے
+audit,ru,informal,ji main Bilal bol raha hoon,provide_patient_name,provide_patient_name,0.9909,high,True,provide_info,True,provide_info,True,False,9.92,False,0.429,test,main hina hoon ji
+audit,ru,normal,Mera number 0300 1234567 hai,provide_patient_phone,provide_patient_phone,0.9905,high,True,provide_info,True,provide_info,True,False,11.68,False,0.5,train,mobile 0300 1234567 hai
+audit,en,normal,my phone is 03211234567,provide_patient_phone,provide_patient_phone,0.9905,high,True,provide_info,True,provide_info,True,False,7.86,False,0.333,train,is my appointment confirmed
+audit,ur,normal,میرا نمبر 0333 7654321 ہے,provide_patient_phone,provide_patient_phone,0.9905,high,True,provide_info,True,provide_info,True,False,9.96,False,0.429,train,میرا نمبر 0300 1234567 ہے
+audit,ru,normal,Meri umar 45 saal hai,provide_patient_age,provide_patient_age,0.991,high,True,provide_info,True,provide_info,True,False,10.12,False,0.667,train,meri umar 18 saal hai
+audit,en,normal,I am 32 years old,provide_patient_age,provide_patient_age,0.9911,high,True,provide_info,True,provide_info,True,False,7.96,False,0.667,val,i am 30 years old
+audit,ur,normal,میری عمر 60 سال ہے,provide_patient_age,provide_patient_age,0.9911,high,True,provide_info,True,provide_info,True,False,10.12,False,0.667,test,میری عمر تیس سال ہے
+audit,ru,normal,bachay ki age 5 saal hai,provide_patient_age,provide_patient_age,0.9897,high,True,provide_info,True,provide_info,True,False,9.52,False,0.222,val,bachay ko doctor ko dikhana hai
+audit,mix,normal,Patient female hai,provide_patient_gender,provide_patient_gender,0.9687,high,True,provide_info,True,provide_info,True,False,8.38,False,0.667,test,female patient
+audit,en,short,I am male,provide_patient_gender,provide_patient_gender,0.9689,high,True,provide_info,True,provide_info,True,False,9.7,False,0.5,test,i am 27
+audit,ur,normal,مریض مرد ہے,provide_patient_gender,provide_patient_gender,0.9251,high,True,provide_info,True,provide_info,True,False,11.35,False,0.333,train,مریض کی حالت نازک ہے
+holdout,ru,normal,Mujhe kal Dr Sara ke paas jana hai,book_appointment,book_appointment,0.9976,high,True,book_appointment,True,book_appointment,True,False,8.37,False,0.556,train,dr asim ke paas jana hai
+holdout,ru,robustness,mjhe apne bete ko doctor ko dikhana h,book_appointment,book_appointment,0.9978,high,True,book_appointment,True,book_appointment,True,False,10.21,False,0.625,train,mjhe doctor sahib ko dikhana h
+holdout,en,normal,I want to see a doctor this week,book_appointment,book_appointment,0.9972,high,True,book_appointment,True,book_appointment,True,False,11.0,False,0.75,test,i want to see a doctor
+holdout,ur,normal,ڈاکٹر صاحب کی اپائنٹمنٹ لینی ہے,book_appointment,appointment_status,0.4794,low,False,book_appointment,False,unknown_intent,False,False,7.94,False,0.571,train,ڈاکٹر کی اپائنٹمنٹ کرنی ہے
+holdout,mix,informal,appointment fix kar dein Friday ki,book_appointment,reschedule_appointment,0.9831,high,False,book_appointment,False,reschedule_appointment,False,False,9.7,False,0.5,val,friday ka appointment final kar dein
+holdout,ru,normal,"mera appointment rehne dein, cancel kar do",cancel_appointment,cancel_appointment,0.9897,high,True,cancel_appointment,True,cancel_appointment,True,False,9.21,False,0.364,val,dr asim ki appointment cancel kar do yaar
+holdout,en,normal,I no longer need my booking,cancel_appointment,cancel_appointment,0.9225,high,True,cancel_appointment,True,cancel_appointment,True,False,7.93,False,0.5,train,i no longer need the appointment
+holdout,ur,normal,اپائنٹمنٹ ختم کر دیں,cancel_appointment,reschedule_appointment,0.8678,high,False,cancel_appointment,False,reschedule_appointment,False,False,9.12,False,0.6,train,اپائنٹمنٹ آگے کر دیں
+holdout,ru,normal,appointment kisi aur din shift kar dein,reschedule_appointment|change_date,reschedule_appointment,0.9941,high,True,reschedule_appointment,True,reschedule_appointment,True,False,10.69,False,0.556,train,meri booking kisi aur din kar dein
+holdout,en,normal,Could you push my visit to Thursday,reschedule_appointment|change_date,reschedule_appointment,0.8664,high,True,reschedule_appointment,True,reschedule_appointment,True,False,8.09,False,0.385,train,could you reschedule my dr asim appointment from thursday to wednesday
+holdout,ur,normal,شام کی بجائے صبح کا وقت کر دیں,change_time|reschedule_appointment,change_time,0.9571,high,True,reschedule_appointment,True,reschedule_appointment,True,False,9.69,False,0.4,train,آج کا وقت فائنل کر دیں
+holdout,ru,normal,meri booking kitne baje ki hai,appointment_status,appointment_status,0.8732,high,True,check_appointment,True,check_appointment,True,False,10.65,False,0.375,train,clinic kitne baje khulta hai
+holdout,en,normal,Is my appointment still on,appointment_status,appointment_status,0.9779,high,True,check_appointment,True,check_appointment,True,False,8.46,False,0.5,train,is my appointment confirmed
+holdout,ru,similar,Dr Hamza parson available honge?,check_availability,check_availability,0.9906,high,True,doctor_availability,True,doctor_availability,True,False,9.83,False,0.571,train,dr hamza is hafte available honge
+holdout,en,normal,Does Dr Ahmed see patients on Saturday,check_availability,check_availability,0.9806,high,True,doctor_availability,True,doctor_availability,True,False,10.49,False,0.3,train,is dr ahmed available on friday
+holdout,ur,normal,کیا ڈاکٹر صاحب چھٹی پر ہیں,doctor_unavailable|check_availability,doctor_unavailable,0.9759,high,True,doctor_availability,True,doctor_availability,True,False,8.48,False,0.833,train,کیا ڈاکٹر چھٹی پر ہیں
+holdout,ru,similar,"Dr Ahmed nahi, koi aur doctor kar dein",change_doctor,change_doctor,0.9931,high,True,reschedule_appointment,True,reschedule_appointment,True,False,10.06,False,0.5,train,mujhe dr sara nahi chahiye koi aur doctor de dein
+holdout,en,normal,Please switch me to a lady doctor,change_doctor,change_doctor,0.9922,high,True,reschedule_appointment,True,reschedule_appointment,True,False,12.23,False,0.625,train,please switch me to another doctor
+holdout,ru,normal,Dr Sara ki fees kitni hai,doctor_fee,doctor_fee,0.9892,high,True,doctor_information,True,doctor_information,True,False,7.9,False,0.714,train,dr hamza ki fees kitni hai
+holdout,en,normal,What does a consultation cost,doctor_fee,doctor_fee,0.9884,high,True,doctor_information,True,doctor_information,True,False,9.61,False,0.25,val,what is the consultation fee
+holdout,ur,normal,ڈاکٹر صاحب نے کون سی ڈگری لی ہے,doctor_qualifications,doctor_qualifications,0.9903,high,True,doctor_information,True,doctor_information,True,False,9.09,False,0.3,train,ڈاکٹر نے کیا پڑھا ہے
+holdout,ru,normal,Dr Hamza kis cheez ke doctor hain,doctor_specialization,doctor_specialization,0.9843,high,True,doctor_information,True,doctor_information,True,False,9.12,False,0.556,train,dr ahmed kis cheez ke specialist hain
+holdout,ru,normal,Dr Sara ke bare mein kuch batayein,doctor_information,check_availability,0.9046,high,False,doctor_information,False,doctor_availability,False,False,9.29,False,0.625,train,dr sara ke baare mein batayein
+holdout,ru,normal,Aapke clinic mein kaun kaun se doctor hain,find_doctor,find_doctor,0.6368,medium,True,doctor_information,True,doctor_information,True,False,11.37,False,0.5,train,doctor aaj clinic mein hain
+holdout,ru,normal,clinic ka pata bata dein,clinic_location,clinic_location,0.354,low,True,clinic_information,True,unknown_intent,False,False,7.9,False,0.5,test,clinic ka pata batayein
+holdout,en,normal,How late are you open today,clinic_timing,clinic_timing,0.9836,high,True,clinic_information,True,clinic_information,True,False,9.25,False,0.833,train,how late are you open
+holdout,ur,normal,کیا اتوار کو کلینک بند ہوتا ہے,clinic_closed|clinic_timing,clinic_closed,0.985,high,True,clinic_information,True,clinic_information,True,False,11.83,False,0.5,train,اتوار کو کھلا ہوتا ہے
+holdout,ru,normal,ammi ki saans ruk rahi hai jaldi kuch karein,emergency,repeat_information,0.4848,medium,False,emergency,False,emergency,True,False,8.1,False,0.357,train,ammi ko saans nahi aa rahi doctor ko dikhana hai jaldi
+holdout,en,normal,"There is a lot of blood, please help",emergency,emergency,0.9895,high,True,emergency,True,emergency,True,False,9.83,False,0.273,train,is there a holiday this week
+holdout,ru,normal,Salam alaikum ji,greeting,greeting,0.9777,high,True,greeting,True,greeting,True,False,12.21,False,0.667,train,salam ji
+holdout,ru,normal,Achha ji Allah hafiz,goodbye,goodbye,0.9798,high,True,goodbye,True,goodbye,True,False,8.01,False,0.6,train,chalo ji allah hafiz
+holdout,en,short,Thanks a lot,thank_you,thank_you,0.986,high,True,thanks,True,thanks,True,False,10.62,False,0.5,train,thanks a million
+holdout,ru,normal,Mujhe guide kar dein kaise hota hai,help,help,0.9831,high,True,help,True,help,True,False,10.3,False,0.333,train,theek hai book kar dein
+holdout,ru,short,haan ji theek hai,confirm,confirm,0.9878,high,True,confirm,True,confirm,True,False,7.78,False,0.6,train,acha theek hai ji
+holdout,ru,short,"nahi, aisa nahi",deny,deny,0.9827,high,True,deny,True,deny,True,False,11.84,False,0.5,train,aisa nahi kaha maine
+holdout,mix,normal,"Sorry, zara phir se kahein",repeat_information,repeat_information,0.9867,high,True,repeat,True,repeat,True,False,9.74,False,0.375,train,zara phir se bataiye kya kaha
+holdout,ru,informal,ruko zara sochne do,unclear_request,unclear_request,0.9851,high,True,unknown_intent,True,unknown_intent,True,False,7.82,False,0.75,val,sochne do zara
+holdout,ru,normal,Mera naam Ayesha Siddiqui hai,provide_patient_name,provide_patient_name,0.9894,high,True,provide_info,True,provide_info,True,False,10.28,False,0.5,train,mera naam ahmed hai
+holdout,ru,normal,mera mobile 0345 1122334 hai,provide_patient_phone,provide_patient_phone,0.9904,high,True,provide_info,True,provide_info,True,False,10.17,False,0.5,train,mobile 0345 7778888 hai
+holdout,ru,normal,Main 28 saal ka hoon,provide_patient_age,provide_patient_age,0.9911,high,True,provide_info,True,provide_info,True,False,7.77,False,0.667,train,main 25 saal ka hoon
+holdout,ru,normal,Patient ek larki hai,provide_patient_gender,provide_patient_gender,0.9552,high,True,provide_info,True,provide_info,True,False,11.88,False,0.5,train,larki hai

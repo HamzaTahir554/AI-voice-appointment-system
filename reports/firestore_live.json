@@ -1,0 +1,40 @@
+{
+  "test_day": "2027-01-14",
+  "operation_seconds": {
+    "book": {
+      "calls": 8,
+      "median": 6.132,
+      "max": 15.449
+    },
+    "availability": {
+      "calls": 1,
+      "median": 2.206,
+      "max": 2.206
+    },
+    "cancel": {
+      "calls": 1,
+      "median": 2.228,
+      "max": 2.228
+    },
+    "query": {
+      "calls": 3,
+      "median": 0.581,
+      "max": 0.692
+    },
+    "get": {
+      "calls": 1,
+      "median": 0.562,
+      "max": 0.562
+    },
+    "doctor_leave": {
+      "calls": 1,
+      "median": 5.037,
+      "max": 5.037
+    },
+    "reschedule": {
+      "calls": 1,
+      "median": 4.414,
+      "max": 4.414
+    }
+  }
+}

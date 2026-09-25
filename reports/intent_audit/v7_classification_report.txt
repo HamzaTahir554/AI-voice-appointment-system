@@ -1,0 +1,116 @@
+==============================================================================
+mBERT INTENT CLASSIFIER - TEST SET EVALUATION
+==============================================================================
+test samples      : 333
+intents in taxonomy: 31
+
+Accuracy          : 0.9159
+Precision (macro) : 0.8798
+Recall    (macro) : 0.8508
+F1        (macro) : 0.8539
+Precision (weighted): 0.9236
+Recall    (weighted): 0.9159
+F1        (weighted): 0.9152
+
+------------------------------------------------------------------------------
+PER-INTENT CLASSIFICATION REPORT
+------------------------------------------------------------------------------
+                          precision    recall  f1-score   support
+
+appointment_confirmation     0.8571    0.8571    0.8571         7
+      appointment_status     1.0000    0.5000    0.6667         2
+        book_appointment     0.9597    0.9862    0.9728       145
+      cancel_appointment     1.0000    0.8750    0.9333         8
+             change_date     0.8333    1.0000    0.9091         5
+           change_doctor     1.0000    0.9167    0.9565        12
+             change_time     0.6000    0.7500    0.6667         4
+      check_availability     1.0000    1.0000    1.0000        10
+           clinic_closed     1.0000    1.0000    1.0000         4
+         clinic_location     1.0000    0.6667    0.8000         3
+           clinic_timing     0.7500    0.6000    0.6667         5
+                 confirm     1.0000    0.8333    0.9091         6
+                    deny     1.0000    0.6000    0.7500         5
+              doctor_fee     1.0000    1.0000    1.0000         7
+      doctor_information     0.8571    0.7500    0.8000         8
+   doctor_qualifications     0.8333    0.7143    0.7692         7
+   doctor_specialization     1.0000    1.0000    1.0000         7
+      doctor_unavailable     0.8571    1.0000    0.9231         6
+               emergency     1.0000    0.7000    0.8235        10
+             find_doctor     0.8333    1.0000    0.9091         5
+                 goodbye     0.6667    0.8000    0.7273         5
+                greeting     1.0000    0.7500    0.8571         4
+                    help     0.5714    0.8000    0.6667         5
+     provide_patient_age     1.0000    1.0000    1.0000         7
+  provide_patient_gender     0.6667    1.0000    0.8000         2
+    provide_patient_name     1.0000    1.0000    1.0000         7
+   provide_patient_phone     1.0000    1.0000    1.0000         7
+      repeat_information     0.7143    1.0000    0.8333         5
+  reschedule_appointment     0.8750    0.8750    0.8750        16
+               thank_you     1.0000    1.0000    1.0000         4
+         unclear_request     0.4000    0.4000    0.4000         5
+
+                accuracy                         0.9159       333
+               macro avg     0.8798    0.8508    0.8539       333
+            weighted avg     0.9236    0.9159    0.9152       333
+
+------------------------------------------------------------------------------
+PER-INTENT PERFORMANCE (sorted by F1)
+------------------------------------------------------------------------------
+Intent                     Precision    Recall        F1  Support
+doctor_fee                    1.0000    1.0000    1.0000        7
+clinic_closed                 1.0000    1.0000    1.0000        4
+check_availability            1.0000    1.0000    1.0000       10
+provide_patient_age           1.0000    1.0000    1.0000        7
+provide_patient_name          1.0000    1.0000    1.0000        7
+provide_patient_phone         1.0000    1.0000    1.0000        7
+doctor_specialization         1.0000    1.0000    1.0000        7
+thank_you                     1.0000    1.0000    1.0000        4
+book_appointment              0.9597    0.9862    0.9728      145
+change_doctor                 1.0000    0.9167    0.9565       12
+cancel_appointment            1.0000    0.8750    0.9333        8
+doctor_unavailable            0.8571    1.0000    0.9231        6
+find_doctor                   0.8333    1.0000    0.9091        5
+confirm                       1.0000    0.8333    0.9091        6
+change_date                   0.8333    1.0000    0.9091        5
+reschedule_appointment        0.8750    0.8750    0.8750       16
+greeting                      1.0000    0.7500    0.8571        4
+appointment_confirmation      0.8571    0.8571    0.8571        7
+repeat_information            0.7143    1.0000    0.8333        5
+emergency                     1.0000    0.7000    0.8235       10
+doctor_information            0.8571    0.7500    0.8000        8
+clinic_location               1.0000    0.6667    0.8000        3
+provide_patient_gender        0.6667    1.0000    0.8000        2
+doctor_qualifications         0.8333    0.7143    0.7692        7
+deny                          1.0000    0.6000    0.7500        5
+goodbye                       0.6667    0.8000    0.7273        5
+appointment_status            1.0000    0.5000    0.6667        2
+clinic_timing                 0.7500    0.6000    0.6667        5
+change_time                   0.6000    0.7500    0.6667        4
+help                          0.5714    0.8000    0.6667        5
+unclear_request               0.4000    0.4000    0.4000        5
+
+Best-performing intent : doctor_fee (F1 1.0000, support 7)
+Worst-performing intent: unclear_request (F1 0.4000, support 5)
+
+------------------------------------------------------------------------------
+MOST COMMON CONFUSIONS (actual -> predicted)
+------------------------------------------------------------------------------
+   emergency                -> book_appointment           3 (30% of that intent)
+   deny                     -> unclear_request            2 (40% of that intent)
+   unclear_request          -> help                       2 (40% of that intent)
+   appointment_status       -> book_appointment           1 (50% of that intent)
+   clinic_location          -> help                       1 (33% of that intent)
+   change_time              -> appointment_confirmation   1 (25% of that intent)
+   greeting                 -> goodbye                    1 (25% of that intent)
+   clinic_timing            -> change_time                1 (20% of that intent)
+
+------------------------------------------------------------------------------
+CONFIDENCE (softmax maximum)
+------------------------------------------------------------------------------
+   mean confidence, correct predictions : 0.9838
+   mean confidence, wrong predictions   : 0.7658
+   threshold 0.50: keeps  98.5% of calls, accuracy on kept 0.9299
+   threshold 0.60: keeps  97.0% of calls, accuracy on kept 0.9412
+   threshold 0.70: keeps  95.5% of calls, accuracy on kept 0.9465
+   threshold 0.80: keeps  94.6% of calls, accuracy on kept 0.9524
+   threshold 0.90: keeps  92.8% of calls, accuracy on kept 0.9579

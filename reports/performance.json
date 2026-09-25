@@ -1,0 +1,329 @@
+{
+  "generated_at": "2026-09-14T08:04:53",
+  "machine": {
+    "cuda": true,
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER"
+  },
+  "stages": {
+    "mbert_intent_detection": {
+      "calls": 60,
+      "median_ms": 9.97,
+      "p95_ms": 13.54,
+      "max_ms": 19.4,
+      "first_call_including_model_load_ms": 7582.8
+    },
+    "dialog_manager_logic_in_memory": {
+      "calls": 60,
+      "median_ms": 0.3,
+      "p95_ms": 0.45,
+      "max_ms": 7.84
+    },
+    "pipeline_turn_no_llm_in_memory": {
+      "calls": 30,
+      "median_ms": 9.66,
+      "p95_ms": 12.57,
+      "max_ms": 12.77
+    },
+    "appointment_backend_book_in_memory": {
+      "calls": 8,
+      "median_ms": 0.07,
+      "p95_ms": 0.07,
+      "max_ms": 0.09
+    },
+    "firestore_get_doctor": {
+      "calls": 5,
+      "median_ms": 2342.85,
+      "p95_ms": 2391.06,
+      "max_ms": 3948.85
+    },
+    "firestore_availability": {
+      "calls": 5,
+      "median_ms": 5848.07,
+      "p95_ms": 5860.32,
+      "max_ms": 5887.83
+    },
+    "ollama_judge_roman_urdu": {
+      "calls": 3,
+      "median_ms": 3126.32,
+      "p95_ms": 3126.32,
+      "max_ms": 3777.29
+    },
+    "speech_to_text": {
+      "status": "not measured",
+      "reason": "no STT integration exists in the codebase (faster-whisper is installed but not wired in)"
+    },
+    "text_to_speech": {
+      "status": "not measured",
+      "reason": "no TTS integration exists in the codebase"
+    },
+    "telephony_asterisk_sip": {
+      "status": "not measured",
+      "reason": "no Asterisk/SIP integration exists in the codebase"
+    }
+  },
+  "from_live_test_runs": {
+    "firestore_live.json": {
+      "test_day": "2027-01-12",
+      "operation_seconds": {
+        "book": {
+          "calls": 8,
+          "median": 6.101,
+          "max": 15.27
+        },
+        "availability": {
+          "calls": 1,
+          "median": 2.227,
+          "max": 2.227
+        },
+        "cancel": {
+          "calls": 1,
+          "median": 2.224,
+          "max": 2.224
+        },
+        "query": {
+          "calls": 3,
+          "median": 0.573,
+          "max": 0.678
+        },
+        "get": {
+          "calls": 1,
+          "median": 0.539,
+          "max": 0.539
+        },
+        "doctor_leave": {
+          "calls": 1,
+          "median": 5.031,
+          "max": 5.031
+        },
+        "reschedule": {
+          "calls": 1,
+          "median": 4.387,
+          "max": 4.387
+        }
+      }
+    },
+    "ollama_live.json": {
+      "model": "llama3.2",
+      "calls": 21,
+      "llm_wording_accepted": 9,
+      "fallback_used": 12,
+      "latency_seconds": {
+        "median": 3.4,
+        "max": 5.88,
+        "min": 3.15
+      },
+      "responses": [
+        {
+          "scenario": "slot_taken",
+          "language": "english",
+          "source": "fallback",
+          "decision": "approved",
+          "seconds": 3.44,
+          "response": "4:00 PM is already taken. Dr Ahmed Khan has 4:20 PM or 5:00 PM free - which suits?",
+          "rejected_llm_text": null,
+          "problems": []
+        },
+        {
+          "scenario": "slot_taken",
+          "language": "roman_urdu",
+          "source": "fallback",
+          "decision": "approved",
+          "seconds": 3.24,
+          "response": "shaam 4 baje ka slot already booked hai. shaam 4:20 baje ya shaam 5 baje available hai. Aap kaunsa prefer karenge?",
+          "rejected_llm_text": null,
+          "problems": []
+        },
+        {
+          "scenario": "slot_taken",
+          "language": "urdu",
+          "source": "fallback",
+          "decision": "approved",
+          "seconds": 3.27,
+          "response": "شام 4 بجے کا وقت پہلے سے بک ہے۔ شام 4:20 بجے یا شام 5 بجے خالی ہیں۔ آپ کون سا پسند کریں گے؟",
+          "rejected_llm_text": null,
+          "problems": []
+        },
+        {
+          "scenario": "doctor_on_leave",
+          "language": "english",
+          "source": "fallback",
+          "decision": "approved",
+          "seconds": 3.4,
+          "response": "Sorry, Dr Ahmed Khan is not at the clinic Monday, 21 September. Another day?",
+          "rejected_llm_text": null,
+          "problems": []
+        },
+        {
+          "scenario": "doctor_on_leave",
+          "language": "roman_urdu",
+          "source": "fallback",
+          "decision": "approved",
+          "seconds": 3.25,
+          "response": "Maazrat, Dr Ahmed Khan Peer 21 tareekh clinic nahi aa rahe. Koi aur din dekhein?",
+          "rejected_llm_text": null,
+          "problems": []
+        },
+        {
+          "scenario": "doctor_on_leave",
+          "language": "urdu",
+          "source": "fallback",
+          "decision": "approved",
+          "seconds": 3.16,
+          "response": "معذرت، Dr Ahmed Khan پیر 21 تاریخ کلینک نہیں آ رہے۔ کوئی اور دن دیکھیں؟",
+          "rejected_llm_text": null,
+          "problems": []
+        },
+        {
+          "scenario": "booked",
+          "language": "english",
+          "source": "ollama",
+          "decision": "approved",
+          "seconds": 3.28,
+          "response": "Your appointment with Dr Ahmed Khan is confirmed for 16:00 on 21st September.",
+          "rejected_llm_text": null,
+          "problems": []
+        },
+        {
+          "scenario": "booked",
+          "language": "roman_urdu",
+          "source": "ollama",
+          "decision": "approved",
+          "seconds": 3.61,
+          "response": "Ji bilkul. Aapki Dr Ahmed Khan ke saath 21 September ko 4 baje ki appointment confirm ho gayi hai.",
+          "rejected_llm_text": null,
+          "problems": []
+        },
+        {
+          "scenario": "booked",
+          "language": "urdu",
+          "source": "ollama",
+          "decision": "approved",
+          "seconds": 5.88,
+          "response": "Ji bilkul. Aapki Dr Ahmed Khan ke saath 21 September ko 4 baje ki appointment confirm ho gayi hai.",
+          "rejected_llm_text": null,
+          "problems": []
+        },
+        {
+          "scenario": "slot_taken",
+          "language": "english",
+          "source": "fallback",
+          "decision": "approved",
+          "seconds": 3.37,
+          "response": "4:00 PM is already taken. Dr Ahmed Khan has 4:20 PM or 5:00 PM free - which suits?",
+          "rejected_llm_text": null,
+          "problems": []
+        },
+        {
+          "scenario": "slot_taken",
+          "language": "roman_urdu",
+          "source": "fallback",
+          "decision": "approved",
+          "seconds": 3.32,
+          "response": "shaam 4 baje ka slot already booked hai. shaam 4:20 baje ya shaam 5 baje available hai. Aap kaunsa prefer karenge?",
+          "rejected_llm_text": null,
+          "problems": []
+        },
+        {
+          "scenario": "slot_taken",
+          "language": "urdu",
+          "source": "fallback",
+          "decision": "approved",
+          "seconds": 3.27,
+          "response": "شام 4 بجے کا وقت پہلے سے بک ہے۔ شام 4:20 بجے یا شام 5 بجے خالی ہیں۔ آپ کون سا پسند کریں گے؟",
+          "rejected_llm_text": null,
+          "problems": []
+        },
+        {
+          "scenario": "doctor_on_leave",
+          "language": "english",
+          "source": "fallback",
+          "decision": "approved",
+          "seconds": 3.4,
+          "response": "Sorry, Dr Ahmed Khan is not at the clinic Monday, 21 September. Another day?",
+          "rejected_llm_text": null,
+          "problems": []
+        },
+        {
+          "scenario": "doctor_on_leave",
+          "language": "roman_urdu",
+          "source": "fallback",
+          "decision": "approved",
+          "seconds": 3.31,
+          "response": "Maazrat, Dr Ahmed Khan Peer 21 tareekh clinic nahi aa rahe. Koi aur din dekhein?",
+          "rejected_llm_text": null,
+          "problems": []
+        },
+        {
+          "scenario": "doctor_on_leave",
+          "language": "urdu",
+          "source": "fallback",
+          "decision": "approved",
+          "seconds": 3.15,
+          "response": "معذرت، Dr Ahmed Khan پیر 21 تاریخ کلینک نہیں آ رہے۔ کوئی اور دن دیکھیں؟",
+          "rejected_llm_text": null,
+          "problems": []
+        },
+        {
+          "scenario": "cancelled",
+          "language": "english",
+          "source": "ollama",
+          "decision": "approved",
+          "seconds": 3.45,
+          "response": "Your appointment with Dr Ahmed Khan has been cancelled.",
+          "rejected_llm_text": null,
+          "problems": []
+        },
+        {
+          "scenario": "cancelled",
+          "language": "roman_urdu",
+          "source": "ollama",
+          "decision": "approved",
+          "seconds": 3.62,
+          "response": "Ji bilkul. Aapki appointment Dr Ahmed Khan ke saath 21 September ko 4 baje ki cancellation confirm ho gayi hai.",
+          "rejected_llm_text": null,
+          "problems": []
+        },
+        {
+          "scenario": "cancelled",
+          "language": "urdu",
+          "source": "ollama",
+          "decision": "approved",
+          "seconds": 5.62,
+          "response": "Aapki appointment cancel kar di gayi hai.",
+          "rejected_llm_text": null,
+          "problems": []
+        },
+        {
+          "scenario": "rescheduled",
+          "language": "english",
+          "source": "ollama",
+          "decision": "approved",
+          "seconds": 3.86,
+          "response": "Ji bilkul. Aapki appointment Dr Ahmed Khan ke saath 22 September ko 5 baje kiya gaya hai.",
+          "rejected_llm_text": null,
+          "problems": []
+        },
+        {
+          "scenario": "rescheduled",
+          "language": "roman_urdu",
+          "source": "ollama",
+          "decision": "approved",
+          "seconds": 3.75,
+          "response": "Ji bilkul. Aapki appointment kal 5 baje ki date aur samay badal diya gaya hai.",
+          "rejected_llm_text": null,
+          "problems": []
+        },
+        {
+          "scenario": "rescheduled",
+          "language": "urdu",
+          "source": "ollama",
+          "decision": "approved",
+          "seconds": 3.75,
+          "response": "Ji bilkul. Aapki appointment kal 5 baje 17:00 ke liye confirm ho gayi hai.",
+          "rejected_llm_text": null,
+          "problems": []
+        }
+      ]
+    }
+  }
+}

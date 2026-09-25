@@ -1,0 +1,169 @@
+{
+  "tag": "before",
+  "model_dir": "C:\\Users\\BURAAQ NOVA\\Start UP\\aI VOICE APPOINTMENT SYSTEM\\intent_detection\\models\\mbert_intent_classifier",
+  "sets": {
+    "challenge": {
+      "cases": 29,
+      "raw_accuracy": 0.8621,
+      "canonical_accuracy": 0.8621,
+      "router_accuracy": 0.8621,
+      "metrics": {
+        "accuracy": 0.8621,
+        "macro_precision": 0.7333,
+        "macro_recall": 0.7667,
+        "macro_f1": 0.7376,
+        "weighted_f1": 0.8174
+      },
+      "leaked_into_corpus": 0,
+      "near_duplicates_ge_0_8": 10,
+      "by_language": {
+        "ru": {
+          "cases": 29,
+          "raw_accuracy": 0.8621
+        }
+      },
+      "by_category": {
+        "challenge_booking": {
+          "cases": 15,
+          "raw_accuracy": 1.0
+        },
+        "challenge_lookalike": {
+          "cases": 14,
+          "raw_accuracy": 0.7143
+        }
+      }
+    },
+    "audit": {
+      "cases": 164,
+      "raw_accuracy": 0.8963,
+      "canonical_accuracy": 0.9085,
+      "router_accuracy": 0.8902,
+      "metrics": {
+        "accuracy": 0.8963,
+        "macro_precision": 0.9205,
+        "macro_recall": 0.9022,
+        "macro_f1": 0.8955,
+        "weighted_f1": 0.8964
+      },
+      "leaked_into_corpus": 30,
+      "near_duplicates_ge_0_8": 5,
+      "by_language": {
+        "en": {
+          "cases": 36,
+          "raw_accuracy": 0.9444
+        },
+        "mix": {
+          "cases": 3,
+          "raw_accuracy": 1.0
+        },
+        "ru": {
+          "cases": 94,
+          "raw_accuracy": 0.8617
+        },
+        "ur": {
+          "cases": 31,
+          "raw_accuracy": 0.9355
+        }
+      },
+      "by_category": {
+        "ambiguous": {
+          "cases": 5,
+          "raw_accuracy": 0.8
+        },
+        "informal": {
+          "cases": 9,
+          "raw_accuracy": 0.7778
+        },
+        "misspelled": {
+          "cases": 7,
+          "raw_accuracy": 0.7143
+        },
+        "negation": {
+          "cases": 1,
+          "raw_accuracy": 1.0
+        },
+        "normal": {
+          "cases": 106,
+          "raw_accuracy": 0.9623
+        },
+        "out_of_domain": {
+          "cases": 2,
+          "raw_accuracy": 0.0
+        },
+        "robustness": {
+          "cases": 9,
+          "raw_accuracy": 1.0
+        },
+        "short": {
+          "cases": 17,
+          "raw_accuracy": 0.8235
+        },
+        "similar": {
+          "cases": 8,
+          "raw_accuracy": 0.625
+        }
+      }
+    },
+    "holdout": {
+      "cases": 41,
+      "raw_accuracy": 0.878,
+      "canonical_accuracy": 0.9024,
+      "router_accuracy": 0.878,
+      "metrics": {
+        "accuracy": 0.878,
+        "macro_precision": 0.9138,
+        "macro_recall": 0.9126,
+        "macro_f1": 0.9019,
+        "weighted_f1": 0.8775
+      },
+      "leaked_into_corpus": 1,
+      "near_duplicates_ge_0_8": 2,
+      "by_language": {
+        "en": {
+          "cases": 10,
+          "raw_accuracy": 1.0
+        },
+        "mix": {
+          "cases": 2,
+          "raw_accuracy": 0.5
+        },
+        "ru": {
+          "cases": 23,
+          "raw_accuracy": 0.8696
+        },
+        "ur": {
+          "cases": 6,
+          "raw_accuracy": 0.8333
+        }
+      },
+      "by_category": {
+        "informal": {
+          "cases": 2,
+          "raw_accuracy": 0.5
+        },
+        "normal": {
+          "cases": 33,
+          "raw_accuracy": 0.8788
+        },
+        "robustness": {
+          "cases": 1,
+          "raw_accuracy": 1.0
+        },
+        "short": {
+          "cases": 3,
+          "raw_accuracy": 1.0
+        },
+        "similar": {
+          "cases": 2,
+          "raw_accuracy": 1.0
+        }
+      }
+    }
+  },
+  "inference_latency_ms": {
+    "calls": 234,
+    "median": 9.61,
+    "p95": 12.41,
+    "max": 9423.72
+  }
+}
