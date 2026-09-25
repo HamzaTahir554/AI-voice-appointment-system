@@ -1,0 +1,2378 @@
+user_input,intent
+Abhi confirm kar dein,appointment_confirmation
+"Book it, that is fine",appointment_confirmation
+Booking pakki kar dein,appointment_confirmation
+Confirm it for Saturday at 10 AM,appointment_confirmation
+Confirm it for Saturday at 11 AM,appointment_confirmation
+Confirm it for Tuesday at evening,appointment_confirmation
+Confirm it for Tuesday at morning,appointment_confirmation
+Confirm it for Wednesday at afternoon,appointment_confirmation
+Confirm it for this Friday at 2 PM,appointment_confirmation
+Confirm it for this Friday at 9 AM,appointment_confirmation
+Confirm it for today at morning,appointment_confirmation
+Confirm my visit with Dr Asim,appointment_confirmation
+Confirm my visit with Dr Bilal,appointment_confirmation
+Confirm my visit with Dr Zainab,appointment_confirmation
+Friday ka appointment final kar dein,appointment_confirmation
+Go ahead and confirm that booking,appointment_confirmation
+Go ahead with that appointment,appointment_confirmation
+Haan wohi slot rakh dein,appointment_confirmation
+Ji final kar dein,appointment_confirmation
+Ji haan appointment confirm kar dein,appointment_confirmation
+Ji wohi slot book kar dein,appointment_confirmation
+Lock it in,appointment_confirmation
+Monday ka appointment final kar dein,appointment_confirmation
+Pakka kar dein,appointment_confirmation
+Please confirm it now,appointment_confirmation
+Please finalise the appointment,appointment_confirmation
+Saturday ka appointment final kar dein,appointment_confirmation
+"That date works, confirm please",appointment_confirmation
+"That works, please book it",appointment_confirmation
+"Theek hai, book kar dein",appointment_confirmation
+Tuesday ka appointment final kar dein,appointment_confirmation
+"Wo date theek hai, confirm karein",appointment_confirmation
+Wohi appointment rakh dein,appointment_confirmation
+Yes book that slot for me,appointment_confirmation
+Yes finalise it,appointment_confirmation
+Yes lock that slot for me,appointment_confirmation
+Yes please confirm my appointment,appointment_confirmation
+aaj ka appointment final kar dein,appointment_confirmation
+agle hafte ka appointment final kar dein,appointment_confirmation
+kal ka appointment final kar dein,appointment_confirmation
+parso ka appointment final kar dein,appointment_confirmation
+آج کا وقت فائنل کر دیں,appointment_confirmation
+ابھی کنفرم کر دیں,appointment_confirmation
+اگلے پیر کا وقت فائنل کر دیں,appointment_confirmation
+بدھ کا وقت فائنل کر دیں,appointment_confirmation
+بکنگ کنفرم کر دیں,appointment_confirmation
+جمعرات کا وقت فائنل کر دیں,appointment_confirmation
+جمعہ کا وقت فائنل کر دیں,appointment_confirmation
+جی فائنل کر دیں,appointment_confirmation
+جی وہی وقت بک کر دیں,appointment_confirmation
+جی ہاں اپائنٹمنٹ پکی کر دیں,appointment_confirmation
+منگل کا وقت فائنل کر دیں,appointment_confirmation
+وہ تاریخ ٹھیک ہے، کنفرم کریں,appointment_confirmation
+وہی اپائنٹمنٹ رکھ دیں,appointment_confirmation
+ٹھیک ہے، بک کر دیں,appointment_confirmation
+پکا کر دیں,appointment_confirmation
+پیر کا وقت فائنل کر دیں,appointment_confirmation
+کل کا وقت فائنل کر دیں,appointment_confirmation
+ہاں وہی وقت رکھ دیں,appointment_confirmation
+ہفتہ کا وقت فائنل کر دیں,appointment_confirmation
+Can you check my booking,appointment_status
+Can you tell me my appointment time,appointment_status
+Do I have an appointment scheduled,appointment_status
+Has my booking gone through,appointment_status
+Have I got an appointment coming up,appointment_status
+Is my appointment confirmed,appointment_status
+Is there a booking under my name,appointment_status
+Kya mera appointment lag gaya hai,appointment_status
+Kya meri appointment confirm ho gayi,appointment_status
+Meri appointment ka kya status hai,appointment_status
+Meri appointment ki tafseel batayein,appointment_status
+Please check my appointment details,appointment_status
+Tell me about my existing appointment,appointment_status
+What day was I booked for,appointment_status
+What is the status of my appointment,appointment_status
+What time was my appointment again,appointment_status
+Zara meri booking check karein,appointment_status
+appointment pakki hai na?,appointment_status
+kya mera naam list mein hai,appointment_status
+kya meri booking bani hui hai,appointment_status
+mera apoinment kis din hai,appointment_status
+mera appointment kab ka hai,appointment_status
+mera time kab ka laga hai,appointment_status
+meri apointment kb hai,appointment_status
+meri appointment ka din aur time bata dein,appointment_status
+meri appointmnt kab he,appointment_status
+meri booking confirm hui thi kya,appointment_status
+mje yaad nahi meri appointment kab hai,appointment_status
+mujhe kis waqt aana hai appointment pe,appointment_status
+ذرا میری بکنگ چیک کریں,appointment_status
+مجھے کس وقت آنا ہے,appointment_status
+میری اپائنٹمنٹ کا کیا ہوا,appointment_status
+میری اپائنٹمنٹ کب ہے,appointment_status
+میری اپائنٹمنٹ کس دن کی ہے,appointment_status
+میری اپائنٹمنٹ کی تفصیل بتائیں,appointment_status
+کیا میری اپائنٹمنٹ پکی ہو گئی,appointment_status
+کیا میری بکنگ ہو چکی ہے,appointment_status
+Ammi ko doctor ko dikhana hai,book_appointment
+Apna checkup karwana tha,book_appointment
+Appointment banwani hai,book_appointment
+Appointment karwani hai,book_appointment
+Appointment laga dein,book_appointment
+Bachay ko doctor ko dikhana hai,book_appointment
+Baji mujhe doctor ka time chahiye,book_appointment
+Bhai doctor ka appointment chahiye,book_appointment
+Book me in for 11 AM on Monday,book_appointment
+Book me in for 2 PM on Monday,book_appointment
+Book me in for 2 PM on Wednesday,book_appointment
+Can I get a slot with Dr Asim,book_appointment
+Can I get an appointment for Saturday,book_appointment
+Can I get an appointment for Tuesday,book_appointment
+Can I get an appointment for this Friday,book_appointment
+Can you book an appointment,book_appointment
+Can you fix a meeting with Dr Ahmed,book_appointment
+Can you fix a meeting with Dr Asim,book_appointment
+Can you fix a meeting with Dr Bilal,book_appointment
+Can you fix a meeting with Dr Sara,book_appointment
+Checkup karwana hai,book_appointment
+Clinic aana hai doctor ke paas,book_appointment
+Doctor ka time chahiye,book_appointment
+Doctor ke paas jana hai,book_appointment
+Doctor ki appointment karni hai,book_appointment
+Doctor ko dikhana hai,book_appointment
+Doctor se milna hai Friday ko,book_appointment
+Doctor se milna hai Tuesday ko,book_appointment
+Doctor se milna hai agle hafte ko,book_appointment
+Doctor se milne ka time chahiye,book_appointment
+Dr Ahmed ki appointment chahiye,book_appointment
+Dr Asim ke paas jana hai,book_appointment
+Dr Bilal ke saath meeting fix kar dein,book_appointment
+Dr Fatima ke saath meeting fix kar dein,book_appointment
+Dr Hamza ke saath meeting fix kar dein,book_appointment
+Dr Khan ke saath meeting fix kar dein,book_appointment
+Dr Sara ke saath time laga dein,book_appointment
+Dr Sara ko dikhana tha,book_appointment
+Dr Usman ke saath meeting fix kar dein,book_appointment
+Friday ka appointment mil sakta hai,book_appointment
+I need an appointment,book_appointment
+I need to see Dr Asim,book_appointment
+I need to see Dr Sara,book_appointment
+I need to see Dr Usman,book_appointment
+I need to see the doctor,book_appointment
+I need to visit the doctor Tuesday,book_appointment
+I need to visit the doctor this Friday,book_appointment
+I want a checkup,book_appointment
+I want to book an appointment with Dr Asim,book_appointment
+I want to book an appointment with Dr Bilal,book_appointment
+I want to book an appointment with Dr Fatima,book_appointment
+I want to book an appointment with Dr Usman,book_appointment
+I want to book an appointment with Dr Zainab,book_appointment
+I want to consult Dr Asim about my back pain,book_appointment
+I want to consult Dr Khan about my back pain,book_appointment
+I want to see a doctor,book_appointment
+I would like to make an appointment,book_appointment
+I would like to see Dr Ahmed,book_appointment
+Ji appointment chahiye thi,book_appointment
+Ji doctor ko dikhana tha,book_appointment
+Kal ka time chahiye tha,book_appointment
+Kal ka time mil sakta hai,book_appointment
+Kya Dr Ayesha se waqt mil sakta hai,book_appointment
+Kya Dr Khan se waqt mil sakta hai,book_appointment
+Kya Dr Zainab se waqt mil sakta hai,book_appointment
+Mera appointment Friday ko rakh dein,book_appointment
+Mera appointment Saturday ko rakh dein,book_appointment
+Mera appointment Tuesday ko rakh dein,book_appointment
+Mera appointment agle hafte ko rakh dein,book_appointment
+Mera naam laga dein,book_appointment
+Mera number laga dein,book_appointment
+Meri appointment likh lein,book_appointment
+Mujhe 2 baje ka slot chahiye,book_appointment
+Mujhe 5 baje ka slot chahiye,book_appointment
+Mujhe Dr Asim se appointment leni hai,book_appointment
+Mujhe Dr Asim se milna tha,book_appointment
+Mujhe Dr Ayesha se appointment leni hai,book_appointment
+Mujhe Dr Hamza ka time chahiye,book_appointment
+Mujhe Dr Hamza ko dikhana hai,book_appointment
+Mujhe Dr Hamza se appointment leni hai,book_appointment
+Mujhe Dr Sara se appointment leni hai,book_appointment
+Mujhe apna checkup karana hai,book_appointment
+Mujhe appointment banwani hai,book_appointment
+Mujhe appointment chahiye thi,book_appointment
+Mujhe checkup karwana hai,book_appointment
+Mujhe doctor ke liye slot chahiye,book_appointment
+Mujhe doctor ko dikhana tha,book_appointment
+Mujhe doctor se checkup karwana hai,book_appointment
+Mujhe shaam ka slot chahiye,book_appointment
+Mujhe slot chahiye,book_appointment
+Please give me a slot on Friday,book_appointment
+Please give me a slot on Thursday,book_appointment
+Please give me a slot on Tuesday,book_appointment
+Please give me a slot on this Friday,book_appointment
+Please schedule me with Dr Asim on next Monday,book_appointment
+Please schedule me with Dr Zainab on Thursday,book_appointment
+Put me down for an appointment,book_appointment
+Register my appointment with Dr Asim,book_appointment
+Register my appointment with Dr Bilal,book_appointment
+Saturday ka appointment mil sakta hai,book_appointment
+Set up a visit for me Friday at morning,book_appointment
+Set up a visit for me tomorrow at 5 PM,book_appointment
+Sir mujhe doctor se milna hai,book_appointment
+Time laga dein,book_appointment
+Walid sahib ko doctor ko dikhana hai,book_appointment
+Zara mera time laga dijiye,book_appointment
+apna checkup karwana hai na,book_appointment
+apne aap ko doctor sahab ko dikhana th,book_appointment
+apne aap ko dokter ko dikhana hai,book_appointment
+apointment chahiye doctor ka,book_appointment
+appointment book karni hai na,book_appointment
+appointment book karni he,book_appointment
+appointment book karni th,book_appointment
+appointment book karni tha,book_appointment
+appointment chahiye,book_appointment
+appointment lena h,book_appointment
+appointment lena hai,book_appointment
+appointment lena hai na,book_appointment
+appointment lena hy,book_appointment
+appointment lena th,book_appointment
+appointment lena tha,book_appointment
+appointment leni h,book_appointment
+appointmnt chahiye,book_appointment
+bachay ko daktar ko dikhana hai na,book_appointment
+bachay ko docter ko dikhana th,book_appointment
+bachay ko doctor sahib ko dikhana hai na,book_appointment
+bachay ko dr ko dikhana tha,book_appointment
+daktar k paas jana hy,book_appointment
+daktar k pas jana chahta hoon,book_appointment
+daktar k pas mera time laga dein,book_appointment
+daktar ka appointment laga dein,book_appointment
+daktar ka time chahiye,book_appointment
+daktar kay pas jana hai,book_appointment
+daktar kay pas jana tha,book_appointment
+daktar ke paas jana chahta hoon,book_appointment
+daktar ke pas mera time laga dein,book_appointment
+daktar ke pass jana he,book_appointment
+daktar ke pass mera time laga dein,book_appointment
+daktar ko dikhana hai,book_appointment
+daktar ko dikhana hai na,book_appointment
+daktar ko dikhana th,book_appointment
+daktar se check karwana h,book_appointment
+daktar se check karwana hai na,book_appointment
+daktar se check karwana he,book_appointment
+daktar se check karwana th,book_appointment
+daktar se check karwana tha,book_appointment
+daktar se milna chahta hoon,book_appointment
+daktar se milne ka waqt chahiye,book_appointment
+dctr k paas mera time laga dein,book_appointment
+dctr k pas mera time laga dein,book_appointment
+dctr ka appointment laga dein,book_appointment
+dctr ka time chahiye,book_appointment
+dctr kay pas jana h,book_appointment
+dctr kay pas mera time laga dein,book_appointment
+dctr ke pass ana hai,book_appointment
+dctr ke pass mera time laga dein,book_appointment
+dctr ki appointment chahiye,book_appointment
+dctr ko dikhana tha,book_appointment
+dctr se check karwana h,book_appointment
+dctr se check karwana hai,book_appointment
+dctr se check karwana hy,book_appointment
+dctr se check karwana th,book_appointment
+dctr se milna hai,book_appointment
+dctr se milna tha,book_appointment
+dctr se milne ka time chahiye,book_appointment
+dctr se milne ka waqt chahiye,book_appointment
+docter k paas mera time laga dein,book_appointment
+docter k pas jana he,book_appointment
+docter ka appointment laga dein,book_appointment
+docter ka time chahiye,book_appointment
+docter ke paas mera time laga dein,book_appointment
+docter ke pas jana chahta hoon,book_appointment
+docter ke pas jana th,book_appointment
+docter ke pass jana chahta hoon,book_appointment
+docter ki appointment chahiye,book_appointment
+docter ko dikhana hai,book_appointment
+docter se check karwana hy,book_appointment
+docter se milna hai,book_appointment
+docter se milna hai na,book_appointment
+docter se milne ka time chahiye,book_appointment
+docter se milne ka waqt chahiye,book_appointment
+doctor k paas jana hai,book_appointment
+doctor k pas jana he,book_appointment
+doctor ka apointment chaiye,book_appointment
+doctor ka appointment laga dein,book_appointment
+doctor ka time chahiye,book_appointment
+doctor ke paas jana chahti hoon,book_appointment
+doctor ke paas jana hai,book_appointment
+doctor ke paas mera time laga dein,book_appointment
+doctor ke pas jana h,book_appointment
+doctor ke pas jana tha,book_appointment
+doctor ke pass jana hai na,book_appointment
+doctor ko dikhana h,book_appointment
+doctor ko dikhana hai,book_appointment
+doctor ko dikhana hy,book_appointment
+doctor ko dikhana th,book_appointment
+doctor sahab k paas ana hai,book_appointment
+doctor sahab k pas ana hai,book_appointment
+doctor sahab ka appointment laga dein,book_appointment
+doctor sahab ka time chahiye,book_appointment
+doctor sahab kay pas jana hy,book_appointment
+doctor sahab kay pas mera time laga dein,book_appointment
+doctor sahab ki appointment chahiye,book_appointment
+doctor sahab ko dikhana he,book_appointment
+doctor sahab ko dikhana hy,book_appointment
+doctor sahab ko dikhana tha,book_appointment
+doctor sahab se checkup karwana h,book_appointment
+doctor sahab se checkup karwana th,book_appointment
+doctor sahab se milna hai,book_appointment
+doctor sahab se milna th,book_appointment
+doctor sahab se milne ka waqt chahiye,book_appointment
+doctor sahib ka appointment laga dein,book_appointment
+doctor sahib ka time chahiye,book_appointment
+doctor sahib kay pas mera time laga dein,book_appointment
+doctor sahib ke liye time chahiye,book_appointment
+doctor sahib ke paas jana hai na,book_appointment
+doctor sahib ke pas jana hai na,book_appointment
+doctor sahib ke pass jana hai,book_appointment
+doctor sahib ki appointment book karni he,book_appointment
+doctor sahib ki appointment chahiye,book_appointment
+doctor sahib ko dikhana he,book_appointment
+doctor sahib se check karwana hy,book_appointment
+doctor sahib se milna chahta hoon,book_appointment
+doctor sahib se milna h,book_appointment
+doctor sahib se milna tha,book_appointment
+doctor sahib se milne ka time chahiye,book_appointment
+doctor sahib se milne ka waqt chahiye,book_appointment
+doctor se check karwana h,book_appointment
+doctor se check karwana hai,book_appointment
+doctor se check karwana he,book_appointment
+doctor se check karwana th,book_appointment
+doctor se checkup karwana hai na,book_appointment
+doctor se milna hy,book_appointment
+doctor se milne ka waqt chahiye,book_appointment
+dokter k paas mera time laga dein,book_appointment
+dokter k pas mera time laga dein,book_appointment
+dokter ka time chahiye,book_appointment
+dokter kay pas jana he,book_appointment
+dokter ke paas mera time laga dein,book_appointment
+dokter ki appointment chahiye,book_appointment
+dokter ko dikhana he,book_appointment
+dokter ko dikhana hy,book_appointment
+dokter se check karwana hai,book_appointment
+dokter se milna chahta hoon,book_appointment
+dokter se milna hai,book_appointment
+dokter se milna tha,book_appointment
+dokter se milne ka waqt chahiye,book_appointment
+dr k pas jana hai,book_appointment
+dr k pas mera time laga dein,book_appointment
+dr ka appointment laga dein,book_appointment
+dr ka time chahiye,book_appointment
+dr kay pas jana h,book_appointment
+dr ke paas mera time laga dein,book_appointment
+dr ke pass jana chahti hoon,book_appointment
+dr ko dikhana h,book_appointment
+dr ko dikhana hai,book_appointment
+dr ko dikhana hai na,book_appointment
+dr se check karwana hai,book_appointment
+dr se check karwana he,book_appointment
+dr se check karwana tha,book_appointment
+dr se checkup karwana th,book_appointment
+dr se milna tha,book_appointment
+dr se milne ka time chahiye,book_appointment
+dr se milne ka waqt chahiye,book_appointment
+mera number laga dein,book_appointment
+mje apna checkup karwana hai na,book_appointment
+mje apna checkup karwana he,book_appointment
+mje apna checkup karwana hy,book_appointment
+mje apna checkup karwana th,book_appointment
+mje apne aap ko docter ko dikhana hy,book_appointment
+mje apne aap ko doctor ko dikhana hy,book_appointment
+mje apne aap ko dokter ko dikhana th,book_appointment
+mje appointment leni hy,book_appointment
+mje bachay ko dctr ko dikhana hai na,book_appointment
+mje bachay ko docter ko dikhana th,book_appointment
+mje bachay ko doctor sahab ko dikhana he,book_appointment
+mje bachay ko doctor sahib ko dikhana h,book_appointment
+mje daktar k pas jana chahti hoon,book_appointment
+mje daktar ka time chahiye,book_appointment
+mje daktar kay pas jana chahti hoon,book_appointment
+mje daktar ke liye time chahiye,book_appointment
+mje daktar ke pas jana chahti hoon,book_appointment
+mje dctr ke liye time chahiye,book_appointment
+mje dctr ki appointment chahiye,book_appointment
+mje dctr se check karwana hy,book_appointment
+mje docter ka time chahiye,book_appointment
+mje docter ke paas jana chahta hoon,book_appointment
+mje docter ki appointment book karni hy,book_appointment
+mje docter ko dikhana th,book_appointment
+mje docter se milna hy,book_appointment
+mje doctor k pas ana th,book_appointment
+mje doctor sahab ko dikhana hai na,book_appointment
+mje doctor sahab se check karwana hai na,book_appointment
+mje doctor sahib k paas jana chahta hoon,book_appointment
+mje doctor sahib ki appointment book karni hy,book_appointment
+mje doctor sahib se checkup karwana th,book_appointment
+mje doctor sahib se milna chahta hoon,book_appointment
+mje doctor se milne ka time chahiye,book_appointment
+mje dokter ke pass jana chahta hoon,book_appointment
+mje dokter ke pass jana tha,book_appointment
+mje dokter ki appointment book karni tha,book_appointment
+mje dokter ki appointment chahiye,book_appointment
+mje dokter ko dikhana he,book_appointment
+mje dokter se check karwana hai,book_appointment
+mje dokter se milne ka time chahiye,book_appointment
+mje dr kay pas jana hai,book_appointment
+mje dr ke paas ana hai,book_appointment
+mje dr ki appointment book karni h,book_appointment
+mje dr ko dikhana hai na,book_appointment
+mje dr se milna hai na,book_appointment
+mjhe apna checkup karwana hai,book_appointment
+mjhe apna checkup karwana he,book_appointment
+mjhe apna checkup karwana th,book_appointment
+mjhe apne aap ko docter ko dikhana th,book_appointment
+mjhe apne aap ko dr ko dikhana hai,book_appointment
+mjhe appointment chahiye,book_appointment
+mjhe appointment leni h,book_appointment
+mjhe appointment leni hai,book_appointment
+mjhe appointment leni he,book_appointment
+mjhe appointment leni hy,book_appointment
+mjhe appointment leni th,book_appointment
+mjhe appointment leni tha,book_appointment
+mjhe bachay ko doctor sahib ko dikhana tha,book_appointment
+mjhe daktar ka time chahiye,book_appointment
+mjhe daktar se milne ka time chahiye,book_appointment
+mjhe dctr ka time chahiye,book_appointment
+mjhe dctr se milna tha,book_appointment
+mjhe docter k pas jana chahta hoon,book_appointment
+mjhe docter ke liye time chahiye,book_appointment
+mjhe docter ko dikhana he,book_appointment
+mjhe docter ko dikhana tha,book_appointment
+mjhe docter se check karwana h,book_appointment
+mjhe docter se milna he,book_appointment
+mjhe doctor k paas ana hai na,book_appointment
+mjhe doctor ke paas ana tha,book_appointment
+mjhe doctor ki appointment book karni tha,book_appointment
+mjhe doctor sahab ke liye time chahiye,book_appointment
+mjhe doctor sahib ke paas jana chahti hoon,book_appointment
+mjhe doctor sahib ki appointment book karni hai,book_appointment
+mjhe doctor sahib ko dikhana h,book_appointment
+mjhe doctor sahib se checkup karwana he,book_appointment
+mjhe doctor sahib se checkup karwana tha,book_appointment
+mjhe doctor sahib se milna chahta hoon,book_appointment
+mjhe doctor se milne ka time chahiye,book_appointment
+mjhe dokter ki appointment book karni h,book_appointment
+mjhe dokter ki appointment book karni he,book_appointment
+mjhe dokter ki appointment chahiye,book_appointment
+mjhe dokter se milna he,book_appointment
+mjhe dokter se milna hy,book_appointment
+mjhe dr se checkup karwana hy,book_appointment
+mjy apna checkup karwana h,book_appointment
+mjy apna checkup karwana hai,book_appointment
+mjy apna checkup karwana hai na,book_appointment
+mjy apna checkup karwana th,book_appointment
+mjy appointment chahiye,book_appointment
+mjy appointment leni hai,book_appointment
+mjy appointment leni hai na,book_appointment
+mjy appointment leni he,book_appointment
+mjy bachay ko daktar ko dikhana th,book_appointment
+mjy bachay ko doctor sahab ko dikhana h,book_appointment
+mjy bachay ko doctor sahab ko dikhana hai na,book_appointment
+mjy bachay ko doctor sahib ko dikhana th,book_appointment
+mjy daktar kay pas jana chahta hoon,book_appointment
+mjy daktar ke paas jana chahti hoon,book_appointment
+mjy daktar ke pas jana hai na,book_appointment
+mjy daktar ki appointment chahiye,book_appointment
+mjy daktar ko dikhana hai,book_appointment
+mjy daktar se check karwana th,book_appointment
+mjy daktar se milne ka time chahiye,book_appointment
+mjy dctr kay pas jana chahta hoon,book_appointment
+mjy dctr ke liye time chahiye,book_appointment
+mjy dctr ke paas ana h,book_appointment
+mjy dctr ki appointment book karni th,book_appointment
+mjy dctr se check karwana th,book_appointment
+mjy dctr se checkup karwana he,book_appointment
+mjy dctr se checkup karwana hy,book_appointment
+mjy dctr se milna chahta hoon,book_appointment
+mjy docter se milna chahta hoon,book_appointment
+mjy docter se milne ka time chahiye,book_appointment
+mjy doctor k paas jana chahti hoon,book_appointment
+mjy doctor kay pas jana chahta hoon,book_appointment
+mjy doctor ki appointment book karni tha,book_appointment
+mjy doctor sahab ka time chahiye,book_appointment
+mjy doctor sahab ke paas jana h,book_appointment
+mjy doctor sahab ko dikhana hai,book_appointment
+mjy doctor sahab ko dikhana tha,book_appointment
+mjy doctor sahab se milna th,book_appointment
+mjy doctor sahab se milne ka time chahiye,book_appointment
+mjy doctor sahib k pas ana tha,book_appointment
+mjy doctor sahib k pas jana chahta hoon,book_appointment
+mjy doctor sahib kay pas jana chahta hoon,book_appointment
+mjy doctor sahib ko dikhana tha,book_appointment
+mjy doctor sahib se checkup karwana h,book_appointment
+mjy doctor se milna hai na,book_appointment
+mjy doctor se milne ka time chahiye,book_appointment
+mjy dokter ka time chahiye,book_appointment
+mjy dokter ke pas ana h,book_appointment
+mjy dokter ke pass jana chahti hoon,book_appointment
+mjy dokter ki appointment book karni h,book_appointment
+mjy dokter ki appointment book karni th,book_appointment
+mjy dokter ki appointment book karni tha,book_appointment
+mjy dokter ko dikhana h,book_appointment
+mjy dokter se check karwana hy,book_appointment
+mjy dr kay pas ana tha,book_appointment
+mjy dr ki appointment book karni he,book_appointment
+muje apna checkup karwana hai,book_appointment
+muje apna checkup karwana hai na,book_appointment
+muje apne aap ko doctor sahab ko dikhana hy,book_appointment
+muje apne aap ko dokter ko dikhana he,book_appointment
+muje appointment chahiye,book_appointment
+muje appointment leni hai,book_appointment
+muje bachay ko daktar ko dikhana hy,book_appointment
+muje bachay ko docter ko dikhana tha,book_appointment
+muje daktar kay pas ana hai,book_appointment
+muje daktar kay pas jana h,book_appointment
+muje daktar ko dikhana th,book_appointment
+muje dctr ka time chahiye,book_appointment
+muje dctr ke pas ana h,book_appointment
+muje dctr ke pas jana he,book_appointment
+muje dctr ki appointment book karni hy,book_appointment
+muje dctr ko dikhana he,book_appointment
+muje dctr se check karwana he,book_appointment
+muje dctr se milna h,book_appointment
+muje dctr se milna tha,book_appointment
+muje docter k pas ana h,book_appointment
+muje docter ki appointment book karni hai,book_appointment
+muje docter se milna tha,book_appointment
+muje doctor sahab k paas ana tha,book_appointment
+muje doctor sahab k pas ana h,book_appointment
+muje doctor sahab ka time chahiye,book_appointment
+muje doctor sahab kay pas jana chahti hoon,book_appointment
+muje doctor sahab ke pas jana he,book_appointment
+muje doctor sahab ke pass jana chahta hoon,book_appointment
+muje doctor sahab ki appointment book karni hai,book_appointment
+muje doctor sahab ki appointment book karni hy,book_appointment
+muje doctor sahab ki appointment book karni th,book_appointment
+muje doctor sahib ke paas jana chahta hoon,book_appointment
+muje doctor sahib ki appointment book karni hai,book_appointment
+muje doctor sahib ki appointment book karni tha,book_appointment
+muje doctor sahib ki appointment chahiye,book_appointment
+muje doctor sahib se check karwana h,book_appointment
+muje dokter ka time chahiye,book_appointment
+muje dokter ke liye time chahiye,book_appointment
+muje dokter ki appointment chahiye,book_appointment
+muje dokter se milna hai,book_appointment
+muje dr kay pas jana chahta hoon,book_appointment
+muje dr ke liye time chahiye,book_appointment
+muje dr se check karwana h,book_appointment
+muje dr se check karwana hai na,book_appointment
+mujhe apna checkup karwana h,book_appointment
+mujhe apna checkup karwana hai,book_appointment
+mujhe apne aap ko dctr ko dikhana h,book_appointment
+mujhe apne aap ko doctor ko dikhana hai,book_appointment
+mujhe apne aap ko doctor sahab ko dikhana th,book_appointment
+mujhe apointment leni he,book_appointment
+mujhe appointment chahiye,book_appointment
+mujhe appointment leni hai,book_appointment
+mujhe appointment leni he,book_appointment
+mujhe appointment leni th,book_appointment
+mujhe bachay ko doctor ko dikhana hai,book_appointment
+mujhe bachay ko doctor sahib ko dikhana hy,book_appointment
+mujhe bachay ko dokter ko dikhana tha,book_appointment
+mujhe dactar ko dikhana hai,book_appointment
+mujhe daktar ke paas ana hy,book_appointment
+mujhe daktar ki appointment book karni he,book_appointment
+mujhe dctr se check karwana tha,book_appointment
+mujhe doctar se milna hai,book_appointment
+mujhe docter ka apoinment chahiye,book_appointment
+mujhe docter ka time chahiye,book_appointment
+mujhe docter ke liye time chahiye,book_appointment
+mujhe docter ke paas jana chahti hoon,book_appointment
+mujhe docter ki appointment chahiye,book_appointment
+mujhe doctor k pas jana h,book_appointment
+mujhe doctor ke liye time chahiye,book_appointment
+mujhe doctor ke paas ana hai,book_appointment
+mujhe doctor ke paas jana chahta hoon,book_appointment
+mujhe doctor ke paas jana chahti hoon,book_appointment
+mujhe doctor ki appointment book karni hai,book_appointment
+mujhe doctor ki appointment chahiye,book_appointment
+mujhe doctor sahab ke paas ana hai,book_appointment
+mujhe doctor sahab se milna chahta hoon,book_appointment
+mujhe doctor sahib ka time chahiye,book_appointment
+mujhe doctor sahib ke paas jana chahta hoon,book_appointment
+mujhe doctor sahib ke pass jana chahta hoon,book_appointment
+mujhe doctor sahib ko dikhana th,book_appointment
+mujhe doctor se check karwana hai,book_appointment
+mujhe doctor se checkup karwana hai,book_appointment
+mujhe doctor se milna chahta hoon,book_appointment
+mujhe doctor se milne ka time chahiye,book_appointment
+mujhe dokter ka time chahiye,book_appointment
+mujhe dokter se check karwana he,book_appointment
+mujhe dokter se milna hai na,book_appointment
+mujhe dokter se milne ka time chahiye,book_appointment
+mujhe dr ahmad se milna hai,book_appointment
+mujhe dr k paas ana he,book_appointment
+mujhe dr ka time chahiye,book_appointment
+mujhe dr kay pas ana th,book_appointment
+mujhe dr ki appointment chahiye,book_appointment
+mujhe dr se check karwana hy,book_appointment
+mujhe dr se check karwana tha,book_appointment
+mujhe dr se milna he,book_appointment
+mujhy apna checkup karwana hai na,book_appointment
+mujhy apna checkup karwana he,book_appointment
+mujhy apna checkup karwana th,book_appointment
+mujhy apna checkup karwana tha,book_appointment
+mujhy apne aap ko dctr ko dikhana hy,book_appointment
+mujhy apne aap ko docter ko dikhana he,book_appointment
+mujhy appointment chahiye,book_appointment
+mujhy appointment leni h,book_appointment
+mujhy appointment leni hy,book_appointment
+mujhy bachay ko daktar ko dikhana h,book_appointment
+mujhy bachay ko daktar ko dikhana hai na,book_appointment
+mujhy bachay ko docter ko dikhana tha,book_appointment
+mujhy daktar ke pass jana chahti hoon,book_appointment
+mujhy daktar ki appointment book karni h,book_appointment
+mujhy daktar se milna chahta hoon,book_appointment
+mujhy daktar se milne ka time chahiye,book_appointment
+mujhy dctr kay pas jana hai,book_appointment
+mujhy dctr ke liye time chahiye,book_appointment
+mujhy dctr se check karwana tha,book_appointment
+mujhy docter k paas jana chahta hoon,book_appointment
+mujhy docter ka time chahiye,book_appointment
+mujhy docter kay pas jana hai na,book_appointment
+mujhy doctor ke liye time chahiye,book_appointment
+mujhy doctor ko dikhana he,book_appointment
+mujhy doctor sahab ko dikhana hy,book_appointment
+mujhy doctor sahab se check karwana he,book_appointment
+mujhy doctor sahab se milna chahta hoon,book_appointment
+mujhy doctor sahab se milne ka time chahiye,book_appointment
+mujhy doctor sahib k paas jana hai,book_appointment
+mujhy doctor sahib ka time chahiye,book_appointment
+mujhy doctor sahib se milna chahta hoon,book_appointment
+mujhy doctor sahib se milna hy,book_appointment
+mujhy doctor se checkup karwana th,book_appointment
+mujhy doctor se milne ka time chahiye,book_appointment
+mujhy dokter ka time chahiye,book_appointment
+mujhy dokter ke paas jana he,book_appointment
+mujhy dokter ke pass jana chahta hoon,book_appointment
+mujhy dr k paas jana chahti hoon,book_appointment
+mujhy dr ke pass jana hai,book_appointment
+mujhy dr se milna he,book_appointment
+time laga dein,book_appointment
+اپائنٹمنٹ لگا دیں,book_appointment
+بچے کو ڈاکٹر کو دکھانا ہے,book_appointment
+جی ڈاکٹر کو دکھانا تھا,book_appointment
+مجھے اپائنٹمنٹ بنوانی ہے,book_appointment
+مجھے اپائنٹمنٹ چاہیے تھی,book_appointment
+مجھے صبح دس بجے کا وقت چاہیے,book_appointment
+مجھے صبح نو بجے کا وقت چاہیے,book_appointment
+مجھے صبح کا وقت چاہیے,book_appointment
+مجھے چیک اپ کروانا ہے,book_appointment
+مجھے ڈاکٹر بلال سے اپائنٹمنٹ لینی ہے,book_appointment
+مجھے ڈاکٹر سارہ سے اپائنٹمنٹ لینی ہے,book_appointment
+مجھے ڈاکٹر سے ملنا ہے,book_appointment
+مجھے ڈاکٹر عائشہ سے اپائنٹمنٹ لینی ہے,book_appointment
+مجھے ڈاکٹر عاصم سے اپائنٹمنٹ لینی ہے,book_appointment
+مجھے ڈاکٹر کا وقت چاہیے,book_appointment
+مجھے ڈاکٹر کے پاس جانا ہے,book_appointment
+میرا نام اپائنٹمنٹ میں لکھ لیں,book_appointment
+میرا نمبر لگا دیں,book_appointment
+میرا ٹائم لگا دیں,book_appointment
+میری اپائنٹمنٹ اگلے پیر کو رکھ دیں,book_appointment
+میری اپائنٹمنٹ جمعرات کو رکھ دیں,book_appointment
+میری اپائنٹمنٹ ہفتہ کو رکھ دیں,book_appointment
+ٹائم لگا دیں,book_appointment
+چیک اپ کروانا ہے,book_appointment
+ڈاکٹر احمد کے ساتھ ملاقات طے کر دیں,book_appointment
+ڈاکٹر بلال کے ساتھ ملاقات طے کر دیں,book_appointment
+ڈاکٹر حمزہ کے ساتھ ملاقات طے کر دیں,book_appointment
+ڈاکٹر سے ملنا ہے,book_appointment
+ڈاکٹر سے ملنے کا وقت چاہیے,book_appointment
+ڈاکٹر عاصم کے ساتھ ملاقات طے کر دیں,book_appointment
+ڈاکٹر کا وقت چاہیے,book_appointment
+ڈاکٹر کو دکھانا ہے,book_appointment
+ڈاکٹر کی اپائنٹمنٹ کرنی ہے,book_appointment
+ڈاکٹر کے پاس جانا ہے,book_appointment
+کل کا وقت مل سکتا ہے,book_appointment
+کیا اگلے پیر کا وقت مل سکتا ہے,book_appointment
+کیا جمعرات کا وقت مل سکتا ہے,book_appointment
+کیا جمعہ کا وقت مل سکتا ہے,book_appointment
+کیا منگل کا وقت مل سکتا ہے,book_appointment
+کیا پیر کا وقت مل سکتا ہے,book_appointment
+"Ab zaroorat nahi, cancel kar dein",cancel_appointment
+Cancel the Friday appointment please,cancel_appointment
+Cancel the Monday appointment please,cancel_appointment
+Cancel the Saturday appointment please,cancel_appointment
+Cancel the Thursday appointment please,cancel_appointment
+Cancel the Tuesday appointment please,cancel_appointment
+Cancel the Wednesday appointment please,cancel_appointment
+Cancel the next Monday appointment please,cancel_appointment
+Cancel the today appointment please,cancel_appointment
+Cancel the tomorrow appointment please,cancel_appointment
+Delete my appointment with Dr Ahmed,cancel_appointment
+Delete my appointment with Dr Asim,cancel_appointment
+Delete my appointment with Dr Ayesha,cancel_appointment
+Delete my appointment with Dr Bilal,cancel_appointment
+Delete my appointment with Dr Fatima,cancel_appointment
+Delete my appointment with Dr Hamza,cancel_appointment
+Delete my appointment with Dr Zainab,cancel_appointment
+Friday wali appointment hata dein,cancel_appointment
+"I cannot come, remove my appointment",cancel_appointment
+I no longer need the appointment,cancel_appointment
+I want to cancel my booking,cancel_appointment
+"Main nahi aa sakta, cancel kar dein",cancel_appointment
+Mera naam list se nikal dein,cancel_appointment
+Monday wali appointment hata dein,cancel_appointment
+Mujhe booking cancel karani hai,cancel_appointment
+Saturday wali appointment hata dein,cancel_appointment
+"Something came up, please cancel",cancel_appointment
+Take my name off the list,cancel_appointment
+Tuesday wali appointment hata dein,cancel_appointment
+aaj wali appointment hata dein,cancel_appointment
+agle hafte wali appointment hata dein,cancel_appointment
+apointment cancl karni hai,cancel_appointment
+appointmnt cancel karni he,cancel_appointment
+kal wali appointment hata dein,cancel_appointment
+mera apoinment cancel kardein,cancel_appointment
+meri apointment cancel kr dein,cancel_appointment
+meri apointment khatam kar dein,cancel_appointment
+parso wali appointment hata dein,cancel_appointment
+آج والی اپائنٹمنٹ ہٹا دیں,cancel_appointment
+اب ضرورت نہیں، کینسل کر دیں,cancel_appointment
+اگلے پیر والی اپائنٹمنٹ ہٹا دیں,cancel_appointment
+بدھ والی اپائنٹمنٹ ہٹا دیں,cancel_appointment
+جمعرات والی اپائنٹمنٹ ہٹا دیں,cancel_appointment
+جمعہ والی اپائنٹمنٹ ہٹا دیں,cancel_appointment
+مجھے بکنگ منسوخ کرانی ہے,cancel_appointment
+منگل والی اپائنٹمنٹ ہٹا دیں,cancel_appointment
+میرا نام فہرست سے نکال دیں,cancel_appointment
+میں نہیں آ سکتا، منسوخ کر دیں,cancel_appointment
+پیر والی اپائنٹمنٹ ہٹا دیں,cancel_appointment
+کل والی اپائنٹمنٹ ہٹا دیں,cancel_appointment
+ہفتہ والی اپائنٹمنٹ ہٹا دیں,cancel_appointment
+Can we change the date to Friday,change_date
+Can we change the date to Monday,change_date
+Can we change the date to Saturday,change_date
+Can we change the date to Thursday,change_date
+Can we change the date to Tuesday,change_date
+Can we change the date to Wednesday,change_date
+Can we change the date to next Monday,change_date
+Can we change the date to this Friday,change_date
+Can we change the date to today,change_date
+Can we change the date to tomorrow,change_date
+Change my appointment date,change_date
+Date badal dein,change_date
+Din change kar dein,change_date
+Friday kar dein,change_date
+I want a different date,change_date
+Make it Friday instead,change_date
+Make it Monday instead,change_date
+Make it Saturday instead,change_date
+Make it today instead,change_date
+Make it tomorrow instead,change_date
+Monday kar dein,change_date
+Mujhe doosri date chahiye,change_date
+Please move it to Friday,change_date
+Please move it to Monday,change_date
+Please move it to Wednesday,change_date
+Please move it to tomorrow,change_date
+Saturday kar dein,change_date
+Shift the day to Tuesday,change_date
+Shift the day to this Friday,change_date
+Tareekh badal dein,change_date
+Tuesday kar dein,change_date
+aaj kar dein,change_date
+agle hafte kar dein,change_date
+kal kar dein,change_date
+parso kar dein,change_date
+آج کر دیں,change_date
+اگلے پیر کر دیں,change_date
+بدھ کر دیں,change_date
+تاریخ بدل دیں,change_date
+جمعرات کر دیں,change_date
+جمعہ کر دیں,change_date
+دن تبدیل کر دیں,change_date
+مجھے دوسری تاریخ چاہیے,change_date
+منگل کر دیں,change_date
+پیر کر دیں,change_date
+کل کر دیں,change_date
+ہفتہ کر دیں,change_date
+Can I see a different doctor instead,change_doctor
+Can you give me another doctor instead,change_doctor
+Can you put me with Dr Asim instead,change_doctor
+Can you put me with Dr Ayesha instead,change_doctor
+Can you put me with Dr Bilal instead,change_doctor
+Can you put me with Dr Fatima instead,change_doctor
+Can you put me with Dr Hamza instead,change_doctor
+Can you put me with Dr Khan instead,change_doctor
+Can you put me with Dr Sara instead,change_doctor
+Can you put me with Dr Usman instead,change_doctor
+Can you put me with Dr Zainab instead,change_doctor
+Change the doctor for my appointment,change_doctor
+Doctor badal dein,change_doctor
+Doctor change kar dein,change_doctor
+Doosre doctor ke saath kar dein,change_doctor
+Dr Ahmed ki jagah kisi aur daktar se,change_doctor
+Dr Ahmed ki jagah kisi aur dctr se,change_doctor
+Dr Ahmed ki jagah kisi aur docter se,change_doctor
+Dr Ahmed ki jagah kisi aur doctor sahab se,change_doctor
+Dr Ahmed ki jagah kisi aur doctor sahib se,change_doctor
+Dr Ahmed ki jagah kisi aur doctor se,change_doctor
+Dr Ahmed ki jagah kisi aur dokter se,change_doctor
+Dr Ahmed ki jagah kisi aur dr se,change_doctor
+Dr Asim ki jagah Dr Sara kar dein,change_doctor
+Dr Hamza ke bajaye koi aur doctor chahiye,change_doctor
+I want to change my doctor,change_doctor
+I want to change my doctor to Dr Ahmed,change_doctor
+I want to change my doctor to Dr Asim,change_doctor
+I want to change my doctor to Dr Ayesha,change_doctor
+I want to change my doctor to Dr Bilal,change_doctor
+I want to change my doctor to Dr Fatima,change_doctor
+I want to change my doctor to Dr Hamza,change_doctor
+I want to change my doctor to Dr Khan,change_doctor
+I want to change my doctor to Dr Sara,change_doctor
+I want to change my doctor to Dr Zainab,change_doctor
+I would rather see a different doctor,change_doctor
+I would rather see a different specialist,change_doctor
+Kisi aur doctor se milna hai,change_doctor
+Mujhe Dr Ahmed ke paas kar dein,change_doctor
+Mujhe Dr Asim ke paas kar dein,change_doctor
+Mujhe Dr Ayesha ke paas kar dein,change_doctor
+Mujhe Dr Bilal ke paas kar dein,change_doctor
+Mujhe Dr Fatima ke paas kar dein,change_doctor
+Mujhe Dr Hamza ke paas kar dein,change_doctor
+Mujhe Dr Khan ke paas kar dein,change_doctor
+Mujhe Dr Sara ke paas kar dein,change_doctor
+Mujhe Dr Usman ke paas kar dein,change_doctor
+Mujhe Dr Zainab ke paas kar dein,change_doctor
+Please switch me to another doctor,change_doctor
+Swap Dr Asim for Dr Sara please,change_doctor
+can I switch to another doctor,change_doctor
+daktar change karna tha,change_doctor
+dctr badal dein,change_doctor
+dctr change karna hy,change_doctor
+docter badal dein,change_doctor
+docter badalna th,change_doctor
+docter change kar dein,change_doctor
+doctor badal dein,change_doctor
+doctor badal dein please,change_doctor
+doctor badalwana hai,change_doctor
+doctor change kar dein,change_doctor
+doctor change karna hy,change_doctor
+doctor sahab change kar dein,change_doctor
+doctor sahab change karna hai,change_doctor
+doctor sahab tabdeel kar dein,change_doctor
+doctor sahib change karna tha,change_doctor
+doctor sahib tabdeel kar dein,change_doctor
+doctor tabdeel kar dein,change_doctor
+dokter badal dein,change_doctor
+dokter change kar dein,change_doctor
+dokter change karna he,change_doctor
+dokter change karna hy,change_doctor
+dr change kar dein,change_doctor
+dr change karna h,change_doctor
+dr change karna th,change_doctor
+dr change krna h,change_doctor
+dr sara ki jagah dr asim ko dikhana hai,change_doctor
+dr tabdeel kar dein,change_doctor
+is appointment mein doctor tabdeel kar dein,change_doctor
+kisi aur daktar se milna th,change_doctor
+koi doosra doctor kar dein,change_doctor
+mera daktar change kar dein,change_doctor
+mera dctr change kar dein,change_doctor
+mera doctor change kar dein,change_doctor
+mera doctor change kr do,change_doctor
+mera dokter change kar dein,change_doctor
+meri appointment Dr Sara ki bajaye Dr Asim ke saath kar dein,change_doctor
+mje kisi aur daktar se milna he,change_doctor
+mjhe dctr badalna th,change_doctor
+mjhe dctr change karna th,change_doctor
+mjhe docter change karna tha,change_doctor
+mjhe doosre docter ke saath kar dein,change_doctor
+mjhe kisi aur dr se milna th,change_doctor
+mjy daktar badalna hy,change_doctor
+mjy dokter change karna he,change_doctor
+mjy dokter change karna th,change_doctor
+mjy doosre dokter ke saath kar dein,change_doctor
+mjy dr change karna hy,change_doctor
+mjy kisi aur doctor sahab se milna hai,change_doctor
+muje docter change karna hai,change_doctor
+muje doctor sahab change karna th,change_doctor
+muje doosre dr ke saath kar dein,change_doctor
+muje dr badalna hy,change_doctor
+"mujhe Dr Sara nahi chahiye, koi aur doctor de dein",change_doctor
+mujhe docter badalna th,change_doctor
+mujhe doctor badalna hai,change_doctor
+mujhe doosre doctor ke saath kar dein,change_doctor
+mujhe doosre doctor sahab ke saath kar dein,change_doctor
+mujhe kisi aur doctor sahib se milna h,change_doctor
+mujhe kisi aur doctor se milna hai,change_doctor
+mujhy daktar change karna tha,change_doctor
+mujhy doosre dctr ke saath kar dein,change_doctor
+mujhy doosre dr ke saath kar dein,change_doctor
+mujhy kisi aur doctor sahib se milna tha,change_doctor
+please change the doctor for my appointment,change_doctor
+دوسرے ڈاکٹر کے ساتھ کر دیں,change_doctor
+مجھے ڈاکٹر احمد کے پاس کر دیں,change_doctor
+مجھے ڈاکٹر بلال کے پاس کر دیں,change_doctor
+مجھے ڈاکٹر حمزہ کے پاس کر دیں,change_doctor
+مجھے ڈاکٹر خان کے پاس کر دیں,change_doctor
+مجھے ڈاکٹر سارہ کے پاس کر دیں,change_doctor
+مجھے ڈاکٹر عائشہ کے پاس کر دیں,change_doctor
+مجھے ڈاکٹر عاصم کے پاس کر دیں,change_doctor
+مجھے ڈاکٹر فاطمہ کے پاس کر دیں,change_doctor
+ڈاکٹر بدل دیں,change_doctor
+ڈاکٹر تبدیل کر دیں,change_doctor
+ڈاکٹر صاحب بدل دیں,change_doctor
+ڈاکٹر عاصم کی جگہ ڈاکٹر سارہ کر دیں,change_doctor
+کسی اور ڈاکٹر سے ملنا ہے,change_doctor
+10 baje kar dein,change_time
+2 baje kar dein,change_time
+5 baje kar dein,change_time
+9 baje kar dein,change_time
+Can I come earlier,change_time
+Can we change the time to 2 PM,change_time
+Can we change the time to 3 PM,change_time
+Can we change the time to 5 PM,change_time
+Can we change the time to 6 PM,change_time
+Can we change the time to 9 AM,change_time
+Can we change the time to afternoon,change_time
+Can we change the time to evening,change_time
+Change the timing of my appointment,change_time
+I want a later time,change_time
+Mujhe baad ka waqt chahiye,change_time
+Pehle aa sakta hoon kya,change_time
+Please make it 10 AM instead,change_time
+Please make it 3 PM instead,change_time
+Please make it 6 PM instead,change_time
+Please make it evening instead,change_time
+Please make it morning instead,change_time
+Shift it to the 10 AM,change_time
+Shift it to the 11 AM,change_time
+Shift it to the 2 PM,change_time
+Shift it to the 3 PM,change_time
+Shift it to the 5 PM,change_time
+Shift it to the afternoon,change_time
+Shift it to the evening,change_time
+Shift it to the morning,change_time
+Time badal dein,change_time
+Waqt change kar dein,change_time
+baad wala time kar dein,change_time
+dopahar kar dein,change_time
+mera time badal dein,change_time
+mujhe doosra time de dein,change_time
+mujhe koi aur time chahiye,change_time
+pehle wala time mil sakta hai,change_time
+shaam kar dein,change_time
+subah kar dein,change_time
+time change krna h,change_time
+time tabdeel kar dein,change_time
+waqt thora aage kar dein,change_time
+بعد والا وقت کر دیں,change_time
+دوپہر دو بجے کر دیں,change_time
+شام پانچ بجے کر دیں,change_time
+شام چھ بجے کر دیں,change_time
+شام کر دیں,change_time
+صبح دس بجے کر دیں,change_time
+صبح نو بجے کر دیں,change_time
+صبح کر دیں,change_time
+مجھے بعد کا وقت چاہیے,change_time
+مجھے دوسرا ٹائم دے دیں,change_time
+وقت بدل دیں,change_time
+ٹائم تبدیل کر دیں,change_time
+کوئی اور وقت کر دیں,change_time
+کیا میں پہلے آ سکتا ہوں,change_time
+4 baje ka slot mil sakta hai,check_availability
+Any appointment available for 11 AM,check_availability
+Any appointment available for 2 PM,check_availability
+Any appointment available for 6 PM,check_availability
+Any appointment available for morning,check_availability
+Appointment ka koi slot available hai,check_availability
+Are there any free slots Monday,check_availability
+Are there any free slots today,check_availability
+Are there any free slots tomorrow,check_availability
+Can I come Wednesday or is it full,check_availability
+Can I find Dr Asim at the clinic on Monday,check_availability
+Do you have an opening on Friday,check_availability
+Do you have an opening on Thursday,check_availability
+Do you have an opening on Tuesday,check_availability
+Do you have an opening on next Monday,check_availability
+Do you have an opening on today,check_availability
+Do you have an opening on tomorrow,check_availability
+Doctor 10 baje par free hain kya,check_availability
+Doctor 2 baje par free hain kya,check_availability
+Doctor 9 baje par free hain kya,check_availability
+Doctor aaj clinic mein hain,check_availability
+Doctor kab available hote hain,check_availability
+Doctor ke available timings kya hain,check_availability
+Doctor ke paas kab ka time available hai,check_availability
+Doctor kis din clinic aate hain,check_availability
+Dr Ahmed kal available honge,check_availability
+Dr Ahmed parson clinic aayenge?,check_availability
+Dr Asim Tuesday ko milenge kya,check_availability
+Dr Hamza is hafte available honge,check_availability
+Dr Sara available hain kya,check_availability
+Dr Sara shaam ko baithengi?,check_availability
+Is Dr Asim available on Monday,check_availability
+Is Dr Asim available on Thursday,check_availability
+Is Dr Ayesha taking patients Tuesday,check_availability
+Is Dr Fatima available on Friday,check_availability
+Is Dr Hamza available on tomorrow,check_availability
+Is Dr Hamza in today,check_availability
+Is Dr Hamza taking patients Friday,check_availability
+Is Dr Khan available on Friday,check_availability
+Is Dr Khan taking patients today,check_availability
+Is Dr Sara taking patients Friday,check_availability
+Is hafte koi waqt khali hai,check_availability
+Is the doctor free at 6 PM,check_availability
+Is the doctor free at afternoon,check_availability
+Is the doctor free at evening,check_availability
+Kal ka koi slot hai,check_availability
+Koi free time hai,check_availability
+Koi slot khali hai,check_availability
+Konsa time khali hai,check_availability
+Kya Dr Ahmed parso ko available hain,check_availability
+Kya Dr Asim Friday ko available hain,check_availability
+Kya Dr Asim Saturday ko available hain,check_availability
+Kya Dr Hamza Tuesday ko available hain,check_availability
+Kya Dr Sara agle hafte ko available hain,check_availability
+Kya Dr Sara available hain,check_availability
+Kya Dr Zainab Monday ko available hain,check_availability
+Kya Dr Zainab Saturday ko available hain,check_availability
+Kya Dr Zainab Tuesday ko available hain,check_availability
+Kya Friday ki jagah hai,check_availability
+Kya aaj ki jagah hai,check_availability
+Kya kal ki jagah hai,check_availability
+Kya main Monday ko aa sakta hoon,check_availability
+Kya main Tuesday ko aa sakta hoon,check_availability
+Kya main aaj ko aa sakta hoon,check_availability
+Kya main kal ko aa sakta hoon,check_availability
+Kya main parso ko aa sakta hoon,check_availability
+Monday ko koi slot khali hai,check_availability
+What slots are open this week,check_availability
+Will Dr Sara be at the clinic tomorrow,check_availability
+aaj ko koi slot khali hai,check_availability
+doctor sahab Friday ko aate hain kya,check_availability
+doctor sahab kal clinic mein honge kya,check_availability
+dr asim kal milenge?,check_availability
+dr hamza wednesday ko baithte hain?,check_availability
+dr sara aaj clinic me hain?,check_availability
+kal ko koi slot khali hai,check_availability
+kya Dr Hamza aaj available hain,check_availability
+kya doctor sahab abhi clinic mein hain,check_availability
+kya kal doctor mil jayenge,check_availability
+آج کو کوئی وقت خالی ہے,check_availability
+اس ہفتے کوئی وقت خالی ہے,check_availability
+اگلے پیر کو کوئی وقت خالی ہے,check_availability
+بدھ کو کوئی وقت خالی ہے,check_availability
+جمعرات کو کوئی وقت خالی ہے,check_availability
+منگل کو کوئی وقت خالی ہے,check_availability
+پیر کو کوئی وقت خالی ہے,check_availability
+ڈاکٹر حمزہ کل ملیں گے؟,check_availability
+ڈاکٹر کس دن کلینک آتے ہیں,check_availability
+کل کا کوئی سلاٹ ہے,check_availability
+کل کو کوئی وقت خالی ہے,check_availability
+کوئی وقت خالی ہے,check_availability
+کیا اگلے پیر کی جگہ ہے,check_availability
+کیا بدھ کی جگہ ہے,check_availability
+کیا جمعرات کی جگہ ہے,check_availability
+کیا جمعہ کی جگہ ہے,check_availability
+کیا ڈاکٹر احمد جمعرات کو دستیاب ہیں,check_availability
+کیا ڈاکٹر حمزہ ہفتہ کو دستیاب ہیں,check_availability
+کیا ڈاکٹر خان پیر کو دستیاب ہیں,check_availability
+کیا ڈاکٹر دستیاب ہیں,check_availability
+کیا ڈاکٹر سارہ آج کلینک میں ہیں,check_availability
+کیا ڈاکٹر صاحب دوپہر دو بجے کو فارغ ہیں,check_availability
+کیا ڈاکٹر صاحب شام کو بیٹھیں گے,check_availability
+کیا ڈاکٹر صاحب شام کو فارغ ہیں,check_availability
+کیا ڈاکٹر صاحب صبح دس بجے کو فارغ ہیں,check_availability
+کیا ڈاکٹر صاحب صبح نو بجے کو فارغ ہیں,check_availability
+کیا ڈاکٹر عائشہ اگلے پیر کو دستیاب ہیں,check_availability
+کیا ڈاکٹر عائشہ بدھ کو دستیاب ہیں,check_availability
+کیا ڈاکٹر عائشہ جمعرات کو دستیاب ہیں,check_availability
+کیا ڈاکٹر عاصم منگل کو دستیاب ہیں,check_availability
+کیا ڈاکٹر عاصم کل کو دستیاب ہیں,check_availability
+Are you closed for Eid,clinic_closed
+Are you open on Sunday,clinic_closed
+Chutti hai kya aaj,clinic_closed
+Eid par band hai kya,clinic_closed
+Friday ko clinic band rahega,clinic_closed
+Is the clinic closed today,clinic_closed
+Is the clinic shut on public holidays,clinic_closed
+Is there a holiday this week,clinic_closed
+Kya clinic aaj band hai,clinic_closed
+Monday ko clinic band rahega,clinic_closed
+Saturday ko clinic band rahega,clinic_closed
+Sunday ko khula hota hai,clinic_closed
+Tuesday ko clinic band rahega,clinic_closed
+Will the clinic be closed Friday,clinic_closed
+Will the clinic be closed Monday,clinic_closed
+Will the clinic be closed Saturday,clinic_closed
+Will the clinic be closed Thursday,clinic_closed
+Will the clinic be closed Tuesday,clinic_closed
+Will the clinic be closed Wednesday,clinic_closed
+Will the clinic be closed next Monday,clinic_closed
+Will the clinic be closed this Friday,clinic_closed
+Will the clinic be closed today,clinic_closed
+Will the clinic be closed tomorrow,clinic_closed
+aaj ko clinic band rahega,clinic_closed
+agle hafte ko clinic band rahega,clinic_closed
+kal ko clinic band rahega,clinic_closed
+parso ko clinic band rahega,clinic_closed
+آج چھٹی ہے کیا,clinic_closed
+آج کو کلینک بند رہے گا,clinic_closed
+اتوار کو کھلا ہوتا ہے,clinic_closed
+اگلے پیر کو کلینک بند رہے گا,clinic_closed
+بدھ کو کلینک بند رہے گا,clinic_closed
+جمعرات کو کلینک بند رہے گا,clinic_closed
+جمعہ کو کلینک بند رہے گا,clinic_closed
+عید پر بند ہے کیا,clinic_closed
+منگل کو کلینک بند رہے گا,clinic_closed
+پیر کو کلینک بند رہے گا,clinic_closed
+کل کو کلینک بند رہے گا,clinic_closed
+کیا کلینک آج بند ہے,clinic_closed
+ہفتہ کو کلینک بند رہے گا,clinic_closed
+Address kya hai,clinic_location
+Clinic ka pata batayein,clinic_location
+Give me the location please,clinic_location
+How do I reach your clinic,clinic_location
+How far is the clinic from the station,clinic_location
+Is the clinic near the main bazaar,clinic_location
+Kaise pohanchna hai,clinic_location
+Kis ilaqe mein hai clinic,clinic_location
+Location bhej dein,clinic_location
+Send me the address,clinic_location
+What is the clinic address,clinic_location
+Which area is the clinic in,clinic_location
+ایڈریس کیا ہے,clinic_location
+لوکیشن بھیج دیں,clinic_location
+وہاں کیسے پہنچنا ہے,clinic_location
+کس علاقے میں ہے کلینک,clinic_location
+کلینک کا پتہ بتائیں,clinic_location
+کلینک کہاں ہے,clinic_location
+Aap ke working hours kya hain,clinic_timing
+Are you open in the evening,clinic_timing
+At what time does the clinic open,clinic_timing
+Band hone ka waqt kya hai,clinic_timing
+Clinic ke auqat kya hain,clinic_timing
+Clinic kitne baje khulta hai,clinic_timing
+Do you sit after Maghrib,clinic_timing
+Doctor sahib kab baithte hain,clinic_timing
+From when to when are you open,clinic_timing
+How late are you open,clinic_timing
+Is the doctor there in the morning,clinic_timing
+Khulne ka time batayein,clinic_timing
+Kis waqt aaun,clinic_timing
+Kis waqt tak khula rehta hai,clinic_timing
+Kitne baje band hota hai,clinic_timing
+Maghrib ke baad baithte hain,clinic_timing
+Main kis waqt aa sakta hoon,clinic_timing
+Opening time please,clinic_timing
+Shaam ko khula hota hai kya,clinic_timing
+Subah doctor hote hain kya,clinic_timing
+Till what time is the doctor sitting,clinic_timing
+Until what time is the clinic open,clinic_timing
+What are the clinic timings,clinic_timing
+What are your working hours,clinic_timing
+What is the closing time,clinic_timing
+What time should I come,clinic_timing
+When can I come,clinic_timing
+When does the clinic close,clinic_timing
+آپ کے اوقات کار کیا ہیں,clinic_timing
+بند ہونے کا وقت کیا ہے,clinic_timing
+شام کو کھلا ہوتا ہے کیا,clinic_timing
+صبح ڈاکٹر ہوتے ہیں کیا,clinic_timing
+مغرب کے بعد بیٹھتے ہیں,clinic_timing
+میں کس وقت آ سکتا ہوں,clinic_timing
+ڈاکٹر صاحب کب بیٹھتے ہیں,clinic_timing
+کتنے بجے بند ہوتا ہے,clinic_timing
+کس وقت آؤں,clinic_timing
+کس وقت تک کھلا رہتا ہے,clinic_timing
+کلینک کتنے بجے کھلتا ہے,clinic_timing
+کلینک کے اوقات کیا ہیں,clinic_timing
+کھلنے کا وقت بتائیں,clinic_timing
+Absolutely,confirm
+Acha theek hai ji,confirm
+Achha theek,confirm
+Agreed,confirm
+Alright do that,confirm
+Bilkul,confirm
+Bilkul sahi,confirm
+Bilkul theek,confirm
+Correct,confirm
+Exactly,confirm
+Fine,confirm
+Haan ji,confirm
+Haan yehi theek hai,confirm
+Han han,confirm
+Ji bilkul,confirm
+Ji haan,confirm
+Ji karein,confirm
+Ji sahi kaha,confirm
+Manzoor hai,confirm
+Ok that is good,confirm
+Okay,confirm
+Perfect,confirm
+Right,confirm
+Sahi hai,confirm
+Sounds good,confirm
+Sounds right,confirm
+Sure,confirm
+That is correct,confirm
+That is fine by me,confirm
+That suits me,confirm
+Theek hai,confirm
+Yeah go ahead,confirm
+Yehi rakh dein,confirm
+Yes,confirm
+Yes correct,confirm
+Yes please,confirm
+Yes please do,confirm
+Yes that is fine,confirm
+Yes that works,confirm
+haan ji kar dijiye,confirm
+haan kar dein,confirm
+han g kr dein,confirm
+jee zaroor kar dein,confirm
+ji kar dijiye,confirm
+theek hai kar do,confirm
+اچھا ٹھیک ہے جی,confirm
+بالکل,confirm
+بالکل صحیح,confirm
+بالکل ٹھیک,confirm
+جی بالکل,confirm
+جی صحیح کہا,confirm
+جی کریں,confirm
+جی ہاں,confirm
+درست ہے,confirm
+منظور ہے,confirm
+ٹھیک ہے,confirm
+ہاں,confirm
+ہاں جی,confirm
+ہاں جی کر دیجیے,confirm
+ہاں ہاں,confirm
+ہاں یہی ٹھیک ہے,confirm
+یہی رکھ دیں,confirm
+Aisa nahi kaha maine,deny
+Bilkul nahi,deny
+Definitely not,deny
+Ghalat hai,deny
+Hargiz nahi,deny
+I disagree,deny
+I do not want that,deny
+Ji nahi,deny
+Main muttafiq nahi,deny
+Nahi aisa mat karein,deny
+Nahi chahiye,deny
+Nahi ji bilkul nahi,deny
+Nahi mera irada badal gaya,deny
+No,deny
+No I changed my mind,deny
+No do not do that,deny
+No no,deny
+No thanks,deny
+No that is wrong,deny
+"No, cancel that",deny
+"No, something else",deny
+Nope,deny
+Not really,deny
+Not that one,deny
+Please do not,deny
+That is incorrect,deny
+That is not correct,deny
+That is not right at all,deny
+That is not what I said,deny
+"Wo nahi, koi aur",deny
+Wrong,deny
+Yeh ghalat hai,deny
+Yeh sahi nahi hai,deny
+Yeh wala nahi,deny
+بالکل نہیں,deny
+جی نہیں,deny
+غلط ہے,deny
+میں متفق نہیں,deny
+میں نے ایسا نہیں کہا,deny
+نہیں,deny
+نہیں ایسا مت کریں,deny
+نہیں جی بالکل نہیں,deny
+نہیں میرا ارادہ بدل گیا,deny
+نہیں چاہیے,deny
+وہ نہیں، کوئی اور,deny
+ہرگز نہیں,deny
+یہ درست نہیں,deny
+یہ غلط ہے,deny
+یہ والا نہیں,deny
+Consultation ka kitna kharcha hai,doctor_fee
+Dr Ahmed ki fees kya hai,doctor_fee
+Dr Asim ki fees kya hai,doctor_fee
+Dr Ayesha ki fees kya hai,doctor_fee
+Dr Bilal ki fees kya hai,doctor_fee
+Dr Fatima ki fees kya hai,doctor_fee
+Dr Hamza ki fees kya hai,doctor_fee
+Dr Khan ki fees kya hai,doctor_fee
+Dr Sara ke charges kya hain,doctor_fee
+Dr Sara ki fees kya hai,doctor_fee
+Dr Usman ki fees kya hai,doctor_fee
+Dr Zainab ki fees kya hai,doctor_fee
+Fees kitni hai,doctor_fee
+How much do I have to pay,doctor_fee
+How much does Dr Ahmed charge,doctor_fee
+How much does Dr Asim charge,doctor_fee
+How much does Dr Ayesha charge,doctor_fee
+How much does Dr Fatima charge,doctor_fee
+How much does Dr Hamza charge,doctor_fee
+How much does Dr Khan charge,doctor_fee
+How much does Dr Sara charge,doctor_fee
+How much does Dr Usman charge,doctor_fee
+How much does Dr Zainab charge,doctor_fee
+How much money should I bring,doctor_fee
+Is it expensive to see the doctor,doctor_fee
+Kitna kharch aayega,doctor_fee
+Kitne paise dene hain,doctor_fee
+Kitne rupay lagenge,doctor_fee
+Tell me the price of a consultation,doctor_fee
+Visit ka rate kya hai,doctor_fee
+What are the charges for a visit,doctor_fee
+What is the consultation fee,doctor_fee
+What is the cost of an appointment,doctor_fee
+What will this visit cost me,doctor_fee
+check up ki fees kitni hai,doctor_fee
+consultaion fee kya hai,doctor_fee
+consultation ke kitne rupay lagenge,doctor_fee
+doctar ki fees kitni hy,doctor_fee
+docter ki fee kitni hai,doctor_fee
+doctor ko dikhane ke kitne paise hain,doctor_fee
+doctor sahab kitna lete hain,doctor_fee
+fees kitni hy,doctor_fee
+fees kitni lagti hai doctor ki,doctor_fee
+فیس کتنی ہے,doctor_fee
+معائنے کی قیمت کیا ہے,doctor_fee
+چیک اپ کا کتنا خرچہ ہے,doctor_fee
+چیک اپ کے کتنے روپے لگیں گے,doctor_fee
+ڈاکٹر احمد کی فیس کیا ہے,doctor_fee
+ڈاکٹر بلال کی فیس کیا ہے,doctor_fee
+ڈاکٹر حمزہ کی فیس کیا ہے,doctor_fee
+ڈاکٹر خان کی فیس کیا ہے,doctor_fee
+ڈاکٹر سارہ کی فیس کیا ہے,doctor_fee
+ڈاکٹر صاحب کتنے پیسے لیتے ہیں,doctor_fee
+ڈاکٹر عائشہ کی فیس کیا ہے,doctor_fee
+ڈاکٹر عاصم کی فیس کیا ہے,doctor_fee
+ڈاکٹر فاطمہ کی فیس کیا ہے,doctor_fee
+کتنا خرچ آئے گا,doctor_fee
+کتنے روپے لگیں گے,doctor_fee
+کتنے پیسے دینے ہیں,doctor_fee
+Doctor ki maloomat chahiye,doctor_information
+Doctor kitne saal se kaam kar rahe hain,doctor_information
+Doctor sahib kaise hain,doctor_information
+Dr Ahmed ka experience kitna hai,doctor_information
+Dr Ahmed kaun hain,doctor_information
+Dr Asim ka experience kitna hai,doctor_information
+Dr Asim kaun hain,doctor_information
+Dr Asim ke baare mein batayein,doctor_information
+Dr Ayesha kaun hain,doctor_information
+Dr Ayesha ke baare mein batayein,doctor_information
+Dr Bilal ka experience kitna hai,doctor_information
+Dr Bilal kaun hain,doctor_information
+Dr Bilal ke baare mein batayein,doctor_information
+Dr Fatima ka experience kitna hai,doctor_information
+Dr Fatima kaun hain,doctor_information
+Dr Fatima ke baare mein batayein,doctor_information
+Dr Hamza ke baare mein batayein,doctor_information
+Dr Khan ke baare mein batayein,doctor_information
+Dr Sara ke baare mein batayein,doctor_information
+Dr Usman ka experience kitna hai,doctor_information
+Dr Usman kaun hain,doctor_information
+Dr Usman ke baare mein batayein,doctor_information
+Dr Zainab ka experience kitna hai,doctor_information
+Dr Zainab kaun hain,doctor_information
+Dr Zainab ke baare mein batayein,doctor_information
+Give me some information on Dr Ahmed,doctor_information
+Give me some information on Dr Asim,doctor_information
+Give me some information on Dr Ayesha,doctor_information
+Give me some information on Dr Bilal,doctor_information
+How long has Dr Asim been practising,doctor_information
+How long has Dr Bilal been practising,doctor_information
+How long has Dr Hamza been practising,doctor_information
+I want details about the doctor,doctor_information
+Is Dr Ahmed any good,doctor_information
+Is Dr Ayesha any good,doctor_information
+Tell me about Dr Asim,doctor_information
+Tell me about Dr Bilal,doctor_information
+Tell me about Dr Khan,doctor_information
+Tell me about Dr Usman,doctor_information
+What can you tell me about Dr Ahmed,doctor_information
+What can you tell me about Dr Fatima,doctor_information
+What can you tell me about Dr Khan,doctor_information
+What can you tell me about Dr Sara,doctor_information
+What can you tell me about Dr Zainab,doctor_information
+Who is Dr Asim,doctor_information
+Who is Dr Bilal,doctor_information
+Who is Dr Usman,doctor_information
+Who is Dr Zainab,doctor_information
+ahmed sahab,doctor_information
+doctor ahmed,doctor_information
+dr ahamd,doctor_information
+dr ahmad,doctor_information
+dr ahmed khan,doctor_information
+dr asim,doctor_information
+dr hamza,doctor_information
+dr sara,doctor_information
+ڈاکٹر احمد کے بارے میں بتائیں,doctor_information
+ڈاکٹر بلال کا تجربہ کتنا ہے,doctor_information
+ڈاکٹر بلال کے بارے میں بتائیں,doctor_information
+ڈاکٹر حمزہ کا تجربہ کتنا ہے,doctor_information
+ڈاکٹر حمزہ کون ہیں,doctor_information
+ڈاکٹر خان کا تجربہ کتنا ہے,doctor_information
+ڈاکٹر خان کون ہیں,doctor_information
+ڈاکٹر خان کے بارے میں بتائیں,doctor_information
+ڈاکٹر سارہ کا تجربہ کتنا ہے,doctor_information
+ڈاکٹر سارہ کون ہیں,doctor_information
+ڈاکٹر سارہ کے بارے میں بتائیں,doctor_information
+ڈاکٹر صاحب کتنے سال سے کام کر رہے ہیں,doctor_information
+ڈاکٹر صاحب کیسے ہیں,doctor_information
+ڈاکٹر عائشہ کا تجربہ کتنا ہے,doctor_information
+ڈاکٹر عائشہ کون ہیں,doctor_information
+ڈاکٹر عائشہ کے بارے میں بتائیں,doctor_information
+ڈاکٹر عاصم کون ہیں,doctor_information
+ڈاکٹر عاصم کے بارے میں بتائیں,doctor_information
+ڈاکٹر فاطمہ کا تجربہ کتنا ہے,doctor_information
+ڈاکٹر فاطمہ کون ہیں,doctor_information
+ڈاکٹر فاطمہ کے بارے میں بتائیں,doctor_information
+ڈاکٹر کی معلومات چاہیے,doctor_information
+Doctor ka experience kitna hai,doctor_qualifications
+Doctor kahan se parhe hain,doctor_qualifications
+Doctor ne kya parha hai,doctor_qualifications
+Doctor sahib ki taleem kya hai,doctor_qualifications
+Dr Ahmed ki degree kya hai,doctor_qualifications
+Dr Asim ki degree kya hai,doctor_qualifications
+Dr Ayesha ki degree kya hai,doctor_qualifications
+Dr Bilal ki degree kya hai,doctor_qualifications
+Dr Fatima ki degree kya hai,doctor_qualifications
+Dr Hamza ki degree kya hai,doctor_qualifications
+Dr Khan ki degree kya hai,doctor_qualifications
+Dr Sara ki degree kya hai,doctor_qualifications
+Dr Usman ki degree kya hai,doctor_qualifications
+Dr Zainab ki degree kya hai,doctor_qualifications
+How many years has Dr Asim been practising,doctor_qualifications
+How many years has Dr Hamza been practising,doctor_qualifications
+How many years has Dr Khan been practising,doctor_qualifications
+How many years has Dr Sara been practising,doctor_qualifications
+How many years has Dr Zainab been practising,doctor_qualifications
+Is the doctor MBBS or FCPS,doctor_qualifications
+Kitne saal ka tajurba hai,doctor_qualifications
+Tell me about the doctor's education,doctor_qualifications
+What are the doctor's credentials,doctor_qualifications
+What degree does the doctor have,doctor_qualifications
+What is Dr Ahmed qualification,doctor_qualifications
+What is Dr Asim qualification,doctor_qualifications
+What is Dr Ayesha qualification,doctor_qualifications
+What is Dr Hamza qualification,doctor_qualifications
+What is Dr Khan qualification,doctor_qualifications
+What is Dr Sara qualification,doctor_qualifications
+What is Dr Zainab qualification,doctor_qualifications
+Where did Dr Ahmed study,doctor_qualifications
+Where did Dr Bilal study,doctor_qualifications
+Where did Dr Hamza study,doctor_qualifications
+Where did Dr Usman study,doctor_qualifications
+Which university did Dr Ahmed graduate from,doctor_qualifications
+Which university did Dr Bilal graduate from,doctor_qualifications
+Which university did Dr Hamza graduate from,doctor_qualifications
+Which university did Dr Khan graduate from,doctor_qualifications
+Which university did Dr Sara graduate from,doctor_qualifications
+ڈاکٹر احمد کی ڈگری کیا ہے,doctor_qualifications
+ڈاکٹر بلال کی ڈگری کیا ہے,doctor_qualifications
+ڈاکٹر حمزہ کی ڈگری کیا ہے,doctor_qualifications
+ڈاکٹر خان کی ڈگری کیا ہے,doctor_qualifications
+ڈاکٹر سارہ کی ڈگری کیا ہے,doctor_qualifications
+ڈاکٹر صاحب کا تجربہ کتنا ہے,doctor_qualifications
+ڈاکٹر صاحب کی تعلیم کیا ہے,doctor_qualifications
+ڈاکٹر عائشہ کی ڈگری کیا ہے,doctor_qualifications
+ڈاکٹر عاصم کی ڈگری کیا ہے,doctor_qualifications
+ڈاکٹر فاطمہ کی ڈگری کیا ہے,doctor_qualifications
+ڈاکٹر نے کیا پڑھا ہے,doctor_qualifications
+ڈاکٹر کہاں سے پڑھے ہیں,doctor_qualifications
+ڈاکٹر کی اہلیت کیا ہے,doctor_qualifications
+کتنے سال کا تجربہ ہے,doctor_qualifications
+Doctor kaunsi bimari dekhte hain,doctor_specialization
+Doctor ki specialty kya hai,doctor_specialization
+Doctor kis type ke hain,doctor_specialization
+Does Dr Ahmed treat skin problems,doctor_specialization
+Does Dr Hamza treat skin problems,doctor_specialization
+Does Dr Khan treat skin problems,doctor_specialization
+Does Dr Usman treat skin problems,doctor_specialization
+Dr Ahmed kis cheez ke specialist hain,doctor_specialization
+Dr Asim kis cheez ke specialist hain,doctor_specialization
+Dr Ayesha kis cheez ke specialist hain,doctor_specialization
+Dr Bilal kis cheez ke specialist hain,doctor_specialization
+Dr Fatima kis cheez ke specialist hain,doctor_specialization
+Dr Khan kis cheez ke specialist hain,doctor_specialization
+Dr Sara kis cheez ke specialist hain,doctor_specialization
+Dr Usman kis cheez ke specialist hain,doctor_specialization
+Dr Zainab kis cheez ke specialist hain,doctor_specialization
+Is Dr Asim a heart specialist,doctor_specialization
+Is Dr Ayesha a heart specialist,doctor_specialization
+Is Dr Sara a heart specialist,doctor_specialization
+Is Dr Zainab a heart specialist,doctor_specialization
+Is the doctor a dentist,doctor_specialization
+Is the doctor a dermatologist,doctor_specialization
+Is the doctor a neurologist,doctor_specialization
+Is the doctor a orthopedic surgeon,doctor_specialization
+Kya doctor dil ke specialist hain,doctor_specialization
+Kya yeh ENT specialist hain,doctor_specialization
+Kya yeh cardiologist hain,doctor_specialization
+Kya yeh child specialist hain,doctor_specialization
+Kya yeh dentist hain,doctor_specialization
+Kya yeh dermatologist hain,doctor_specialization
+Kya yeh eye specialist hain,doctor_specialization
+Kya yeh gynecologist hain,doctor_specialization
+Kya yeh neurologist hain,doctor_specialization
+Kya yeh orthopedic surgeon hain,doctor_specialization
+What is Dr Ahmed specialty,doctor_specialization
+What is Dr Bilal specialty,doctor_specialization
+What is Dr Hamza specialty,doctor_specialization
+What is Dr Sara specialty,doctor_specialization
+What is Dr Zainab specialty,doctor_specialization
+What kind of doctor is Dr Ahmed,doctor_specialization
+What kind of doctor is Dr Asim,doctor_specialization
+What kind of doctor is Dr Fatima,doctor_specialization
+What kind of doctor is Dr Khan,doctor_specialization
+What kind of doctor is Dr Sara,doctor_specialization
+What kind of doctor is Dr Zainab,doctor_specialization
+Which diseases does the doctor handle,doctor_specialization
+Which field does the doctor specialise in,doctor_specialization
+ڈاکٹر احمد کس چیز کے ماہر ہیں,doctor_specialization
+ڈاکٹر بلال کس چیز کے ماہر ہیں,doctor_specialization
+ڈاکٹر حمزہ کس چیز کے ماہر ہیں,doctor_specialization
+ڈاکٹر خان کس چیز کے ماہر ہیں,doctor_specialization
+ڈاکٹر سارہ کس چیز کے ماہر ہیں,doctor_specialization
+ڈاکٹر عائشہ کس چیز کے ماہر ہیں,doctor_specialization
+ڈاکٹر عاصم کس چیز کے ماہر ہیں,doctor_specialization
+ڈاکٹر فاطمہ کس چیز کے ماہر ہیں,doctor_specialization
+ڈاکٹر کس قسم کے ہیں,doctor_specialization
+ڈاکٹر کون سی بیماری دیکھتے ہیں,doctor_specialization
+ڈاکٹر کی تخصیص کیا ہے,doctor_specialization
+کیا ڈاکٹر دل کے ماہر ہیں,doctor_specialization
+کیا یہ آنکھوں کے ماہر ہیں,doctor_specialization
+کیا یہ امراض قلب کے ماہر ہیں,doctor_specialization
+کیا یہ بچوں کے ڈاکٹر ہیں,doctor_specialization
+کیا یہ جلد کے ماہر ہیں,doctor_specialization
+کیا یہ دانتوں کے ڈاکٹر ہیں,doctor_specialization
+کیا یہ زنانہ امراض کی ڈاکٹر ہیں,doctor_specialization
+کیا یہ ناک کان گلے کے ماہر ہیں,doctor_specialization
+کیا یہ ہڈیوں کے ڈاکٹر ہیں,doctor_specialization
+Doctor Friday ko nahi baithte,doctor_unavailable
+Doctor Monday ko nahi baithte,doctor_unavailable
+Doctor Saturday ko nahi baithte,doctor_unavailable
+Doctor Tuesday ko nahi baithte,doctor_unavailable
+Doctor aaj ko nahi baithte,doctor_unavailable
+Doctor agle hafte ko nahi baithte,doctor_unavailable
+Doctor kal ko nahi baithte,doctor_unavailable
+Doctor parso ko nahi baithte,doctor_unavailable
+Doctor sahib bahar gaye hain,doctor_unavailable
+Dr Ahmed nahi aa rahe kya,doctor_unavailable
+Dr Ayesha nahi aa rahe kya,doctor_unavailable
+Dr Bilal nahi aa rahe kya,doctor_unavailable
+Dr Fatima nahi aa rahe kya,doctor_unavailable
+Dr Hamza nahi aa rahe kya,doctor_unavailable
+Dr Khan nahi aa rahe kya,doctor_unavailable
+Dr Sara nahi aa rahe kya,doctor_unavailable
+Dr Usman nahi aa rahe kya,doctor_unavailable
+Dr Zainab nahi aa rahe kya,doctor_unavailable
+Has Dr Ahmed gone on holiday,doctor_unavailable
+Has Dr Bilal gone on holiday,doctor_unavailable
+Has Dr Sara gone on holiday,doctor_unavailable
+Has Dr Usman gone on holiday,doctor_unavailable
+Has Dr Zainab gone on holiday,doctor_unavailable
+I heard Dr Ahmed is not coming,doctor_unavailable
+I heard Dr Asim is not coming,doctor_unavailable
+I heard Dr Ayesha is not coming,doctor_unavailable
+I heard Dr Bilal is not coming,doctor_unavailable
+I heard Dr Zainab is not coming,doctor_unavailable
+Is Dr Ahmed out of station,doctor_unavailable
+Is Dr Ayesha out of station,doctor_unavailable
+Is Dr Fatima out of station,doctor_unavailable
+Is Dr Khan out of station,doctor_unavailable
+Is Dr Sara out of station,doctor_unavailable
+Is Dr Usman out of station,doctor_unavailable
+Is the doctor off Friday,doctor_unavailable
+Is the doctor off Monday,doctor_unavailable
+Is the doctor off Tuesday,doctor_unavailable
+Is the doctor off Wednesday,doctor_unavailable
+Is the doctor off tomorrow,doctor_unavailable
+Is the doctor on leave,doctor_unavailable
+Kya doctor available nahi hain,doctor_unavailable
+Kya doctor chutti par hain,doctor_unavailable
+The doctor is not sitting today right,doctor_unavailable
+Why is the doctor not available,doctor_unavailable
+ڈاکٹر آج کو نہیں بیٹھتے,doctor_unavailable
+ڈاکٹر احمد نہیں آ رہے کیا,doctor_unavailable
+ڈاکٹر اگلے پیر کو نہیں بیٹھتے,doctor_unavailable
+ڈاکٹر بدھ کو نہیں بیٹھتے,doctor_unavailable
+ڈاکٹر بلال نہیں آ رہے کیا,doctor_unavailable
+ڈاکٹر جمعرات کو نہیں بیٹھتے,doctor_unavailable
+ڈاکٹر جمعہ کو نہیں بیٹھتے,doctor_unavailable
+ڈاکٹر حمزہ نہیں آ رہے کیا,doctor_unavailable
+ڈاکٹر خان نہیں آ رہے کیا,doctor_unavailable
+ڈاکٹر سارہ نہیں آ رہے کیا,doctor_unavailable
+ڈاکٹر صاحب باہر گئے ہیں,doctor_unavailable
+ڈاکٹر عائشہ نہیں آ رہے کیا,doctor_unavailable
+ڈاکٹر عاصم نہیں آ رہے کیا,doctor_unavailable
+ڈاکٹر فاطمہ نہیں آ رہے کیا,doctor_unavailable
+ڈاکٹر منگل کو نہیں بیٹھتے,doctor_unavailable
+ڈاکٹر پیر کو نہیں بیٹھتے,doctor_unavailable
+ڈاکٹر کل کو نہیں بیٹھتے,doctor_unavailable
+ڈاکٹر ہفتہ کو نہیں بیٹھتے,doctor_unavailable
+کیا ڈاکٹر دستیاب نہیں ہیں,doctor_unavailable
+کیا ڈاکٹر چھٹی پر ہیں,doctor_unavailable
+"Abbu ke seene mein dard ho raha hai, foran doctor chahiye",emergency
+Accident ho gaya hai,emergency
+"Accident ho gaya hai, khoon beh raha hai, doctor chahiye",emergency
+"Ammi ko daura para hai, doctor se abhi milna hai",emergency
+"Ammi ko saans nahi aa rahi, doctor ko dikhana hai jaldi",emergency
+"Bachay ka khoon nahi ruk raha, doctor ke pas jana h",emergency
+"Bachay ko jhatke lag rahe hain, doctor ko foran dikhana hai",emergency
+Bachay ko tez bukhar hai aur jhatke lag rahe hain,emergency
+"Bachay ne zeher pee liya hai, doctor ke paas le jana hai",emergency
+"Beti ne dawai ki poori sheeshi kha li hai, doctor ke paas jana hai",emergency
+"Bhai gir kar behosh ho gaya, doctor ko dikhana hai abhi",emergency
+"Bohat tez bleeding ho rahi hai, doctor ko dikhana hai",emergency
+Bohot khoon beh raha hai,emergency
+"Bohot urgent hai, jawab nahi de raha",emergency
+"Chehra ek taraf latak gaya hai aur bola nahi ja raha, doctor chahiye",emergency
+"Dada ji saans nahi le pa rahe, dr ke paas le jana hai",emergency
+"Dard bardasht nahi ho raha, isi waqt doctor ke paas jana hai",emergency
+"Dil ka daura lag raha hai, doctor ke paas jana hai",emergency
+"Dum ghut raha hai, doctor chahiye foran",emergency
+Emergency hai,emergency
+Foran doctor chahiye,emergency
+"Get me to a doctor, there is severe bleeding",emergency
+He is bleeding badly,emergency
+"His face is drooping and he can't speak, we need a doctor",emergency
+I am having severe chest pain,emergency
+"I can't breathe properly, I need to see the doctor immediately",emergency
+"I need to see a doctor right now, my chest hurts badly",emergency
+"I need to see the doctor now, I cannot breathe",emergency
+"I think I'm having a heart attack, I need the doctor",emergency
+I think it is a heart attack,emergency
+"It is an emergency, I need Dr Sara immediately",emergency
+"It is very urgent, he is not responding",emergency
+"Lagta hai heart attack hai, doctor ko dikhana h",emergency
+"Mere abbu gir gaye hain, abhi madad chahiye",emergency
+"Mje chakkar aa ke gir gaya tha, seene me dard h, dr chahiye",emergency
+My child has a very high fever and is shaking,emergency
+"My child swallowed something poisonous, we need a doctor now",emergency
+"My father collapsed, we have to get him to a doctor",emergency
+"My father collapsed, we need help now",emergency
+"Nana behosh ho gaye hain, doctor ke paas le jana hai",emergency
+Please send help immediately,emergency
+"Pregnancy mein bohat khoon aa raha hai, doctor ke pas jana h",emergency
+"Saans lene mein mushkil ho rahi hai, doctor se milna hai foran",emergency
+Saans nahi aa rahi,emergency
+"Sar pe chot lagi hai aur behoshi aa rahi hai, doctor ke paas jana hai",emergency
+"Seene mein bohat dard hai, doctor ke paas jana hai abhi",emergency
+Seene mein bohot dard ho raha hai,emergency
+"She is having a seizure, we need to see a doctor",emergency
+"She is unconscious, what do I do",emergency
+The patient cannot breathe,emergency
+There has been an accident,emergency
+"There's been an accident and he is bleeding a lot, we need a doctor",emergency
+This is an emergency,emergency
+Urgent! Please get Dr Hamza now,emergency
+"We need a doctor right now, not tomorrow",emergency
+"We need an appointment right now, he is unconscious",emergency
+Woh behosh ho gayi hai,emergency
+"abhi doctor ko dikhana hai, ammi gir gayi aur hosh nahi",emergency
+"appointment nahi, abhi doctor chahiye, seene mein dard hai",emergency
+"doctor chahiye foran, bachay ne dawai kha li hai",emergency
+"doctor ke paas le jana hai abhi, abbu behosh hain",emergency
+"doctor se abhi milna hai, khoon ruk nahi raha",emergency
+"dr sahab ko abhi bulayein, dil ka daura lag raha hai",emergency
+"mje dr ko dikhana h jaldi, bacha saans nahi le raha",emergency
+"mujhe dr ke pas jana h, chest pain bohat zyada hai",emergency
+"mujhe foran doctor ke paas jana hai, saans nahi aa rahi",emergency
+ابو بے ہوش ہو گئے ہیں، ڈاکٹر کے پاس لے جانا ہے,emergency
+بچے نے زہر پی لیا ہے، فوراً ڈاکٹر کے پاس جانا ہے,emergency
+بچے کو تیز بخار ہے اور جھٹکے لگ رہے ہیں,emergency
+بچے کو جھٹکے لگ رہے ہیں، فوری ڈاکٹر کو دکھانا ہے,emergency
+بہت خون بہہ رہا ہے,emergency
+بہت ہنگامی صورتحال ہے,emergency
+حادثہ ہو گیا ہے,emergency
+حادثہ ہو گیا ہے، خون بہہ رہا ہے، ڈاکٹر چاہیے,emergency
+خون نہیں رک رہا، ڈاکٹر کے پاس جانا ہے,emergency
+دل کا دورہ لگ رہا ہے، ڈاکٹر سے ملنا ہے,emergency
+سانس نہیں آ رہی,emergency
+سانس نہیں آ رہی، ابھی ڈاکٹر کو دکھانا ہے,emergency
+سینے میں شدید درد ہو رہا ہے,emergency
+سینے میں شدید درد ہے، ڈاکٹر کے پاس جانا ہے,emergency
+فوراً ڈاکٹر چاہیے,emergency
+مجھے ابھی ڈاکٹر کے پاس جانا ہے، سانس نہیں آ رہی,emergency
+میرے ابو گر گئے ہیں، ابھی مدد چاہیے,emergency
+وہ بے ہوش ہو گئی ہے,emergency
+ڈاکٹر سے فوراً ملنا ہے، سینے میں درد ہے,emergency
+ڈاکٹر کو ابھی دکھانا ہے، بچہ بے ہوش ہے,emergency
+یہ ایمرجنسی ہے,emergency
+Aap ke paas kaunse doctor hain,find_doctor
+Bachon ka doctor hai kya,find_doctor
+Can you suggest a good doctor,find_doctor
+Do you have a ENT specialist at this clinic,find_doctor
+Do you have a cardiologist at this clinic,find_doctor
+Do you have a child specialist at this clinic,find_doctor
+Do you have a dentist at this clinic,find_doctor
+Do you have a dermatologist at this clinic,find_doctor
+Do you have a eye specialist at this clinic,find_doctor
+Do you have a gynecologist at this clinic,find_doctor
+Do you have a orthopedic surgeon at this clinic,find_doctor
+Doctors ki list de dein,find_doctor
+Give me a list of your doctors,find_doctor
+I am looking for a ENT specialist,find_doctor
+I am looking for a cardiologist,find_doctor
+I am looking for a child specialist,find_doctor
+I am looking for a dentist,find_doctor
+I am looking for a dermatologist,find_doctor
+I am looking for a eye specialist,find_doctor
+I am looking for a gynecologist,find_doctor
+I am looking for a neurologist,find_doctor
+I am looking for a orthopedic surgeon,find_doctor
+I need a doctor for my child,find_doctor
+Kis doctor se milna chahiye,find_doctor
+Kya yahan koi achha doctor hai,find_doctor
+Mujhe ENT specialist chahiye,find_doctor
+Mujhe cardiologist chahiye,find_doctor
+Mujhe child specialist chahiye,find_doctor
+Mujhe dentist chahiye,find_doctor
+Mujhe dermatologist chahiye,find_doctor
+Mujhe eye specialist chahiye,find_doctor
+Mujhe gynecologist chahiye,find_doctor
+Mujhe neurologist chahiye,find_doctor
+Mujhe orthopedic surgeon chahiye,find_doctor
+Which doctors do you have,find_doctor
+Which specialist should I see,find_doctor
+Who can I see for my problem,find_doctor
+آپ کے پاس کون سے ڈاکٹر ہیں,find_doctor
+بچوں کا ڈاکٹر ہے کیا,find_doctor
+مجھے آنکھوں کے ماہر چاہیے,find_doctor
+مجھے امراض قلب کے ماہر چاہیے,find_doctor
+مجھے بچوں کے ڈاکٹر چاہیے,find_doctor
+مجھے جلد کے ماہر چاہیے,find_doctor
+مجھے دانتوں کے ڈاکٹر چاہیے,find_doctor
+مجھے زنانہ امراض کی ڈاکٹر چاہیے,find_doctor
+مجھے ناک کان گلے کے ماہر چاہیے,find_doctor
+مجھے ہڈیوں کے ڈاکٹر چاہیے,find_doctor
+ڈاکٹروں کی فہرست دے دیں,find_doctor
+کس ڈاکٹر سے ملنا چاہیے,find_doctor
+کیا یہاں کوئی اچھا ڈاکٹر ہے,find_doctor
+Acha ji chalta hoon,goodbye
+Acha ji khuda hafiz,goodbye
+Alright goodbye,goodbye
+"Alright then, see you",goodbye
+"Aur kuch nahi, bye",goodbye
+"Bas ho gaya, khuda hafiz",goodbye
+"Bas itna hi tha, allah hafiz",goodbye
+Bye,goodbye
+Bye ji,goodbye
+Catch you later,goodbye
+Chalo ji allah hafiz,goodbye
+Chalta hoon,goodbye
+Ending the call now,goodbye
+Good night,goodbye
+Goodbye,goodbye
+"I am done, goodbye",goodbye
+"I will call back later, bye",goodbye
+I will hang up now,goodbye
+Khuda hafiz,goodbye
+Main phone rakhta hoon,goodbye
+Milte hain clinic par,goodbye
+"Nothing else, bye",goodbye
+Ok bye,goodbye
+Okay I will hang up,goodbye
+Okay bye bye,goodbye
+"Okay then, khuda hafiz",goodbye
+"Okay, talk later",goodbye
+"Right, I will go now",goodbye
+See you at the clinic,goodbye
+See you later,goodbye
+Shab bakhair,goodbye
+"Take care, bye",goodbye
+Talk to you later,goodbye
+"That is all I needed, bye",goodbye
+"That is all, bye",goodbye
+"That is everything, thank you bye",goodbye
+Theek hai phir milte hain,goodbye
+"Theek hai, khuda hafiz",goodbye
+acha baad mein baat karta hoon,goodbye
+"bas ji itna hi, khuda hafiz",goodbye
+chalo ji phir baat karte hain,goodbye
+ok phir kabhi baat karenge,goodbye
+"theek hai ji, rakhti hoon",goodbye
+الوداع,goodbye
+اور کچھ نہیں، الوداع,goodbye
+اچھا جی خدا حافظ,goodbye
+اچھا جی چلتا ہوں,goodbye
+بس اتنا ہی تھا، اللہ حافظ,goodbye
+بس ہو گیا، خدا حافظ,goodbye
+خدا حافظ,goodbye
+شب بخیر,goodbye
+میں فون رکھتا ہوں,goodbye
+ٹھیک ہے بعد میں بات کرتے ہیں,goodbye
+ٹھیک ہے پھر ملتے ہیں,goodbye
+ٹھیک ہے، خدا حافظ,goodbye
+چلتا ہوں,goodbye
+چلو جی اللہ حافظ,goodbye
+کلینک پر ملتے ہیں,goodbye
+Aap kaise hain,greeting
+Adab,greeting
+Assalam o alaikum ji,greeting
+Good afternoon,greeting
+Good evening,greeting
+Good morning,greeting
+Hello are you there,greeting
+Hello hello,greeting
+Hello ji,greeting
+Hello koi hai,greeting
+"Hello, I need some help",greeting
+"Hello, can you help me",greeting
+"Hello, is this the clinic",greeting
+"Hello, sun rahe hain",greeting
+Hey there,greeting
+Hi good day,greeting
+Hi there,greeting
+"Hi, I am calling about an appointment",greeting
+"Hi, can you hear me",greeting
+Is anyone there,greeting
+Kya haal hai,greeting
+Morning,greeting
+Salam,greeting
+Salam bhai,greeting
+Salam ji,greeting
+"Salam, clinic hai kya",greeting
+"Salam, main baat kar sakta hoon",greeting
+Subah bakhair,greeting
+آداب,greeting
+آپ کیسے ہیں,greeting
+السلام علیکم جی,greeting
+السلام علیکم، کلینک ہے کیا,greeting
+سلام,greeting
+سلام بھائی,greeting
+سلام جی,greeting
+صبح بخیر,greeting
+کیا حال ہے,greeting
+کیا میں بات کر سکتا ہوں,greeting
+ہیلو,greeting
+ہیلو کوئی ہے,greeting
+Aap kya kar sakte hain,help
+Aap kya kya kar sakte hain,help
+Booking kaise hoti hai,help
+Can you assist me,help
+Can you guide me please,help
+Can you help me,help
+Can you walk me through it,help
+Explain the process to me,help
+Help me please,help
+How do I book with you,help
+How does this work,help
+"I am confused, what should I do",help
+"I am new here, how does this work",help
+I do not know what to do,help
+I do not understand the system,help
+I need assistance,help
+I need some help,help
+Kuch samajh nahi aa raha,help
+Kya kya pooch sakta hoon,help
+"Main confuse hoon, kya karun",help
+"Main naya hoon, samjha dein",help
+Meri madad karein,help
+Meri thori madad karein,help
+Mujhe madad chahiye,help
+Mujhe rehnumai chahiye,help
+Mujhe samajh nahi aa raha,help
+Mujhe tareeqa batayein,help
+Please guide me,help
+Please help me out,help
+Rehnumai karein,help
+Tell me what I can ask you,help
+What all can you help with,help
+What are my options,help
+What can you do,help
+What services do you offer,help
+What should I say,help
+Yeh kaise kaam karta hai,help
+Yeh system kaise chalta hai,help
+Zara samjha dein,help
+آپ کیا کر سکتے ہیں,help
+آپ کیا کیا کر سکتے ہیں,help
+بکنگ کیسے ہوتی ہے,help
+ذرا سمجھا دیں,help
+رہنمائی کریں,help
+مجھے رہنمائی چاہیے,help
+مجھے سمجھ نہیں آ رہا,help
+مجھے طریقہ بتائیں,help
+مجھے مدد چاہیے,help
+میری تھوڑی مدد کریں,help
+میری مدد کریں,help
+میں الجھن میں ہوں، کیا کروں,help
+میں نیا ہوں، سمجھا دیں,help
+میں کیا کیا پوچھ سکتا ہوں,help
+کچھ سمجھ نہیں آ رہا,help
+یہ نظام کیسے چلتا ہے,help
+یہ کیسے کام کرتا ہے,help
+18 saal,provide_patient_age
+25 saal,provide_patient_age
+Age 18,provide_patient_age
+Age 35,provide_patient_age
+Age 42,provide_patient_age
+He is 18 years old,provide_patient_age
+He is 30 years old,provide_patient_age
+He is 35 years old,provide_patient_age
+He is 48 years old,provide_patient_age
+He is 60 years old,provide_patient_age
+I am 27,provide_patient_age
+I am 30,provide_patient_age
+I am 30 years old,provide_patient_age
+I am 33,provide_patient_age
+I am 33 years old,provide_patient_age
+I am 35,provide_patient_age
+I am 35 years old,provide_patient_age
+I am 42 years old,provide_patient_age
+I am 48 years old,provide_patient_age
+I am 55,provide_patient_age
+I am 60 years old,provide_patient_age
+Main 25 saal ka hoon,provide_patient_age
+Main 33 saal ka hoon,provide_patient_age
+Main 42 saal ka hoon,provide_patient_age
+Main 55 saal ka hoon,provide_patient_age
+Main 60 saal ka hoon,provide_patient_age
+Meri umar 18 saal hai,provide_patient_age
+Meri umar 25 saal hai,provide_patient_age
+Meri umar 33 saal hai,provide_patient_age
+Meri umar 35 saal hai,provide_patient_age
+Meri umar 42 saal hai,provide_patient_age
+Meri umar 55 saal hai,provide_patient_age
+Meri umar 60 saal hai,provide_patient_age
+My age is 27,provide_patient_age
+My age is 35,provide_patient_age
+My age is 60,provide_patient_age
+Patient 27 saal ka hai,provide_patient_age
+Patient 30 saal ka hai,provide_patient_age
+Patient 33 saal ka hai,provide_patient_age
+Patient 55 saal ka hai,provide_patient_age
+She is 18,provide_patient_age
+She is 27,provide_patient_age
+She is 35,provide_patient_age
+She is 60,provide_patient_age
+The patient is 33,provide_patient_age
+The patient is 48,provide_patient_age
+Umar 25 hai,provide_patient_age
+Umar 27 hai,provide_patient_age
+Umar 35 hai,provide_patient_age
+Umar 42 hai,provide_patient_age
+Umar 60 hai,provide_patient_age
+عمر تیس سال,provide_patient_age
+عمر ساٹھ سال,provide_patient_age
+عمر پچپن سال,provide_patient_age
+عمر پچیس سال,provide_patient_age
+عمر پینتیس سال,provide_patient_age
+مریض اٹھارہ سال کا ہے,provide_patient_age
+مریض بیالیس سال کا ہے,provide_patient_age
+مریض تیس سال کا ہے,provide_patient_age
+مریض ساٹھ سال کا ہے,provide_patient_age
+مریض پچپن سال کا ہے,provide_patient_age
+مریض پچیس سال کا ہے,provide_patient_age
+مریض پینتیس سال کا ہے,provide_patient_age
+میری عمر تیس سال ہے,provide_patient_age
+میری عمر ساٹھ سال ہے,provide_patient_age
+میری عمر پچپن سال ہے,provide_patient_age
+میری عمر پچیس سال ہے,provide_patient_age
+میری عمر پینتیس سال ہے,provide_patient_age
+میں بیالیس سال کا ہوں,provide_patient_age
+میں تیس سال کا ہوں,provide_patient_age
+میں ساٹھ سال کا ہوں,provide_patient_age
+میں پچپن سال کا ہوں,provide_patient_age
+میں پچیس سال کا ہوں,provide_patient_age
+Female patient,provide_patient_gender
+Gender male,provide_patient_gender
+He is a boy,provide_patient_gender
+I am female,provide_patient_gender
+It is for a woman,provide_patient_gender
+Larka hai,provide_patient_gender
+Larki hai,provide_patient_gender
+Main aurat hoon,provide_patient_gender
+Main mard hoon,provide_patient_gender
+Patient mard hai,provide_patient_gender
+She is a girl,provide_patient_gender
+The patient is a man,provide_patient_gender
+Yeh khatoon ke liye hai,provide_patient_gender
+لڑکا ہے,provide_patient_gender
+لڑکی ہے,provide_patient_gender
+میں عورت ہوں,provide_patient_gender
+میں مرد ہوں,provide_patient_gender
+یہ خاتون کے لیے ہے,provide_patient_gender
+Fatima likh lein,provide_patient_name
+"Hina, that is my name",provide_patient_name
+I am Bilal,provide_patient_name
+I am Maryam,provide_patient_name
+I am Usman,provide_patient_name
+"Imran, that is my name",provide_patient_name
+It is Ahmed,provide_patient_name
+It is Bilal,provide_patient_name
+It is Fatima here,provide_patient_name
+It is Maryam,provide_patient_name
+It is Sara,provide_patient_name
+It is Usman,provide_patient_name
+Kamran baat kar raha hoon,provide_patient_name
+Main Ahmed hoon,provide_patient_name
+Main Fatima hoon,provide_patient_name
+Main Maryam hoon,provide_patient_name
+Maryam likh lein,provide_patient_name
+Mera naam Ahmed hai,provide_patient_name
+Mera naam Bilal hai,provide_patient_name
+Mera naam Fatima hai,provide_patient_name
+Mera naam Hassan hai,provide_patient_name
+Mera naam Hina hai,provide_patient_name
+Mera naam Imran hai,provide_patient_name
+Mera naam Maryam hai,provide_patient_name
+Mera naam Zainab hai,provide_patient_name
+My name is Ayesha,provide_patient_name
+My name is Imran,provide_patient_name
+My name is Maryam,provide_patient_name
+Naam Maryam hai,provide_patient_name
+Name is Bilal,provide_patient_name
+Name is Zainab,provide_patient_name
+Patient ka naam Ahmed hai,provide_patient_name
+Patient ka naam Ali hai,provide_patient_name
+Patient ka naam Ayesha hai,provide_patient_name
+Patient ka naam Bilal hai,provide_patient_name
+Patient ka naam Fatima hai,provide_patient_name
+Patient ka naam Hina hai,provide_patient_name
+Patient ka naam Usman hai,provide_patient_name
+Please note it as Ayesha,provide_patient_name
+Please note it as Hassan,provide_patient_name
+Please note it as Hina,provide_patient_name
+Please note it as Imran,provide_patient_name
+Sara likh lein,provide_patient_name
+"Sara, that is my name",provide_patient_name
+The patient name is Fatima,provide_patient_name
+The patient name is Hassan,provide_patient_name
+The patient name is Usman,provide_patient_name
+This is Omar speaking,provide_patient_name
+You can write Fatima,provide_patient_name
+You can write Hina,provide_patient_name
+You can write Imran,provide_patient_name
+"Zainab, that is my name",provide_patient_name
+ji mera naam Usman hai,provide_patient_name
+main Hina hoon ji,provide_patient_name
+main Sana bol rahi hoon,provide_patient_name
+patient ka naam Zainab hai,provide_patient_name
+احمد لکھ لیں,provide_patient_name
+حنا لکھ لیں,provide_patient_name
+سارہ لکھ لیں,provide_patient_name
+عائشہ لکھ لیں,provide_patient_name
+فاطمہ لکھ لیں,provide_patient_name
+مریض کا نام احمد ہے,provide_patient_name
+مریض کا نام عائشہ ہے,provide_patient_name
+مریض کا نام عثمان ہے,provide_patient_name
+مریض کا نام علی ہے,provide_patient_name
+میرا نام بلال ہے,provide_patient_name
+میرا نام زینب ہے,provide_patient_name
+میرا نام سارہ ہے,provide_patient_name
+میرا نام عثمان ہے,provide_patient_name
+میرا نام علی ہے,provide_patient_name
+میرا نام عمران ہے,provide_patient_name
+میں حنا ہوں,provide_patient_name
+میں سارہ ہوں,provide_patient_name
+میں عائشہ بول رہی ہوں,provide_patient_name
+میں عائشہ ہوں,provide_patient_name
+میں علی ہوں,provide_patient_name
+میں فاطمہ ہوں,provide_patient_name
+نام احمد ہے,provide_patient_name
+نام بلال ہے,provide_patient_name
+نام سارہ ہے,provide_patient_name
+نام عائشہ ہے,provide_patient_name
+نام عثمان ہے,provide_patient_name
+0300 1234567 par call kar lein,provide_patient_phone
+0301 2223333 par call kar lein,provide_patient_phone
+0308 6667777 par call kar lein,provide_patient_phone
+0308 6667777 پر کال کر لیں,provide_patient_phone
+0312 4445555 par call kar lein,provide_patient_phone
+0321 9876543 par call kar lein,provide_patient_phone
+0321 9876543 پر کال کر لیں,provide_patient_phone
+0333 5551234 par call kar lein,provide_patient_phone
+0333 5551234 پر کال کر لیں,provide_patient_phone
+Contact me at 0300 1234567,provide_patient_phone
+Contact me at 0301 2223333,provide_patient_phone
+Contact me at 0312 4445555,provide_patient_phone
+Contact me at 0345 7778888,provide_patient_phone
+It is 0308 6667777,provide_patient_phone
+It is 0312 4445555,provide_patient_phone
+It is 0321 9876543,provide_patient_phone
+It is 0333 5551234,provide_patient_phone
+It is 0345 7778888,provide_patient_phone
+Mera number 0301 2223333 hai,provide_patient_phone
+Mera number 0321 9876543 hai,provide_patient_phone
+Mera number 0345 7778888 hai,provide_patient_phone
+Mobile 0300 1234567 hai,provide_patient_phone
+Mobile 0301 2223333 hai,provide_patient_phone
+Mobile 0312 4445555 hai,provide_patient_phone
+Mobile 0321 9876543 hai,provide_patient_phone
+Mobile 0333 5551234 hai,provide_patient_phone
+Mobile 0345 7778888 hai,provide_patient_phone
+My mobile is 0300 1234567,provide_patient_phone
+My mobile is 0301 2223333,provide_patient_phone
+My mobile is 0308 6667777,provide_patient_phone
+My mobile is 0312 4445555,provide_patient_phone
+My number is 0301 2223333,provide_patient_phone
+My number is 0321 9876543,provide_patient_phone
+My number is 0333 5551234,provide_patient_phone
+Note down 0301 2223333,provide_patient_phone
+Note down 0312 4445555,provide_patient_phone
+Note down 0321 9876543,provide_patient_phone
+Note down 0345 7778888,provide_patient_phone
+Number likh lein 0300 1234567,provide_patient_phone
+Number likh lein 0308 6667777,provide_patient_phone
+Number likh lein 0321 9876543,provide_patient_phone
+Number likh lein 0345 7778888,provide_patient_phone
+Phone number 0300 1234567,provide_patient_phone
+Phone number 0308 6667777,provide_patient_phone
+Phone number 0312 4445555,provide_patient_phone
+Phone number 0321 9876543,provide_patient_phone
+Phone number 0333 5551234,provide_patient_phone
+Phone number 0345 7778888,provide_patient_phone
+You can call me on 0301 2223333,provide_patient_phone
+You can call me on 0312 4445555,provide_patient_phone
+You can call me on 0321 9876543,provide_patient_phone
+You can call me on 0333 5551234,provide_patient_phone
+فون نمبر 0301 2223333,provide_patient_phone
+فون نمبر 0312 4445555,provide_patient_phone
+فون نمبر 0321 9876543,provide_patient_phone
+فون نمبر 0333 5551234,provide_patient_phone
+فون نمبر 0345 7778888,provide_patient_phone
+موبائل 0300 1234567 ہے,provide_patient_phone
+موبائل 0308 6667777 ہے,provide_patient_phone
+موبائل 0312 4445555 ہے,provide_patient_phone
+موبائل 0321 9876543 ہے,provide_patient_phone
+موبائل 0333 5551234 ہے,provide_patient_phone
+موبائل 0345 7778888 ہے,provide_patient_phone
+میرا نمبر 0300 1234567 ہے,provide_patient_phone
+میرا نمبر 0308 6667777 ہے,provide_patient_phone
+میرا نمبر 0312 4445555 ہے,provide_patient_phone
+میرا نمبر 0345 7778888 ہے,provide_patient_phone
+نمبر لکھ لیں 0300 1234567,provide_patient_phone
+نمبر لکھ لیں 0301 2223333,provide_patient_phone
+نمبر لکھ لیں 0312 4445555,provide_patient_phone
+نمبر لکھ لیں 0321 9876543,provide_patient_phone
+نمبر لکھ لیں 0345 7778888,provide_patient_phone
+Aap ne kya kaha,repeat_information
+Awaz nahi aa rahi,repeat_information
+Can you repeat that,repeat_information
+Can you spell that out,repeat_information
+Come again,repeat_information
+Could you say it slowly,repeat_information
+Dobara kahein,repeat_information
+Ek aur baar,repeat_information
+Ek baar phir kahein,repeat_information
+I could not hear you,repeat_information
+I did not catch that,repeat_information
+"I did not understand, again",repeat_information
+"Line kat gayi thi, phir kahein",repeat_information
+Louder please,repeat_information
+"Maaf kijiye, sun nahi paya",repeat_information
+One more time please,repeat_information
+Pardon,repeat_information
+Pata dobara batayein,repeat_information
+Phir se batayein,repeat_information
+Please repeat the address,repeat_information
+Please say it once more,repeat_information
+Repeat please,repeat_information
+Samajh nahi aaya,repeat_information
+"Samajh nahi aaya, dobara",repeat_information
+Say that again please,repeat_information
+Say the timing again,repeat_information
+Sorry I missed that,repeat_information
+Sorry what was that,repeat_information
+"Sorry, come again",repeat_information
+"The line broke, repeat please",repeat_information
+"The line is bad, say it again",repeat_information
+Waqt phir se batayein,repeat_information
+What did you say,repeat_information
+"You are breaking up, can you repeat",repeat_information
+Zara aahista boliye,repeat_information
+Zara dobara boliye,repeat_information
+Zara zor se boliye,repeat_information
+aap ki awaz saaf nahi aa rahi,repeat_information
+awaz toot rahi hai,repeat_information
+kat kat ke awaz aa rahi hai,repeat_information
+line kharab hai dobara boliye,repeat_information
+"signal nahi aa raha, phir se kahein",repeat_information
+zara phir se bataiye kya kaha,repeat_information
+آواز نہیں آ رہی,repeat_information
+آواز ٹوٹ رہی ہے، دوبارہ بولیں,repeat_information
+آپ نے کیا کہا,repeat_information
+ایک اور بار,repeat_information
+ایک بار پھر کہیں,repeat_information
+دوبارہ کہیں,repeat_information
+ذرا آہستہ بولیے,repeat_information
+ذرا دوبارہ بولیے,repeat_information
+ذرا زور سے بولیے,repeat_information
+سمجھ نہیں آیا,repeat_information
+سمجھ نہیں آیا، دوبارہ,repeat_information
+لائن خراب ہے، پھر سے بتائیں,repeat_information
+لائن کٹ گئی تھی، پھر کہیں,repeat_information
+معاف کیجیے، سن نہیں پایا,repeat_information
+وقت پھر سے بتائیں,repeat_information
+پتہ دوبارہ بتائیں,repeat_information
+پھر سے بتائیں,repeat_information
+Appointment Friday par shift kar dein,reschedule_appointment
+Appointment Monday par shift kar dein,reschedule_appointment
+Appointment Saturday par shift kar dein,reschedule_appointment
+Appointment Tuesday par shift kar dein,reschedule_appointment
+Appointment aage barha dein,reschedule_appointment
+Appointment aaj par shift kar dein,reschedule_appointment
+Appointment agle hafte par shift kar dein,reschedule_appointment
+"Appointment cancel mat karein, bas din change kar dein",reschedule_appointment
+Appointment kal par shift kar dein,reschedule_appointment
+Appointment parso par shift kar dein,reschedule_appointment
+Appointment rakhni hai bas time aage karna hai,reschedule_appointment
+Can my visit be moved later,reschedule_appointment
+Can we move my appointment,reschedule_appointment
+"Cancel na karein, kisi aur din kar dein",reschedule_appointment
+"Cancel nahi karni, sirf waqt badalna hai",reschedule_appointment
+"Cancel nahi, reschedule karni hai",reschedule_appointment
+Change my appointment to Friday,reschedule_appointment
+Change my appointment to Monday,reschedule_appointment
+Change my appointment to Saturday,reschedule_appointment
+Change my appointment to Thursday,reschedule_appointment
+Change my appointment to Tuesday,reschedule_appointment
+Change my appointment to Wednesday,reschedule_appointment
+Change my appointment to next Monday,reschedule_appointment
+Change my appointment to this Friday,reschedule_appointment
+Change my appointment to today,reschedule_appointment
+Change my appointment to tomorrow,reschedule_appointment
+"Do not cancel it, just move it to another day",reschedule_appointment
+I need a different slot,reschedule_appointment
+I want to reschedule my appointment,reschedule_appointment
+"Meri appointment cancel nahi karni, bas time change karna hai",reschedule_appointment
+Meri appointment reschedule karni hai,reschedule_appointment
+Meri booking kisi aur din kar dein,reschedule_appointment
+"Mujhe cancel nahi karni, doosra time chahiye",reschedule_appointment
+Mujhe doosra waqt chahiye,reschedule_appointment
+"Not cancelling, I just want a different time",reschedule_appointment
+Please shift my booking to another day,reschedule_appointment
+Postpone my appointment please,reschedule_appointment
+apointment resedule karni hai,reschedule_appointment
+appointment ka din badal dein,reschedule_appointment
+appointment next week pe kar dein,reschedule_appointment
+appointmnt change karni he,reschedule_appointment
+mera tym change kar dein,reschedule_appointment
+meri apointment kisi or din kar dein,reschedule_appointment
+mje appointment postpone karni h,reschedule_appointment
+اپائنٹمنٹ آج پر منتقل کر دیں,reschedule_appointment
+اپائنٹمنٹ آگے بڑھا دیں,reschedule_appointment
+اپائنٹمنٹ آگے کر دیں,reschedule_appointment
+اپائنٹمنٹ اگلے پیر پر منتقل کر دیں,reschedule_appointment
+اپائنٹمنٹ بدھ پر منتقل کر دیں,reschedule_appointment
+اپائنٹمنٹ جمعرات پر منتقل کر دیں,reschedule_appointment
+اپائنٹمنٹ جمعہ پر منتقل کر دیں,reschedule_appointment
+اپائنٹمنٹ منسوخ نہیں کرنی، بس وقت بدلنا ہے,reschedule_appointment
+اپائنٹمنٹ منگل پر منتقل کر دیں,reschedule_appointment
+اپائنٹمنٹ پیر پر منتقل کر دیں,reschedule_appointment
+اپائنٹمنٹ کل پر منتقل کر دیں,reschedule_appointment
+اپائنٹمنٹ کی تاریخ آگے بڑھا دیں,reschedule_appointment
+اپائنٹمنٹ ہفتہ پر منتقل کر دیں,reschedule_appointment
+مجھے دوسرا وقت چاہیے,reschedule_appointment
+میری اپائنٹمنٹ دوبارہ مقرر کرنی ہے,reschedule_appointment
+میری بکنگ دوسرے دن کر دیں,reschedule_appointment
+میری بکنگ کسی اور دن کر دیں,reschedule_appointment
+کینسل نہیں کرنی، صرف دن تبدیل کرنا ہے,reschedule_appointment
+Aap ka bohot shukriya,thank_you
+Aap ka ehsan hai,thank_you
+Aap ne bohot madad ki,thank_you
+"Allah aap ko khush rakhe, shukriya",thank_you
+Bari meherbani hui,thank_you
+"Bless you, thanks",thank_you
+Bohot bohot shukriya,thank_you
+Bohot meherbani aap ki,thank_you
+Bohot shukriya,thank_you
+"Cheers, thanks",thank_you
+Grateful for your help,thank_you
+"Great, thanks",thank_you
+I really appreciate your help,thank_you
+"Jazak Allah, shukriya",thank_you
+Meherbani,thank_you
+Much appreciated,thank_you
+"Perfect, thank you",thank_you
+Shukriya ji bohot,thank_you
+Thank you for your time,thank_you
+Thank you so much,thank_you
+Thank you very much indeed,thank_you
+Thanks a million,thank_you
+Thanks for your help,thank_you
+Thanks ji,thank_you
+"Thanks, that answers it",thank_you
+"That is very helpful, thank you",thank_you
+That is very kind of you,thank_you
+Waqt dene ka shukriya,thank_you
+You have been very helpful,thank_you
+آپ نے بہت مدد کی,thank_you
+آپ کا احسان ہے,thank_you
+آپ کا بہت شکریہ,thank_you
+اللہ آپ کو خوش رکھے، شکریہ,thank_you
+بڑی مہربانی ہوئی,thank_you
+بہت بہت شکریہ,thank_you
+بہت شکریہ,thank_you
+بہت نوازش,thank_you
+بہت نوازش آپ کی,thank_you
+جزاک اللہ,thank_you
+مہربانی,thank_you
+وقت دینے کا شکریہ,thank_you
+Acha wo kya tha,unclear_request
+Actually hold on,unclear_request
+Actually never mind,unclear_request
+Bhool gaya kya kehna tha,unclear_request
+Book me a flight to Lahore,unclear_request
+Can I think about it,unclear_request
+Chhorein koi baat nahi,unclear_request
+Ek minute,unclear_request
+Er I am not certain,unclear_request
+"Erm, what was I saying",unclear_request
+Give me a moment,unclear_request
+Hang on a minute,unclear_request
+Hmm,unclear_request
+Hmm dekhte hain,unclear_request
+Hmm let me see,unclear_request
+Hmm sochne do,unclear_request
+Hold on,unclear_request
+How do I put this,unclear_request
+I do not know,unclear_request
+I forgot what I wanted to say,unclear_request
+"I mean, the thing is",unclear_request
+It is sort of complicated,unclear_request
+Just a sec,unclear_request
+Kaise batao,unclear_request
+"Matlab, baat yeh hai",unclear_request
+Not sure really,unclear_request
+One moment,unclear_request
+Pata nahi,unclear_request
+Pata nahi kya kahoon,unclear_request
+Pay my electricity bill,unclear_request
+Ruko zara,unclear_request
+Sochne do zara,unclear_request
+Something about the thing,unclear_request
+Tell me a joke,unclear_request
+Thora mushkil hai batana,unclear_request
+Uh let me think,unclear_request
+Uhh,unclear_request
+Um I am not sure,unclear_request
+Umm okay so,unclear_request
+Ummm,unclear_request
+Wait a second,unclear_request
+Wait wait,unclear_request
+What is the cricket score,unclear_request
+Zara rukiye,unclear_request
+abhi batata hoon ruko,unclear_request
+cricket ka score kya hai,unclear_request
+ek lamha,unclear_request
+ek sec,unclear_request
+haan wo kya kehte hain,unclear_request
+hmm acha to,unclear_request
+koi joke sunao,unclear_request
+mobile recharge karna hai,unclear_request
+mujhe taxi bulwa dein,unclear_request
+ruko ruko,unclear_request
+thehriye zara,unclear_request
+wo matlab mera kehna tha,unclear_request
+اچھا وہ کیا تھا,unclear_request
+ایک لمحہ,unclear_request
+ایک منٹ,unclear_request
+بھول گیا کیا کہنا تھا,unclear_request
+تھوڑا مشکل ہے بتانا,unclear_request
+ذرا رکیں,unclear_request
+ذرا رکیے,unclear_request
+ذرا ٹھہریں,unclear_request
+رکیں ذرا سوچ لوں,unclear_request
+سوچنے دیں ذرا,unclear_request
+مجھے ٹیکسی چاہیے,unclear_request
+مطلب، بات یہ ہے,unclear_request
+پتہ نہیں,unclear_request
+پتہ نہیں کیا کہوں,unclear_request
+چھوڑیں کوئی بات نہیں,unclear_request
+کرکٹ کا سکور کیا ہے,unclear_request
+کیسے بتاؤں,unclear_request
+ہممم,unclear_request

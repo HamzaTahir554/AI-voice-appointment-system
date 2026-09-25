@@ -1,0 +1,1501 @@
+user_input,intent,assistant_response,Urdu_Query,Urdu_Response
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+Move my appointment to Wednesday at 10 AM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو بدھ کو صبح 10 بجے منتقل کریں۔,reschedule_appointment
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+I want to book an appointment with Dr Ahmed,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Move my appointment to Thursday at 10 AM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو جمعرات کو صبح 10 بجے منتقل کریں۔,reschedule_appointment
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+I want to book an appointment with Dr Ahmed,book_appointment,"Dr. Ahmed Khan is available, appointment confirmed.",میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Move my appointment to Thursday at 10 AM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو جمعرات کو صبح 10 بجے منتقل کریں۔,reschedule_appointment
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Book my appointment with the doctor on Tuesday at 2 PM,book_appointment,"Sorry, no slots available.",منگل کو دوپہر 2 بجے ڈاکٹر کے ساتھ میری اپائنٹمنٹ بک کرو,book_appointment
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+Move my appointment to Monday at 4 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو پیر کو شام 4 بجے منتقل کریں۔,reschedule_appointment
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Book my appointment with the doctor on Thursday at 12 PM,book_appointment,"Sorry, no slots available.",جمعرات کو رات 12 بجے ڈاکٹر کے ساتھ میری اپائنٹمنٹ بک کرو,book_appointment
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+Move my appointment to Friday at 10 AM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو جمعہ کو صبح 10 بجے منتقل کریں۔,reschedule_appointment
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Book my appointment with the doctor on Thursday at 12 PM,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,جمعرات کو رات 12 بجے ڈاکٹر کے ساتھ میری اپائنٹمنٹ بک کرو,book_appointment
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Is Dr Ahmed available on Friday?,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,کیا ڈاکٹر احمد جمعہ کو دستیاب ہیں؟,book_appointment
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Move my appointment to Thursday at 2 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو جمعرات کو دوپہر 2 بجے منتقل کریں۔,reschedule_appointment
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+Book my appointment with the doctor on Tuesday at 4 PM,book_appointment,"Dr. Ahmed Khan is available, appointment confirmed.",منگل کو شام 4 بجے ڈاکٹر کے ساتھ میری اپائنٹمنٹ بک کرو,book_appointment
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+I want to book an appointment with Dr Ahmed,book_appointment,"Sorry, no slots available.",میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Move my appointment to Wednesday at 2 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ بدھ کو دوپہر 2 بجے منتقل کریں۔,reschedule_appointment
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+Move my appointment to Monday at 10 AM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو پیر کو صبح 10 بجے منتقل کریں۔,reschedule_appointment
+Is Dr Ahmed available on Wednesday?,book_appointment,"Dr. Ahmed Khan is available, appointment confirmed.",کیا ڈاکٹر احمد بدھ کو دستیاب ہیں؟,book_appointment
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+I want to book an appointment with Dr Ahmed,book_appointment,"Dr. Ahmed Khan is available, appointment confirmed.",میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+Move my appointment to Tuesday at 2 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ منگل کو دوپہر 2 بجے منتقل کر دیں۔,reschedule_appointment
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Move my appointment to Monday at 10 AM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو پیر کو صبح 10 بجے منتقل کریں۔,reschedule_appointment
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Is Dr Ahmed available on Tuesday?,book_appointment,"Dr. Ahmed Khan is available, appointment confirmed.",کیا ڈاکٹر احمد منگل کو دستیاب ہیں؟,book_appointment
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+Is Dr Ahmed available on Tuesday?,book_appointment,"Dr. Ahmed Khan is available, appointment confirmed.",کیا ڈاکٹر احمد منگل کو دستیاب ہیں؟,book_appointment
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+I want to book an appointment with Dr Ahmed,book_appointment,"Sorry, no slots available.",میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+Move my appointment to Thursday at 4 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ جمعرات کو شام 4 بجے منتقل کریں۔,reschedule_appointment
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Book my appointment with the doctor on Monday at 12 PM,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,پیر کو رات 12 بجے ڈاکٹر کے ساتھ میری اپائنٹمنٹ بک کرو,book_appointment
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+Move my appointment to Tuesday at 4 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ منگل کو شام 4 بجے منتقل کریں۔,reschedule_appointment
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Is Dr Ahmed available on Monday?,book_appointment,"Dr. Ahmed Khan is available, appointment confirmed.",کیا ڈاکٹر احمد پیر کو دستیاب ہیں؟,book_appointment
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+Move my appointment to Wednesday at 10 AM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو بدھ کو صبح 10 بجے منتقل کریں۔,reschedule_appointment
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Move my appointment to Thursday at 2 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو جمعرات کو دوپہر 2 بجے منتقل کریں۔,reschedule_appointment
+Is Dr Ahmed available on Friday?,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,کیا ڈاکٹر احمد جمعہ کو دستیاب ہیں؟,book_appointment
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Book my appointment with the doctor on Thursday at 2 PM,book_appointment,"Dr. Ahmed Khan is available, appointment confirmed.",جمعرات کو دوپہر 2 بجے ڈاکٹر کے ساتھ میری اپائنٹمنٹ بک کرو,book_appointment
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Book my appointment with the doctor on Wednesday at 12 PM,book_appointment,"Sorry, no slots available.",بدھ کو رات 12 بجے ڈاکٹر کے ساتھ میری اپائنٹمنٹ بک کرو,book_appointment
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Book my appointment with the doctor on Thursday at 4 PM,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,جمعرات کو شام 4 بجے ڈاکٹر کے ساتھ میری اپائنٹمنٹ بک کرو,book_appointment
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+Is Dr Ahmed available on Monday?,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,کیا ڈاکٹر احمد پیر کو دستیاب ہیں؟,book_appointment
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Move my appointment to Tuesday at 10 AM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ منگل کو صبح 10 بجے منتقل کریں۔,reschedule_appointment
+Book my appointment with the doctor on Thursday at 4 PM,book_appointment,"Dr. Ahmed Khan is available, appointment confirmed.",جمعرات کو شام 4 بجے ڈاکٹر کے ساتھ میری اپائنٹمنٹ بک کرو,book_appointment
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+I want to book an appointment with Dr Ahmed,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Move my appointment to Monday at 12 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو پیر کو رات 12 بجے منتقل کریں۔,reschedule_appointment
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Move my appointment to Wednesday at 12 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ بدھ کو رات 12 بجے منتقل کریں۔,reschedule_appointment
+I want to book an appointment with Dr Ahmed,book_appointment,"Dr. Ahmed Khan is available, appointment confirmed.",میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+I want to book an appointment with Dr Ahmed,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+Move my appointment to Monday at 4 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو پیر کو شام 4 بجے منتقل کریں۔,reschedule_appointment
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Move my appointment to Tuesday at 2 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ منگل کو دوپہر 2 بجے منتقل کر دیں۔,reschedule_appointment
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Book my appointment with the doctor on Wednesday at 12 PM,book_appointment,"Sorry, no slots available.",بدھ کو رات 12 بجے ڈاکٹر کے ساتھ میری اپائنٹمنٹ بک کرو,book_appointment
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+I want to book an appointment with Dr Ahmed,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Is Dr Ahmed available on Thursday?,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,کیا ڈاکٹر احمد جمعرات کو دستیاب ہیں؟,book_appointment
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+I want to book an appointment with Dr Ahmed,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+I want to book an appointment with Dr Ahmed,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Move my appointment to Monday at 12 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو پیر کو رات 12 بجے منتقل کریں۔,reschedule_appointment
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+I want to book an appointment with Dr Ahmed,book_appointment,"Sorry, no slots available.",میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+Move my appointment to Friday at 2 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو جمعہ کو دوپہر 2 بجے منتقل کریں۔,reschedule_appointment
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+I want to book an appointment with Dr Ahmed,book_appointment,"Dr. Ahmed Khan is available, appointment confirmed.",میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Book my appointment with the doctor on Wednesday at 12 PM,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,بدھ کو رات 12 بجے ڈاکٹر کے ساتھ میری اپائنٹمنٹ بک کرو,book_appointment
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Move my appointment to Thursday at 10 AM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو جمعرات کو صبح 10 بجے منتقل کریں۔,reschedule_appointment
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+Move my appointment to Tuesday at 12 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ منگل کو رات 12 بجے منتقل کریں۔,reschedule_appointment
+I want to book an appointment with Dr Ahmed,book_appointment,"Sorry, no slots available.",میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Is Dr Ahmed available on Thursday?,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,کیا ڈاکٹر احمد جمعرات کو دستیاب ہیں؟,book_appointment
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Is Dr Ahmed available on Wednesday?,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,کیا ڈاکٹر احمد بدھ کو دستیاب ہیں؟,book_appointment
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+Move my appointment to Friday at 12 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو جمعہ کو رات 12 بجے منتقل کریں۔,reschedule_appointment
+I want to book an appointment with Dr Ahmed,book_appointment,"Dr. Ahmed Khan is available, appointment confirmed.",میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+Book my appointment with the doctor on Friday at 10 AM,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,جمعہ کو صبح 10 بجے ڈاکٹر کے ساتھ میری اپائنٹمنٹ بک کرو,book_appointment
+I want to book an appointment with Dr Ahmed,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Move my appointment to Tuesday at 12 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ منگل کو رات 12 بجے منتقل کریں۔,reschedule_appointment
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+Book my appointment with the doctor on Monday at 4 PM,book_appointment,"Dr. Ahmed Khan is available, appointment confirmed.",پیر کو شام 4 بجے ڈاکٹر کے ساتھ میری اپائنٹمنٹ بک کرو,book_appointment
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Move my appointment to Tuesday at 4 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ منگل کو شام 4 بجے منتقل کریں۔,reschedule_appointment
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+I want to book an appointment with Dr Ahmed,book_appointment,"Sorry, no slots available.",میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Move my appointment to Friday at 4 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو جمعہ کو شام 4 بجے منتقل کریں۔,reschedule_appointment
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+Move my appointment to Monday at 4 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو پیر کو شام 4 بجے منتقل کریں۔,reschedule_appointment
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+I want to book an appointment with Dr Ahmed,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+Move my appointment to Tuesday at 2 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ منگل کو دوپہر 2 بجے منتقل کر دیں۔,reschedule_appointment
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+Is Dr Ahmed available on Monday?,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,کیا ڈاکٹر احمد پیر کو دستیاب ہیں؟,book_appointment
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+Move my appointment to Tuesday at 4 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ منگل کو شام 4 بجے منتقل کریں۔,reschedule_appointment
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+I want to book an appointment with Dr Ahmed,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+I want to book an appointment with Dr Ahmed,book_appointment,"Sorry, no slots available.",میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Book my appointment with the doctor on Friday at 12 PM,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,جمعہ کو رات 12 بجے ڈاکٹر کے ساتھ میری اپائنٹمنٹ بک کرو,book_appointment
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+I want to book an appointment with Dr Ahmed,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Move my appointment to Monday at 2 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو پیر کو دوپہر 2 بجے منتقل کریں۔,reschedule_appointment
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Move my appointment to Monday at 12 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو پیر کو رات 12 بجے منتقل کریں۔,reschedule_appointment
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+Move my appointment to Wednesday at 2 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ بدھ کو دوپہر 2 بجے منتقل کریں۔,reschedule_appointment
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Move my appointment to Monday at 10 AM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو پیر کو صبح 10 بجے منتقل کریں۔,reschedule_appointment
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+Is Dr Ahmed available on Tuesday?,book_appointment,"Sorry, no slots available.",کیا ڈاکٹر احمد منگل کو دستیاب ہیں؟,book_appointment
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Is Dr Ahmed available on Wednesday?,book_appointment,"Sorry, no slots available.",کیا ڈاکٹر احمد بدھ کو دستیاب ہیں؟,book_appointment
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+I want to book an appointment with Dr Ahmed,book_appointment,"Dr. Ahmed Khan is available, appointment confirmed.",میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+I want to book an appointment with Dr Ahmed,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Is Dr Ahmed available on Thursday?,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,کیا ڈاکٹر احمد جمعرات کو دستیاب ہیں؟,book_appointment
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+I want to book an appointment with Dr Ahmed,book_appointment,"Sorry, no slots available.",میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Move my appointment to Monday at 12 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو پیر کو رات 12 بجے منتقل کریں۔,reschedule_appointment
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Move my appointment to Monday at 4 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو پیر کو شام 4 بجے منتقل کریں۔,reschedule_appointment
+Move my appointment to Wednesday at 10 AM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو بدھ کو صبح 10 بجے منتقل کریں۔,reschedule_appointment
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Move my appointment to Wednesday at 4 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ بدھ کو شام 4 بجے منتقل کر دیں۔,reschedule_appointment
+Book my appointment with the doctor on Thursday at 10 AM,book_appointment,"Sorry, no slots available.",جمعرات کو صبح 10 بجے ڈاکٹر کے ساتھ میری اپائنٹمنٹ بک کرو,book_appointment
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Book my appointment with the doctor on Wednesday at 10 AM,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,بدھ کو صبح 10 بجے ڈاکٹر کے ساتھ میری اپائنٹمنٹ بک کرو,book_appointment
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Is Dr Ahmed available on Monday?,book_appointment,"Dr. Ahmed Khan is available, appointment confirmed.",کیا ڈاکٹر احمد پیر کو دستیاب ہیں؟,book_appointment
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+I want to book an appointment with Dr Ahmed,book_appointment,"Dr. Ahmed Khan is available, appointment confirmed.",میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Move my appointment to Friday at 4 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو جمعہ کو شام 4 بجے منتقل کریں۔,reschedule_appointment
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Move my appointment to Wednesday at 12 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ بدھ کو رات 12 بجے منتقل کریں۔,reschedule_appointment
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+Is Dr Ahmed available on Tuesday?,book_appointment,"Dr. Ahmed Khan is available, appointment confirmed.",کیا ڈاکٹر احمد منگل کو دستیاب ہیں؟,book_appointment
+Is Dr Ahmed available on Tuesday?,book_appointment,"Sorry, no slots available.",کیا ڈاکٹر احمد منگل کو دستیاب ہیں؟,book_appointment
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+I want to book an appointment with Dr Ahmed,book_appointment,"Sorry, no slots available.",میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Is Dr Ahmed available on Friday?,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,کیا ڈاکٹر احمد جمعہ کو دستیاب ہیں؟,book_appointment
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+Is Dr Ahmed available on Wednesday?,book_appointment,"Dr. Ahmed Khan is available, appointment confirmed.",کیا ڈاکٹر احمد بدھ کو دستیاب ہیں؟,book_appointment
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Move my appointment to Thursday at 2 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو جمعرات کو دوپہر 2 بجے منتقل کریں۔,reschedule_appointment
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Is Dr Ahmed available on Wednesday?,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,کیا ڈاکٹر احمد بدھ کو دستیاب ہیں؟,book_appointment
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+Move my appointment to Friday at 2 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو جمعہ کو دوپہر 2 بجے منتقل کریں۔,reschedule_appointment
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Move my appointment to Monday at 10 AM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو پیر کو صبح 10 بجے منتقل کریں۔,reschedule_appointment
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Is Dr Ahmed available on Monday?,book_appointment,"Dr. Ahmed Khan is available, appointment confirmed.",کیا ڈاکٹر احمد پیر کو دستیاب ہیں؟,book_appointment
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+Move my appointment to Thursday at 4 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ جمعرات کو شام 4 بجے منتقل کریں۔,reschedule_appointment
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+Move my appointment to Wednesday at 12 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ بدھ کو رات 12 بجے منتقل کریں۔,reschedule_appointment
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+Is Dr Ahmed available on Tuesday?,book_appointment,"Sorry, no slots available.",کیا ڈاکٹر احمد منگل کو دستیاب ہیں؟,book_appointment
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+I want to book an appointment with Dr Ahmed,book_appointment,"Sorry, no slots available.",میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Move my appointment to Thursday at 2 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو جمعرات کو دوپہر 2 بجے منتقل کریں۔,reschedule_appointment
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Move my appointment to Monday at 12 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو پیر کو رات 12 بجے منتقل کریں۔,reschedule_appointment
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+Is Dr Ahmed available on Wednesday?,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,کیا ڈاکٹر احمد بدھ کو دستیاب ہیں؟,book_appointment
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Move my appointment to Wednesday at 4 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ بدھ کو شام 4 بجے منتقل کر دیں۔,reschedule_appointment
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Is Dr Ahmed available on Tuesday?,book_appointment,"Dr. Ahmed Khan is available, appointment confirmed.",کیا ڈاکٹر احمد منگل کو دستیاب ہیں؟,book_appointment
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Book my appointment with the doctor on Wednesday at 4 PM,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,بدھ کو شام 4 بجے ڈاکٹر کے ساتھ میری اپائنٹمنٹ بک کرو,book_appointment
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Book my appointment with the doctor on Monday at 10 AM,book_appointment,"Dr. Ahmed Khan is available, appointment confirmed.",پیر کو صبح 10 بجے ڈاکٹر کے ساتھ میری اپائنٹمنٹ بک کرو,book_appointment
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Move my appointment to Tuesday at 12 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ منگل کو رات 12 بجے منتقل کریں۔,reschedule_appointment
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Move my appointment to Tuesday at 10 AM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ منگل کو صبح 10 بجے منتقل کریں۔,reschedule_appointment
+Move my appointment to Monday at 4 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو پیر کو شام 4 بجے منتقل کریں۔,reschedule_appointment
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Is Dr Ahmed available on Wednesday?,book_appointment,"Sorry, no slots available.",کیا ڈاکٹر احمد بدھ کو دستیاب ہیں؟,book_appointment
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Move my appointment to Tuesday at 12 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ منگل کو رات 12 بجے منتقل کریں۔,reschedule_appointment
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+I want to book an appointment with Dr Ahmed,book_appointment,"Sorry, no slots available.",میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+Is Dr Ahmed available on Friday?,book_appointment,"Dr. Ahmed Khan is available, appointment confirmed.",کیا ڈاکٹر احمد جمعہ کو دستیاب ہیں؟,book_appointment
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+I want to book an appointment with Dr Ahmed,book_appointment,"Sorry, no slots available.",میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+I want to book an appointment with Dr Ahmed,book_appointment,"Sorry, no slots available.",میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+Book my appointment with the doctor on Wednesday at 4 PM,book_appointment,"Sorry, no slots available.",بدھ کو شام 4 بجے ڈاکٹر کے ساتھ میری اپائنٹمنٹ بک کرو,book_appointment
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+Is Dr Ahmed available on Monday?,book_appointment,"Sorry, no slots available.",کیا ڈاکٹر احمد پیر کو دستیاب ہیں؟,book_appointment
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+I want to book an appointment with Dr Ahmed,book_appointment,"Sorry, no slots available.",میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+Is Dr Ahmed available on Tuesday?,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,کیا ڈاکٹر احمد منگل کو دستیاب ہیں؟,book_appointment
+Is Dr Ahmed available on Wednesday?,book_appointment,"Dr. Ahmed Khan is available, appointment confirmed.",کیا ڈاکٹر احمد بدھ کو دستیاب ہیں؟,book_appointment
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+Book my appointment with the doctor on Monday at 2 PM,book_appointment,"Sorry, no slots available.",پیر کو دوپہر 2 بجے ڈاکٹر کے ساتھ میری اپائنٹمنٹ بک کرو,book_appointment
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+I want to book an appointment with Dr Ahmed,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+I want to book an appointment with Dr Ahmed,book_appointment,"Sorry, no slots available.",میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Move my appointment to Thursday at 10 AM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو جمعرات کو صبح 10 بجے منتقل کریں۔,reschedule_appointment
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Is Dr Ahmed available on Monday?,book_appointment,"Sorry, no slots available.",کیا ڈاکٹر احمد پیر کو دستیاب ہیں؟,book_appointment
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Is Dr Ahmed available on Tuesday?,book_appointment,"Sorry, no slots available.",کیا ڈاکٹر احمد منگل کو دستیاب ہیں؟,book_appointment
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+I want to book an appointment with Dr Ahmed,book_appointment,"Sorry, no slots available.",میں ڈاکٹر احمد کے ساتھ ملاقات کا وقت بُک کرنا چاہتا ہوں۔,book_appointment
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+Move my appointment to Friday at 2 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو جمعہ کو دوپہر 2 بجے منتقل کریں۔,reschedule_appointment
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+Is Dr Ahmed available on Wednesday?,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,کیا ڈاکٹر احمد بدھ کو دستیاب ہیں؟,book_appointment
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+Move my appointment to Friday at 10 AM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو جمعہ کو صبح 10 بجے منتقل کریں۔,reschedule_appointment
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Book my appointment with the doctor on Tuesday at 2 PM,book_appointment,"Dr. Ahmed Khan is available, appointment confirmed.",منگل کو دوپہر 2 بجے ڈاکٹر کے ساتھ میری اپائنٹمنٹ بک کرو,book_appointment
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+Move my appointment to Monday at 10 AM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو پیر کو صبح 10 بجے منتقل کریں۔,reschedule_appointment
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+"I can't come, cancel my booking",cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,میں نہیں آ سکتا، اپنی بکنگ منسوخ کر دو,منسوخ_اپائنٹمنٹ
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Patient is critical,emergency,Please go to nearest hospital immediately or call emergency services.,مریض کی حالت نازک ہے۔,ہنگامی
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+Book my appointment with the doctor on Tuesday at 2 PM,book_appointment,"Sorry, no slots available.",منگل کو دوپہر 2 بجے ڈاکٹر کے ساتھ میری اپائنٹمنٹ بک کرو,book_appointment
+Is he available today?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,کیا وہ آج دستیاب ہے؟,ask_availability
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+What is Dr Ahmed fee?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,ڈاکٹر احمد کی فیس کیا ہے؟,ڈاکٹر_فیس
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+Where is the clinic?,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کہاں ہے؟,کلینک_پتہ
+This is an emergency!,emergency,Please go to nearest hospital immediately or call emergency services.,یہ ایک ہنگامی صورتحال ہے!,ہنگامی
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+Move my appointment to Tuesday at 12 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ منگل کو رات 12 بجے منتقل کریں۔,reschedule_appointment
+Is Dr Ahmed available on Tuesday?,book_appointment,Your appointment with Dr. Ahmed Khan is booked.,کیا ڈاکٹر احمد منگل کو دستیاب ہیں؟,book_appointment
+Next available slot?,ask_availability,Dr. Ahmed Khan next available slot is tomorrow at 10 AM.,اگلا دستیاب سلاٹ؟,ask_availability
+Move my appointment to Wednesday at 10 AM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو بدھ کو صبح 10 بجے منتقل کریں۔,reschedule_appointment
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+Move my appointment to Thursday at 2 PM,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,میری اپوائنٹمنٹ کو جمعرات کو دوپہر 2 بجے منتقل کریں۔,reschedule_appointment
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Clinic address please,clinic_address,"The clinic is located at City Health Clinic, Main Road.",کلینک کا پتہ پلیز,کلینک_پتہ
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+Bye,goodbye,Goodbye! Take care.,الوداع,الوداع
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+What is Dr Ahmed qualification?,doctor_qualification,"Dr. Ahmed Khan is MBBS, FCPS.",ڈاکٹر احمد کی اہلیت کیا ہے؟,ڈاکٹر_قابلیت
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Thanks,goodbye,Goodbye! Take care.,شکریہ,الوداع
+How many years of experience does he have?,doctor_experience,Dr. Ahmed Khan has 10 years experience.,اس کے پاس کتنے سال کا تجربہ ہے؟,ڈاکٹر_تجربہ
+How much does he charge?,doctor_fee,The fee of Dr. Ahmed Khan is 2000 PKR.,وہ کتنا چارج کرتا ہے؟,ڈاکٹر_فیس
+Assalamualaikum,greeting,Hello! How can I assist you regarding Dr Ahmed?,السلام علیکم,سلام
+Cancel my appointment with Dr Ahmed,cancel_appointment,Your appointment with Dr. Ahmed Khan is cancelled.,ڈاکٹر احمد کے ساتھ میری ملاقات منسوخ کر دیں۔,منسوخ_اپائنٹمنٹ
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+When is the doctor available?,clinic_timing,The clinic timing is 9 AM to 5 PM.,ڈاکٹر کب دستیاب ہے؟,کلینک_ٹائمنگ
+Hello,greeting,Hello! How can I assist you regarding Dr Ahmed?,ہیلو,سلام
+Tell me about the doctor,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر کے بارے میں بتائیں,ڈاکٹر_معلومات
+What are the clinic timings?,clinic_timing,The clinic timing is 9 AM to 5 PM.,کلینک کے اوقات کیا ہیں؟,کلینک_ٹائمنگ
+Who is Dr Ahmed?,doctor_info,Dr. Ahmed Khan is a qualified doctor.,ڈاکٹر احمد کون ہیں؟,ڈاکٹر_معلومات
+Reschedule my appointment with Dr Ahmed,reschedule_appointment,Your appointment with Dr. Ahmed Khan is rescheduled.,ڈاکٹر احمد کے ساتھ میری ملاقات کا وقت طے کریں۔,reschedule_appointment
