@@ -1,0 +1,421 @@
+/* ==========================================================================
+   admin.css - the administration screens.
+
+   Same components as the rest of the dashboard (cards, tables, badges); this
+   file only adds the pieces the doctor side has no use for: the register
+   table, the counters on the overview, the activity list, and the tabbed
+   doctor dialog with its photo picker and week editor.
+   ========================================================================== */
+
+/* ----------------------------------------------------------- overview --- */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+.grid-2-wide {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(280px, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+.stat { min-width: 92px; }
+.stat-value {
+  display: block;
+  font-size: 1.625rem;
+  font-weight: 600;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+.stat-label {
+  display: block;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+.stat-note {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-subtle);
+  margin-top: 2px;
+}
+
+.activity { list-style: none; display: grid; gap: 14px; }
+.activity li { display: flex; gap: 10px; align-items: flex-start; font-size: 0.875rem; }
+.activity-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  margin-top: 7px;
+  flex: none;
+  background: var(--text-subtle);
+}
+.activity-doctor_added { background: var(--success); }
+.activity-doctor_updated { background: var(--info); }
+.activity-patient_notified { background: var(--warning); }
+
+/* ------------------------------------------------- toolbars in a head --- */
+/* A card head is a flex row, so a toolbar dropped into it has to be told to
+   take the width - otherwise every filter wraps onto its own line. */
+#doctors-toolbar,
+#appointments-toolbar { flex: 1; }
+#doctors-toolbar .toolbar .input,
+#appointments-toolbar .toolbar .input { width: auto; }
+#doctors-toolbar .search,
+#appointments-toolbar .search { flex: 1 1 240px; }
+#doctors-toolbar .search .input,
+#appointments-toolbar .search .input { width: 100%; }
+#doctors-toolbar select.input,
+#appointments-toolbar select.input { min-width: 150px; }
+#appointments-toolbar .input[type="date"] { min-width: 150px; }
+
+/* ------------------------------------------------------ doctor table --- */
+/* Seven columns need room, or every word wraps onto its own line. Below
+   1000px the table becomes one block per doctor instead (see the end of this
+   file), so it never has to be read through a horizontal scrollbar. */
+.table-doctors { min-width: 880px; table-layout: fixed; }
+.table-doctors td { vertical-align: top; padding-top: 11px; padding-bottom: 11px; }
+/* The seven widths add up to exactly 100%, or a fixed layout overflows. */
+.table-doctors th:nth-child(1), .table-doctors td:nth-child(1) { width: 18%; }
+.table-doctors th:nth-child(2), .table-doctors td:nth-child(2) { width: 14%; }
+.table-doctors th:nth-child(3), .table-doctors td:nth-child(3) { width: 19%; }
+.table-doctors th:nth-child(4), .table-doctors td:nth-child(4) { width: 13%; white-space: nowrap; }
+.table-doctors th:nth-child(5), .table-doctors td:nth-child(5) { width: 9%; }
+.table-doctors th:nth-child(6), .table-doctors td:nth-child(6) { width: 14%; }
+.table-doctors th:nth-child(7), .table-doctors td:nth-child(7) { width: 13%; padding-left: 4px; }
+.table-doctors td:nth-child(1) .link-btn { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.table-doctors .cell-right { text-align: right; }
+.table-doctors td .muted.small {
+  display: block;
+  line-height: 1.35;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.cell-person { display: flex; align-items: center; gap: 10px; }
+.cell-person .link-btn { font-weight: 600; display: block; text-align: left; text-decoration: none; }
+.cell-person .link-btn:hover { text-decoration: underline; }
+.cell-person span { display: block; }
+
+.row-actions {
+  display: inline-flex;
+  gap: 2px;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  white-space: nowrap;
+}
+.row-actions .btn-icon { padding: 6px; color: var(--text-muted); }
+.row-actions .btn-icon:hover { color: var(--text); background: var(--surface-3); }
+.row-actions .is-danger { color: var(--danger); }
+.row-actions .is-danger:hover { background: var(--danger-bg); }
+
+tr.row-muted td:not(.cell-right) { opacity: 0.68; }
+
+/* --------------------------------------------------- doctor dialog ----- */
+.tabs {
+  display: flex;
+  gap: 2px;
+  border-bottom: 1px solid var(--border);
+  flex: 1;
+}
+.tab {
+  padding: 8px 12px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+.tab:hover { color: var(--text); }
+.tab.is-active { color: var(--brand); border-bottom-color: var(--brand); font-weight: 600; }
+.tab-panel { padding-top: 16px; }
+
+.detail-identity { display: flex; gap: 14px; align-items: center; }
+.detail-identity h4 { font-size: 1.0625rem; }
+
+.stack-16 { display: grid; gap: 16px; }
+.stack-16 h4 { font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.04em;
+               color: var(--text-subtle); margin-bottom: 8px; }
+
+.plain-list { list-style: none; display: grid; }
+.week-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.875rem;
+}
+.week-line:last-child { border-bottom: 0; }
+.week-line strong { font-weight: 500; }
+
+.mini-stats { display: flex; gap: 10px; }
+.mini-stat {
+  flex: 1;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  padding: 10px 12px;
+  background: var(--surface-2);
+}
+.mini-stat-value { display: block; font-size: 1.25rem; font-weight: 600; line-height: 1.2; }
+.mini-stat-label { display: block; font-size: 0.75rem; color: var(--text-muted); }
+
+/* ---------------------------------------------------------- the form --- */
+.form-sections { display: grid; gap: 22px; }
+.form-section > h4 {
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-subtle);
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px 16px;
+}
+
+.photo-picker { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 16px; }
+.photo-picker-actions { flex: 1; min-width: 0; }
+.photo-picker .hint { margin-top: 6px; }
+
+.week-editor { border: 1px solid var(--border); border-radius: var(--r-sm); }
+.week-editor .day-row { padding: 10px 14px; grid-template-columns: 140px 1fr; }
+.week-editor .day-row:last-child { border-bottom: 0; }
+
+/* -------------------------------------------------- settings helpers --- */
+.pref-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.pref-row:last-of-type { border-bottom: 0; }
+.pref-row p { margin-top: 2px; }
+
+/* ----------------------------------------------- leave: what it costs --- */
+/* Shown before the dates are blocked, so nobody cancels five appointments by
+   accident. */
+.impact {
+  border: 1px solid var(--warning);
+  border-radius: var(--r-sm);
+  background: var(--warning-bg);
+  padding: 10px 12px;
+}
+.impact .muted, .impact .week-line { color: inherit; }
+.impact-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  color: var(--warning);
+  margin-bottom: 6px;
+}
+.impact .plain-list { max-height: 148px; overflow-y: auto; }
+.impact .week-line { border-bottom-color: rgba(0, 0, 0, 0.08); }
+
+/* --------------------------------------------- free slots when moving --- */
+.slot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+  gap: 6px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+.slot {
+  padding: 7px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  background: var(--surface);
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+}
+.slot:hover { border-color: var(--border-strong); background: var(--surface-3); }
+.slot.is-chosen {
+  border-color: var(--brand);
+  background: var(--brand-soft);
+  color: var(--brand);
+  font-weight: 600;
+}
+.slot-wrap { min-height: 60px; }
+
+/* =========================================================== statistics ===
+   Shared by the doctor's own figures and the clinic-wide ones. Plain
+   numbers, one bar, no chart library. */
+.period-picker { display: grid; gap: 8px; justify-items: end; }
+.period-custom .input { width: auto; }
+
+.figures {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 32px;
+  align-items: flex-end;
+}
+.figure { min-width: 84px; }
+.figure-value {
+  display: block;
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+.figure-lead .figure-value { font-size: 1.875rem; }
+.figure-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin-top: 3px;
+}
+.dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+.dot-confirmed { background: var(--success); }
+.dot-pending { background: var(--warning); }
+.dot-rescheduled { background: var(--info); }
+.dot-completed { background: var(--neutral); }
+.dot-cancelled { background: var(--danger); }
+
+.status-bar-wrap { margin-top: 16px; display: grid; gap: 6px; }
+.status-bar {
+  display: flex;
+  height: 8px;
+  border-radius: var(--r-pill);
+  overflow: hidden;
+  background: var(--surface-3);
+}
+.status-slice { display: block; height: 100%; }
+.status-slice-confirmed { background: var(--success); }
+.status-slice-pending { background: var(--warning); }
+.status-slice-rescheduled { background: var(--info); }
+.status-slice-completed { background: var(--neutral); }
+.status-slice-cancelled { background: var(--danger); }
+
+.stats-foot {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+.today-line { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+
+.table-stats .num { text-align: right; font-variant-numeric: tabular-nums; }
+.table-stats tbody tr.is-chosen { background: var(--brand-soft); }
+.table-stats tbody tr.is-chosen td { color: var(--text); }
+
+@media (max-width: 768px) {
+  .period-picker { justify-items: stretch; }
+  .figures { gap: 10px 20px; }
+  .figure { min-width: 70px; }
+  .figure-lead .figure-value { font-size: 1.625rem; }
+  .table-stats .num { text-align: right; }
+  .stats-foot { flex-direction: column; gap: 6px; }
+}
+
+/* ------------------------------------------ information, not a field --- */
+.readonly-block {
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  background: var(--surface-2);
+  padding: 14px 16px;
+}
+.readonly-block .hint { margin-top: 10px; }
+
+.mb-8 { margin-bottom: 8px; }
+.hint .icon { vertical-align: -2px; margin-right: 2px; }
+
+/* --------------------------------------------------------- utilities --- */
+.row { display: flex; align-items: center; }
+.row.gap-8 { gap: 8px; }
+.row.space-between { justify-content: space-between; gap: 16px; align-items: flex-end; }
+.stack-12 { display: grid; gap: 12px; }
+.mt-8 { margin-top: 8px; }
+.mt-12 { margin-top: 12px; }
+
+/* ------------------------------------------------------------ narrow --- */
+@media (max-width: 1100px) {
+  .grid-2-wide { grid-template-columns: 1fr; }
+}
+
+/* Between 768px and 1000px the shared card layout has not kicked in yet, but
+   seven columns are already too many: give the register the same treatment
+   early. Below 768px responsive.css does this for every table. */
+@media (max-width: 1000px) {
+  .table-doctors { min-width: 0; table-layout: auto; }
+  .table-doctors thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .table-doctors, .table-doctors tbody, .table-doctors tr, .table-doctors td {
+    display: block;
+    width: 100%;
+  }
+  .table-doctors tr {
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    margin: 12px;
+    padding: 6px 0;
+    background: var(--surface);
+  }
+  .table-doctors tbody tr:hover { background: var(--surface); }
+  .table-doctors td {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 9px 14px;
+    border-bottom: 0;
+    text-align: right;
+  }
+  .table-doctors td::before {
+    content: attr(data-label);
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-align: left;
+    flex: none;
+  }
+  .table-doctors th:nth-child(n), .table-doctors td:nth-child(n) { width: auto; }
+  /* The secondary line (address, qualification, "2 upcoming") takes its own
+     line rather than being squeezed next to the main value. */
+  .table-doctors td { flex-wrap: wrap; row-gap: 2px; }
+  .table-doctors td > .muted.small { flex: 0 0 100%; text-align: right; -webkit-line-clamp: 3; }
+  .cell-person { justify-content: flex-end; }
+  .cell-person div { text-align: right; }
+  .row-actions { justify-content: flex-end; }
+
+  /* In a stacked toolbar a flex-basis would become a HEIGHT. */
+  #doctors-toolbar .search,
+  #doctors-toolbar select.input,
+  #appointments-toolbar .search,
+  #appointments-toolbar select.input { flex: 0 0 auto; width: 100%; }
+  #doctors-toolbar .toolbar .input,
+  #appointments-toolbar .toolbar .input { width: 100%; }
+}
+
+@media (max-width: 720px) {
+  .stat-row { gap: 18px; }
+  .stat { min-width: 76px; }
+  .stat-value { font-size: 1.375rem; }
+  .mini-stats { flex-direction: column; }
+  .photo-picker { flex-direction: column; }
+  .detail-identity { flex-direction: column; align-items: flex-start; }
+  .week-editor .day-row { grid-template-columns: 1fr; gap: 8px; }
+}
