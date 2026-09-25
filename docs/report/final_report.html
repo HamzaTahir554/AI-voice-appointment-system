@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AI Voice Appointment System - Final Report</title>
+<style>
+  /* Print layout for headless Chrome: A4, page numbers in the margin box. */
+  @page {
+    size: A4;
+    margin: 22mm 20mm 22mm 20mm;
+    @bottom-center {
+      content: counter(page);
+      font: 9pt "Segoe UI", Arial, sans-serif;
+      color: #6b7280;
+    }
+  }
+  @page :first { @bottom-center { content: none; } }
+
+  :root {
+    --ink: #1c2530;
+    --muted: #5b6770;
+    --line: #d8dde1;
+    --soft: #f3f5f6;
+    --accent: #0f6b7b;
+    --warn: #8a5a00;
+    --warn-bg: #fbf3e2;
+    --bad: #a5272a;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    font: 10.5pt/1.55 "Segoe UI", "Calibri", Arial, sans-serif;
+    color: var(--ink);
+    margin: 0;
+  }
+  h1, h2, h3, h4 { font-weight: 600; line-height: 1.25; color: var(--ink); }
+  h1 { font-size: 20pt; margin: 0 0 6mm; }
+  h2 {
+    font-size: 15pt;
+    margin: 0 0 4mm;
+    padding-bottom: 2mm;
+    border-bottom: 1.5px solid var(--accent);
+    break-before: page;
+  }
+  h3 { font-size: 12pt; margin: 6mm 0 2mm; }
+  h4 { font-size: 10.5pt; margin: 4mm 0 1.5mm; color: var(--muted); }
+  p { margin: 0 0 2.5mm; }
+  ul, ol { margin: 0 0 3mm; padding-left: 6mm; }
+  li { margin-bottom: 1mm; }
+  code, .mono { font: 9pt/1.4 Consolas, "Courier New", monospace; }
+  code { background: var(--soft); padding: 0.2mm 1mm; border-radius: 2px; }
+  pre {
+    font: 8.6pt/1.45 Consolas, "Courier New", monospace;
+    background: var(--soft);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 3mm 4mm;
+    margin: 0 0 3mm;
+    white-space: pre-wrap;
+    break-inside: avoid;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1mm 0 4mm;
+    font-size: 9.4pt;
+    break-inside: auto;
+  }
+  th, td {
+    text-align: left;
+    padding: 1.6mm 2.2mm;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  th { background: var(--soft); font-weight: 600; }
+  tr { break-inside: avoid; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  figure { margin: 2mm 0 5mm; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; border: 1px solid var(--line); }
+  figcaption { font-size: 9pt; color: var(--muted); margin-top: 1.5mm; }
+  .note {
+    border-left: 3px solid var(--accent);
+    background: #eef5f6;
+    padding: 2.5mm 4mm;
+    margin: 2mm 0 4mm;
+    break-inside: avoid;
+  }
+  .status {
+    border-left: 3px solid var(--warn);
+    background: var(--warn-bg);
+    padding: 2.5mm 4mm;
+    margin: 2mm 0 4mm;
+    break-inside: avoid;
+  }
+  .pill {
+    display: inline-block;
+    font-size: 8.5pt;
+    font-weight: 600;
+    padding: 0.3mm 2mm;
+    border-radius: 8px;
+    white-space: nowrap;
+  }
+  .pill.yes { background: #e4f2ea; color: #146c43; }
+  .pill.no { background: #fae7e7; color: var(--bad); }
+  .pill.part { background: var(--warn-bg); color: var(--warn); }
+
+  /* title page */
+  .cover {
+    height: 250mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .cover .kicker { color: var(--accent); font-weight: 600; letter-spacing: 0.08em;
+                   text-transform: uppercase; font-size: 10pt; }
+  .cover h1 { font-size: 30pt; margin: 4mm 0 3mm; }
+  .cover .sub { font-size: 13pt; color: var(--muted); margin-bottom: 18mm; }
+  .cover dl { display: grid; grid-template-columns: 38mm 1fr; gap: 2mm 4mm;
+              font-size: 10.5pt; margin: 0; }
+  .cover dt { color: var(--muted); }
+  .cover dd { margin: 0; }
+
+  .toc ol { list-style: none; padding: 0; columns: 2; column-gap: 10mm; }
+  .toc li { margin: 0 0 1.4mm; break-inside: avoid; }
+  .toc .n { display: inline-block; width: 9mm; color: var(--muted); }
+
+  .diagram { break-inside: avoid; margin: 2mm 0 5mm; }
+  .diagram svg { width: 100%; height: auto; }
+</style>
+</head>
+<body>
+
+<!-- ============================================================== cover -->
+<section class="cover">
+  <div class="kicker">Final Year Project &middot; Final Report</div>
+  <h1>AI Voice Appointment System</h1>
+  <div class="sub">A multilingual conversational assistant that books, changes and
+    cancels doctor appointments, with a doctor dashboard and a clinic
+    administration panel</div>
+  <dl>
+    <dt>Report date</dt><dd>25 September 2026</dd>
+    <dt>Languages served</dt><dd>English, Urdu, Roman Urdu and mixed speech</dd>
+    <dt>Repository</dt><dd>github.com/HamzaTahir554/AI-voice-appointment-system</dd>
+    <dt>Scope of this report</dt><dd>What is implemented in the repository at the date
+      above. Components that were planned but are not implemented are stated
+      as such.</dd>
+  </dl>
+</section>
+
+<!-- ============================================================== contents -->
+<section class="toc">
+  <h2 style="break-before: page">Contents</h2>
+  <ol>
+    <li><span class="n">1</span>Introduction</li>
+    <li><span class="n">2</span>Objectives</li>
+    <li><span class="n">3</span>System Overview</li>
+    <li><span class="n">4</span>System Architecture</li>
+    <li><span class="n">5</span>Intent Detection (mBERT)</li>
+    <li><span class="n">6</span>Dialogue Manager</li>
+    <li><span class="n">7</span>LLM Judge and Response Generator</li>
+    <li><span class="n">8</span>Appointment Backend</li>
+    <li><span class="n">9</span>Firebase / Database</li>
+    <li><span class="n">10</span>Doctor Dashboard</li>
+    <li><span class="n">11</span>SuperAdmin Dashboard</li>
+    <li><span class="n">12</span>Speech-to-Text (STT)</li>
+    <li><span class="n">13</span>Text-to-Speech (TTS)</li>
+    <li><span class="n">14</span>Asterisk / SIP Telephony</li>
+    <li><span class="n">15</span>Testing</li>
+    <li><span class="n">16</span>Security</li>
+    <li><span class="n">17</span>Technologies Used</li>
+    <li><span class="n">18</span>Performance Measurements</li>
+    <li><span class="n">19</span>Limitations and Future Work</li>
+    <li><span class="n">20</span>Conclusion</li>
+    <li><span class="n">A</span>Appendix A &ndash; HTTP API Reference</li>
+    <li><span class="n">B</span>Appendix B &ndash; Configuration Variables</li>
+  </ol>
+
+  <h3>Implementation status at a glance</h3>
+  <table>
+    <tr><th>Component</th><th>Status</th><th>Where</th></tr>
+    <tr><td>Fine-tuned mBERT intent detection (31 intents)</td><td><span class="pill yes">Implemented</span></td><td><code>intent_detection/</code></td></tr>
+    <tr><td>Dialogue Manager</td><td><span class="pill yes">Implemented</span></td><td><code>dialog_manager/</code></td></tr>
+    <tr><td>LLM judge, response generator, hallucination guard (Ollama)</td><td><span class="pill yes">Implemented</span></td><td><code>ollama_judge/</code></td></tr>
+    <tr><td>Appointment Backend and HTTP API</td><td><span class="pill yes">Implemented</span></td><td><code>appointment_backend/</code>, <code>api/</code></td></tr>
+    <tr><td>Firebase Firestore persistence</td><td><span class="pill yes">Implemented</span></td><td><code>firebase/</code></td></tr>
+    <tr><td>Doctor Dashboard</td><td><span class="pill yes">Implemented</span></td><td><code>Dashboard/</code></td></tr>
+    <tr><td>SuperAdmin Dashboard (single clinic)</td><td><span class="pill yes">Implemented</span></td><td><code>Dashboard/</code>, <code>api/admin.py</code></td></tr>
+    <tr><td>Appointment statistics</td><td><span class="pill yes">Implemented</span></td><td><code>appointment_backend/statistics.py</code></td></tr>
+    <tr><td>Dashboard authentication and roles</td><td><span class="pill part">Prototype</span></td><td><code>api/auth.py</code></td></tr>
+    <tr><td>Patient notifications</td><td><span class="pill part">Queued, not delivered</span></td><td><code>firebase/notification_service.py</code></td></tr>
+    <tr><td>Speech-to-Text</td><td><span class="pill no">Not implemented</span></td><td>&mdash;</td></tr>
+    <tr><td>Text-to-Speech</td><td><span class="pill no">Not implemented</span></td><td>&mdash;</td></tr>
+    <tr><td>Asterisk / SIP telephony</td><td><span class="pill no">Not implemented</span></td><td>&mdash;</td></tr>
+  </table>
+</section>
+
+<!-- ============================================================== 1 -->
+<section>
+  <h2>1. Introduction</h2>
+
+  <h3>1.1 Project title</h3>
+  <p><strong>AI Voice Appointment System</strong> &ndash; a multilingual conversational
+    assistant for booking doctor appointments at a clinic in Pakistan.</p>
+
+  <h3>1.2 Background</h3>
+  <p>Most clinics in Pakistan take appointments by telephone. A receptionist answers,
+    checks the doctor's diary by hand or in a spreadsheet, and writes the booking
+    down. Patients speak Urdu, English, or &ndash; very often &ndash; Roman Urdu mixed
+    with English words ("Mujhe Dr Ahmed se kal 4 baje appointment chahiye"). Staff
+    time is limited, calls are missed outside opening hours, and double bookings and
+    lost cancellations are common.</p>
+
+  <h3>1.3 Problem statement</h3>
+  <p>Appointment handling needs to understand what a patient wants in the languages
+    they actually use, apply the clinic's scheduling rules consistently, and keep
+    doctors and clinic staff informed &ndash; without a person having to transcribe
+    every request.</p>
+
+  <h3>1.4 Proposed solution</h3>
+  <p>A conversational pipeline that takes what the patient says, classifies their
+    intent with a fine-tuned multilingual BERT model, runs a stateful dialogue to
+    collect the doctor, date and time, applies the clinic's rules in a dedicated
+    appointment backend, stores everything in Firebase Firestore, and phrases the
+    reply with a local large language model that is prevented from changing any
+    fact. Doctors manage their own day through a web dashboard; a clinic
+    administrator manages the doctors, the clinic and every appointment through a
+    separate administration area.</p>
+
+  <h3>1.5 Motivation</h3>
+  <ul>
+    <li>Serve patients in their own language, including Roman Urdu and code-mixed
+      speech that off-the-shelf English systems handle poorly.</li>
+    <li>Keep the rules deterministic: a language model is good at wording and bad at
+      being trusted with a diary, so the booking logic is ordinary tested code.</li>
+    <li>Give doctors and the clinic an accurate, shared view of the diary, whether an
+      appointment was made through the assistant or on the dashboard.</li>
+  </ul>
+
+  <div class="status"><strong>Scope note.</strong> The design targets telephone
+    calls (Asterisk/SIP, speech recognition and speech synthesis). Those three
+    stages are <strong>not implemented</strong> in this repository. The implemented
+    pipeline takes the patient's words as <em>text</em> and returns the reply as
+    <em>text</em>; Sections 12&ndash;14 describe the exact state of each.</div>
+</section>
+
+<!-- ============================================================== 2 -->
+<section>
+  <h2>2. Objectives</h2>
+  <p>The objectives below are the ones the implemented system meets.</p>
+  <ol>
+    <li><strong>Understand multilingual requests.</strong> Classify a patient's
+      utterance into one of 31 intents in English, Urdu (Arabic script), Roman Urdu
+      or a mixture, using a fine-tuned mBERT model.</li>
+    <li><strong>Hold a real conversation.</strong> Track what has been said across
+      turns, ask only for missing information, confirm before acting, and recover
+      from corrections and unclear input.</li>
+    <li><strong>Enforce clinic rules in one place.</strong> Book, cancel and
+      reschedule only through a backend that validates dates, working hours,
+      doctor availability and double bookings.</li>
+    <li><strong>Persist reliably.</strong> Store patients, doctors, the clinic,
+      schedules, appointments, conversations and notifications in Firebase
+      Firestore, with an in-memory stand-in for offline development and tests.</li>
+    <li><strong>Word replies naturally but safely.</strong> Use a local LLM through
+      Ollama to phrase replies, and reject any wording that contradicts the
+      backend's result.</li>
+    <li><strong>Serve the doctors.</strong> Give each doctor a dashboard for their
+      own appointments, patients, working hours, leave, profile, notifications and
+      statistics.</li>
+    <li><strong>Serve the clinic.</strong> Give a single administrator control of
+      the one clinic, every doctor, their sign-in credentials, their leave, every
+      appointment and clinic-wide statistics.</li>
+    <li><strong>Protect access.</strong> Separate the two roles on the server, keep
+      credentials out of source code and the browser, and hash stored passwords.</li>
+  </ol>
+</section>
+
+<!-- ============================================================== 3 -->
+<section>
+  <h2>3. System Overview</h2>
+  <p>The intended end-to-end flow, and what exists today:</p>
+
+  <div class="diagram">
+  <svg viewBox="0 0 760 330" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial" font-size="12">
+    <defs>
+      <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M0,0 L10,5 L0,10 z" fill="#5b6770"/>
+      </marker>
+    </defs>
+    <!-- row 1: not implemented -->
+    <g>
+      <rect x="10" y="20" width="120" height="46" rx="4" fill="#fff" stroke="#a5272a" stroke-dasharray="5 4"/>
+      <text x="70" y="40" text-anchor="middle" font-weight="600">Patient call</text>
+      <text x="70" y="56" text-anchor="middle" fill="#a5272a" font-size="10">not implemented</text>
+      <rect x="160" y="20" width="120" height="46" rx="4" fill="#fff" stroke="#a5272a" stroke-dasharray="5 4"/>
+      <text x="220" y="40" text-anchor="middle" font-weight="600">Asterisk / SIP</text>
+      <text x="220" y="56" text-anchor="middle" fill="#a5272a" font-size="10">not implemented</text>
+      <rect x="310" y="20" width="120" height="46" rx="4" fill="#fff" stroke="#a5272a" stroke-dasharray="5 4"/>
+      <text x="370" y="40" text-anchor="middle" font-weight="600">Speech-to-Text</text>
+      <text x="370" y="56" text-anchor="middle" fill="#a5272a" font-size="10">not implemented</text>
+      <line x1="130" y1="43" x2="158" y2="43" stroke="#5b6770" marker-end="url(#arrow)"/>
+      <line x1="280" y1="43" x2="308" y2="43" stroke="#5b6770" marker-end="url(#arrow)"/>
+    </g>
+    <!-- text entry point -->
+    <rect x="470" y="20" width="270" height="46" rx="4" fill="#eef5f6" stroke="#0f6b7b"/>
+    <text x="605" y="40" text-anchor="middle" font-weight="600">Text in: /dialog/message, /voice/message</text>
+    <text x="605" y="56" text-anchor="middle" fill="#5b6770" font-size="10">or voice_pipeline.py (typed turns)</text>
+    <line x1="430" y1="43" x2="468" y2="43" stroke="#a5272a" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
+
+    <!-- row 2: implemented core -->
+    <rect x="30" y="120" width="150" height="50" rx="4" fill="#fff" stroke="#0f6b7b" stroke-width="1.5"/>
+    <text x="105" y="141" text-anchor="middle" font-weight="600">mBERT intent</text>
+    <text x="105" y="158" text-anchor="middle" fill="#5b6770" font-size="10">31 intents, confidence</text>
+    <rect x="215" y="120" width="150" height="50" rx="4" fill="#fff" stroke="#0f6b7b" stroke-width="1.5"/>
+    <text x="290" y="141" text-anchor="middle" font-weight="600">Dialogue Manager</text>
+    <text x="290" y="158" text-anchor="middle" fill="#5b6770" font-size="10">state, slots, confirm</text>
+    <rect x="400" y="120" width="160" height="50" rx="4" fill="#fff" stroke="#0f6b7b" stroke-width="1.5"/>
+    <text x="480" y="141" text-anchor="middle" font-weight="600">Appointment Backend</text>
+    <text x="480" y="158" text-anchor="middle" fill="#5b6770" font-size="10">rules, validation</text>
+    <rect x="595" y="120" width="145" height="50" rx="4" fill="#fff" stroke="#0f6b7b" stroke-width="1.5"/>
+    <text x="667" y="141" text-anchor="middle" font-weight="600">Firebase Firestore</text>
+    <text x="667" y="158" text-anchor="middle" fill="#5b6770" font-size="10">10 collections</text>
+    <path d="M605,66 L605,95 L105,95 L105,118" fill="none" stroke="#5b6770" marker-end="url(#arrow)"/>
+    <line x1="180" y1="145" x2="213" y2="145" stroke="#5b6770" marker-end="url(#arrow)"/>
+    <line x1="365" y1="145" x2="398" y2="145" stroke="#5b6770" marker-end="url(#arrow)"/>
+    <line x1="560" y1="145" x2="593" y2="145" stroke="#5b6770" marker-end="url(#arrow)"/>
+
+    <!-- row 3: wording and output -->
+    <rect x="215" y="220" width="220" height="50" rx="4" fill="#fff" stroke="#0f6b7b" stroke-width="1.5"/>
+    <text x="325" y="241" text-anchor="middle" font-weight="600">LLM judge + response validator</text>
+    <text x="325" y="258" text-anchor="middle" fill="#5b6770" font-size="10">Ollama llama3.2, templates as fallback</text>
+    <path d="M480,170 L480,200 L325,200 L325,218" fill="none" stroke="#5b6770" marker-end="url(#arrow)"/>
+    <rect x="470" y="220" width="130" height="50" rx="4" fill="#eef5f6" stroke="#0f6b7b"/>
+    <text x="535" y="241" text-anchor="middle" font-weight="600">Reply text out</text>
+    <text x="535" y="258" text-anchor="middle" fill="#5b6770" font-size="10">JSON response</text>
+    <line x1="435" y1="245" x2="468" y2="245" stroke="#5b6770" marker-end="url(#arrow)"/>
+    <rect x="625" y="220" width="115" height="50" rx="4" fill="#fff" stroke="#a5272a" stroke-dasharray="5 4"/>
+    <text x="682" y="241" text-anchor="middle" font-weight="600">Text-to-Speech</text>
+    <text x="682" y="258" text-anchor="middle" fill="#a5272a" font-size="10">not implemented</text>
+    <line x1="600" y1="245" x2="623" y2="245" stroke="#a5272a" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
+
+    <!-- dashboards -->
+    <rect x="30" y="220" width="150" height="50" rx="4" fill="#fff" stroke="#0f6b7b" stroke-width="1.5"/>
+    <text x="105" y="241" text-anchor="middle" font-weight="600">Web dashboards</text>
+    <text x="105" y="258" text-anchor="middle" fill="#5b6770" font-size="10">doctor + SuperAdmin</text>
+    <path d="M105,218 L105,195 L400,195" fill="none" stroke="#5b6770" stroke-dasharray="2 2"/>
+    <text x="30" y="300" fill="#5b6770" font-size="10.5">Solid border: implemented. Dashed red border: designed but not implemented.</text>
+    <text x="30" y="316" fill="#5b6770" font-size="10.5">The dashboards reach the backend through the same FastAPI service (/dashboard/*, /admin/*).</text>
+  </svg>
+  </div>
+
+  <h3>3.1 One conversation turn, as implemented</h3>
+  <ol>
+    <li>The patient's words arrive as text at <code>POST /dialog/message</code>
+      (or <code>/voice/message</code>, or the interactive <code>voice_pipeline.py</code>).</li>
+    <li>The <strong>intent router</strong> runs the fine-tuned mBERT classifier and
+      returns an intent and a confidence.</li>
+    <li>The <strong>Dialogue Manager</strong> updates the session state, extracts
+      entities (doctor, date, time, appointment ID, patient details), and decides the
+      next action: ask for a missing slot, check availability, ask for confirmation,
+      or act.</li>
+    <li>Only after confirmation does it call the <strong>Appointment Backend</strong>,
+      which validates the request and reads or writes <strong>Firestore</strong>.</li>
+    <li>The backend's result goes to the <strong>Ollama judge</strong>, which phrases
+      a reply in the caller's language. The <strong>response validator</strong>
+      rejects any wording whose times, dates or IDs differ from the result, in which
+      case a deterministic template is used instead.</li>
+    <li>The reply is returned as text, together with the intent, confidence, action
+      and slot state.</li>
+  </ol>
+  <p>Every appointment written this way appears in the doctor's dashboard and the
+    administrator's views, because both read the same Firestore collections through
+    the same backend.</p>
+</section>
+
+<!-- ============================================================== 4 -->
+<section>
+  <h2>4. System Architecture</h2>
+  <p>The system is one Python code base served by a single FastAPI process, plus a
+    static web front end served by that process at <code>/ui</code>. There is one
+    backend: the voice pipeline and both dashboards call the same Appointment
+    Backend and the same Firestore data layer.</p>
+
+  <table>
+    <tr><th>Layer</th><th>Package</th><th>Responsibility</th></tr>
+    <tr><td>Configuration</td><td><code>config.py</code></td><td>Every tunable value, read from environment variables with safe defaults; statuses, actions and collection names.</td></tr>
+    <tr><td>Intent detection</td><td><code>intent_detection/</code></td><td>Data preparation, training, evaluation and inference for the mBERT classifier.</td></tr>
+    <tr><td>Dialogue</td><td><code>dialog_manager/</code></td><td>Session state, slot filling, entity validation, semantic fallback for low confidence, emergency escalation.</td></tr>
+    <tr><td>Wording</td><td><code>ollama_judge/</code></td><td>Ollama client, prompts, language handling, spoken templates, response validator.</td></tr>
+    <tr><td>Business rules</td><td><code>appointment_backend/</code></td><td>Booking, cancellation, rescheduling, availability, validation, doctor leave cascade, statistics.</td></tr>
+    <tr><td>Persistence</td><td><code>firebase/</code></td><td>Repository abstraction over Firestore (and an in-memory equivalent), one service per collection.</td></tr>
+    <tr><td>HTTP service</td><td><code>api/</code></td><td>FastAPI application, dialogue and voice endpoints, dashboard and administration APIs, authentication.</td></tr>
+    <tr><td>Front end</td><td><code>Dashboard/</code></td><td>Plain HTML, CSS and JavaScript dashboards for doctors and the administrator.</td></tr>
+    <tr><td>Entry points</td><td><code>voice_pipeline.py</code>, <code>scripts/</code></td><td>Interactive console pipeline, demo, evaluation, performance and Firebase checks, test runner, report builder.</td></tr>
+  </table>
+
+  <h3>4.1 How the components communicate</h3>
+  <ul>
+    <li><strong>In-process calls.</strong> Within the API process, the Dialogue
+      Manager calls the intent router, the Appointment Backend and the Ollama judge
+      as ordinary Python objects.</li>
+    <li><strong>HTTP to Ollama.</strong> The judge calls the local Ollama server's
+      REST API with <code>httpx</code> (default <code>http://localhost:11434</code>).</li>
+    <li><strong>Firebase Admin SDK.</strong> The <code>firebase/</code> repository
+      talks to Firestore with the server-side Admin SDK. The browser never talks to
+      Firebase directly.</li>
+    <li><strong>HTTP from the browser.</strong> The dashboards call
+      <code>/auth/*</code>, <code>/dashboard/*</code> and <code>/admin/*</code> with a
+      bearer token; every call is scoped on the server to the signed-in role.</li>
+    <li><strong>One result shape.</strong> Every backend operation returns an
+      <code>OperationResult</code> (<code>success</code>, <code>operation</code>,
+      <code>appointment_id</code>, <code>status</code>, <code>data</code>,
+      <code>error</code>), which the API maps to HTTP status codes (404, 403, 400,
+      409, 503).</li>
+  </ul>
+
+  <h3>4.2 Why the language model is last</h3>
+  <p>By the time the LLM runs, the appointment has already been booked, refused or
+    looked up by deterministic code. The LLM can only change the wording; the
+    validator checks the wording against the result. The worst case when the model
+    misbehaves is a plainer sentence, never a wrong booking.</p>
+</section>
+
+<!-- ============================================================== 5 -->
+<section>
+  <h2>5. Intent Detection (mBERT)</h2>
+
+  <h3>5.1 Model and architecture</h3>
+  <table>
+    <tr><th>Property</th><th>Value</th></tr>
+    <tr><td>Base model</td><td><code>bert-base-multilingual-cased</code> (mBERT)</td></tr>
+    <tr><td>Head</td><td><code>BertForSequenceClassification</code> &ndash; a linear classifier over the pooled [CLS] representation</td></tr>
+    <tr><td>Encoder</td><td>12 transformer layers, hidden size 768</td></tr>
+    <tr><td>Vocabulary</td><td>119,547 WordPiece tokens (shared across 104 languages, including Urdu script)</td></tr>
+    <tr><td>Output</td><td>31 intents; softmax probability used as confidence</td></tr>
+    <tr><td>Saved model size</td><td>679 MB (<code>model.safetensors</code>)</td></tr>
+  </table>
+  <p>mBERT was chosen because one model covers English, Urdu in Arabic script and
+    Roman Urdu. The training loop is hand-written PyTorch rather than the
+    Transformers <code>Trainer</code>, which keeps it independent of API changes
+    between library versions.</p>
+
+  <h3>5.2 Dataset</h3>
+  <p>Four source files in <code>Data/</code> are merged by
+    <code>intent_detection/src/preprocess.py</code>, which detects each file's text
+    and label columns, maps their different label vocabularies onto one taxonomy,
+    removes duplicates and assigns each row a script (English, Urdu, Roman Urdu).</p>
+  <table>
+    <tr><th>Source file</th><th class="num">Rows in file</th><th class="num">Rows used</th><th>Notes</th></tr>
+    <tr><td><code>dataset.csv</code></td><td class="num">405</td><td class="num">810</td><td>Carries a parallel Urdu column, so each row gives two examples</td></tr>
+    <tr><td><code>dataset2.csv</code></td><td class="num">2,159</td><td class="num">159</td><td>Most rows collapse to duplicates after normalisation</td></tr>
+    <tr><td><code>dataset3.csv</code></td><td class="num">1,500</td><td class="num">118</td><td>As above</td></tr>
+    <tr><td><code>synthetic_intents.csv</code></td><td class="num">2,377</td><td class="num">2,374</td><td>Template-generated phrasings for under-represented intents, contrast pairs, natural and Roman-Urdu spelling variants</td></tr>
+    <tr><th>Total</th><th></th><th class="num">3,461</th><th></th></tr>
+  </table>
+  <table>
+    <tr><th>Split</th><th class="num">Rows</th><th>Script</th><th class="num">Rows</th></tr>
+    <tr><td>Train</td><td class="num">2,760</td><td>Roman Urdu</td><td class="num">1,242</td></tr>
+    <tr><td>Validation</td><td class="num">347</td><td>English</td><td class="num">1,231</td></tr>
+    <tr><td>Test</td><td class="num">354</td><td>Urdu (Arabic script)</td><td class="num">987</td></tr>
+    <tr><td></td><td></td><td>Other</td><td class="num">1</td></tr>
+  </table>
+  <p>The split is <strong>group-aware</strong>: an Urdu row and the Roman-Urdu row it
+    was translated from always land in the same split, so the test score cannot be
+    inflated by a near-copy seen in training. The corpus is imbalanced &ndash;
+    <code>book_appointment</code> has 1,417 rows (41%) and the smallest intent,
+    <code>provide_patient_gender</code>, has 18 &ndash; which is handled with class
+    weights (5.4).</p>
+
+  <h3>5.3 Intent classes (31)</h3>
+  <table>
+    <tr><th>Group</th><th>Intents</th></tr>
+    <tr><td>Appointments</td><td>book_appointment, cancel_appointment, reschedule_appointment, appointment_status, appointment_confirmation, check_availability</td></tr>
+    <tr><td>Changes during a booking</td><td>change_date, change_time, change_doctor</td></tr>
+    <tr><td>Doctor information</td><td>find_doctor, doctor_information, doctor_specialization, doctor_qualifications, doctor_fee, doctor_unavailable</td></tr>
+    <tr><td>Clinic information</td><td>clinic_location, clinic_timing, clinic_closed</td></tr>
+    <tr><td>Patient details</td><td>provide_patient_name, provide_patient_phone, provide_patient_age, provide_patient_gender</td></tr>
+    <tr><td>Conversation</td><td>greeting, goodbye, thank_you, confirm, deny, help, repeat_information, unclear_request</td></tr>
+    <tr><td>Safety</td><td>emergency</td></tr>
+  </table>
+
+  <h3>5.4 Training process and hyperparameters</h3>
+  <table>
+    <tr><th>Setting</th><th>Value</th><th>Reason</th></tr>
+    <tr><td>Maximum sequence length</td><td>64 tokens</td><td>The longest utterance is 29 tokens; 128 would waste computation</td></tr>
+    <tr><td>Batch size</td><td>16, with 2 gradient-accumulation steps (effective 32)</td><td>Fits a 6 GB GPU</td></tr>
+    <tr><td>Optimiser</td><td>AdamW, learning rate 2&times;10<sup>-5</sup>, weight decay 0.01</td><td>Standard for BERT fine-tuning</td></tr>
+    <tr><td>Schedule</td><td>Linear, 10% warm-up</td><td></td></tr>
+    <tr><td>Epochs</td><td>20, early stopping on validation macro-F1, patience 5</td><td>A small validation set makes macro-F1 noisy between epochs</td></tr>
+    <tr><td>Loss</td><td>Cross-entropy with class weights, inverse frequency to the power 0.5 (a 9&times; spread)</td><td>Full inverse-frequency weights over-predicted rare intents</td></tr>
+    <tr><td>Precision</td><td>Mixed (fp16)</td><td></td></tr>
+    <tr><td>Seed</td><td>42</td><td>Reproducible splits and initialisation</td></tr>
+    <tr><td>Hardware</td><td>NVIDIA GeForce GTX 1660 SUPER, 6 GB; about 233 s per epoch</td><td></td></tr>
+    <tr><td>Selected checkpoint</td><td>Epoch 19 of 20, validation macro-F1 0.8659</td><td>Best validation macro-F1</td></tr>
+  </table>
+
+  <figure>
+    <img src="../../intent_detection/outputs/loss_comparison.png" style="max-height: 78mm">
+    <figcaption>Figure 1 &ndash; Training and validation loss per epoch
+      (<code>intent_detection/outputs/loss_comparison.png</code>).</figcaption>
+  </figure>
+
+  <h3>5.5 Evaluation on the held-out test set</h3>
+  <p>Measured on the 354-row test set by <code>intent_detection/src/evaluate.py</code>
+    (<code>intent_detection/outputs/test_metrics.json</code>):</p>
+  <table>
+    <tr><th>Metric</th><th class="num">Macro average</th><th class="num">Weighted average</th></tr>
+    <tr><td>Accuracy</td><td class="num" colspan="2" style="text-align:center">0.8983</td></tr>
+    <tr><td>Precision</td><td class="num">0.8680</td><td class="num">0.9097</td></tr>
+    <tr><td>Recall</td><td class="num">0.8404</td><td class="num">0.8983</td></tr>
+    <tr><td>F1-score</td><td class="num">0.8362</td><td class="num">0.8937</td></tr>
+  </table>
+  <p>Macro averages weight every intent equally, so they are lower than the
+    weighted ones: several intents have only 4&ndash;8 test examples, where one
+    mistake moves recall by 12&ndash;25 points.</p>
+
+  <h4>Strongest and weakest intents (test set F1)</h4>
+  <table>
+    <tr><th>Intent</th><th class="num">Precision</th><th class="num">Recall</th><th class="num">F1</th><th class="num">Support</th></tr>
+    <tr><td>book_appointment</td><td class="num">0.948</td><td class="num">0.993</td><td class="num">0.970</td><td class="num">148</td></tr>
+    <tr><td>change_doctor</td><td class="num">1.000</td><td class="num">1.000</td><td class="num">1.000</td><td class="num">13</td></tr>
+    <tr><td>reschedule_appointment</td><td class="num">0.889</td><td class="num">0.889</td><td class="num">0.889</td><td class="num">18</td></tr>
+    <tr><td>check_availability</td><td class="num">1.000</td><td class="num">0.833</td><td class="num">0.909</td><td class="num">12</td></tr>
+    <tr><td>emergency</td><td class="num">1.000</td><td class="num">0.546</td><td class="num">0.706</td><td class="num">11</td></tr>
+    <tr><td>change_time</td><td class="num">1.000</td><td class="num">0.500</td><td class="num">0.667</td><td class="num">6</td></tr>
+    <tr><td>repeat_information</td><td class="num">0.500</td><td class="num">0.667</td><td class="num">0.571</td><td class="num">6</td></tr>
+    <tr><td>goodbye</td><td class="num">1.000</td><td class="num">0.333</td><td class="num">0.500</td><td class="num">6</td></tr>
+    <tr><td>clinic_timing</td><td class="num">0.400</td><td class="num">0.400</td><td class="num">0.400</td><td class="num">5</td></tr>
+  </table>
+  <p>Seven intents reach F1 1.00 (change_date, change_doctor, doctor_unavailable,
+    greeting, provide_patient_age, provide_patient_gender, provide_patient_phone).
+    The weakest are short information questions that differ by a single content word
+    (<em>timing</em> versus <em>location</em> versus <em>fee</em>), and conversational
+    closers with very few examples. <strong>Emergency recall is 0.55</strong>, which
+    is why emergencies are not left to the classifier alone (5.6).</p>
+
+  <figure>
+    <img src="../../intent_detection/outputs/confusion_matrix_normalized.png" style="max-height: 120mm">
+    <figcaption>Figure 2 &ndash; Normalised confusion matrix on the test set
+      (<code>intent_detection/outputs/confusion_matrix_normalized.png</code>).</figcaption>
+  </figure>
+
+  <h3>5.6 Confidence handling</h3>
+  <table>
+    <tr><th>Confidence</th><th>Behaviour</th><th>Setting</th></tr>
+    <tr><td>&ge; 0.80</td><td>The intent is acted on.</td><td><code>HIGH_CONFIDENCE</code></td></tr>
+    <tr><td>0.60 &ndash; 0.79</td><td>The intent is used, but a <em>semantic fallback</em> must corroborate it (a recognisable subject and action, and no competing-intent signal); otherwise the assistant confirms what it understood.</td><td><code>CONFIDENCE_THRESHOLD</code></td></tr>
+    <tr><td>&lt; 0.60</td><td>Treated as unclear; the assistant asks the caller to rephrase instead of touching the database.</td><td></td></tr>
+    <tr><td>Mid-booking switch</td><td>An in-progress booking is only abandoned for a different intent above 0.75, so a stray word does not derail it.</td><td><code>INTENT_SWITCH_THRESHOLD</code></td></tr>
+  </table>
+  <p><strong>Emergency safety net.</strong> Because the model misses some emergencies
+    phrased in ways it has not seen, the Dialogue Manager also escalates acute-danger
+    phrases (for example chest pain, heavy bleeding, breathlessness) regardless of the
+    predicted intent, with stand-down rules for routine mentions such as "test" or
+    "checkup". It is on by default (<code>EMERGENCY_SAFETY_NET</code>).</p>
+</section>
+
+<!-- ============================================================== 6 -->
+<section>
+  <h2>6. Dialogue Manager</h2>
+  <p>The Dialogue Manager (<code>dialog_manager/</code>) turns a sequence of intents into
+    a finished task. It is deterministic code, not a language model.</p>
+
+  <table>
+    <tr><th>Module</th><th>Responsibility</th></tr>
+    <tr><td><code>dialog_manager.py</code></td><td>The conversation controller: routes each turn, chooses the next action, calls the backend.</td></tr>
+    <tr><td><code>intent_router.py</code></td><td>Loads the mBERT model and applies the confidence bands.</td></tr>
+    <tr><td><code>state_manager.py</code></td><td>Per-session state, persisted in <code>conversation_sessions</code>; sessions expire after 15 minutes of silence.</td></tr>
+    <tr><td><code>slot_manager.py</code></td><td>Which slots each workflow needs (doctor, date, time, appointment ID, patient details) and which are still missing.</td></tr>
+    <tr><td><code>validators.py</code></td><td>Entity extraction and validation: doctor names and aliases, relative and absolute dates, spoken times, phone numbers, appointment IDs.</td></tr>
+    <tr><td><code>semantic_fallback.py</code></td><td>Corroborates low- and medium-confidence intents; also hosts the emergency safety net.</td></tr>
+    <tr><td><code>responses.py</code></td><td>Turns a decision into words, in the caller's language.</td></tr>
+  </table>
+
+  <h3>6.1 Conversation management</h3>
+  <p>Each turn is processed against the session's state: the active workflow, the
+    filled slots, any pending confirmation and the language the caller is using.
+    Every message is stored in <code>conversation_messages</code> (phone numbers
+    masked), and <code>GET /dialog/transcript/{session_id}</code> returns a call's
+    transcript.</p>
+
+  <h3>6.2 Intent handling</h3>
+  <p>The router's intent selects a workflow (book, cancel, reschedule, check status,
+    availability, doctor or clinic information, patient details, conversation). Side
+    questions asked in the middle of a booking ("what is Dr Ahmed's fee?") are
+    answered and the booking then resumes. Correction intents
+    (<code>change_date</code>, <code>change_time</code>, <code>change_doctor</code>) are
+    absorbed into the current booking instead of starting a new one.</p>
+
+  <h3>6.3 Slot and entity handling</h3>
+  <ul>
+    <li><strong>Doctor</strong>: matched against the name and aliases stored on each
+      doctor record, longest alias first; an ambiguous name ("Dr Hamza" when two
+      doctors share it) is asked about rather than guessed. A replacement ("Dr Ahmed
+      nahi, Dr Asim") replaces the earlier choice.</li>
+    <li><strong>Date</strong>: relative dates (kal, parson, today, tomorrow), weekday
+      names, and day-of-month forms, resolved in the <code>Asia/Karachi</code> time
+      zone.</li>
+    <li><strong>Time</strong>: spoken forms such as "shaam 5 baje" or "4:30 PM".</li>
+    <li><strong>Appointment ID and patient details</strong>: extracted when a
+      workflow needs them.</li>
+  </ul>
+
+  <h3>6.4 Confirmation, clarification and the booking flow</h3>
+  <pre>greeting -> book_appointment
+  -> ASK_FOR_DOCTOR -> ASK_FOR_DATE -> ASK_FOR_TIME   (only the missing slots)
+  -> CHECK_AVAILABILITY (backend dry run)
+       free:     ASK_CONFIRMATION -> "haan" -> CREATE_APPOINTMENT -> reply with ID
+       not free: OFFER_ALTERNATIVES (nearest free slots)
+  -> deny at confirmation: nothing is written; the caller can change a slot</pre>
+  <p>The actions the manager can take are defined in <code>config.Action</code>: asking
+    for each slot, checking availability, asking for confirmation, creating,
+    cancelling and rescheduling appointments, checking status, giving doctor and
+    clinic information, offering alternatives, greeting, clarifying, escalating an
+    emergency, and ending the conversation.</p>
+
+  <h3>6.5 Error handling</h3>
+  <ul>
+    <li>Backend failures come back as a structured result and are explained to the
+      caller in plain words; technical errors are never read out.</li>
+    <li>If the database is unreachable the assistant says so instead of pretending
+      to book.</li>
+    <li>Dead ends found in testing are closed: for example, answering "nahi" to "what
+      is your appointment ID?" lists the caller's bookings instead of looping.</li>
+  </ul>
+</section>
+
+<!-- ============================================================== 7 -->
+<section>
+  <h2>7. LLM Judge and Response Generator</h2>
+
+  <h3>7.1 Why an LLM is used</h3>
+  <p>Template replies are correct but stiff, and do not adapt to the caller's
+    wording. A local LLM rephrases the backend's result naturally. Running it locally
+    through <strong>Ollama</strong> keeps patient data on the clinic's machine and
+    costs nothing per call.</p>
+
+  <h3>7.2 Model and settings</h3>
+  <table>
+    <tr><th>Setting</th><th>Value</th></tr>
+    <tr><td>Runtime</td><td>Ollama (tested with version 0.34.4), called over HTTP with <code>httpx</code></td></tr>
+    <tr><td>Model</td><td><code>llama3.2</code> (<code>OLLAMA_MODEL</code>)</td></tr>
+    <tr><td>Temperature</td><td>0.2 &ndash; it rewrites facts it is given, it does not invent</td></tr>
+    <tr><td>Maximum tokens</td><td>200 &ndash; a spoken reply is one or two sentences</td></tr>
+    <tr><td>Timeout</td><td>30 s, after which the template is used</td></tr>
+    <tr><td>Can be switched off</td><td><code>OLLAMA_ENABLED=false</code> gives deterministic replies only</td></tr>
+  </table>
+
+  <h3>7.3 Judge, validation and decision process</h3>
+  <pre>backend result -> Ollama (prompt with the facts) -> response validator -> approved text
+                                                            |
+                                                            +-- rejected -> deterministic template</pre>
+  <p>The validator (<code>response_validator.py</code>) checks every time, date and
+    appointment ID mentioned in the generated sentence against the backend result,
+    rejects a failed operation described as a success, and rejects wrong relative
+    dates, wrong weekdays, raw ISO dates, and a reply in the wrong language or script.
+    If anything fails, the deterministic template (<code>fallback.py</code>,
+    <code>dialog_templates.py</code>) is used.</p>
+
+  <h3>7.4 Languages</h3>
+  <p>Replies are produced in English, Roman Urdu or Urdu (<code>language.py</code>),
+    following the caller's language unless <code>RESPONSE_LANGUAGE</code> fixes it.
+    Templates exist for every action in all three languages, so the assistant answers
+    in the caller's language even with the LLM switched off.</p>
+
+  <h3>7.5 Integration with the Dialogue Manager</h3>
+  <p>The Dialogue Manager decides <em>what</em> happens and the backend makes it
+    happen; only then is the judge asked <em>how to say it</em>. Turns with no
+    database operation (a slot question, a greeting) use templates by default,
+    because there is no backend result to validate the model's wording against
+    (<code>OLLAMA_TRANSLATE</code> turns that on for stronger models).</p>
+
+  <div class="note"><strong>Measured behaviour.</strong> In the recorded live run
+    against <code>llama3.2</code> (<code>reports/ollama_live.json</code>), 21 replies
+    were requested: 3 were accepted by the validator and 18 fell back to templates,
+    with a median latency of 4.12 s. An earlier run recorded 9 of 21 accepted. The
+    guard is doing its job &ndash; the small 3-billion-parameter model often mangles
+    Roman Urdu or restates a time differently &ndash; and the templates carry most
+    calls. A larger model would raise the acceptance rate.</div>
+</section>
+
+<!-- ============================================================== 8 -->
+<section>
+  <h2>8. Appointment Backend</h2>
+  <p>The Appointment Backend (<code>appointment_backend/</code>) is the only code that
+    creates or changes an appointment. The voice pipeline, the doctor dashboard and the
+    administration area all go through its facade, <code>AppointmentBackend</code>.</p>
+
+  <table>
+    <tr><th>Module</th><th>Responsibility</th></tr>
+    <tr><td><code>appointment_service.py</code></td><td>The facade used by every caller.</td></tr>
+    <tr><td><code>booking_service.py</code></td><td>The single path that creates appointments.</td></tr>
+    <tr><td><code>cancellation_service.py</code></td><td>Patient cancellation, clinic cancellation, and the doctor-leave cascade.</td></tr>
+    <tr><td><code>reschedule_service.py</code></td><td>Moving an appointment to a new date and time.</td></tr>
+    <tr><td><code>availability_service.py</code></td><td>Free slots: working hours minus leave minus existing bookings.</td></tr>
+    <tr><td><code>validation.py</code></td><td>Gates run before any write.</td></tr>
+    <tr><td><code>statistics.py</code></td><td>Counting appointments by status and period.</td></tr>
+    <tr><td><code>result.py</code></td><td>The uniform <code>OperationResult</code>.</td></tr>
+  </table>
+
+  <h3>8.1 Operations and endpoints</h3>
+  <table>
+    <tr><th>Operation</th><th>Public (voice) route</th><th>Dashboard / admin route</th></tr>
+    <tr><td>Create</td><td><code>POST /appointments/book</code></td><td><code>POST /dashboard/appointments</code></td></tr>
+    <tr><td>Retrieve</td><td><code>GET /appointments/{id}</code>, <code>GET /patients/{id}/appointments</code>, <code>GET /doctors/{id}/appointments</code></td><td><code>GET /dashboard/appointments</code>, <code>GET /admin/appointments</code></td></tr>
+    <tr><td>Check without writing</td><td><code>POST /appointments/check</code></td><td>&mdash;</td></tr>
+    <tr><td>Cancel</td><td><code>POST /appointments/cancel</code></td><td><code>POST /dashboard/appointments/{id}/cancel</code>, <code>POST /admin/appointments/{id}/cancel</code></td></tr>
+    <tr><td>Reschedule</td><td><code>POST /appointments/reschedule</code></td><td><code>.../reschedule</code> on both</td></tr>
+    <tr><td>Complete</td><td>&mdash;</td><td><code>.../complete</code> on both</td></tr>
+    <tr><td>Availability</td><td><code>GET /doctors/{id}/availability?date=</code></td><td><code>GET /dashboard/availability</code>, <code>GET /admin/doctors/{id}/availability</code></td></tr>
+    <tr><td>Doctor leave</td><td><code>POST /doctors/unavailability</code></td><td><code>/dashboard/leave</code>, <code>/admin/doctors/{id}/leave</code> (+ <code>/preview</code>)</td></tr>
+  </table>
+  <p>Appendix A lists all 72 routes.</p>
+
+  <h3>8.2 Appointment statuses</h3>
+  <table>
+    <tr><th>Status</th><th>Meaning</th></tr>
+    <tr><td><code>pending</code></td><td>Created, not yet confirmed</td></tr>
+    <tr><td><code>confirmed</code></td><td>Booked (the assistant confirms before writing)</td></tr>
+    <tr><td><code>rescheduled</code></td><td>A live appointment that was moved</td></tr>
+    <tr><td><code>completed</code></td><td>Consultation finished (set from a dashboard)</td></tr>
+    <tr><td><code>cancelled</code></td><td>Cancelled by the patient or the clinic</td></tr>
+    <tr><td><code>cancelled_by_doctor</code></td><td>Cancelled because the doctor took leave that day</td></tr>
+  </table>
+  <p>Records are never deleted: cancellation changes the status and keeps the
+    history.</p>
+
+  <h3>8.3 Business rules</h3>
+  <ul>
+    <li><strong>Valid date and time</strong>: no past dates; the time must be one of
+      the doctor's slots for that weekday.</li>
+    <li><strong>Doctor must be active</strong>: a deactivated or removed doctor is
+      refused and is not offered to callers.</li>
+    <li><strong>Doctor must be working</strong>: the weekly schedule
+      (<code>schedules</code>) and leave dates (<code>doctor_unavailability</code>) are
+      applied; the seeded clinic closes on Sunday.</li>
+    <li><strong>No double booking</strong>: availability is checked, then the write
+      goes through a transactional <code>reserve_slot</code> that re-checks inside a
+      Firestore transaction, so two callers racing for the same slot cannot both
+      win.</li>
+    <li><strong>Ownership</strong>: a caller may only cancel or move their own
+      appointment; a doctor may only act on appointments in their own diary.</li>
+    <li><strong>Final states are final</strong>: a completed or cancelled appointment
+      cannot be changed again.</li>
+  </ul>
+
+  <h3>8.4 Doctor leave</h3>
+  <p>Blocking a date runs one cascade: the date is written to
+    <code>doctor_unavailability</code> (so new bookings are refused), every live
+    appointment that day becomes <code>cancelled_by_doctor</code>, and one
+    notification per affected patient is queued in <code>notifications</code>. The
+    administrator sees a preview of exactly which appointments and patients will be
+    affected before confirming. Re-opening the date accepts new bookings but does not
+    resurrect the cancelled ones.</p>
+</section>
+
+<!-- ============================================================== 9 -->
+<section>
+  <h2>9. Firebase / Database</h2>
+
+  <h3>9.1 Technology</h3>
+  <p><strong>Google Cloud Firestore</strong> (Firebase), accessed only from the server
+    through the <strong>Firebase Admin SDK</strong> (<code>firebase-admin</code>,
+    <code>google-cloud-firestore</code>). A repository abstraction
+    (<code>firebase/firebase_config.py</code>) has two implementations with the same
+    interface: <code>FirestoreRepository</code> for real data, and
+    <code>LocalRepository</code>, an in-memory store used for tests and offline demos
+    (selected with <code>USE_LOCAL_DB</code>, or automatically when no credentials
+    are configured, in which case demo data is seeded). Both stamp
+    <code>created_at</code> and <code>updated_at</code> on every write.</p>
+
+  <h3>9.2 Collections and fields</h3>
+  <table>
+    <tr><th>Collection</th><th>Key fields</th></tr>
+    <tr><td><code>clinics</code></td><td>clinic_id, name, address, city, phone, active &ndash; <strong>one record</strong> (<code>CLINIC_ID</code>, default C001)</td></tr>
+    <tr><td><code>doctors</code></td><td>doctor_id, name, specialization, qualification, experience_years, fee, phone, email, about, photo, aliases, clinic_ids, active, archived, notification_prefs</td></tr>
+    <tr><td><code>schedules</code></td><td>schedule_id, doctor_id, clinic_id, day, start_time, end_time, slot_duration, active</td></tr>
+    <tr><td><code>doctor_unavailability</code></td><td>id <code>{doctor_id}_{date}</code>, doctor_id, date, reason, active</td></tr>
+    <tr><td><code>patients</code></td><td>patient_id, name, phone</td></tr>
+    <tr><td><code>appointments</code></td><td>appointment_id, patient_id, doctor_id, clinic_id, date, time, status, cancelled_at, cancellation_reason, completed_at</td></tr>
+    <tr><td><code>notifications</code></td><td>notification_id, patient_id, appointment_id, doctor_id, type, channel, status, date, time, message, read_by_doctor</td></tr>
+    <tr><td><code>conversation_sessions</code></td><td>Dialogue state per session</td></tr>
+    <tr><td><code>conversation_messages</code></td><td>One document per message, phone numbers masked</td></tr>
+    <tr><td><code>dashboard_accounts</code></td><td>account_id, username, role, password_hash, password_salt, iterations</td></tr>
+  </table>
+
+  <h3>9.3 Relationships</h3>
+  <pre>clinics (one record)
+   └── doctors ─── schedules            (doctor_id)
+         │   └──── doctor_unavailability (doctor_id)
+         │   └──── dashboard_accounts    (account_id = doctor_id)
+         └── appointments ─── patients   (doctor_id, patient_id)
+                  └──── notifications    (appointment_id, patient_id, doctor_id)</pre>
+  <p>This is a <strong>single-clinic</strong> system: every doctor belongs to the one
+    clinic. Doctors keep a <code>clinic_ids</code> field containing that clinic for
+    compatibility with the booking rules, but nothing in the system adds, selects or
+    switches clinics, and every screen and spoken reply reads the clinic's name
+    through <code>ClinicService.primary()</code>.</p>
+
+  <h3>9.4 Data flow</h3>
+  <p>Writes happen only in the Appointment Backend and the dashboard APIs, through the
+    services in <code>firebase/</code>. Reads for display go through the same services.
+    The browser holds no Firebase credentials and never calls Firestore; it calls the
+    FastAPI service, which calls Firestore.</p>
+
+  <h3>9.5 Authentication to Firebase</h3>
+  <p>The server authenticates with a service account, given either as three
+    environment variables (<code>FIREBASE_PROJECT_ID</code>,
+    <code>FIREBASE_CLIENT_EMAIL</code>, <code>FIREBASE_PRIVATE_KEY</code>) or as the path
+    to the key file (<code>FIREBASE_CREDENTIALS_FILE</code>).
+    <code>scripts/verify_firebase.py</code> checks the configuration and connectivity.
+    No Firestore security-rules file is part of this repository; all access is from the
+    server's Admin SDK.</p>
+</section>
+
+<!-- ============================================================== 10 -->
+<section>
+  <h2>10. Doctor Dashboard</h2>
+  <p>A web application in <code>Dashboard/</code>, written in plain HTML, CSS and
+    JavaScript with no build step, and served by the API at <code>/ui</code>. A doctor
+    signs in with their username or doctor ID and sees <strong>only their own
+    data</strong>; the server scopes every <code>/dashboard/*</code> request to the
+    doctor in the session.</p>
+
+  <table>
+    <tr><th>Page</th><th>What it does</th><th>API</th></tr>
+    <tr><td>Dashboard</td><td>Today's counters, today's list, who is due now, what is coming up, and their own appointment statistics by period.</td><td><code>/dashboard/summary</code>, <code>/dashboard/statistics</code></td></tr>
+    <tr><td>Appointments</td><td>Filter by scope, date and status; view, complete, reschedule, cancel; book a new appointment against real free slots.</td><td><code>/dashboard/appointments</code></td></tr>
+    <tr><td>Patients</td><td>The people in this doctor's diary, with visit counts and history; register a patient.</td><td><code>/dashboard/patients</code></td></tr>
+    <tr><td>Schedule</td><td>The weekly working hours callers are offered, and leave dates with the cancel-and-notify cascade.</td><td><code>/dashboard/schedule</code>, <code>/dashboard/leave</code></td></tr>
+    <tr><td>Doctor Profile</td><td>Specialization, qualifications, experience, fee, about. The clinic is shown as read-only information.</td><td><code>/dashboard/profile</code></td></tr>
+    <tr><td>Notifications</td><td>Messages queued for this doctor's patients, with their delivery state.</td><td><code>/dashboard/notifications</code></td></tr>
+    <tr><td>Settings</td><td>Account (photo, name, email, phone; username shown read-only), own password, alert preferences, appearance (light, dark, follow system), session.</td><td><code>/dashboard/profile</code>, <code>/auth/password</code></td></tr>
+  </table>
+
+  <h3>10.1 Statistics</h3>
+  <p>The doctor sees Total, Confirmed, Pending, Completed and Cancelled counts (and
+    Rescheduled, when there are any) for Today, This week, This month, All time or a
+    custom range, a bar showing the split, and today's breakdown. The endpoint takes
+    no doctor ID at all, so a doctor cannot request another doctor's numbers.</p>
+
+  <h3>10.2 Keeping up to date</h3>
+  <p>While open, the dashboard re-reads today's diary every 30 seconds and raises the
+    alerts the doctor has switched on: a new booking by the assistant, a
+    cancellation, or a changed time.</p>
+</section>
+
+<!-- ============================================================== 11 -->
+<section>
+  <h2>11. SuperAdmin Dashboard</h2>
+  <p>The administrator signs in with the administrator ID and reaches a separate area
+    (<code>/admin/*</code>). The two roles do not overlap: a doctor's token is refused by
+    every administration route, and the administrator's token is refused by the
+    doctor routes, because that data belongs to a doctor.</p>
+
+  <div class="note"><strong>Single clinic.</strong> There is one clinic, many doctors,
+    and their appointments. The administrator is the only person who can change the
+    clinic's name, address, city and phone; the change reaches every doctor profile,
+    every appointment detail and the assistant's spoken confirmation at once.</div>
+
+  <table>
+    <tr><th>Area</th><th>Capabilities</th></tr>
+    <tr><td>Overview</td><td>Doctors on the register, bookable, deactivated and on leave today; what is in the diary now; clinic-wide statistics by period with a per-doctor table; today's appointments; recent activity.</td></tr>
+    <tr><td>Doctors</td><td>Search and filter the register; <strong>add</strong> a doctor (including username and password in the same step); <strong>edit</strong> profile, photo, fee and working hours; <strong>deactivate</strong> and activate; <strong>remove</strong> (archive, never delete) and restore. Clicking a doctor's name opens their appointments.</td></tr>
+    <tr><td>Doctor details</td><td>Profile; availability (working week and leave dates, with a preview of which appointments a new leave would cancel); appointments; and <strong>Sign-in</strong>, where the doctor's username and password are set.</td></tr>
+    <tr><td>Appointments</td><td>Every doctor's appointments, filtered by scope, doctor, date and search; cancel with a recorded reason, move to a free slot, or mark completed &ndash; each through the Appointment Backend.</td></tr>
+    <tr><td>Clinic</td><td>The one clinic's name, address, city and phone. A database left over from an earlier multi-clinic version can be consolidated onto the one record.</td></tr>
+    <tr><td>Settings</td><td>The administrator's own password, appearance and session.</td></tr>
+  </table>
+
+  <h3>11.1 What administrator actions do to the system</h3>
+  <table>
+    <tr><th>Action</th><th>Effect</th></tr>
+    <tr><td>Add a doctor</td><td>Writes the doctor record with generated name aliases, so the assistant recognises the spoken name at once; writes the working week; issues sign-in details if given. A name that collides with another doctor's is reported.</td></tr>
+    <tr><td>Deactivate</td><td>Sets <code>active: false</code>. New bookings are refused, the assistant stops offering the doctor, and sign-in is refused. Existing appointments are kept.</td></tr>
+    <tr><td>Remove</td><td>Archives the record (<code>archived: true</code>); appointments, patients and messages stay.</td></tr>
+    <tr><td>Set a password</td><td>Stores a hash; the doctor's other open sessions are signed out.</td></tr>
+    <tr><td>Cancel an appointment</td><td>Status becomes <code>cancelled</code> with the stated reason, the slot is freed, and a message for the patient is queued.</td></tr>
+    <tr><td>Give leave</td><td>Runs the leave cascade of Section 8.4.</td></tr>
+  </table>
+
+  <h3>11.2 Clinic and doctor statistics</h3>
+  <p><code>GET /admin/statistics</code> counts the clinic's appointments by status for a
+    chosen period and returns one row per doctor (total, confirmed, pending, completed,
+    cancelled). Choosing a doctor narrows the headline figures to them while the table
+    still lists everybody for comparison. The doctor rows always add up to the clinic
+    total; this is tested.</p>
+</section>
+
+<!-- ============================================================== 12 -->
+<section>
+  <h2>12. Speech-to-Text (STT)</h2>
+  <div class="status"><strong>Status: not implemented.</strong> There is no
+    speech-recognition component in this repository. No module converts audio to
+    text, and no test exercises one. The recorded performance measurements list
+    speech-to-text as "not measured: no STT integration exists in the codebase".</div>
+  <p><strong>What exists instead.</strong> The pipeline accepts the patient's words as
+    text at <code>POST /dialog/message</code>, <code>POST /voice/message</code> and
+    in the interactive <code>voice_pipeline.py</code>. Everything downstream &ndash;
+    intent detection, dialogue, backend, database, reply &ndash; works on that text, so
+    an STT stage can be added in front without changing it.</p>
+  <p><strong>Language support that would apply.</strong> The text stages already
+    handle English, Urdu in Arabic script, Roman Urdu and mixed input (Section 5.2), so
+    an STT model's output in any of those forms can be consumed directly.</p>
+  <p><strong>Considerations for adding it</strong> (future work): telephone audio is
+    8 kHz narrow-band (G.711 &mu;-law or A-law); recognition latency adds directly to
+    each turn; and an Urdu-capable model such as Whisper would be needed.</p>
+</section>
+
+<!-- ============================================================== 13 -->
+<section>
+  <h2>13. Text-to-Speech (TTS)</h2>
+  <div class="status"><strong>Status: not implemented.</strong> There is no
+    speech-synthesis component in this repository.</div>
+  <p>The reply is produced as <strong>text</strong> in English, Roman Urdu or Urdu
+    (Section 7.4), returned by <code>/dialog/message</code> and
+    <code>/voice/message</code>. Dates and times are already written in spoken form
+    (for example "Thursday, 1 October at 6:00 PM", never an ISO date), so a TTS engine
+    can read the text as it is. Adding TTS is future work.</p>
+</section>
+
+<!-- ============================================================== 14 -->
+<section>
+  <h2>14. Asterisk / SIP Telephony</h2>
+  <div class="status"><strong>Status: not implemented.</strong> There is no
+    Asterisk configuration, dial plan, SIP account, AudioSocket or AGI integration in
+    this repository.</div>
+  <p><strong>The integration point that exists.</strong> <code>POST /voice/message</code>
+    is designed as the endpoint a telephony layer would call on each turn: it takes a
+    session ID, the transcribed text and an optional patient ID, runs the whole
+    pipeline, and returns the sentence to speak together with the intent, the backend
+    result and the judge's decision. A future telephony bridge would connect
+    Asterisk (receiving the call), an STT stage, this endpoint and a TTS stage.</p>
+  <p>The caller would be identified by phone number (<code>PatientService.find_by_phone</code>
+    exists and is used today); in production the caller ID from the telephony layer
+    would supply it.</p>
+</section>
+
+<!-- ============================================================== 15 -->
+<section>
+  <h2>15. Testing</h2>
+  <p>The test suite uses the standard-library <code>unittest</code> framework and runs
+    with one command, <code>python scripts/run_tests.py</code>, which groups the tests
+    by component and writes machine-readable results to <code>reports/</code>. Tests run
+    against the in-memory repository, so they never touch the real database. Tests
+    that need live Firestore or a running Ollama are opt-in
+    (<code>--live</code>) and are counted as skipped otherwise.</p>
+
+  <h3>15.1 Offline test results</h3>
+  <p>Run on 25 September 2026, on the repository as submitted:</p>
+  <table>
+    <tr><th>Category</th><th>Test modules</th><th class="num">Tests</th><th class="num">Passed</th><th class="num">Failed</th><th class="num">Skipped</th></tr>
+    <tr><td>Intent detection</td><td>test_intents, test_roman_urdu, test_intent_audit</td><td class="num">45</td><td class="num">45</td><td class="num">0</td><td class="num">0</td></tr>
+    <tr><td>Dialogue</td><td>test_dialog, test_entities, test_naturalness, test_scenarios, test_emergency_safety</td><td class="num">112</td><td class="num">112</td><td class="num">0</td><td class="num">0</td></tr>
+    <tr><td>Appointment backend</td><td>test_backend, test_appointments</td><td class="num">61</td><td class="num">60</td><td class="num">0</td><td class="num">1</td></tr>
+    <tr><td>Firebase</td><td>test_firebase, test_firestore_live</td><td class="num">40</td><td class="num">31</td><td class="num">0</td><td class="num">9</td></tr>
+    <tr><td>Ollama / wording</td><td>test_ollama, test_ollama_live</td><td class="num">54</td><td class="num">51</td><td class="num">0</td><td class="num">3</td></tr>
+    <tr><td>End-to-end</td><td>test_integration, test_api</td><td class="num">25</td><td class="num">25</td><td class="num">0</td><td class="num">0</td></tr>
+    <tr><td>Dashboards</td><td>test_dashboard_api, test_admin_api, test_statistics</td><td class="num">122</td><td class="num">121</td><td class="num">0</td><td class="num">1</td></tr>
+    <tr><td>Security</td><td>test_security, test_data_safety</td><td class="num">11</td><td class="num">11</td><td class="num">0</td><td class="num">0</td></tr>
+    <tr><th>Total</th><th></th><th class="num">470</th><th class="num">456</th><th class="num">0</th><th class="num">14</th></tr>
+  </table>
+  <p>The 14 skipped tests are the live Firestore and Ollama tests, which need
+    <code>--live</code> and real services.</p>
+
+  <h3>15.2 What the tests cover</h3>
+  <ul>
+    <li><strong>Unit</strong>: entity extraction (dates, times, doctor names), slot
+      logic, statistics arithmetic (every record counted exactly once, month-end and
+      leap-year boundaries), password hashing rules.</li>
+    <li><strong>Intent detection</strong>: the trained model on fixed phrasings in each
+      language, Roman-Urdu spelling variants, a hand-written audit set, and a check that
+      no challenge phrase leaked into training data.</li>
+    <li><strong>Appointments</strong>: booking, double-booking refusal, cancellation
+      keeping the record, rescheduling rules, completed appointments being final, and
+      the leave cascade with its notifications.</li>
+    <li><strong>Integration and end-to-end</strong>: whole conversations through the
+      real mBERT model and Dialogue Manager to a booking, and the HTTP API.</li>
+    <li><strong>Dashboards</strong>: sign-in for both roles; a doctor never seeing
+      another doctor's data (403); the administrator adding a doctor who is then found
+      by name and bookable through the voice route; deactivation refusing bookings;
+      removal archiving instead of deleting; credentials; the single clinic and its
+      name reaching every reader; a five-appointment leave scenario (previewed,
+      cancelled, five patients notified, history kept); and statistics matching the
+      records by hand.</li>
+    <li><strong>Security</strong>: no key or password in any source or report file,
+      <code>.env</code> and the service-account file ignored by Git, credentials never
+      written to logs.</li>
+  </ul>
+
+  <h3>15.3 Browser tests</h3>
+  <p>Two scripts in <code>tests/browser/</code> drive the real dashboard in headless
+    Chrome over the DevTools protocol and fail on any JavaScript error:</p>
+  <table>
+    <tr><th>Script</th><th class="num">Checks</th><th>Result</th><th>Covers</th></tr>
+    <tr><td><code>dashboard_checks.js</code></td><td class="num">59</td><td>59 passed</td><td>Sign-in screen, both roles, the doctor register, adding, viewing, deactivating, removing and restoring a doctor, settings, role separation, every doctor page, phone-width layout</td></tr>
+    <tr><td><code>admin_checks.js</code></td><td class="num">51</td><td>51 passed</td><td>The clinic record, clinic-wide appointments with cancellation, the leave preview, statistics, credentials, a doctor changing their own password, what a doctor may not do, the administrator's password</td></tr>
+  </table>
+
+  <h3>15.4 Verification against real data</h3>
+  <ul>
+    <li><strong>Statistics.</strong> Read-only against the live Firestore project:
+      4 appointments and 5 doctors; the counts reported by the statistics module
+      matched a hand count exactly (total 4, confirmed 1, completed 1, cancelled 2), the
+      doctor rows summed to the clinic total, and each period's count matched a filter
+      of the records.</li>
+    <li><strong>Voice pipeline.</strong> A doctor added through the administration
+      area was booked in a Roman-Urdu conversation ("dr uzma se appointment
+      chahiye" &rarr; "kal" &rarr; "shaam 5 baje" &rarr; "haan"), and the appointment
+      appeared in the administrator's view and in that doctor's own dashboard.</li>
+    <li><strong>Firestore round trip.</strong> An appointment booked through the public
+      route against live Firestore appeared in the doctor dashboard, was cancelled
+      there, kept its record as <code>cancelled</code>, and freed its slot.</li>
+  </ul>
+</section>
+
+<!-- ============================================================== 16 -->
+<section>
+  <h2>16. Security</h2>
+
+  <h3>16.1 Secrets and environment variables</h3>
+  <ul>
+    <li>All secrets come from environment variables or a <code>.env</code> file that is
+      ignored by Git. <code>.env.example</code> lists the variable names with empty
+      values.</li>
+    <li>The Firebase service-account file is ignored by Git by name pattern, and every
+      other JSON file is ignored unless explicitly listed.</li>
+    <li>The browser holds no Firebase credential, API key or server address; the
+      dashboard never displays configuration or connection details.</li>
+    <li>A test (<code>tests/test_security.py</code>) scans the source, the reports and
+      this PDF for private keys and service-account e-mail addresses, and checks that
+      the secret files are ignored.</li>
+  </ul>
+
+  <h3>16.2 Authentication</h3>
+  <ul>
+    <li><code>POST /auth/login</code> accepts a username, a doctor ID or the
+      administrator ID, and returns an opaque random token
+      (<code>secrets.token_urlsafe(32)</code>) sent as a bearer token.</li>
+    <li>Passwords are stored in <code>dashboard_accounts</code> as PBKDF2-HMAC-SHA256
+      hashes (120,000 iterations, a 16-byte random salt per account) and compared in
+      constant time. No password or hash is ever returned by the API.</li>
+    <li><code>DASHBOARD_PASSWORD</code> and <code>SUPERADMIN_PASSWORD</code> are only
+      <em>starting</em> passwords: they open an account that has never had one set,
+      and stop working as soon as one is.</li>
+    <li>Wrong ID and wrong password give the same answer, so the sign-in form cannot be
+      used to discover valid IDs. A deactivated doctor cannot sign in.</li>
+  </ul>
+
+  <h3>16.3 Authorisation</h3>
+  <ul>
+    <li>Two roles, enforced on the server: <code>doctor</code> for
+      <code>/dashboard/*</code> and <code>superadmin</code> for <code>/admin/*</code>. Each
+      is refused (403) by the other's routes.</li>
+    <li>A doctor's routes take the doctor ID from the session, never from the request;
+      another doctor's appointment returns 403.</li>
+    <li>A doctor cannot change their username, the clinic's details or anyone else's
+      credentials; there is no route for the first and the API refuses the others.</li>
+    <li>Changing a password signs the account out of its other sessions.</li>
+  </ul>
+
+  <h3>16.4 API and Firebase security</h3>
+  <ul>
+    <li>CORS is limited to the origins in <code>DASHBOARD_ORIGINS</code>, without
+      credentials.</li>
+    <li>Firestore is reached only by the server's Admin SDK.</li>
+  </ul>
+
+  <div class="status"><strong>Known limits.</strong> Sessions live in the API
+    process, so restarting it signs everyone out; there is no sign-in rate limiting
+    and no self-service password reset. The public voice-pipeline routes
+    (<code>/appointments/*</code>, <code>/dialog/*</code>, <code>/voice/message</code>) are not
+    authenticated, because they are meant to sit behind the telephony layer on a
+    private network. Production would add Firebase Authentication and network
+    restrictions.</div>
+</section>
+
+<!-- ============================================================== 17 -->
+<section>
+  <h2>17. Technologies Used</h2>
+  <table>
+    <tr><th>Category</th><th>Technology</th><th>Version tested</th></tr>
+    <tr><td>Programming languages</td><td>Python; JavaScript (browser, and Node.js for the browser tests); HTML and CSS</td><td>Python 3.12.10; Node.js 24.16</td></tr>
+    <tr><td>NLP model</td><td>mBERT (<code>bert-base-multilingual-cased</code>) fine-tuned for 31 intents</td><td>&mdash;</td></tr>
+    <tr><td>Deep learning</td><td>PyTorch, Hugging Face Transformers</td><td>torch 2.14.0 (CUDA 12.6), transformers 5.15.0</td></tr>
+    <tr><td>Data and metrics</td><td>pandas, NumPy, scikit-learn, Matplotlib</td><td>3.0.5, 2.5.1, 1.9.0, 3.11.1</td></tr>
+    <tr><td>LLM</td><td>Ollama running <code>llama3.2</code></td><td>Ollama 0.34.4</td></tr>
+    <tr><td>STT</td><td>Not implemented</td><td>&mdash;</td></tr>
+    <tr><td>TTS</td><td>Not implemented</td><td>&mdash;</td></tr>
+    <tr><td>Backend</td><td>FastAPI, Uvicorn, Pydantic, httpx, python-dotenv</td><td>0.141.1, 0.52.3, 2.13.4, 0.28.1, 1.2.2</td></tr>
+    <tr><td>Database</td><td>Google Cloud Firestore via the Firebase Admin SDK</td><td>firebase-admin 7.5.0, google-cloud-firestore 2.30.0</td></tr>
+    <tr><td>Telephony</td><td>Not implemented (Asterisk/SIP planned)</td><td>&mdash;</td></tr>
+    <tr><td>Frontend</td><td>HTML, CSS and JavaScript without a framework or build step; Inter web font</td><td>&mdash;</td></tr>
+    <tr><td>Testing</td><td><code>unittest</code>; headless Chrome for browser tests; pypdf for the report check</td><td>pypdf 6.16.0</td></tr>
+    <tr><td>Version control</td><td>Git and GitHub, GitHub CLI</td><td>git 2.54, gh 2.95</td></tr>
+    <tr><td>Hardware used</td><td>NVIDIA GeForce GTX 1660 SUPER (6 GB) for training</td><td>&mdash;</td></tr>
+    <tr><td>Tools</td><td>Visual Studio Code, PowerShell, Google Chrome</td><td>&mdash;</td></tr>
+  </table>
+</section>
+
+<!-- ============================================================== 18 -->
+<section>
+  <h2>18. Performance Measurements</h2>
+  <p>Measured by <code>scripts/measure_performance.py</code> on 14 September 2026 on the
+    development machine (NVIDIA GTX 1660 SUPER), recorded in
+    <code>reports/performance.json</code>:</p>
+  <table>
+    <tr><th>Stage</th><th class="num">Calls</th><th class="num">Median</th><th class="num">95th percentile</th></tr>
+    <tr><td>mBERT intent detection (GPU)</td><td class="num">60</td><td class="num">9.97 ms</td><td class="num">13.54 ms</td></tr>
+    <tr><td>&nbsp;&nbsp;first call, including loading the model</td><td class="num">1</td><td class="num" colspan="2" style="text-align:center">7.58 s</td></tr>
+    <tr><td>Dialogue Manager logic (in memory)</td><td class="num">60</td><td class="num">0.30 ms</td><td class="num">0.45 ms</td></tr>
+    <tr><td>Whole turn without the LLM (in memory)</td><td class="num">30</td><td class="num">9.66 ms</td><td class="num">12.57 ms</td></tr>
+    <tr><td>Backend booking (in memory)</td><td class="num">8</td><td class="num">0.07 ms</td><td class="num">0.07 ms</td></tr>
+    <tr><td>Firestore: read a doctor</td><td class="num">5</td><td class="num">2.34 s</td><td class="num">2.39 s</td></tr>
+    <tr><td>Firestore: availability for a date</td><td class="num">5</td><td class="num">5.85 s</td><td class="num">5.86 s</td></tr>
+    <tr><td>Ollama judge (Roman Urdu)</td><td class="num">3</td><td class="num">3.13 s</td><td class="num">3.13 s</td></tr>
+  </table>
+  <p>Live Firestore operations measured in the live test run
+    (<code>reports/firestore_live.json</code>): booking median 6.13 s (8 calls),
+    rescheduling 4.41 s, doctor leave 5.04 s, cancellation 2.23 s.</p>
+  <p><strong>Interpretation.</strong> The language model and the classifier are fast;
+    the network round trips to Firestore dominate each turn, because every validation
+    gate is a separate read. Reading a doctor's schedule once per call, or caching the
+    doctor and clinic records, is the most effective improvement available.</p>
+</section>
+
+<!-- ============================================================== 19 -->
+<section>
+  <h2>19. Limitations and Future Work</h2>
+  <table>
+    <tr><th>Area</th><th>Current state</th><th>Future work</th></tr>
+    <tr><td>Telephony and voice</td><td>STT, TTS and Asterisk/SIP are not implemented; the pipeline is text in, text out.</td><td>Add an Asterisk bridge, an Urdu-capable STT model and a TTS engine in front of and behind <code>/voice/message</code>.</td></tr>
+    <tr><td>Notifications</td><td>Patient messages are queued in Firestore and shown on the dashboards; nothing is sent.</td><td>Implement the <code>NotificationSender</code> interface against an SMS or voice provider, with credentials from the environment.</td></tr>
+    <tr><td>Intent model</td><td>Macro-F1 0.836; short information questions and conversational closers are weakest; emergency recall 0.55, backed by the phrase safety net.</td><td>More natural phrasings per intent (30&ndash;50), a fresh held-out set, and more emergency examples with the booking phrase first.</td></tr>
+    <tr><td>LLM wording</td><td><code>llama3.2</code> wording is accepted for a minority of replies; templates carry most calls.</td><td>A larger local model (for example 7&ndash;8B parameters).</td></tr>
+    <tr><td>Authentication</td><td>Prototype sessions in the API process; no rate limiting or self-service reset.</td><td>Firebase Authentication, rate limiting, and authenticated voice routes.</td></tr>
+    <tr><td>Performance</td><td>Several seconds per Firestore-backed turn.</td><td>Fewer round trips and caching of doctor and clinic records.</td></tr>
+    <tr><td>Data model</td><td>Patients hold a name and phone only; appointments have no reason or notes field.</td><td>Extend the records when the clinic needs those fields.</td></tr>
+  </table>
+</section>
+
+<!-- ============================================================== 20 -->
+<section>
+  <h2>20. Conclusion</h2>
+  <p>The implemented system understands appointment requests in English, Urdu, Roman
+    Urdu and mixed speech with a fine-tuned mBERT classifier (test accuracy 0.898,
+    macro-F1 0.836 over 31 intents), holds a stateful conversation that asks only for
+    what is missing and confirms before acting, applies the clinic's scheduling rules in
+    a single tested backend, and stores everything in Firebase Firestore. A local
+    language model phrases replies naturally but is never allowed to change a fact.</p>
+  <p>Around that pipeline, doctors have a dashboard for their own day, and a single
+    administrator manages the one clinic, its doctors, their credentials, their leave,
+    every appointment and clinic-wide statistics, with the separation between the two
+    roles enforced on the server. The system is covered by 470 automated tests, of
+    which none fail, and 110 browser checks.</p>
+  <p>The telephone layer &ndash; Asterisk/SIP, speech recognition and speech synthesis
+    &ndash; remains future work. The pipeline was built so that these stages attach at
+    its two ends without changes to the parts described in this report.</p>
+</section>
+
+<!-- ============================================================== A -->
+<section>
+  <h2>Appendix A &ndash; HTTP API Reference</h2>
+  <p>All 72 routes served by the FastAPI application. Interactive documentation is at
+    <code>/docs</code> when the service is running.</p>
+  <table style="font-size: 8.6pt">
+    <tr><th>Method</th><th>Path</th><th>Purpose</th></tr>
+    <tr><td colspan="3"><strong>Service and conversation</strong></td></tr>
+    <tr><td>GET</td><td><code>/</code>, <code>/health</code></td><td>Service status; backend and model health</td></tr>
+    <tr><td>POST</td><td><code>/dialog/message</code></td><td>One conversation turn: text in, reply and state out</td></tr>
+    <tr><td>POST</td><td><code>/dialog/reset</code>, <code>/dialog/end</code></td><td>Reset or end a session</td></tr>
+    <tr><td>GET</td><td><code>/dialog/transcript/{session_id}</code></td><td>Stored transcript, phone numbers masked</td></tr>
+    <tr><td>POST</td><td><code>/voice/message</code></td><td>Full pipeline for a telephony layer (text in, reply text out)</td></tr>
+    <tr><td>POST</td><td><code>/intent/predict</code></td><td>The mBERT classifier on its own</td></tr>
+    <tr><td colspan="3"><strong>Appointment Backend (voice pipeline)</strong></td></tr>
+    <tr><td>POST</td><td><code>/appointments/book</code>, <code>/cancel</code>, <code>/reschedule</code>, <code>/check</code></td><td>Book, cancel, move, or check without writing</td></tr>
+    <tr><td>GET</td><td><code>/appointments/{appointment_id}</code></td><td>One appointment</td></tr>
+    <tr><td>GET</td><td><code>/patients/{patient_id}/appointments</code></td><td>A patient's appointments</td></tr>
+    <tr><td>GET</td><td><code>/doctors</code>, <code>/doctors/{doctor_id}</code></td><td>Active doctors; one doctor</td></tr>
+    <tr><td>GET</td><td><code>/doctors/{doctor_id}/availability</code>, <code>/appointments</code></td><td>Free slots on a date; a doctor's appointments</td></tr>
+    <tr><td>POST</td><td><code>/doctors/unavailability</code></td><td>Block a date (leave cascade)</td></tr>
+    <tr><td colspan="3"><strong>Authentication</strong></td></tr>
+    <tr><td>POST</td><td><code>/auth/login</code>, <code>/auth/logout</code></td><td>Start and end a session</td></tr>
+    <tr><td>GET</td><td><code>/auth/session</code></td><td>Who is signed in, and their role</td></tr>
+    <tr><td>POST</td><td><code>/auth/password</code></td><td>Change your own password</td></tr>
+    <tr><td colspan="3"><strong>Doctor dashboard (doctor role, own data only)</strong></td></tr>
+    <tr><td>GET</td><td><code>/dashboard/summary</code>, <code>/dashboard/statistics</code></td><td>Today at a glance; counts by status and period</td></tr>
+    <tr><td>GET, POST</td><td><code>/dashboard/appointments</code></td><td>List; book</td></tr>
+    <tr><td>GET</td><td><code>/dashboard/appointments/{id}</code></td><td>One appointment</td></tr>
+    <tr><td>POST</td><td><code>/dashboard/appointments/{id}/cancel</code>, <code>/reschedule</code>, <code>/complete</code></td><td>Act on one</td></tr>
+    <tr><td>GET</td><td><code>/dashboard/availability</code></td><td>Free slots</td></tr>
+    <tr><td>GET, POST</td><td><code>/dashboard/patients</code>; GET <code>/dashboard/patients/{id}</code></td><td>Patients</td></tr>
+    <tr><td>GET, PATCH</td><td><code>/dashboard/profile</code>, <code>/dashboard/schedule</code></td><td>Profile; weekly hours</td></tr>
+    <tr><td>GET, POST</td><td><code>/dashboard/leave</code>; DELETE <code>/dashboard/leave/{date}</code></td><td>Leave dates</td></tr>
+    <tr><td>GET</td><td><code>/dashboard/notifications</code></td><td>Queued patient messages</td></tr>
+    <tr><td>POST</td><td><code>/dashboard/notifications/{id}/read</code>, <code>/read-all</code></td><td>Mark read</td></tr>
+    <tr><td colspan="3"><strong>Administration (superadmin role)</strong></td></tr>
+    <tr><td>GET</td><td><code>/admin/summary</code>, <code>/admin/statistics</code></td><td>Overview; clinic and per-doctor counts</td></tr>
+    <tr><td>GET, POST</td><td><code>/admin/doctors</code></td><td>Register; add a doctor</td></tr>
+    <tr><td>GET, PATCH, DELETE</td><td><code>/admin/doctors/{id}</code></td><td>Details; edit; remove (archive)</td></tr>
+    <tr><td>POST</td><td><code>/admin/doctors/{id}/status</code>, <code>/restore</code></td><td>Activate or deactivate; restore</td></tr>
+    <tr><td>GET, PATCH</td><td><code>/admin/doctors/{id}/credentials</code>, <code>/schedule</code></td><td>Sign-in details; weekly hours</td></tr>
+    <tr><td>GET</td><td><code>/admin/doctors/{id}/appointments</code>, <code>/availability</code></td><td>A doctor's diary; free slots</td></tr>
+    <tr><td>GET, POST</td><td><code>/admin/doctors/{id}/leave</code>; GET <code>/leave/preview</code>; DELETE <code>/leave/{date}</code></td><td>Leave, with preview</td></tr>
+    <tr><td>GET, PATCH</td><td><code>/admin/clinic</code>; POST <code>/admin/clinic/consolidate</code></td><td>The one clinic</td></tr>
+    <tr><td>GET</td><td><code>/admin/appointments</code>, <code>/admin/appointments/{id}</code></td><td>Every appointment</td></tr>
+    <tr><td>POST</td><td><code>/admin/appointments/{id}/cancel</code>, <code>/reschedule</code>, <code>/complete</code></td><td>Act on one</td></tr>
+  </table>
+</section>
+
+<!-- ============================================================== B -->
+<section>
+  <h2>Appendix B &ndash; Configuration Variables</h2>
+  <p>Names only. Values are set in the server's environment or in a <code>.env</code>
+    file that is never committed; <code>.env.example</code> is the template.</p>
+  <table>
+    <tr><th>Variable</th><th>Purpose</th></tr>
+    <tr><td><code>FIREBASE_PROJECT_ID</code>, <code>FIREBASE_CLIENT_EMAIL</code>, <code>FIREBASE_PRIVATE_KEY</code></td><td>Service-account credentials (option A)</td></tr>
+    <tr><td><code>FIREBASE_CREDENTIALS_FILE</code></td><td>Path to the service-account key file (option B)</td></tr>
+    <tr><td><code>USE_LOCAL_DB</code></td><td>Force the in-memory database</td></tr>
+    <tr><td><code>CONFIDENCE_THRESHOLD</code>, <code>HIGH_CONFIDENCE</code>, <code>INTENT_SWITCH_THRESHOLD</code></td><td>Intent confidence bands (0.60, 0.80, 0.75)</td></tr>
+    <tr><td><code>EMERGENCY_SAFETY_NET</code></td><td>Phrase-based emergency escalation (on by default)</td></tr>
+    <tr><td><code>SESSION_TIMEOUT_MINUTES</code></td><td>Dialogue session lifetime (15)</td></tr>
+    <tr><td><code>OLLAMA_BASE_URL</code>, <code>OLLAMA_MODEL</code>, <code>OLLAMA_TIMEOUT</code>, <code>OLLAMA_TEMPERATURE</code>, <code>OLLAMA_MAX_TOKENS</code>, <code>OLLAMA_ENABLED</code>, <code>OLLAMA_TRANSLATE</code></td><td>The local LLM</td></tr>
+    <tr><td><code>RESPONSE_LANGUAGE</code></td><td>Reply language, or <code>auto</code> to follow the caller</td></tr>
+    <tr><td><code>DASHBOARD_PASSWORD</code>, <code>DASHBOARD_PASSWORD_&lt;DOCTORID&gt;</code></td><td>Starting passwords for doctor accounts</td></tr>
+    <tr><td><code>SUPERADMIN_ID</code>, <code>SUPERADMIN_PASSWORD</code></td><td>The administrator's ID and starting password</td></tr>
+    <tr><td><code>DASHBOARD_SESSION_HOURS</code>, <code>DASHBOARD_ORIGINS</code></td><td>Dashboard session lifetime; allowed browser origins</td></tr>
+    <tr><td><code>CLINIC_ID</code></td><td>The document that holds the one clinic (C001)</td></tr>
+    <tr><td><code>NOTIFICATION_PROVIDER</code></td><td>Reserved for an SMS or call provider (not implemented)</td></tr>
+    <tr><td><code>APPOINTMENT_ID_PREFIX</code>, <code>TIMEZONE</code>, <code>LOG_LEVEL</code>, <code>INTENT_MODULE_DIR</code></td><td>Appointment IDs, time zone (Asia/Karachi), logging, model location</td></tr>
+  </table>
+</section>
+
+</body>
+</html>
