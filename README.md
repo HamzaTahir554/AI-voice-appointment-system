@@ -475,7 +475,13 @@ Results on the submitted code:
 | **Total** | **470** | **456** | **14** |
 
 No test fails. The skipped tests are the live Firestore and Ollama checks,
-which need `--live`. Intent detection tests need the trained model (step 4).
+which need `--live`.
+
+Without the trained model (a fresh clone before step 4) the suite still
+passes: the four test classes that exercise the real model skip themselves,
+giving 462 tests, 444 passed, 18 skipped, 0 failed. The dialogue tests use a
+scripted stand-in classifier on purpose (`tests/helpers.py`), so they test
+the dialogue logic on its own; the running system always uses mBERT.
 
 **Browser checks** drive the real dashboard in headless Chrome - 59 and 51
 checks, all passing. See [`tests/browser/README.md`](tests/browser/README.md).
