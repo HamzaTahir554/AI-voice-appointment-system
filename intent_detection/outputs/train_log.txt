@@ -1,0 +1,83 @@
+------------------------------------------------------------------------------
+torch version        : 2.14.0+cu126
+CUDA available       : True
+GPU name             : NVIDIA GeForce GTX 1660 SUPER
+GPU memory           : 6.0 GB
+training device      : cuda
+------------------------------------------------------------------------------
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 4406.57it/s]
+[transformers] [1mBertForSequenceClassification LOAD REPORT[0m from: bert-base-multilingual-cased
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+train / val / test rows : 2760 / 347 / 354
+intents                 : 31
+batch size              : 16 (effective 32 with accumulation)
+loss                    : cross-entropy (class weights, power=0.5, spread=9x)
+mixed precision (fp16)  : True
+------------------------------------------------------------------------------
+epoch 1/20 (231.6s)  train loss 3.3353 acc 0.2551 | val loss 2.7075 acc 0.4380 macroF1 0.0673
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:11<00:00, 11.15s/it]Writing model shards: 100%|██████████| 1/1 [00:11<00:00, 11.15s/it]
+           new best macro-F1 0.0673 -> checkpoint saved
+epoch 2/20 (233.0s)  train loss 2.8181 acc 0.5091 | val loss 1.9647 acc 0.6110 macroF1 0.3070
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:07<00:00,  7.37s/it]Writing model shards: 100%|██████████| 1/1 [00:07<00:00,  7.37s/it]
+           new best macro-F1 0.3070 -> checkpoint saved
+epoch 3/20 (233.5s)  train loss 2.0864 acc 0.6772 | val loss 1.3720 acc 0.7493 macroF1 0.5278
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:06<00:00,  6.01s/it]Writing model shards: 100%|██████████| 1/1 [00:06<00:00,  6.01s/it]
+           new best macro-F1 0.5278 -> checkpoint saved
+epoch 4/20 (234.2s)  train loss 1.4284 acc 0.8261 | val loss 1.0159 acc 0.8184 macroF1 0.6425
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:09<00:00,  9.23s/it]Writing model shards: 100%|██████████| 1/1 [00:09<00:00,  9.23s/it]
+           new best macro-F1 0.6425 -> checkpoint saved
+epoch 5/20 (233.4s)  train loss 1.0060 acc 0.8891 | val loss 0.7853 acc 0.8617 macroF1 0.7206
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:05<00:00,  5.21s/it]Writing model shards: 100%|██████████| 1/1 [00:05<00:00,  5.21s/it]
+           new best macro-F1 0.7206 -> checkpoint saved
+epoch 6/20 (244.1s)  train loss 0.6931 acc 0.9304 | val loss 0.6964 acc 0.8646 macroF1 0.7466
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:08<00:00,  8.37s/it]Writing model shards: 100%|██████████| 1/1 [00:08<00:00,  8.37s/it]
+           new best macro-F1 0.7466 -> checkpoint saved
+epoch 7/20 (233.7s)  train loss 0.4743 acc 0.9598 | val loss 0.5856 acc 0.8847 macroF1 0.7673
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:06<00:00,  6.80s/it]Writing model shards: 100%|██████████| 1/1 [00:06<00:00,  6.80s/it]
+           new best macro-F1 0.7673 -> checkpoint saved
+epoch 8/20 (233.4s)  train loss 0.3189 acc 0.9812 | val loss 0.5459 acc 0.9020 macroF1 0.8301
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:11<00:00, 11.45s/it]Writing model shards: 100%|██████████| 1/1 [00:11<00:00, 11.45s/it]
+           new best macro-F1 0.8301 -> checkpoint saved
+epoch 9/20 (233.4s)  train loss 0.2142 acc 0.9866 | val loss 0.4794 acc 0.9135 macroF1 0.8519
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:05<00:00,  5.56s/it]Writing model shards: 100%|██████████| 1/1 [00:05<00:00,  5.56s/it]
+           new best macro-F1 0.8519 -> checkpoint saved
+epoch 10/20 (233.4s)  train loss 0.1321 acc 0.9928 | val loss 0.4449 acc 0.9164 macroF1 0.8438
+epoch 11/20 (233.3s)  train loss 0.0878 acc 0.9949 | val loss 0.4336 acc 0.9222 macroF1 0.8594
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:08<00:00,  8.46s/it]Writing model shards: 100%|██████████| 1/1 [00:08<00:00,  8.46s/it]
+           new best macro-F1 0.8594 -> checkpoint saved
+epoch 12/20 (233.3s)  train loss 0.0571 acc 0.9978 | val loss 0.4887 acc 0.9135 macroF1 0.8632
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:08<00:00,  8.41s/it]Writing model shards: 100%|██████████| 1/1 [00:08<00:00,  8.41s/it]
+           new best macro-F1 0.8632 -> checkpoint saved
+epoch 13/20 (233.2s)  train loss 0.0375 acc 0.9996 | val loss 0.4892 acc 0.9222 macroF1 0.8630
+epoch 14/20 (233.3s)  train loss 0.0277 acc 1.0000 | val loss 0.4764 acc 0.9193 macroF1 0.8583
+epoch 15/20 (233.2s)  train loss 0.0230 acc 0.9996 | val loss 0.4616 acc 0.9251 macroF1 0.8650
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:06<00:00,  6.69s/it]Writing model shards: 100%|██████████| 1/1 [00:06<00:00,  6.69s/it]
+           new best macro-F1 0.8650 -> checkpoint saved
+epoch 16/20 (233.5s)  train loss 0.0191 acc 1.0000 | val loss 0.4571 acc 0.9193 macroF1 0.8569
+epoch 17/20 (233.2s)  train loss 0.0172 acc 1.0000 | val loss 0.4583 acc 0.9193 macroF1 0.8518
+epoch 18/20 (233.2s)  train loss 0.0159 acc 1.0000 | val loss 0.4683 acc 0.9222 macroF1 0.8553
+epoch 19/20 (233.4s)  train loss 0.0152 acc 1.0000 | val loss 0.4658 acc 0.9280 macroF1 0.8659
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:11<00:00, 11.28s/it]Writing model shards: 100%|██████████| 1/1 [00:11<00:00, 11.28s/it]
+           new best macro-F1 0.8659 -> checkpoint saved
+epoch 20/20 (233.4s)  train loss 0.0150 acc 1.0000 | val loss 0.4687 acc 0.9251 macroF1 0.8639
+------------------------------------------------------------------------------
+best epoch 19 with validation macro-F1 0.8659
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights: 100%|██████████| 201/201 [00:00<00:00, 10023.72it/s]
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:10<00:00, 10.79s/it]Writing model shards: 100%|██████████| 1/1 [00:10<00:00, 10.79s/it]
+model saved   -> C:\Users\BURAAQ NOVA\Start UP\aI VOICE APPOINTMENT SYSTEM\intent_detection\models\mbert_intent_classifier
+history saved -> C:\Users\BURAAQ NOVA\Start UP\aI VOICE APPOINTMENT SYSTEM\intent_detection\outputs\training_history.json

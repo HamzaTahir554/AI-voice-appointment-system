@@ -1,0 +1,373 @@
+====================================================================
+SYNTHETIC DATA GENERATED
+====================================================================
+   appointment_confirmation       60
+   appointment_status             37
+   book_appointment              582
+   cancel_appointment             51
+   change_date                    47
+   change_doctor                 129
+   change_time                    56
+   check_availability            110
+   clinic_closed                  40
+   clinic_location                18
+   clinic_timing                  41
+   confirm                        62
+   deny                           49
+   doctor_fee                     59
+   doctor_information             78
+   doctor_qualifications          54
+   doctor_specialization          67
+   doctor_unavailable             64
+   emergency                      87
+   find_doctor                    50
+   goodbye                        58
+   greeting                       40
+   help                           56
+   provide_patient_age            73
+   provide_patient_gender         18
+   provide_patient_name           82
+   provide_patient_phone          72
+   repeat_information             60
+   reschedule_appointment         62
+   thank_you                      41
+   unclear_request                74
+--------------------------------------------------------------------
+   TOTAL                        2377 unique sentences across 31 intents
+   (of which hand-written)       127 natural phrasings / STT variants
+   (of which augmented)          507 Roman-Urdu spelling variants
+   (of which emergency)           38 booking-shaped emergencies
+   (of which contrast)           159 audit-driven boundary phrasings
+   held out                       51 rows matching the evaluation sets
+
+written to C:\Users\BURAAQ NOVA\Start UP\aI VOICE APPOINTMENT SYSTEM\Data\synthetic_intents.csv
+==============================================================================
+FILE: dataset.csv
+==============================================================================
+1. Shape                : 405 rows x 5 columns
+3. Columns              : ['User_Query', 'AI_Response', 'Intent', 'Urdu_Query', 'Urdu_Response']
+   -> detected TEXT     : User_Query
+   -> detected INTENT   : Intent
+   -> parallel (script) : ['Urdu_Query']
+
+2. First 5 rows (detected columns only):
+   [0] 'Doctor sahib kab baithte hain? Dr. Hamza timings?' -> hours
+   [1] 'Doctor sahib ka experience kitna hai?' -> exp
+   [2] "Doctor ki parhai kya hai? What is Dr. Hamza's qualification?" -> qual
+   [3] ' मरीज़ की हालत खराब है Can I see Dr. Hamza right now?' -> emergency
+   [4] 'Can I move my meeting with Dr. Hamza to Saturday?' -> reschedule
+
+4. Unique intent labels (9):
+   ['address', 'book', 'cancel', 'emergency', 'exp', 'fee', 'hours', 'qual', 'reschedule']
+
+5./8. Samples per intent (class distribution):
+   book                               384  ########################################
+   reschedule                           8  #
+   emergency                            4  #
+   fee                                  4  #
+   hours                                1  #
+   exp                                  1  #
+   qual                                 1  #
+   cancel                               1  #
+   address                              1  #
+   imbalance ratio (max/min) = 384.0x  ->  IMBALANCED
+
+6. Missing values per column:
+   User_Query                           0   <-- model column
+   AI_Response                          0
+   Intent                               0   <-- model column
+   Urdu_Query                           0
+   Urdu_Response                        0
+
+7. Duplicate statistics:
+   fully duplicated rows        : 0
+   duplicated (text,intent)     : 0
+   distinct utterances          : 405 of 405
+
+9. Language / script distribution of the text column:
+   roman_urdu     392
+   english         12
+   devanagari       1
+
+==============================================================================
+FILE: dataset2.csv
+==============================================================================
+1. Shape                : 2159 rows x 19 columns
+3. Columns              : ['ID', 'Feature', 'Style', 'Patient', 'Doctor', 'Doctor_Specialization', 'Doctor_Fee', 'Doctor_Qualification', 'Doctor_Experience', 'Clinic_Address', 'Clinic_Phone', 'Clinic_Email', 'Clinic_Hours', 'Day', 'Time', 'Patient_Message', 'Assistant_Message', 'Urdu_Query', 'Urdu_Response']
+   -> detected TEXT     : Patient_Message
+   -> detected INTENT   : Feature
+   -> parallel (script) : none
+
+2. First 5 rows (detected columns only):
+   [0] 'I would like to book an appointment with Dr. Asim.' -> Booking
+   [1] 'I would like to book an appointment with Dr. Asim.' -> Booking
+   [2] 'I would like to book an appointment with Dr. Asim.' -> Booking
+   [3] 'I would like to book an appointment with Dr. Asim.' -> Booking
+   [4] 'I would like to book an appointment with Dr. Asim.' -> Booking
+
+4. Unique intent labels (12):
+   ['Booking', 'Cancellation', 'Check_Availability', 'Clinic_Address_Inquiry', 'Clinic_Hours_Inquiry', 'Confirmation', 'Doctor_Experience_Inquiry', 'Doctor_Fee_Inquiry', 'Doctor_Info_Inquiry', 'Doctor_Qualification_Inquiry', 'Emergency', 'Rescheduling']
+
+5./8. Samples per intent (class distribution):
+   Booking                            500  ########################################
+   Cancellation                       350  ############################
+   Emergency                          240  ###################
+   Rescheduling                       225  ##################
+   Doctor_Fee_Inquiry                 144  ###########
+   Clinic_Address_Inquiry             120  #########
+   Confirmation                       120  #########
+   Doctor_Info_Inquiry                105  ########
+   Clinic_Hours_Inquiry               105  ########
+   Check_Availability                 100  ########
+   Doctor_Qualification_Inquiry        75  ######
+   Doctor_Experience_Inquiry           75  ######
+   imbalance ratio (max/min) = 6.7x  ->  IMBALANCED
+
+6. Missing values per column:
+   ID                                   0
+   Feature                              0   <-- model column
+   Style                                0
+   Patient                              0
+   Doctor                               0
+   Doctor_Specialization                0
+   Doctor_Fee                           0
+   Doctor_Qualification                 0
+   Doctor_Experience                    0
+   Clinic_Address                       0
+   Clinic_Phone                         0
+   Clinic_Email                         0
+   Clinic_Hours                         0
+   Day                                624
+   Time                               624
+   Patient_Message                      0   <-- model column
+   Assistant_Message                    0
+   Urdu_Query                           0
+   Urdu_Response                        0
+
+7. Duplicate statistics:
+   fully duplicated rows        : 0
+   duplicated (text,intent)     : 2000
+   distinct utterances          : 159 of 2159
+
+9. Language / script distribution of the text column:
+   english       1678
+   roman_urdu     481
+
+==============================================================================
+FILE: dataset3.csv
+==============================================================================
+1. Shape                : 1500 rows x 5 columns
+3. Columns              : ['user_input', 'intent', 'assistant_response', 'Urdu_Query', 'Urdu_Response']
+   -> detected TEXT     : user_input
+   -> detected INTENT   : intent
+   -> parallel (script) : ['Urdu_Query']
+
+2. First 5 rows (detected columns only):
+   [0] 'Assalamualaikum' -> greeting
+   [1] 'Clinic address please' -> clinic_address
+   [2] 'Assalamualaikum' -> greeting
+   [3] "I can't come, cancel my booking" -> cancel_appointment
+   [4] 'Tell me about the doctor' -> doctor_info
+
+4. Unique intent labels (13):
+   ['ask_availability', 'book_appointment', 'cancel_appointment', 'clinic_address', 'clinic_timing', 'doctor_experience', 'doctor_fee', 'doctor_info', 'doctor_qualification', 'emergency', 'goodbye', 'greeting', 'reschedule_appointment']
+
+5./8. Samples per intent (class distribution):
+   doctor_experience                  135  ########################################
+   greeting                           132  #######################################
+   doctor_info                        132  #######################################
+   goodbye                            126  #####################################
+   doctor_qualification               118  ##################################
+   doctor_fee                         116  ##################################
+   emergency                          116  ##################################
+   clinic_timing                      112  #################################
+   ask_availability                   110  ################################
+   cancel_appointment                 109  ################################
+   reschedule_appointment             105  ###############################
+   clinic_address                     100  #############################
+   book_appointment                    89  ##########################
+   imbalance ratio (max/min) = 1.5x  ->  roughly balanced
+
+6. Missing values per column:
+   user_input                           0   <-- model column
+   intent                               0   <-- model column
+   assistant_response                   0
+   Urdu_Query                           0
+   Urdu_Response                        0
+
+7. Duplicate statistics:
+   fully duplicated rows        : 1425
+   duplicated (text,intent)     : 1439
+   distinct utterances          : 61 of 1500
+
+9. Language / script distribution of the text column:
+   english       1500
+
+==============================================================================
+FILE: synthetic_intents.csv
+==============================================================================
+1. Shape                : 2377 rows x 2 columns
+3. Columns              : ['user_input', 'intent']
+   -> detected TEXT     : user_input
+   -> detected INTENT   : intent
+   -> parallel (script) : none
+
+2. First 5 rows (detected columns only):
+   [0] 'Abhi confirm kar dein' -> appointment_confirmation
+   [1] 'Book it, that is fine' -> appointment_confirmation
+   [2] 'Booking pakki kar dein' -> appointment_confirmation
+   [3] 'Confirm it for Saturday at 10 AM' -> appointment_confirmation
+   [4] 'Confirm it for Saturday at 11 AM' -> appointment_confirmation
+
+4. Unique intent labels (31):
+   ['appointment_confirmation', 'appointment_status', 'book_appointment', 'cancel_appointment', 'change_date', 'change_doctor', 'change_time', 'check_availability', 'clinic_closed', 'clinic_location', 'clinic_timing', 'confirm', 'deny', 'doctor_fee', 'doctor_information', 'doctor_qualifications', 'doctor_specialization', 'doctor_unavailable', 'emergency', 'find_doctor', 'goodbye', 'greeting', 'help', 'provide_patient_age', 'provide_patient_gender', 'provide_patient_name', 'provide_patient_phone', 'repeat_information', 'reschedule_appointment', 'thank_you', 'unclear_request']
+
+5./8. Samples per intent (class distribution):
+   book_appointment                   582  ########################################
+   change_doctor                      129  ########
+   check_availability                 110  #######
+   emergency                           87  #####
+   provide_patient_name                82  #####
+   doctor_information                  78  #####
+   unclear_request                     74  #####
+   provide_patient_age                 73  #####
+   provide_patient_phone               72  ####
+   doctor_specialization               67  ####
+   doctor_unavailable                  64  ####
+   confirm                             62  ####
+   reschedule_appointment              62  ####
+   appointment_confirmation            60  ####
+   repeat_information                  60  ####
+   doctor_fee                          59  ####
+   goodbye                             58  ###
+   change_time                         56  ###
+   help                                56  ###
+   doctor_qualifications               54  ###
+   cancel_appointment                  51  ###
+   find_doctor                         50  ###
+   deny                                49  ###
+   change_date                         47  ###
+   clinic_timing                       41  ##
+   thank_you                           41  ##
+   clinic_closed                       40  ##
+   greeting                            40  ##
+   appointment_status                  37  ##
+   clinic_location                     18  #
+   provide_patient_gender              18  #
+   imbalance ratio (max/min) = 32.3x  ->  IMBALANCED
+
+6. Missing values per column:
+   user_input                           0   <-- model column
+   intent                               0   <-- model column
+
+7. Duplicate statistics:
+   fully duplicated rows        : 0
+   duplicated (text,intent)     : 0
+   distinct utterances          : 2377 of 2377
+
+9. Language / script distribution of the text column:
+   english       1028
+   roman_urdu     823
+   urdu           526
+
+   held out 4 rows matching the evaluation sets
+==============================================================================
+UNIFIED DATASET
+==============================================================================
+rows harvested (incl. parallel Urdu) : 8346
+after dropping empty/missing text    : 8346
+after exact duplicate removal        : 3461
+leakage-proof groups                 : 2991
+canonical intents                    : 31
+
+Final class distribution:
+   book_appointment          1417 ( 40.9%)  ########################################
+   reschedule_appointment     175 (  5.1%)  ####
+   change_doctor              129 (  3.7%)  ###
+   check_availability         119 (  3.4%)  ###
+   emergency                  111 (  3.2%)  ###
+   doctor_information          88 (  2.5%)  ##
+   provide_patient_name        82 (  2.4%)  ##
+   doctor_fee                  79 (  2.3%)  ##
+   unclear_request             74 (  2.1%)  ##
+   provide_patient_age         73 (  2.1%)  ##
+   doctor_qualifications       72 (  2.1%)  ##
+   provide_patient_phone       72 (  2.1%)  ##
+   cancel_appointment          71 (  2.1%)  ##
+   doctor_specialization       67 (  1.9%)  #
+   appointment_confirmation    66 (  1.9%)  #
+   doctor_unavailable          64 (  1.8%)  #
+   confirm                     62 (  1.8%)  #
+   repeat_information          60 (  1.7%)  #
+   goodbye                     59 (  1.7%)  #
+   change_time                 56 (  1.6%)  #
+   help                        56 (  1.6%)  #
+   clinic_timing               54 (  1.6%)  #
+   find_doctor                 50 (  1.4%)  #
+   deny                        49 (  1.4%)  #
+   change_date                 47 (  1.4%)  #
+   greeting                    41 (  1.2%)  #
+   thank_you                   41 (  1.2%)  #
+   clinic_closed               40 (  1.2%)  #
+   appointment_status          37 (  1.1%)  #
+   clinic_location             32 (  0.9%)  #
+   provide_patient_gender      18 (  0.5%)  #
+
+Script distribution:
+   roman_urdu    1242 ( 35.9%)
+   english       1231 ( 35.6%)
+   urdu           987 ( 28.5%)
+   devanagari       1 (  0.0%)
+
+==============================================================================
+TRAIN / VALIDATION / TEST SPLIT (stratified, group-aware)
+==============================================================================
+   train   2760 rows ( 79.7%)
+   val      347 rows ( 10.0%)
+   test     354 rows ( 10.2%)
+   train/test text overlap: 0 (must be 0)
+
+Per-intent split counts:
+split                     train  val  test
+label                                     
+appointment_confirmation     52    7     7
+appointment_status           29    4     4
+book_appointment           1130  139   148
+cancel_appointment           55    8     8
+change_date                  37    5     5
+change_doctor               103   13    13
+change_time                  44    6     6
+check_availability           95   12    12
+clinic_closed                32    4     4
+clinic_location              25    4     3
+clinic_timing                44    5     5
+confirm                      50    6     6
+deny                         39    5     5
+doctor_fee                   63    8     8
+doctor_information           70    9     9
+doctor_qualifications        56    9     7
+doctor_specialization        53    7     7
+doctor_unavailable           52    6     6
+emergency                    90   10    11
+find_doctor                  40    5     5
+goodbye                      47    6     6
+greeting                     33    4     4
+help                         44    6     6
+provide_patient_age          59    7     7
+provide_patient_gender       14    2     2
+provide_patient_name         66    8     8
+provide_patient_phone        58    7     7
+repeat_information           48    6     6
+reschedule_appointment      139   18    18
+thank_you                    33    4     4
+unclear_request              60    7     7
+
+==============================================================================
+SAVED
+==============================================================================
+   label2id  -> C:\Users\BURAAQ NOVA\Start UP\aI VOICE APPOINTMENT SYSTEM\intent_detection\data\label2id.json
+   id2label  -> C:\Users\BURAAQ NOVA\Start UP\aI VOICE APPOINTMENT SYSTEM\intent_detection\data\id2label.json
+   processed -> C:\Users\BURAAQ NOVA\Start UP\aI VOICE APPOINTMENT SYSTEM\intent_detection\data\intents.csv
+   splits    -> C:\Users\BURAAQ NOVA\Start UP\aI VOICE APPOINTMENT SYSTEM\intent_detection\data\splits.csv
+
+   31 intents: ['appointment_confirmation', 'appointment_status', 'book_appointment', 'cancel_appointment', 'change_date', 'change_doctor', 'change_time', 'check_availability', 'clinic_closed', 'clinic_location', 'clinic_timing', 'confirm', 'deny', 'doctor_fee', 'doctor_information', 'doctor_qualifications', 'doctor_specialization', 'doctor_unavailable', 'emergency', 'find_doctor', 'goodbye', 'greeting', 'help', 'provide_patient_age', 'provide_patient_gender', 'provide_patient_name', 'provide_patient_phone', 'repeat_information', 'reschedule_appointment', 'thank_you', 'unclear_request']

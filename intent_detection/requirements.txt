@@ -1,0 +1,28 @@
+# ---------------------------------------------------------------------------
+# Intent Detection module - AI Voice Appointment System
+#
+# IMPORTANT (GPU): the plain `torch` wheel on PyPI is CPU-ONLY. To train on an
+# NVIDIA GPU install torch from the CUDA index FIRST, then install this file:
+#
+#   pip install torch --index-url https://download.pytorch.org/whl/cu126
+#   pip install -r requirements.txt
+#
+# Verify with:  python -c "import torch; print(torch.cuda.is_available())"
+# ---------------------------------------------------------------------------
+
+# --- deep learning ---------------------------------------------------------
+torch>=2.4,<3.0
+transformers>=4.44
+
+# --- data ------------------------------------------------------------------
+pandas>=2.2
+numpy>=1.26
+
+# --- metrics & plotting ----------------------------------------------------
+scikit-learn>=1.5
+matplotlib>=3.8           # seaborn deliberately NOT used
+
+# --- API -------------------------------------------------------------------
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pydantic>=2.8

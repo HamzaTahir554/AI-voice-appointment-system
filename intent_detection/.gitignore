@@ -1,0 +1,10 @@
+# trained weights and checkpoints are large - download them from the
+# repository's Releases page, or regenerate with src/train.py
+models/
+# The plots and the training log in outputs/ ARE kept: they are the evidence
+# behind the metrics quoted in the report.
+data/intents.csv
+data/splits.csv
+__pycache__/
+*.pyc
+.venv/
