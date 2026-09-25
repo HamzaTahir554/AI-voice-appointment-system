@@ -1,0 +1,199 @@
+/* ==========================================================================
+   global.css - design tokens, reset, typography, theme
+   AI Voice Appointment System - Doctor Dashboard
+   ========================================================================== */
+
+:root {
+  /* A clinic palette: one accent, used sparingly. Teal reads as medical
+     without the saturated indigo/violet of a template. */
+  --brand: #0f6b7b;
+  --brand-hover: #0b5765;
+  --brand-soft: #e7f1f3;
+  --on-brand: #ffffff;
+
+  /* The sidebar is a single flat colour - no gradient. */
+  --sidebar-bg: #16242c;
+  --sidebar-text: #c7d2d6;
+  --sidebar-text-strong: #ffffff;
+  --sidebar-line: rgba(255, 255, 255, 0.10);
+  --sidebar-active: rgba(255, 255, 255, 0.08);
+
+  /* Surfaces and text */
+  --bg: #f6f7f8;
+  --surface: #ffffff;
+  --surface-2: #fafbfb;
+  --surface-3: #f1f3f4;
+  --border: #e3e6e8;
+  --border-strong: #cbd1d4;
+  --text: #16242c;
+  --text-muted: #5d6b73;
+  --text-subtle: #8b979d;
+
+  /* Status palette: every pair is text on its own background */
+  --success: #146c43;      --success-bg: #e4f2ea;
+  --warning: #915907;      --warning-bg: #fbf0dc;
+  --danger:  #a5272a;      --danger-bg:  #fae7e7;
+  --info:    #14607e;      --info-bg:    #e3eff4;
+  --neutral: #495a62;      --neutral-bg: #eef1f2;
+  --accent:  #0f6b7b;      --accent-bg:  #e7f1f3;
+
+  /* Shape: modest corners, quiet shadows */
+  --r-sm: 5px;
+  --r: 7px;
+  --r-lg: 9px;
+  --r-xl: 11px;
+  --r-pill: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(22, 36, 44, 0.05);
+  --shadow: 0 1px 3px rgba(22, 36, 44, 0.08);
+  --shadow-lg: 0 8px 24px rgba(22, 36, 44, 0.14);
+
+  /* Layout */
+  --sidebar-w: 236px;
+  --header-h: 60px;
+
+  --font: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: var(--font);
+  --speed: 0.15s;
+}
+
+[data-theme="dark"] {
+  --brand: #5cb7c4;
+  --brand-hover: #7cc9d3;
+  --brand-soft: #123138;
+  --on-brand: #06181d;
+
+  --sidebar-bg: #11191f;
+  --sidebar-text: #9fadb4;
+  --sidebar-text-strong: #ffffff;
+  --sidebar-line: rgba(255, 255, 255, 0.08);
+  --sidebar-active: rgba(255, 255, 255, 0.07);
+
+  --bg: #10171b;
+  --surface: #171f24;
+  --surface-2: #1c262b;
+  --surface-3: #232f35;
+  --border: #2a363c;
+  --border-strong: #3b4a52;
+  --text: #e4e9eb;
+  --text-muted: #9aa8af;
+  --text-subtle: #7b8991;
+
+  --success: #6ec49a;      --success-bg: #13291f;
+  --warning: #e0b163;      --warning-bg: #2e2412;
+  --danger:  #e39292;      --danger-bg:  #331a1a;
+  --info:    #85bdd6;      --info-bg:    #12262f;
+  --neutral: #b9c6cc;      --neutral-bg: #222d33;
+  --accent:  #5cb7c4;      --accent-bg:  #123138;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 10px 28px rgba(0, 0, 0, 0.5);
+}
+
+/* --------------------------------------------------------------- reset --- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+* { margin: 0; padding: 0; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+img, svg { display: block; max-width: 100%; }
+ul, ol { list-style: none; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { background: none; border: 0; cursor: pointer; }
+a { color: var(--brand); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+h1 { font-size: 1.5rem; }
+h2 { font-size: 1.25rem; }
+h3 { font-size: 1.0625rem; }
+h4 { font-size: 0.9375rem; }
+
+/* ------------------------------------------------------ accessibility --- */
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  z-index: 200;
+  background: var(--surface);
+  color: var(--text);
+  padding: 10px 16px;
+  border-radius: var(--r-sm);
+  box-shadow: var(--shadow);
+  transition: top var(--speed) ease;
+}
+.skip-link:focus { top: 12px; text-decoration: none; }
+
+[hidden] { display: none !important; }
+
+/* ------------------------------------------------------------ helpers --- */
+.muted { color: var(--text-muted); }
+.mono { font-family: Consolas, "Cascadia Mono", ui-monospace, monospace; }
+.small { font-size: 0.8125rem; }
+.strong { font-weight: 600; }
+.text-right { text-align: right; }
+.nowrap { white-space: nowrap; }
+.stack { display: grid; gap: 16px; }
+.row { display: flex; align-items: center; gap: 10px; }
+.row-between { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.wrap { flex-wrap: wrap; }
+.grow { flex: 1; }
+.mt-0 { margin-top: 0; }
+.mt-16 { margin-top: 16px; }
+.mt-24 { margin-top: 24px; }
+
+.icon {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.icon-sm { width: 16px; height: 16px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

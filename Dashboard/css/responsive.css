@@ -1,0 +1,134 @@
+/* ==========================================================================
+   responsive.css - breakpoints
+   1280 / 1024 (sidebar becomes a drawer) / 768 (tables become cards) / 480
+   ========================================================================== */
+
+/* ------------------------------------------------- laptop: 1280px and down */
+@media (max-width: 1280px) {
+  :root { --sidebar-w: 232px; }
+  .page { padding: 20px 20px 36px; }
+  .topbar { padding: 12px 20px; }
+  .split { grid-template-columns: 1.5fr 1fr; }
+}
+
+/* ------------------------------- small laptop / tablet: 1024px and down --- */
+@media (max-width: 1024px) {
+  .sidebar {
+    transform: translateX(-100%);
+    box-shadow: var(--shadow-lg);
+    width: 268px;
+  }
+  .app.nav-open .sidebar { transform: translateX(0); }
+  .content { margin-left: 0; }
+
+  .menu-toggle { display: grid; }
+
+  .split, .split-even { grid-template-columns: 1fr; }
+  .global-search { width: min(280px, 34vw); }
+}
+
+/* ---------------------------------------------- tablet: 768px and down --- */
+@media (max-width: 768px) {
+  .topbar { flex-wrap: wrap; row-gap: 10px; padding: 12px 16px; }
+  .topbar-title h1 { font-size: 1.125rem; }
+  .global-search { order: 3; width: 100%; }
+  .topbar-tools { margin-left: auto; }
+  .profile-btn-text { display: none; }
+  .profile-btn { padding: 4px; }
+
+  .page { padding: 16px 16px 32px; }
+  .kpi-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+  .kpi { padding: 14px; gap: 10px; }
+  .kpi-value { font-size: 1.5rem; }
+
+  /* Tables become stacked cards: each cell carries its own label. */
+  table.data thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  table.data, table.data tbody, table.data tr, table.data td { display: block; width: 100%; }
+  table.data tr {
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    margin: 12px;
+    padding: 6px 0;
+    background: var(--surface);
+  }
+  table.data tbody tr:hover { background: var(--surface); }
+  table.data td {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 9px 14px;
+    border-bottom: 0;
+    text-align: right;
+  }
+  table.data td::before {
+    content: attr(data-label);
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-align: left;
+    flex: none;
+  }
+  table.data td:empty { display: none; }
+  .cell-actions { justify-content: flex-end; }
+
+  .day-row { grid-template-columns: 1fr; gap: 10px; }
+  .detail-list { grid-template-columns: 1fr 1fr; }
+  .toast-region { right: 12px; left: 12px; bottom: 12px; width: auto; }
+}
+
+/* ---------------------------------------------- mobile: 560px and down --- */
+@media (max-width: 560px) {
+  .login-screen { flex-direction: column; }
+  .login-right { display: none; }
+  .login-left { padding: 36px 22px; justify-content: flex-start; }
+  .login-left h1 { font-size: 1.625rem; }
+  .login-brand { margin-bottom: 28px; }
+
+  .modal-backdrop { padding: 0; place-items: end stretch; }
+  .modal, .modal-sm, .modal-lg {
+    width: 100%;
+    max-height: 92vh;
+    border-radius: var(--r-lg) var(--r-lg) 0 0;
+  }
+  .modal-foot .btn { flex: 1; }
+}
+
+/* ---------------------------------------------- mobile: 480px and down --- */
+@media (max-width: 480px) {
+  .page { padding: 14px 12px 28px; }
+  .topbar { padding: 10px 12px; }
+  .page-head { flex-direction: column; align-items: stretch; }
+  .page-head .btn { width: 100%; }
+  .kpi-grid { grid-template-columns: 1fr 1fr; }
+  .card-head { padding: 14px 16px; }
+  .card-body { padding: 16px; }
+  .detail-list { grid-template-columns: 1fr; }
+  .apt-row { flex-wrap: wrap; row-gap: 8px; }
+  .apt-time { width: auto; }
+  .apt-actions { width: 100%; justify-content: flex-end; }
+  .segmented { width: 100%; }
+  .segmented button { flex: 1; }
+
+  /* Filters stack: side by side they squeeze the search box to one letter. */
+  .toolbar { flex-direction: column; align-items: stretch; }
+  .toolbar .search { min-width: 0; width: 100%; }
+  .toolbar .input[type="date"] { width: 100%; }
+  .toolbar .btn { width: 100%; }
+  .theme-options { flex-direction: column; }
+}
+
+/* ------------------------------------------------- very small: 375px ---- */
+@media (max-width: 375px) {
+  .kpi-grid { grid-template-columns: 1fr; }
+  .toolbar .search { min-width: 0; }
+}
+
+/* ------------------------------------------------------------ print ---- */
+@media print {
+  .sidebar, .topbar-tools, .menu-toggle, .toast-region, .cell-actions { display: none !important; }
+  .content { margin-left: 0; }
+  .card { box-shadow: none; border-color: #ccc; }
+}
