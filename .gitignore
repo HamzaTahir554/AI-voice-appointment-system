@@ -1,0 +1,71 @@
+# ---------------------------------------------------------------------------
+# Secrets - NEVER commit these
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+# Firebase service-account keys (any name, any location)
+*serviceAccount*.json
+*service-account*.json
+*firebase-adminsdk*.json
+credentials/
+secrets/
+# Any other JSON is treated as potentially sensitive (service-account keys are
+# JSON). The project's own small JSON files are listed back in explicitly.
+*.json
+!intent_detection/data/label2id.json
+!intent_detection/data/id2label.json
+!intent_detection/outputs/*.json
+!reports/**/*.json
+# ...except the results file every test run rewrites
+reports/test_results.json
+reports/test_results.xml
+
+# ---------------------------------------------------------------------------
+# Trained models - large binaries, regenerate with intent_detection/src/train.py
+# ---------------------------------------------------------------------------
+intent_detection/models/
+models/
+*.safetensors
+*.bin
+*.pt
+*.ckpt
+
+# Generated artefacts. The training plots in intent_detection/outputs/ ARE
+# kept: they are the evidence behind the metrics in the report.
+intent_detection/data/intents.csv
+intent_detection/data/splits.csv
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# ---------------------------------------------------------------------------
+# Environments
+# ---------------------------------------------------------------------------
+.venv/
+venv/
+env/
+
+# ---------------------------------------------------------------------------
+# Editors / OS
+# ---------------------------------------------------------------------------
+# Personal editor settings (they hold machine-specific interpreter paths)
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# ---------------------------------------------------------------------------
+# Logs and scratch output
+# ---------------------------------------------------------------------------
+*.log
+logs/

@@ -1,0 +1,45 @@
+# ---------------------------------------------------------------------------
+# AI Voice Appointment System
+#
+#   pip install -r requirements.txt
+#
+# GPU NOTE: the plain `torch` wheel on PyPI is CPU-ONLY. To use an NVIDIA GPU,
+# install torch from the CUDA index FIRST:
+#   pip install torch --index-url https://download.pytorch.org/whl/cu126
+#
+# Audited against every import in the project. Removed as unused: accelerate
+# (the training loop is hand-written, not transformers.Trainer), pytest (the
+# suite is standard-library unittest - see scripts/run_tests.py) and a
+# duplicate httpx line. safetensors is installed by transformers itself.
+# ---------------------------------------------------------------------------
+
+# --- intent detection (mBERT) ---------------------------------------------
+torch>=2.4,<3.0
+transformers>=4.44
+
+# --- data / metrics (training and evaluation only) -------------------------
+pandas>=2.2
+numpy>=1.26
+scikit-learn>=1.5
+matplotlib>=3.8
+
+# --- Firebase --------------------------------------------------------------
+firebase-admin>=6.5
+google-cloud-firestore>=2.16
+
+# --- Ollama (local LLM) ----------------------------------------------------
+# The Ollama HTTP API is called directly with httpx, so the `ollama` package
+# is not required. Install the Ollama server separately: https://ollama.com
+# httpx is also what fastapi.testclient uses in the API tests.
+httpx>=0.27
+
+# --- API -------------------------------------------------------------------
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pydantic>=2.8
+python-dotenv>=1.0
+
+# --- reports ---------------------------------------------------------------
+# Only needed to check the generated PDF report (tests/test_security.py skips
+# that check when it is missing).
+pypdf>=4.0
