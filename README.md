@@ -7,11 +7,17 @@ and time, applies the clinic's rules, and stores everything in **Firebase
 Firestore**. Doctors manage their day in a web dashboard, and a clinic
 administrator manages the doctors, the clinic and every appointment.
 
-> **Scope.** The system is designed for telephone calls. The telephone layer -
-> **Asterisk/SIP, speech-to-text and text-to-speech - is not implemented** in
-> this repository. The implemented pipeline takes the patient's words as
-> **text** and returns the reply as **text**, through an HTTP API or an
-> interactive console.
+> **Scope.** The system is designed for telephone calls. **Speech-to-text and
+> text-to-speech (ElevenLabs) are implemented and measured against the real
+> ElevenLabs API with synthetic callers** - not yet with real patients or a
+> phone line (see [docs/VOICE.md](docs/VOICE.md)).
+> **Asterisk/SIP is not implemented**: a call runs over a WebSocket that a
+> telephony bridge would connect to. Until then, **`python voice_app.py`** runs
+> the whole conversation through the computer's **microphone and speaker** -
+> measured live with a synthetic caller; a real person speaking into the
+> microphone has not been measured yet. The same pipeline also takes the
+> patient's words as **text** and returns the reply as **text**, through an
+> HTTP API or an interactive console.
 
 The full write-up is in
 [`docs/AI_Voice_Appointment_System_Final_Report.pdf`](docs/AI_Voice_Appointment_System_Final_Report.pdf).
@@ -30,6 +36,7 @@ The full write-up is in
 - [Using the system](#using-the-system)
 - [Project Structure](#project-structure)
 - [Testing](#testing)
+- [Performance](#performance)
 - [Development Tools](#development-tools)
 - [Security](#security)
 - [Limitations and future work](#limitations-and-future-work)
@@ -85,6 +92,9 @@ The full write-up is in
 ## How it works
 
 ```text
+Caller audio ──> /voice/call (WebSocket) ──┐
+Microphone  ──> voice_app.py ──────────────┴──> ElevenLabs realtime STT
+                                                  │ committed transcript
 Patient text ──> /dialog/message  or  /voice/message  or  voice_pipeline.py
                         │
                         ▼
@@ -103,9 +113,10 @@ Patient text ──> /dialog/message  or  /voice/message  or  voice_pipeline.py
       Ollama judge + response validator      wording, never facts
                         │
                         ▼
-                  Reply text out
+                  Reply text out ──> ElevenLabs streaming TTS ──> caller audio
+                                                                  or speaker
 
-Not implemented:  Asterisk/SIP ─> Speech-to-Text  ...  Text-to-Speech
+Not implemented:  Asterisk/SIP (the telephone line itself)
 ```
 
 The language model runs **last**: by the time it phrases the reply, the
@@ -122,8 +133,9 @@ appointment has already been booked or refused by deterministic code.
 | Deep learning | PyTorch, Hugging Face Transformers |
 | Data and metrics | pandas, NumPy, scikit-learn, Matplotlib |
 | LLM | Ollama running `llama3.2` (local, called over HTTP with httpx) |
-| STT | Not implemented |
-| TTS | Not implemented |
+| STT | ElevenLabs Scribe v2 Realtime over WebSocket |
+| TTS | ElevenLabs streaming TTS (`eleven_v3_conversational`) |
+| Microphone and speaker | sounddevice (PortAudio) |
 | Backend | FastAPI, Uvicorn, Pydantic, python-dotenv |
 | Database | Google Cloud Firestore through the Firebase Admin SDK |
 | Telephony | Not implemented (Asterisk/SIP planned) |
@@ -155,7 +167,9 @@ appointment has already been booked or refused by deterministic code.
 | Node.js | 22 or newer (tested 24.16) | Browser tests only |
 | NVIDIA driver with CUDA 12.6 support | - | GPU training/inference only |
 
-Asterisk is **not** required: the telephony layer is not implemented.
+Asterisk is **not** required: the telephony layer is not implemented. An
+**ElevenLabs account** is needed only for speech (the voice call); everything
+else works without one.
 
 ---
 
@@ -174,7 +188,9 @@ audited against every import in the project.
 | matplotlib | 3.8 | 3.11.1 | Training plots |
 | firebase-admin | 6.5 | 7.5.0 | Firestore access |
 | google-cloud-firestore | 2.16 | 2.30.0 | Firestore client |
-| httpx | 0.27 | 0.28.1 | Ollama client; FastAPI test client |
+| httpx | 0.27 | 0.28.1 | Ollama and ElevenLabs TTS client; FastAPI test client |
+| websockets | 12 | 15.0.1 | ElevenLabs realtime speech-to-text |
+| sounddevice | 0.4 | 0.5.6 | Microphone and speaker (`voice_app.py`) |
 | fastapi | 0.115 | 0.141.1 | HTTP API |
 | uvicorn[standard] | 0.30 | 0.52.3 | ASGI server |
 | pydantic | 2.8 | 2.13.4 | Request validation |
@@ -275,6 +291,16 @@ with demo doctors**, which is enough to try everything. For persistent data:
    ```powershell
    python scripts/verify_firebase.py
    ```
+5. Create the four composite indexes the dashboard's queries use
+   (declared in [`firestore.indexes.json`](firestore.indexes.json)):
+   ```powershell
+   python scripts/firestore_indexes.py            # shows which exist
+   python scripts/firestore_indexes.py --create   # builds the missing ones
+   ```
+   (or `firebase deploy --only firestore:indexes` with the Firebase CLI).
+   Without them everything still works - the API notices a missing index,
+   answers with a simpler query and logs which index to create - but those
+   screens read more documents than they need to.
 
 ### 7. Configure Ollama (optional)
 
@@ -284,9 +310,11 @@ Install Ollama from <https://ollama.com>, then:
 ollama pull llama3.2
 ```
 
-Ollama listens on `http://localhost:11434` by default (`OLLAMA_BASE_URL`). To
-run without it, set `OLLAMA_ENABLED=false`; replies then come from templates in
-all three languages.
+Ollama listens on `http://127.0.0.1:11434` by default (`OLLAMA_BASE_URL`).
+Use `127.0.0.1`, not `localhost`: on Windows `localhost` is tried over IPv6
+first and every request waited ~2.1 s for that to fail (measured: 2,236-2,316
+ms against 191 ms). To run without Ollama, set `OLLAMA_ENABLED=false`; replies
+then come from templates in all three languages.
 
 ### 8. Start the backend
 
@@ -309,7 +337,72 @@ and `DASHBOARD_PASSWORD`, or as the **administrator** with `ADMIN` and
 is changed in the dashboard it is stored hashed in Firestore and the `.env`
 value stops working for that account.
 
-### 10. Run the tests
+### 10. Set up ElevenLabs (speech - optional)
+
+Only the voice call needs this; typed text works without it. Full details and
+the design decisions are in [docs/VOICE.md](docs/VOICE.md).
+
+1. Create an account at <https://elevenlabs.io>.
+2. In the ElevenLabs dashboard create an **API key** (Profile -> API keys).
+3. Put it in `.env` - never in code, the dashboard, a report or Git:
+   ```text
+   ELEVENLABS_API_KEY=your-key-here
+   ```
+4. Speech-to-text: `ELEVENLABS_STT_MODEL=scribe_v2_realtime`, the language
+   callers speak `ELEVENLABS_STT_LANGUAGE=ur`, and the line's audio
+   `ELEVENLABS_STT_AUDIO_FORMAT=ulaw_8000` (a phone line; `pcm_16000` for a
+   microphone).
+5. Text-to-speech: `ELEVENLABS_TTS_MODEL=eleven_v3_conversational` (measured:
+   same first-audio time as `eleven_flash_v2_5`, speaks Urdu) and
+   `ELEVENLABS_TTS_OUTPUT_FORMAT=ulaw_8000`.
+6. Choose the receptionist's voice and put its id in `ELEVENLABS_VOICE_ID`.
+   The key needs the **Voices: Read** permission for this, and on a **free**
+   ElevenLabs plan only the built-in voices work through the API (Voice
+   Library voices are refused with `paid_plan_required`; the list marks them):
+   ```powershell
+   python scripts/voice_check.py --voices
+   ```
+7. Dependencies are already in `requirements.txt` (httpx, websockets). The
+   official `elevenlabs` package is not needed, and FFmpeg is not needed.
+8. Test speech-to-text on a recording (16-bit WAV):
+   ```powershell
+   python scripts/voice_check.py --stt recording.wav
+   ```
+9. Test text-to-speech:
+   ```powershell
+   python scripts/voice_check.py --tts "Ji bilkul. Kis doctor ke liye appointment chahiye?"
+   ```
+10. Run the full voice pipeline - simulated calls, with the latency of every
+    turn, and the model comparison:
+    ```powershell
+    python scripts/voice_benchmark.py all
+    ```
+    A telephony bridge connects to `ws://<host>:8000/voice/call` (docs/VOICE.md,
+    section 5); set `VOICE_GATEWAY_TOKEN` when it is not on the same machine.
+
+These checks use ElevenLabs credits.
+
+### 11. Talk to it by voice (microphone and speaker)
+
+After step 10 - no other setup:
+
+```powershell
+python voice_app.py --list-devices   # microphones and speakers; * = default
+python voice_app.py --mic-test       # is the microphone loud enough? (sends nothing)
+python voice_app.py --sound-test     # a tone on the speaker (no credits)
+python voice_app.py                  # talk
+```
+
+Speak after "LISTENING..."; the end of a sentence is detected by the pause.
+`python voice_app.py --ptt` is push-to-talk instead: SPACE to start, SPACE to
+stop. `q`, Esc or Ctrl+C ends the conversation. Use **headphones** where you
+can: through loudspeakers the microphone is muted while the agent speaks (so
+it never transcribes itself), which also means it cannot be interrupted.
+Bookings go to the database in `.env` - Firestore when configured, so they
+appear in the dashboard; `--local` uses the in-memory demo clinic instead.
+Details: [docs/VOICE.md](docs/VOICE.md), section 10.
+
+### 12. Run the tests
 
 ```powershell
 python scripts/run_tests.py
@@ -362,6 +455,38 @@ APPOINTMENT_ID_PREFIX=
 TIMEZONE=
 LOG_LEVEL=
 INTENT_MODULE_DIR=
+
+# Speech (ElevenLabs) - docs/VOICE.md
+ELEVENLABS_API_KEY=
+ELEVENLABS_STT_MODEL=
+ELEVENLABS_STT_BATCH_MODEL=
+ELEVENLABS_STT_LANGUAGE=
+ELEVENLABS_STT_SECONDARY_LANGUAGES=
+ELEVENLABS_STT_AUDIO_FORMAT=
+ELEVENLABS_STT_SILENCE_SECS=
+ELEVENLABS_STT_CHUNK_MS=
+ELEVENLABS_STT_KEYTERMS=
+ELEVENLABS_TTS_MODEL=
+ELEVENLABS_VOICE_ID=
+ELEVENLABS_TTS_OUTPUT_FORMAT=
+ELEVENLABS_TTS_LANGUAGE=
+ELEVENLABS_TIMEOUT=
+ELEVENLABS_MAX_RETRIES=
+ELEVENLABS_ENABLE_LOGGING=
+VOICE_GATEWAY_TOKEN=
+
+# Microphone voice mode (voice_app.py)
+MICROPHONE_DEVICE=
+SPEAKER_DEVICE=
+VOICE_INPUT_MODE=
+VOICE_DEBUG=
+VOICE_MIC_FORMAT=
+VOICE_TTS_OUTPUT_FORMAT=
+VOICE_BARGE_IN=
+VOICE_OLLAMA_EVERY_TURN=
+
+# Development only
+PERF_DEBUG=            # 1: log database reads per request, add a Server-Timing header
 ```
 
 ---
@@ -377,7 +502,22 @@ python voice_pipeline.py                        # a scripted booking
 ```
 
 `--fresh` **deletes every appointment** before starting; do not use it against
-real data.
+real data. Note that this console re-writes the demo clinic, doctors,
+schedules and patients (`firebase/seed_data.py`) into the configured database
+each time it starts - with Firestore configured, that overwrites changes made
+to those records in the dashboards. `voice_app.py` and the API never do.
+
+### Talk to it by voice
+
+```powershell
+python voice_app.py              # microphone -> ... -> speaker (step 11)
+python voice_app.py --debug      # show every stage and its timing
+```
+
+With `--debug` (or `VOICE_DEBUG=true`) each turn shows what was heard, the
+intent, the Dialog Manager's action, the database result, whether Ollama's
+wording was approved or rejected (and why), what is spoken, and where the
+time went.
 
 ### Talk to it over HTTP
 
@@ -396,6 +536,7 @@ the endpoint a telephony layer would call.
 | Prefix | Who | What |
 |---|---|---|
 | `/dialog/*`, `/voice/message`, `/intent/predict` | pipeline | Conversation turns, classifier |
+| `/voice/call` (WebSocket) | telephony bridge | A spoken call: audio in, transcripts and audio out |
 | `/appointments/*`, `/doctors/*`, `/patients/*` | pipeline | Appointment Backend |
 | `/auth/*` | both roles | Sign in, sign out, own password |
 | `/dashboard/*` | doctor | Own appointments, patients, schedule, leave, profile, notifications, statistics |
@@ -413,7 +554,9 @@ AI-voice-appointment-system/
 │   ├── main.py             application, dialogue and voice endpoints, /ui
 │   ├── auth.py             sessions and roles
 │   ├── dashboard.py        /auth/*, /dashboard/*  (doctor, own data only)
-│   └── admin.py            /admin/*               (administrator)
+│   ├── admin.py            /admin/*               (administrator)
+│   └── data.py             how the dashboards read Firestore: narrow queries,
+│                           batched patients, counts, paging, parallel reads
 ├── appointment_backend/    the only code that creates or changes appointments
 │   ├── appointment_service.py   facade
 │   ├── booking_service.py, cancellation_service.py, reschedule_service.py
@@ -422,7 +565,11 @@ AI-voice-appointment-system/
 │   └── api.py              public appointment routes
 ├── dialog_manager/         conversation state, slots, entities, fallback
 ├── ollama_judge/           LLM client, prompts, languages, templates, validator
-├── firebase/               Firestore repository and one service per collection
+├── speech/                 ElevenLabs STT and TTS, audio formats, one voice call,
+│                           microphone.py and speaker.py (voice_app.py)
+├── firebase/               Firestore repository and one service per collection,
+│                           plus cache.py (clinic and doctor register) and
+│                           metrics.py (read counting for PERF_DEBUG)
 ├── intent_detection/       mBERT intent model
 │   ├── src/                preprocess, train, evaluate, inference, data builders
 │   ├── data/               label maps (processed CSVs are regenerated)
@@ -432,14 +579,19 @@ AI-voice-appointment-system/
 ├── Data/                   raw intent datasets
 ├── docs/
 │   ├── AI_Voice_Appointment_System_Final_Report.pdf
+│   ├── PERFORMANCE.md      what was slow, what changed, measured before/after
 │   └── report/final_report.html   source of the report
 ├── reports/                evaluation outputs (intent audit, latency, live runs)
 ├── scripts/                run_tests, build_report, demo, evaluate_intents,
-│                           measure_performance, verify_firebase
+│                           measure_performance, verify_firebase,
+│                           firestore_indexes
 ├── tests/                  unittest suite
-│   └── browser/            headless-Chrome dashboard checks
+│   └── browser/            headless-Chrome dashboard checks and page timing
 ├── config.py               every setting, from environment variables
+├── firestore.indexes.json  the composite indexes the queries need
+├── firebase.json           points the Firebase CLI at that file
 ├── voice_pipeline.py       interactive console pipeline
+├── voice_app.py            talk by microphone and speaker
 ├── requirements.txt
 ├── .env.example
 └── .gitignore
@@ -466,31 +618,68 @@ Results on the submitted code:
 |---|---:|---:|---:|
 | Intent detection | 45 | 45 | 0 |
 | Dialogue | 112 | 112 | 0 |
-| Appointment backend | 61 | 60 | 1 |
+| Appointment backend | 61 | 61 | 0 |
 | Firebase | 40 | 31 | 9 |
 | Ollama / wording | 54 | 51 | 3 |
 | End-to-end | 25 | 25 | 0 |
-| Dashboards | 122 | 121 | 1 |
+| Dashboards (including performance) | 153 | 152 | 1 |
+| Speech (ElevenLabs simulated; microphone and speaker simulated) | 94 | 94 | 0 |
 | Security | 11 | 11 | 0 |
-| **Total** | **470** | **456** | **14** |
+| **Total** | **595** | **582** | **13** |
 
 No test fails. The skipped tests are the live Firestore and Ollama checks,
-which need `--live`.
+which need `--live`. The speech tests run against simulated ElevenLabs
+services and a simulated sound card; the real service is measured by
+`scripts/voice_benchmark.py` and the microphone app by live runs (results in
+[docs/VOICE.md](docs/VOICE.md), sections 9 and 10).
 
 Without the trained model (a fresh clone before step 4) the suite still
-passes: the four test classes that exercise the real model skip themselves,
-giving 462 tests, 444 passed, 18 skipped, 0 failed. The dialogue tests use a
+passes: the test classes that exercise the real model skip themselves,
+giving 589 tests, 534 passed, 55 skipped, 0 failed (measured with
+`INTENT_MODULE_DIR` pointing at a copy without `models/`; the speech tests
+that run whole calls through mBERT skip themselves too). The dialogue tests use a
 scripted stand-in classifier on purpose (`tests/helpers.py`), so they test
 the dialogue logic on its own; the running system always uses mBERT.
 
 **Browser checks** drive the real dashboard in headless Chrome - 59 and 51
 checks, all passing. See [`tests/browser/README.md`](tests/browser/README.md).
 
+**Page timing** against a running API started with `PERF_DEBUG=1`:
+`node tests/browser/measure_pages.js <url> <doctor id> <password> <admin id>
+<password>` (see [`docs/PERFORMANCE.md`](docs/PERFORMANCE.md)).
+
 **Rebuilding the report** after editing its source:
 
 ```powershell
 python scripts/build_report.py
 ```
+
+---
+
+## Performance
+
+The dashboards read Firestore through [`api/data.py`](api/data.py): only the
+records a screen shows, patients fetched by id in one batch, totals counted by
+Firestore instead of downloaded, independent reads run in parallel, and lists
+paged on the server. The browser shares identical requests and forgets
+everything it reused the moment anything is changed.
+
+Measured on the live Firestore project, warm server, median of three runs
+against the previous code:
+
+| | Before | After |
+|---|---:|---:|
+| Doctor: sign in to a usable dashboard | 7.3 s | 1.2 s |
+| Doctor: 30-second refresh | 3.4 s, 4 requests | 0.57 s, 1 request |
+| Administrator: sign in to the overview | 5.7 s | 1.7 s |
+| Administrator: doctor register | 3.0 s | 0.72 s |
+| Every page once: time / API requests | 40.8 s / 29 | 12.0 s / 20 |
+| The same pages on a clinic of 20,000 appointments: Firestore reads | 157,429 | 9,240 |
+
+What was slow, every change, the indexes, the measurements that did not
+improve and why: [`docs/PERFORMANCE.md`](docs/PERFORMANCE.md). Setting
+`PERF_DEBUG=1` makes the API log and return (as a `Server-Timing` header) the
+round trips and documents read by each request.
 
 ---
 
@@ -532,9 +721,11 @@ private network.
 
 | Area | Today | Next step |
 |---|---|---|
-| Telephony and voice | Not implemented; text in, text out | Asterisk bridge, Urdu-capable STT, TTS around `/voice/message` |
+| Telephony | Asterisk/SIP not implemented; a call runs over the `/voice/call` WebSocket | An Asterisk bridge (ARI External Media or AudioSocket) - docs/VOICE.md, section 5 |
+| Speech | Measured live with synthetic callers only: 5 of 6 test calls complete; caller stops → agent speaks 2.5 s median (3.0 s in the microphone app with Ollama wording every reply); some Urdu words misheard ("kal" → "Cole", "kal ke liye" → "Calcutta") | A real person through the microphone; real callers' recordings (`--recordings`); a phone line |
+| Out-of-scope questions | mBERT has no out-of-scope class ("Aaj mausam kaisa hai?" gets clinic hours) | An out-of-scope class in the next training round |
 | Patient notifications | Queued in Firestore and shown; not sent | Implement the `NotificationSender` interface for an SMS or voice provider |
 | Intent model | Macro-F1 0.836; emergency recall 0.55 (backed by the safety net) | More natural examples per intent and a fresh held-out set |
-| LLM wording | `llama3.2` wording accepted for a minority of replies; templates cover the rest | A larger local model |
+| LLM wording | Every voice reply goes to `llama3.2`; in two 21-turn text checks the validator accepted 15 and 13 wordings and rejected 3 and 5 (a changed day, a dropped slot or question, an added "nahi"); the facts of accepted wordings are checked, their grammar is not ("Aap kis din convenient rahega?" passes) | A larger local model (e.g. `qwen2.5:7b`, fits the 6 GB GPU) |
 | Authentication | Prototype sessions | Firebase Authentication and rate limiting |
-| Speed | Several seconds per Firestore-backed turn | Fewer round trips; cache doctor and clinic records |
+| Speed (voice turns) | Several seconds per Firestore-backed turn; the booking checks read one after another | Fewer round trips in the booking checks - the dashboards' reads were reworked this way ([`docs/PERFORMANCE.md`](docs/PERFORMANCE.md)) |

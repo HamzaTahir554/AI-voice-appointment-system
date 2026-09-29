@@ -134,7 +134,10 @@ def detect_yes_no(text: str) -> str | None:
     if not text:
         return None
     cleaned = unicodedata.normalize("NFKC", text).strip().lower()
-    cleaned = re.sub(r"[!.,?۔]+", " ", cleaned).strip()
+    # Urdu punctuation too: the Urdu comma and question mark sit inside the
+    # Arabic-script block, so left in place they glue onto the word - a
+    # transcript's "ہاں، کر دیں" was missed as a "yes" in a live voice call.
+    cleaned = re.sub(r"[!.,?;:۔،؟؛]+", " ", cleaned).strip()
     cleaned = re.sub(r"\s+", " ", cleaned)
 
     if cleaned in _YES_WORDS:

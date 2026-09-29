@@ -17,12 +17,15 @@ from __future__ import annotations
 
 import logging
 import os
+import time
 from contextlib import asynccontextmanager
 from pathlib import Path as FilePath
 from typing import Any
 
 from fastapi import FastAPI, HTTPException, Path
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.gzip import GZipMiddleware
+from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
@@ -38,7 +41,7 @@ from dialog_manager.dialog_manager import DialogManager
 from firebase.clinic_service import ClinicService
 from firebase.conversation_service import ConversationService
 from firebase.doctor_service import DoctorService
-from firebase.firebase_config import init_repository
+from firebase.firebase_config import DatabaseError, init_repository
 from firebase.patient_service import PatientService
 
 logging.basicConfig(
@@ -72,11 +75,14 @@ async def lifespan(app: FastAPI):
     backend = AppointmentBackend(repo)
     services["backend"] = backend
     set_backend(backend)
+    if repo.backend == "firestore":
+        _warm_up_firestore()
 
     try:
         services["dialog"] = DialogManager(repository=repo)
         services["pipeline"] = VoicePipeline(
             dialog_manager=services["dialog"], repository=repo)
+        _warm_up_intent_model(services["dialog"])
         logger.info("Dialog Manager ready; Ollama %s",
                     "available" if services["pipeline"].llm_available
                     else "unavailable (deterministic responses)")
@@ -88,6 +94,47 @@ async def lifespan(app: FastAPI):
         services["dialog_error"] = str(exc)
     yield
     services.clear()
+
+
+def _warm_up_intent_model(dialog) -> None:
+    """Load mBERT in the background at start-up. It loads on first use
+    otherwise, and the first caller after a restart waited for it - 10.3 s
+    measured on the first turn of a voice call."""
+    import threading
+
+    def run():
+        try:
+            dialog.router.route("warm up")
+            logger.info("intent model loaded")
+        except Exception as exc:                     # pragma: no cover
+            logger.warning("intent model warm-up failed: %s", exc)
+
+    threading.Thread(target=run, name="mbert-warmup", daemon=True).start()
+
+
+def _warm_up_firestore() -> None:
+    """Open the Firestore connection before the first person needs it.
+
+    A fresh process pays once for its gRPC connection and access token, and
+    once per missing composite index for being refused before it falls
+    back. Without this the first person to sign in after a restart paid
+    both. A few small reads in the background do it instead: the clinic and
+    doctor records (which also fills their cache) and one `limit 1` probe
+    per declared index, which logs any index still to be deployed. Start-up
+    does not wait for them, and a failure here only means the first request
+    pays as before.
+    """
+    import threading
+
+    def run():
+        try:
+            from api import data
+            data.parallel(data.clinic, data.doctors, data.learn_indexes)
+            logger.info("Firestore connection warmed up")
+        except Exception as exc:                     # pragma: no cover
+            logger.warning("Firestore warm-up skipped: %s", exc)
+
+    threading.Thread(target=run, name="firestore-warmup", daemon=True).start()
 
 
 app = FastAPI(
@@ -111,6 +158,26 @@ app.include_router(dashboard_router)
 # Administration: the superadmin account manages the doctors (api/admin.py).
 app.include_router(admin_router)
 
+# Voice: a phone call over a WebSocket - ElevenLabs speech around the same
+# pipeline /voice/message runs (api/voice_ws.py, speech/).
+from api import voice_ws  # noqa: E402
+
+voice_ws.use_pipeline(lambda: services.get("pipeline"))
+app.include_router(voice_ws.router)
+
+
+@app.exception_handler(DatabaseError)
+async def database_unavailable(request, exc: DatabaseError):
+    """A Firestore failure a route did not handle itself: logged in full
+    here, and answered with a plain message - never the raw database error."""
+    logger.error("database error on %s %s: %s", request.method,
+                 request.url.path, exc)
+    return JSONResponse(status_code=503, content={"detail": {
+        "success": False,
+        "error": {"code": "backend_unavailable",
+                  "message": "The appointment system database is unreachable. "
+                             "Please try again."}}})
+
 # The dashboard may be served from this API (same origin, no CORS needed) at
 # /ui, or opened from disk / another dev server - hence the configurable
 # origin list. "null" covers a page opened directly as a file:// URL.
@@ -118,6 +185,9 @@ _origins = [o.strip() for o in os.environ.get(
     "DASHBOARD_ORIGINS",
     "http://localhost:8080,http://127.0.0.1:8080,http://localhost:5500,http://127.0.0.1:5500,null"
 ).split(",") if o.strip()]
+# The dashboard's scripts, styles and larger JSON answers go out compressed
+# (334 KB of dashboard files become 89 KB). Built into Starlette.
+app.add_middleware(GZipMiddleware, minimum_size=1000)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=_origins,
@@ -125,6 +195,35 @@ app.add_middleware(
     allow_methods=["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
     allow_headers=["Authorization", "Content-Type"],
 )
+
+# --------------------------------------------------------------------------
+# Per-request database accounting (development only)
+#
+# Every request gets its own counter of database round trips, documents read
+# and written (firebase/metrics.py). With PERF_DEBUG=1 the totals are logged
+# and returned in a Server-Timing header, which the browser's developer tools
+# show under Network -> Timing. Without it nothing is added to any response.
+# --------------------------------------------------------------------------
+from firebase import metrics as db_metrics  # noqa: E402
+
+_perf_logger = logging.getLogger("api.perf")
+
+
+@app.middleware("http")
+async def count_database_work(request, call_next):
+    counter = db_metrics.begin()
+    started = time.perf_counter()
+    response = await call_next(request)
+    if db_metrics.enabled() and not request.url.path.startswith("/ui"):
+        total_ms = (time.perf_counter() - started) * 1000
+        response.headers["Server-Timing"] = (
+            f'app;dur={total_ms:.1f}, '
+            f'db;dur={counter.seconds * 1000:.1f};desc="{counter.summary()}"')
+        _perf_logger.info("%s %s %s -> %d in %.0f ms (%s)", request.method,
+                          request.url.path, request.url.query, response.status_code,
+                          total_ms, counter.summary())
+    return response
+
 
 _dashboard_dir = FilePath(__file__).resolve().parents[1] / "Dashboard"
 if _dashboard_dir.is_dir():

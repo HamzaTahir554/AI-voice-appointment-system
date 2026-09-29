@@ -160,6 +160,32 @@ def summarise(appointments: list[dict]) -> dict:
     }
 
 
+def summarise_counts(total: int, by_status: dict) -> dict:
+    """`summarise()` for when only the counts are known - from Firestore
+    count() aggregations, which count without downloading a record.
+
+    Same shape and the same arithmetic: whatever is in `total` but in none of
+    the known statuses is `other`, so the buckets still add up to the total.
+    """
+    counts = {status: int(by_status.get(status, 0) or 0) for status in ALL_STATUSES}
+    total = int(total or 0)
+    cancelled = sum(counts[status] for status in CANCELLED_STATUSES)
+    return {
+        "total": total,
+        "pending": counts[Status.PENDING],
+        "confirmed": counts[Status.CONFIRMED],
+        "rescheduled": counts[Status.RESCHEDULED],
+        "completed": counts[Status.COMPLETED],
+        "cancelled": cancelled,
+        "cancelled_by_patient": counts[Status.CANCELLED],
+        "cancelled_by_doctor": counts[Status.CANCELLED_BY_DOCTOR],
+        "live": sum(counts[status] for status in LIVE_STATUSES),
+        # Two counts taken a moment apart can straddle a write; never negative.
+        "other": max(0, total - sum(counts.values())),
+        "by_status": dict(counts),
+    }
+
+
 def per_doctor(appointments: list[dict], doctors: list[dict]) -> list[dict]:
     """One row per doctor, busiest first.
 
@@ -169,11 +195,17 @@ def per_doctor(appointments: list[dict], doctors: list[dict]) -> list[dict]:
     grouped: dict = {}
     for appointment in appointments or []:
         grouped.setdefault(appointment.get("doctor_id"), []).append(appointment)
+    return per_doctor_from_summaries(
+        {doctor_id: summarise(rows) for doctor_id, rows in grouped.items()}, doctors)
 
+
+def per_doctor_from_summaries(summaries: dict, doctors: list[dict]) -> list[dict]:
+    """`per_doctor()` from counts already made - one summarise()-shaped dict
+    per doctor id, e.g. from count() aggregations for "all time"."""
     rows = []
     for doctor in doctors or []:
         doctor_id = doctor.get("doctor_id")
-        counts = summarise(grouped.get(doctor_id, []))
+        counts = summaries.get(doctor_id) or summarise([])
         rows.append({
             "doctor_id": doctor_id,
             "name": doctor.get("name") or doctor_id,
@@ -203,3 +235,26 @@ def statistics(appointments: list[dict], doctors: list[dict] | None = None,
     if doctors is not None:
         payload["doctors"] = per_doctor(selected, doctors)
     return payload
+
+
+def statistics_from_parts(window: dict, period_rows: list[dict] | None,
+                          today_rows: list[dict], all_time: dict,
+                          day: str | None = None) -> dict:
+    """The same payload as `statistics()`, assembled from narrower reads:
+
+        period_rows  only the records dated inside the window
+                     (None when the window is "all time": the totals are
+                     then the all-time counts)
+        today_rows   only today's records
+        all_time     summarise_counts() of every record, from aggregations
+
+    `statistics()` stays the reference; the tests check both agree on the
+    same data.
+    """
+    day = day or today_iso()
+    return {
+        "period": window,
+        "totals": dict(all_time) if period_rows is None else summarise(period_rows),
+        "today": {"date": day, **summarise(today_rows)},
+        "all_time": dict(all_time),
+    }

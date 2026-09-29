@@ -391,7 +391,10 @@ window.Pages.appointments = (function () {
 
   const filters = { scope: 'all', query: '', date: '' };
   const PAGE_SIZE = 20;
+  const MOST = 500;             // the most one request may ask for
   let shownCount = PAGE_SIZE;
+  let rows = [];                // every row loaded so far, in order
+  let ticket = 0;               // answers to an older request are dropped
 
   function render(container) {
     const tableBody = UI.el('div', { class: 'card-body card-body-flush' }, UI.skeleton(6));
@@ -473,73 +476,104 @@ window.Pages.appointments = (function () {
     load(tableBody, true);
   }
 
+  /* The server sends one page at a time. A fresh load (new filters) starts
+     at the first page; a reload after an action re-reads just the rows that
+     were already on screen; "Load more" asks only for the next page. */
   function load(tableBody, resetPaging) {
     if (resetPaging) { shownCount = PAGE_SIZE; }
+    const mine = ++ticket;
     UI.mount(tableBody, UI.skeleton(6));
 
-    Store.getAppointments(filters).then(function (list) {
-      if (!list.length) {
-        UI.mount(tableBody, UI.empty({
-          icon: 'calendar',
-          title: 'No appointments found',
-          message: 'Nothing matches these filters. Try another date or reset them.'
-        }));
-        return;
-      }
-
-      const page = list.slice(0, shownCount);
-      const reload = function () { load(tableBody); };
-
-      const rows = page.map(function (appointment) {
-        return UI.el('tr', {}, [
-          UI.el('td', { 'data-label': 'ID', class: 'cell-sub nowrap', text: appointment.appointment_id }),
-          UI.el('td', { 'data-label': 'Date', class: 'nowrap' }, [
-            UI.el('span', { text: UI.formatDateShort(appointment.date) }),
-            UI.el('span', { class: 'cell-sub', text: ' ' + UI.relativeDay(appointment.date) })
-          ]),
-          UI.el('td', { 'data-label': 'Time', class: 'nowrap', text: UI.formatTime(appointment.time) }),
-          UI.el('td', { 'data-label': 'Patient' }, [
-            UI.el('span', { class: 'cell-primary', text: appointment.patient_name }),
-            UI.el('div', { class: 'cell-sub', text: appointment.patient_id })
-          ]),
-          UI.el('td', { 'data-label': 'Phone', class: 'nowrap', text: appointment.patient_phone || '-' }),
-          UI.el('td', { 'data-label': 'Status' }, UI.badge(appointment.status)),
-          UI.el('td', { 'data-label': 'Actions' },
-            UI.el('div', { class: 'cell-actions' },
-              AppointmentActions.actionButtons(appointment, reload)))
-        ]);
-      });
-
-      UI.mount(tableBody, UI.el('div', { class: 'table-wrap' }, [
-        UI.el('table', { class: 'data' }, [
-          UI.el('thead', {}, UI.el('tr', {}, [
-            UI.el('th', { scope: 'col', text: 'Appointment ID' }),
-            UI.el('th', { scope: 'col', text: 'Date' }),
-            UI.el('th', { scope: 'col', text: 'Time' }),
-            UI.el('th', { scope: 'col', text: 'Patient' }),
-            UI.el('th', { scope: 'col', text: 'Phone' }),
-            UI.el('th', { scope: 'col', text: 'Status' }),
-            UI.el('th', { scope: 'col', class: 'text-right', text: 'Actions' })
-          ])),
-          UI.el('tbody', {}, rows)
-        ])
-      ]));
-
-      if (list.length > page.length) {
-        tableBody.appendChild(UI.el('div', { class: 'card-body row-between wrap' }, [
-          UI.el('span', {
-            class: 'muted small',
-            text: 'Showing ' + page.length + ' of ' + list.length + ' appointments'
-          }),
-          UI.el('button', {
-            class: 'btn btn-secondary btn-sm', type: 'button',
-            onClick: function () { shownCount += PAGE_SIZE; load(tableBody); }
-          }, 'Load more')
-        ]));
-      }
+    Store.getAppointmentsPage(Object.assign({}, filters, {
+      offset: 0, limit: Math.min(MOST, Math.max(PAGE_SIZE, shownCount))
+    })).then(function (page) {
+      if (mine !== ticket) { return; }
+      rows = page.appointments;
+      paint(tableBody, page);
     }).catch(function (error) {
+      if (mine !== ticket) { return; }
       UI.mount(tableBody, UI.apiError(error, function () { load(tableBody, true); }));
     });
+  }
+
+  function loadMore(tableBody, button) {
+    const mine = ++ticket;
+    UI.setButtonLoading(button, true);
+    Store.getAppointmentsPage(Object.assign({}, filters, {
+      offset: rows.length, limit: PAGE_SIZE
+    })).then(function (page) {
+      if (mine !== ticket) { return; }
+      rows = rows.concat(page.appointments);
+      shownCount = rows.length;
+      paint(tableBody, page);
+    }).catch(function (error) {
+      if (mine !== ticket) { return; }
+      UI.setButtonLoading(button, false);
+      UI.toast(error.message || 'Could not load more appointments.', 'error');
+    });
+  }
+
+  function paint(tableBody, page) {
+    if (!rows.length) {
+      UI.mount(tableBody, UI.empty({
+        icon: 'calendar',
+        title: 'No appointments found',
+        message: 'Nothing matches these filters. Try another date or reset them.'
+      }));
+      return;
+    }
+
+    const reload = function () { load(tableBody); };
+
+    const lines = rows.map(function (appointment) {
+      return UI.el('tr', {}, [
+        UI.el('td', { 'data-label': 'ID', class: 'cell-sub nowrap', text: appointment.appointment_id }),
+        UI.el('td', { 'data-label': 'Date', class: 'nowrap' }, [
+          UI.el('span', { text: UI.formatDateShort(appointment.date) }),
+          UI.el('span', { class: 'cell-sub', text: ' ' + UI.relativeDay(appointment.date) })
+        ]),
+        UI.el('td', { 'data-label': 'Time', class: 'nowrap', text: UI.formatTime(appointment.time) }),
+        UI.el('td', { 'data-label': 'Patient' }, [
+          UI.el('span', { class: 'cell-primary', text: appointment.patient_name }),
+          UI.el('div', { class: 'cell-sub', text: appointment.patient_id })
+        ]),
+        UI.el('td', { 'data-label': 'Phone', class: 'nowrap', text: appointment.patient_phone || '-' }),
+        UI.el('td', { 'data-label': 'Status' }, UI.badge(appointment.status)),
+        UI.el('td', { 'data-label': 'Actions' },
+          UI.el('div', { class: 'cell-actions' },
+            AppointmentActions.actionButtons(appointment, reload)))
+      ]);
+    });
+
+    UI.mount(tableBody, UI.el('div', { class: 'table-wrap' }, [
+      UI.el('table', { class: 'data' }, [
+        UI.el('thead', {}, UI.el('tr', {}, [
+          UI.el('th', { scope: 'col', text: 'Appointment ID' }),
+          UI.el('th', { scope: 'col', text: 'Date' }),
+          UI.el('th', { scope: 'col', text: 'Time' }),
+          UI.el('th', { scope: 'col', text: 'Patient' }),
+          UI.el('th', { scope: 'col', text: 'Phone' }),
+          UI.el('th', { scope: 'col', text: 'Status' }),
+          UI.el('th', { scope: 'col', class: 'text-right', text: 'Actions' })
+        ])),
+        UI.el('tbody', {}, lines)
+      ])
+    ]));
+
+    if (page.has_more || (page.total !== null && page.total > rows.length)) {
+      const more = UI.el('button', {
+        class: 'btn btn-secondary btn-sm', type: 'button',
+        onClick: function () { loadMore(tableBody, more); }
+      }, 'Load more');
+      tableBody.appendChild(UI.el('div', { class: 'card-body row-between wrap' }, [
+        UI.el('span', {
+          class: 'muted small',
+          text: 'Showing ' + rows.length
+            + (page.total !== null ? ' of ' + page.total : '') + ' appointments'
+        }),
+        page.has_more ? more : null
+      ]));
+    }
   }
 
   return { render: render };

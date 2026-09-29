@@ -200,13 +200,18 @@ class AccountService:
         decides whether an environment password may still be used.
         """
         found = self.get(account_id)
-        if not found.ok or not found.data.get("password_hash"):
+        return found.ok and self.matches(found.data, password)
+
+    @staticmethod
+    def matches(record: dict | None, password: str) -> bool:
+        """The same check, against an account record already read - sign-in
+        reads the record once and uses it for everything it needs."""
+        if not record or not record.get("password_hash"):
             return False
-        record = found.data
         try:
             salt = bytes.fromhex(record.get("password_salt", ""))
         except ValueError:
-            logger.error("account %s has an unreadable salt", account_id)
+            logger.error("account %s has an unreadable salt", record.get("account_id"))
             return False
         digest, _, _ = hash_password(password or "", salt,
                                      int(record.get("iterations") or ITERATIONS))

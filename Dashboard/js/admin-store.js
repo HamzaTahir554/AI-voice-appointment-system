@@ -6,9 +6,17 @@
    only thing that touches Firebase.
 
        Admin screens -> admin-store.js -> /admin/* (FastAPI) -> Firebase
+
+   Reuse (api.js remembers; any change made here, and signing out, forgets
+   everything at once): the overview 3 seconds, so its 30-second refresh
+   shares one request with the page it redraws; statistics 25 seconds; the
+   doctor register 20 seconds; the clinic a minute. Appointment lists are
+   never kept - they are read a page at a time.
    ========================================================================== */
 window.AdminStore = (function () {
   'use strict';
+
+  const KEEP = { summary: 3000, statistics: 25000, doctors: 20000, clinic: 60000 };
 
   function query(params) {
     const parts = [];
@@ -22,12 +30,12 @@ window.AdminStore = (function () {
 
   /* ---------------------------------------------------------- overview -- */
   function getSummary() {
-    return Api.get('/admin/summary');
+    return Api.get('/admin/summary', { cache: KEEP.summary });
   }
 
   /* ----------------------------------------------------------- doctors -- */
   function getDoctors(filters) {
-    return Api.get('/admin/doctors' + query(filters));
+    return Api.get('/admin/doctors' + query(filters), { cache: KEEP.doctors });
   }
 
   function getDoctor(doctorId) {
@@ -77,14 +85,14 @@ window.AdminStore = (function () {
       params.start = f.start || '';
       params.end = f.end || '';
     }
-    return Api.get('/admin/statistics' + query(params));
+    return Api.get('/admin/statistics' + query(params), { cache: KEEP.statistics });
   }
 
   /* ------------------------------------------------------------- clinic -- */
   /* One clinic, one record. Its name and address are read from here by every
      screen, and by the assistant when it talks to a caller. */
   function getClinic() {
-    return Api.get('/admin/clinic');
+    return Api.get('/admin/clinic', { cache: KEEP.clinic });
   }
 
   function updateClinic(payload) {

@@ -38,7 +38,9 @@ CATEGORIES = {
     "firebase": ["test_firebase", "test_firestore_live"],
     "ollama": ["test_ollama", "test_ollama_live"],
     "end_to_end": ["test_integration", "test_api"],
-    "dashboard": ["test_dashboard_api", "test_admin_api", "test_statistics"],
+    "dashboard": ["test_dashboard_api", "test_admin_api", "test_statistics",
+                  "test_performance"],
+    "speech": ["test_speech", "test_voice_app"],
     "security": ["test_security", "test_data_safety"],
 }
 MODULE_TO_CATEGORY = {module: cat for cat, modules in CATEGORIES.items() for module in modules}

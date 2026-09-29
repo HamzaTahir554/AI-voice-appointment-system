@@ -23,6 +23,7 @@ from config import (
     Intent,
 )
 from dialog_manager.intent_router import IntentResult, IntentRouter
+from dialog_manager.semantic_fallback import moves_own_appointment
 from dialog_manager.responses import ResponseGenerator, format_date, format_time
 from dialog_manager.slot_manager import SlotManager
 from dialog_manager.state_manager import ConversationState, SessionManager
@@ -162,7 +163,7 @@ class DialogManager:
 
         # 2. Choose the effective intent (context-aware, with switching).
         interrupted = self._side_question_task(state, intent_result, entities)
-        effective = self._effective_intent(state, intent_result, entities)
+        effective = self._effective_intent(state, intent_result, entities, text)
 
         # 2b. A MEDIUM-confidence guess that would start a brand-new workflow,
         #     with nothing in the utterance to corroborate it, is checked with
@@ -334,7 +335,7 @@ class DialogManager:
 
     def _effective_intent(self, state: ConversationState,
                           intent_result: IntentResult,
-                          entities: dict) -> str:
+                          entities: dict, text: str = "") -> str:
         """
         Decide which intent this turn belongs to.
 
@@ -348,6 +349,15 @@ class DialogManager:
         # The emergency safety net fired: nothing else is considered.
         if getattr(intent_result, "safety_override", False):
             return Intent.EMERGENCY
+
+        # "Meri appointment Friday ko 5 baje kar dein" reads as a booking to
+        # the classifier (and the training data agrees for a caller with no
+        # appointment). For a caller who HAS an upcoming appointment and is
+        # not in the middle of something else, it means moving that one.
+        if (predicted == Intent.BOOK_APPOINTMENT and state.intent is None
+                and moves_own_appointment(text)
+                and self._has_upcoming_appointment(state)):
+            return Intent.RESCHEDULE_APPOINTMENT
 
         # Inside a booking DRAFT, "change the doctor / date / time" edits the
         # draft. Treating it as a reschedule abandons the booking and asks for
@@ -398,17 +408,31 @@ class DialogManager:
             return state.intent
         return predicted
 
+    def _has_upcoming_appointment(self, state: ConversationState) -> bool:
+        patient_id = state.get_slot("patient_id")
+        if not patient_id:
+            return False
+        listing = self.appointments.get_patient_appointments(patient_id)
+        return bool(listing.ok and listing.data)
+
     # ==================================================================
     # Confirmation
     # ==================================================================
     def _handle_confirmation(self, state: ConversationState, text: str,
                              intent_result: IntentResult, entities: dict,
                              yes_no: str | None) -> dict[str, Any]:
-        # A confident new workflow intent cancels the pending confirmation.
+        # A confident new workflow intent cancels the pending confirmation -
+        # but, as in _effective_intent, a change-date/time/doctor label while
+        # a booking waits is about THIS booking, not a new task. Observed in
+        # a live voice call: "ہاں، کر دیں" (yes, do it) -> change_date 0.87
+        # overrode the caller's yes and the booking was asked about again.
+        edits_this_booking = (state.intent == Intent.BOOK_APPOINTMENT
+                              and intent_result.raw_intent in _DRAFT_EDIT_LABELS)
         if (intent_result.intent in WORKFLOW_INTENTS
                 and (intent_result.confidence >= INTENT_SWITCH_THRESHOLD
                      or getattr(intent_result, "safety_override", False))
-                and intent_result.intent != state.intent):
+                and intent_result.intent != state.intent
+                and not edits_this_booking):
             state.confirmation_required = False
             state.pending_action = None
             return self._decide(state, text, intent_result, entities, None)

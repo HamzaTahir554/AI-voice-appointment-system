@@ -11,6 +11,12 @@
    switched on in Settings: comparing the new diary with the previous one is
    how "a patient just cancelled" can be noticed at all, since the backend
    has no push channel.
+
+   One request per poll: the summary carries today's diary, the unread
+   message count and a signature of what is booked from today on, and the
+   page it redraws reuses that same answer (store.js keeps it 3 seconds).
+   The sign-in answer already contains the doctor's record, so opening the
+   dashboard does not fetch the profile first.
    ========================================================================== */
 window.App = (function () {
   'use strict';
@@ -53,13 +59,16 @@ window.App = (function () {
       return;
     }
 
-    Store.getProfile()
+    const ready = session.doctor
+      ? Promise.resolve({ doctor: session.doctor })
+      : Store.getProfile();
+    ready
       .then(function (data) {
+        Store.setDoctor(data.doctor);
         Nav.init({ role: 'doctor', account: data.doctor });
         shellReady = true;
         startPolling();
-        Store.refreshUnreadCount();
-        rememberDiary();
+        rememberDiary();          // also brings the unread count
       })
       .catch(function (error) {
         UI.toast(error.message || 'Could not load your profile.', 'error');
@@ -132,9 +141,10 @@ window.App = (function () {
         Nav.refreshIfRoute(['overview']);
         return;
       }
-      Store.refreshUnreadCount();
-      Store.getTodayAppointments().then(announce).catch(function () { /* offline */ });
-      Nav.refreshIfRoute(['dashboard', 'appointments']);
+      Store.getSummary().then(function (summary) {
+        announce(summary.today);
+        Nav.refreshIfRoute(['dashboard', 'appointments']);
+      }).catch(function () { /* offline: try again next time */ });
     }, POLL_MS);
   }
 

@@ -1,0 +1,255 @@
+{
+ "llm": true,
+ "tts_model": "eleven_v3_conversational",
+ "stt_model": "scribe_v2_realtime",
+ "caller_text": "urdu",
+ "caller_voice": "iP95p4xoKVk53GoZ742B",
+ "warm_up": {
+  "mbert_load_ms": 10003,
+  "ollama_first_request_ms": 4937
+ },
+ "summary": {
+  "turns": 10,
+  "speech_end_to_agent_audio_ms_median": 2476.0,
+  "speech_end_to_agent_audio_ms_max": 11281.0,
+  "speech_end_to_transcript_ms_median": 1539.5,
+  "pipeline_ms_median": 70.5,
+  "tts_first_byte_ms_median": 649.0
+ },
+ "calls": {
+  "booking": {
+   "turns": [
+    {
+     "transcript": "مجھے Dr. Ahmed سے کل appointment چاہیے۔",
+     "intent": "book_appointment",
+     "action": "ask_for_time",
+     "response": "Bilkul. Kis waqt aana chahenge?",
+     "spoken": true,
+     "tts_error": null,
+     "latency": {
+      "speech_end_to_transcript_ms": 1500.0,
+      "pipeline_ms": 93.0,
+      "tts_first_byte_ms": 655.2,
+      "speech_end_to_agent_audio_ms": 2468.0
+     },
+     "appointment_id": null
+    },
+    {
+     "transcript": "چار بجے۔",
+     "intent": "book_appointment",
+     "action": "ask_confirmation",
+     "response": "Theek hai. Dr Ahmed Khan ke paas kal shaam 4 baje ka slot khali hai. Book kar doon?",
+     "spoken": true,
+     "tts_error": null,
+     "latency": {
+      "speech_end_to_transcript_ms": 1563.0,
+      "pipeline_ms": 15.0,
+      "tts_first_byte_ms": 637.3,
+      "speech_end_to_agent_audio_ms": 2406.0
+     },
+     "appointment_id": null
+    },
+    {
+     "transcript": "ہاں، کر دیں۔",
+     "intent": "reschedule_appointment",
+     "action": "create_appointment",
+     "response": "Done ji. Aap ki appointment Dr Ahmed Khan ke saath kal shaam 4 baje confirm ho gayi hai. Appointment ID APT4B8FC0 hai.",
+     "spoken": true,
+     "tts_error": null,
+     "latency": {
+      "speech_end_to_transcript_ms": 1203.0,
+      "pipeline_ms": 9234.0,
+      "tts_first_byte_ms": 661.8,
+      "speech_end_to_agent_audio_ms": 11281.0
+     },
+     "appointment_id": "APT4B8FC0"
+    }
+   ],
+   "usage": {
+    "turns": 3,
+    "stt_audio_ms_sent": 8200,
+    "stt_audio_ms_held_back": 12680,
+    "tts_characters": 232,
+    "tts_requests": 3,
+    "tts_cache_hits": 0,
+    "stt_reconnects": 0
+   },
+   "end_reason": "benchmark_done"
+  },
+  "cancellation": {
+   "turns": [
+    {
+     "transcript": "Many appointment cancel کر دیں۔",
+     "intent": "cancel_appointment",
+     "action": "ask_confirmation",
+     "response": "Bilkul. Aap ki appointment Dr Ahmed Khan ke saath kal shaam 7:40 baje hai. Cancel kar doon?",
+     "spoken": true,
+     "tts_error": null,
+     "latency": {
+      "speech_end_to_transcript_ms": 1516.0,
+      "pipeline_ms": 63.0,
+      "tts_first_byte_ms": 665.6,
+      "speech_end_to_agent_audio_ms": 2437.0
+     },
+     "appointment_id": null
+    },
+    {
+     "transcript": "ہاں جی۔",
+     "intent": "confirm",
+     "action": "cancel_appointment",
+     "response": "Aapki appointment Dr Ahmed Khan ke saath 30 September ko 19:40 ke liye cancelled ho gayi hai.",
+     "spoken": true,
+     "tts_error": null,
+     "latency": {
+      "speech_end_to_transcript_ms": 1484.0,
+      "pipeline_ms": 6688.0,
+      "tts_first_byte_ms": 689.4,
+      "speech_end_to_agent_audio_ms": 9047.0
+     },
+     "appointment_id": "APTD07605"
+    }
+   ],
+   "usage": {
+    "turns": 2,
+    "stt_audio_ms_sent": 5020,
+    "stt_audio_ms_held_back": 8980,
+    "tts_characters": 416,
+    "tts_requests": 5,
+    "tts_cache_hits": 0,
+    "stt_reconnects": 0
+   },
+   "end_reason": "benchmark_done"
+  },
+  "rescheduling": {
+   "turns": [
+    {
+     "transcript": "Mein appointment جمعہ کو 5:00 بجے کر دیں۔",
+     "intent": "reschedule_appointment",
+     "action": "ask_confirmation",
+     "response": "Bilkul. Dr Ahmed Khan Jumma 2 tareekh shaam 5 baje free hain. Appointment wahan shift kar doon?",
+     "spoken": true,
+     "tts_error": null,
+     "latency": {
+      "speech_end_to_transcript_ms": 1594.0,
+      "pipeline_ms": 78.0,
+      "tts_first_byte_ms": 634.8,
+      "speech_end_to_agent_audio_ms": 2484.0
+     },
+     "appointment_id": null
+    },
+    {
+     "transcript": "ہے۔",
+     "intent": "reschedule_appointment",
+     "action": "ask_confirmation",
+     "response": "Maazrat, kar doon? Bas haan ya nahi bata dein.",
+     "spoken": true,
+     "tts_error": null,
+     "latency": {
+      "speech_end_to_transcript_ms": 1593.0,
+      "pipeline_ms": 47.0,
+      "tts_first_byte_ms": 642.1,
+      "speech_end_to_agent_audio_ms": 2453.0
+     },
+     "appointment_id": null
+    }
+   ],
+   "usage": {
+    "turns": 2,
+    "stt_audio_ms_sent": 5780,
+    "stt_audio_ms_held_back": 2260,
+    "tts_characters": 557,
+    "tts_requests": 7,
+    "tts_cache_hits": 0,
+    "stt_reconnects": 0
+   },
+   "end_reason": "benchmark_done"
+  },
+  "doctor_fee": {
+   "turns": [
+    {
+     "transcript": "Doctor احمد کی fees کتنی ہے؟",
+     "intent": "doctor_information",
+     "action": "provide_doctor_fee",
+     "response": "Dr Ahmed Khan ki consultation fee 2000 rupay hai.",
+     "spoken": true,
+     "tts_error": null,
+     "latency": {
+      "speech_end_to_transcript_ms": 1469.0,
+      "pipeline_ms": 46.0,
+      "tts_first_byte_ms": 643.6,
+      "speech_end_to_agent_audio_ms": 2359.0
+     },
+     "appointment_id": null
+    }
+   ],
+   "usage": {
+    "turns": 1,
+    "stt_audio_ms_sent": 3000,
+    "stt_audio_ms_held_back": 1080,
+    "tts_characters": 606,
+    "tts_requests": 8,
+    "tts_cache_hits": 0,
+    "stt_reconnects": 0
+   },
+   "end_reason": "benchmark_done"
+  },
+  "availability": {
+   "turns": [
+    {
+     "transcript": "Dr. Ahmed Cole available ہے؟",
+     "intent": "doctor_availability",
+     "action": "ask_for_date",
+     "response": "Bilkul. Kis din aana convenient rahega?",
+     "spoken": true,
+     "tts_error": null,
+     "latency": {
+      "speech_end_to_transcript_ms": 1672.0,
+      "pipeline_ms": 31.0,
+      "tts_first_byte_ms": 635.0,
+      "speech_end_to_agent_audio_ms": 2515.0
+     },
+     "appointment_id": null
+    }
+   ],
+   "usage": {
+    "turns": 1,
+    "stt_audio_ms_sent": 3100,
+    "stt_audio_ms_held_back": 1100,
+    "tts_characters": 645,
+    "tts_requests": 9,
+    "tts_cache_hits": 0,
+    "stt_reconnects": 0
+   },
+   "end_reason": "benchmark_done"
+  },
+  "goodbye": {
+   "turns": [
+    {
+     "transcript": "شکریہ۔ اللہ حافظ۔",
+     "intent": "goodbye",
+     "action": "end_conversation",
+     "response": "Khuda hafiz, apna khayal rakhiye ga.",
+     "spoken": true,
+     "tts_error": null,
+     "latency": {
+      "speech_end_to_transcript_ms": 1766.0,
+      "pipeline_ms": 94.0,
+      "tts_first_byte_ms": 654.3,
+      "speech_end_to_agent_audio_ms": 2688.0
+     },
+     "appointment_id": null
+    }
+   ],
+   "usage": {
+    "turns": 1,
+    "stt_audio_ms_sent": 2700,
+    "stt_audio_ms_held_back": 1100,
+    "tts_characters": 681,
+    "tts_requests": 10,
+    "tts_cache_hits": 0,
+    "stt_reconnects": 0
+   },
+   "end_reason": "goodbye"
+  }
+ }
+}

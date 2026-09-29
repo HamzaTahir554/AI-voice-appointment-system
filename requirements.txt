@@ -39,6 +39,16 @@ uvicorn[standard]>=0.30
 pydantic>=2.8
 python-dotenv>=1.0
 
+# --- Speech: ElevenLabs STT / TTS (speech/) --------------------------------
+# The official REST and WebSocket API, called with httpx (above) and
+# websockets. The official `elevenlabs` SDK is not required - and cannot be
+# installed on Windows without long-path support. No FFmpeg: audio is never
+# transcoded on the call path.
+websockets>=12
+# Microphone and speaker for voice_app.py (bundles PortAudio on Windows and
+# macOS; on Linux: apt install libportaudio2).
+sounddevice>=0.4
+
 # --- reports ---------------------------------------------------------------
 # Only needed to check the generated PDF report (tests/test_security.py skips
 # that check when it is missing).

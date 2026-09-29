@@ -20,8 +20,9 @@ from typing import Any
 from ollama_judge.fallback import build_fallback_response
 from ollama_judge.language import ENGLISH, detect_utterance_language
 from ollama_judge.ollama_service import OllamaService
-from ollama_judge.prompts import FEW_SHOT, JUDGE_SYSTEM_PROMPT, build_judge_input
-from ollama_judge.response_validator import validate_llm_response
+from ollama_judge.prompts import (FEW_SHOT, JUDGE_SYSTEM_PROMPT, PHRASE_EXAMPLES,
+                                   PHRASE_SYSTEM_PROMPT, build_judge_input, build_phrase_input)
+from ollama_judge.response_validator import validate_llm_response, validate_rewording
 
 logger = logging.getLogger(__name__)
 
@@ -127,6 +128,35 @@ class OllamaJudge:
 
         return JudgeResult(candidate, "approved", "ollama", reason,
                            llm_raw=candidate)
+
+    # ------------------------------------------------------------------
+    def phrase(self, reference: str, user_text: str, language: str) -> JudgeResult:
+        """
+        Word a turn that has no database result: a slot question, a greeting,
+        a fee. `reference` is the Dialog Manager's own sentence for the turn -
+        the facts the reply must keep, and what is said if the model fails or
+        its wording is rejected (response_validator.validate_rewording).
+        """
+        if not reference:
+            return JudgeResult(reference, "approved", "fallback", "nothing to say")
+        if not self.service.is_available():
+            return JudgeResult(reference, "approved", "fallback", "Ollama unavailable")
+        # The caller's own words are left out on purpose: a small model
+        # answers in the language it last read, not the one it is asked for.
+        examples = PHRASE_EXAMPLES.get(language, PHRASE_EXAMPLES["roman_urdu"])
+        parsed = self.service.chat_json(
+            PHRASE_SYSTEM_PROMPT, build_phrase_input(reference, language),
+            examples=examples if self.use_few_shot else None)
+        candidate = str((parsed or {}).get("response") or "").strip()
+        if not candidate:
+            return JudgeResult(reference, "approved", "fallback",
+                               "model returned no usable sentence")
+        report = validate_rewording(candidate, reference, language)
+        if not report.valid:
+            return JudgeResult(reference, "needs_correction", "fallback",
+                               "validator rejected the reworded response",
+                               validation_problems=report.problems, llm_raw=candidate)
+        return JudgeResult(candidate, "approved", "ollama", "reworded", llm_raw=candidate)
 
     # ------------------------------------------------------------------
     def rephrase(self, deterministic_text: str, user_text: str,

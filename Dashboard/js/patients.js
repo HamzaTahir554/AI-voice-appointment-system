@@ -119,67 +119,106 @@ window.Pages.patients = (function () {
     load(listBody);
   }
 
+  /* One page from the server; "Load more" appends the next one. */
+  let shown = [];
+  let ticket = 0;
+
   function load(listBody) {
+    const mine = ++ticket;
     UI.mount(listBody, UI.skeleton(6));
-    Store.getPatients(query).then(function (patients) {
-      if (!patients.length) {
-        UI.mount(listBody, UI.empty({
-          icon: 'users',
-          title: 'No patients found',
-          message: query
-            ? 'No patient matches "' + query + '".'
-            : 'Patients appear here once they have an appointment with you.'
-        }));
-        return;
-      }
-
-      const rows = patients.map(function (patient) {
-        const next = patient.next_appointment;
-        return UI.el('tr', {}, [
-          UI.el('td', { 'data-label': 'Patient' }, [
-            UI.el('div', { class: 'patient-name' }, [
-              UI.avatar(patient.name),
-              UI.el('div', {}, [
-                UI.el('span', { class: 'cell-primary', text: patient.name }),
-                UI.el('div', { class: 'cell-sub', text: patient.patient_id })
-              ])
-            ])
-          ]),
-          UI.el('td', { 'data-label': 'Phone', class: 'nowrap', text: patient.phone || '-' }),
-          UI.el('td', { 'data-label': 'Appointments', text: String(patient.total_appointments) }),
-          UI.el('td', {
-            'data-label': 'Last visit', class: 'nowrap',
-            text: patient.last_visit ? UI.formatDateShort(patient.last_visit) : 'None'
-          }),
-          UI.el('td', { 'data-label': 'Next appointment', class: 'nowrap' },
-            next
-              ? UI.el('span', { text: UI.relativeDay(next.date) + ' ' + UI.formatTime(next.time) })
-              : UI.el('span', { class: 'pill', text: 'None booked' })),
-          UI.el('td', { 'data-label': 'Actions' }, UI.el('div', { class: 'cell-actions' }, [
-            UI.el('button', {
-              class: 'btn btn-secondary btn-sm', type: 'button',
-              onClick: function () { PatientActions.openDetails(patient.patient_id); }
-            }, 'View')
-          ]))
-        ]);
-      });
-
-      UI.mount(listBody, UI.el('div', { class: 'table-wrap' }, [
-        UI.el('table', { class: 'data' }, [
-          UI.el('thead', {}, UI.el('tr', {}, [
-            UI.el('th', { scope: 'col', text: 'Patient' }),
-            UI.el('th', { scope: 'col', text: 'Phone' }),
-            UI.el('th', { scope: 'col', text: 'Appointments' }),
-            UI.el('th', { scope: 'col', text: 'Last visit' }),
-            UI.el('th', { scope: 'col', text: 'Next appointment' }),
-            UI.el('th', { scope: 'col', class: 'text-right', text: 'Actions' })
-          ])),
-          UI.el('tbody', {}, rows)
-        ])
-      ]));
+    Store.getPatientsPage({ query: query, offset: 0 }).then(function (page) {
+      if (mine !== ticket) { return; }
+      shown = page.patients;
+      paint(listBody, page);
     }).catch(function (error) {
+      if (mine !== ticket) { return; }
       UI.mount(listBody, UI.apiError(error, function () { load(listBody); }));
     });
+  }
+
+  function loadMore(listBody, button) {
+    const mine = ++ticket;
+    UI.setButtonLoading(button, true);
+    Store.getPatientsPage({ query: query, offset: shown.length }).then(function (page) {
+      if (mine !== ticket) { return; }
+      shown = shown.concat(page.patients);
+      paint(listBody, page);
+    }).catch(function (error) {
+      if (mine !== ticket) { return; }
+      UI.setButtonLoading(button, false);
+      UI.toast(error.message || 'Could not load more patients.', 'error');
+    });
+  }
+
+  function paint(listBody, page) {
+    const patients = shown;
+    if (!patients.length) {
+      UI.mount(listBody, UI.empty({
+        icon: 'users',
+        title: 'No patients found',
+        message: query
+          ? 'No patient matches "' + query + '".'
+          : 'Patients appear here once they have an appointment with you.'
+      }));
+      return;
+    }
+
+    const rows = patients.map(function (patient) {
+      const next = patient.next_appointment;
+      return UI.el('tr', {}, [
+        UI.el('td', { 'data-label': 'Patient' }, [
+          UI.el('div', { class: 'patient-name' }, [
+            UI.avatar(patient.name),
+            UI.el('div', {}, [
+              UI.el('span', { class: 'cell-primary', text: patient.name }),
+              UI.el('div', { class: 'cell-sub', text: patient.patient_id })
+            ])
+          ])
+        ]),
+        UI.el('td', { 'data-label': 'Phone', class: 'nowrap', text: patient.phone || '-' }),
+        UI.el('td', { 'data-label': 'Appointments', text: String(patient.total_appointments) }),
+        UI.el('td', {
+          'data-label': 'Last visit', class: 'nowrap',
+          text: patient.last_visit ? UI.formatDateShort(patient.last_visit) : 'None'
+        }),
+        UI.el('td', { 'data-label': 'Next appointment', class: 'nowrap' },
+          next
+            ? UI.el('span', { text: UI.relativeDay(next.date) + ' ' + UI.formatTime(next.time) })
+            : UI.el('span', { class: 'pill', text: 'None booked' })),
+        UI.el('td', { 'data-label': 'Actions' }, UI.el('div', { class: 'cell-actions' }, [
+          UI.el('button', {
+            class: 'btn btn-secondary btn-sm', type: 'button',
+            onClick: function () { PatientActions.openDetails(patient.patient_id); }
+          }, 'View')
+        ]))
+      ]);
+    });
+
+    UI.mount(listBody, UI.el('div', { class: 'table-wrap' }, [
+      UI.el('table', { class: 'data' }, [
+        UI.el('thead', {}, UI.el('tr', {}, [
+          UI.el('th', { scope: 'col', text: 'Patient' }),
+          UI.el('th', { scope: 'col', text: 'Phone' }),
+          UI.el('th', { scope: 'col', text: 'Appointments' }),
+          UI.el('th', { scope: 'col', text: 'Last visit' }),
+          UI.el('th', { scope: 'col', text: 'Next appointment' }),
+          UI.el('th', { scope: 'col', class: 'text-right', text: 'Actions' })
+        ])),
+        UI.el('tbody', {}, rows)
+      ])
+    ]));
+
+    if (page.has_more) {
+      const more = UI.el('button', {
+        class: 'btn btn-secondary btn-sm', type: 'button',
+        onClick: function () { loadMore(listBody, more); }
+      }, 'Load more');
+      listBody.appendChild(UI.el('div', { class: 'card-body row-between wrap' }, [
+        UI.el('span', { class: 'muted small',
+                        text: 'Showing ' + patients.length + ' of ' + page.total + ' patients' }),
+        more
+      ]));
+    }
   }
 
   /* ------------------------------------------------------ add patient -- */

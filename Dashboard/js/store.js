@@ -10,6 +10,17 @@
 
    Field names are the backend's own (appointment_id, patient_id, date, time,
    status), so nothing has to be translated back when writing.
+
+   Reuse, and its limits (api.js does the remembering; any change the doctor
+   makes, and signing out, forgets all of it at once):
+     - the summary: 3 seconds - long enough that the 30-second refresh and
+       the page it redraws share one request, never longer
+     - statistics: 60 seconds, and forgotten sooner the moment the summary
+       shows the diary has changed (its `signature`)
+     - profile and working week: 2 minutes / 1 minute; they change only
+       when somebody edits them, and an edit made here forgets them at once
+     - appointment lists, patients and messages: never kept - each opening
+       asks again, one page at a time
    ========================================================================== */
 window.Store = (function () {
   'use strict';
@@ -36,9 +47,13 @@ window.Store = (function () {
     cancelled_by_doctor: 'Cancelled by you'
   };
 
+  const KEEP = { summary: 3000, statistics: 60000, profile: 120000, schedule: 60000 };
+  const PAGE = 20;
+
   const listeners = new Set();
   let doctor = null;
   let clinic = null;
+  let signature = null;      // the diary as the last summary saw it
 
   function subscribe(fn) {
     listeners.add(fn);
@@ -66,11 +81,17 @@ window.Store = (function () {
 
   /* ----------------------------------------------------------- doctor --- */
   function loadProfile() {
-    return Api.get('/dashboard/profile').then(function (data) {
+    return Api.get('/dashboard/profile', { cache: KEEP.profile }).then(function (data) {
       doctor = data.doctor;
       clinic = data.clinic;
       return data;
     });
+  }
+
+  /* The sign-in answer already carries the doctor's record, so the
+     dashboard can open without asking for it again. */
+  function setDoctor(record) {
+    doctor = record || null;
   }
 
   function getDoctor() {
@@ -103,8 +124,21 @@ window.Store = (function () {
   }
 
   /* ------------------------------------------------------ appointments --- */
+  /* The summary also brings the unread-message count, and a signature of
+     the diary from today on: when that changes, the statistics are asked for
+     again instead of waiting out their minute. */
   function getSummary() {
-    return Api.get('/dashboard/summary');
+    return Api.get('/dashboard/summary', { cache: KEEP.summary }).then(function (data) {
+      if (data.signature && signature && data.signature !== signature) {
+        Api.forget('/dashboard/statistics');
+      }
+      signature = data.signature || signature;
+      if (typeof data.unread_notifications === 'number' && data.unread_notifications !== unread) {
+        unread = data.unread_notifications;
+        changed();
+      }
+      return data;
+    });
   }
 
   function getStats() {
@@ -121,20 +155,27 @@ window.Store = (function () {
       if (f.start) { params.push('start=' + encodeURIComponent(f.start)); }
       if (f.end) { params.push('end=' + encodeURIComponent(f.end)); }
     }
-    return Api.get('/dashboard/statistics?' + params.join('&'));
+    return Api.get('/dashboard/statistics?' + params.join('&'), { cache: KEEP.statistics });
   }
 
-  function getAppointments(filters) {
+  /* One page of appointments: { appointments, total, has_more, offset }.
+     `total` is null when counting would mean reading every record. */
+  function getAppointmentsPage(filters) {
     const f = filters || {};
     const params = [];
     if (f.scope && f.scope !== 'all') { params.push('scope=' + encodeURIComponent(f.scope)); }
     if (f.date) { params.push('date=' + encodeURIComponent(f.date)); }
+    if (f.start) { params.push('start=' + encodeURIComponent(f.start)); }
+    if (f.end) { params.push('end=' + encodeURIComponent(f.end)); }
     if (f.status) { params.push('status=' + encodeURIComponent(f.status)); }
     if (f.query) { params.push('query=' + encodeURIComponent(f.query)); }
-    const suffix = params.length ? '?' + params.join('&') : '';
-    return Api.get('/dashboard/appointments' + suffix).then(function (data) {
-      return data.appointments;
-    });
+    params.push('offset=' + (f.offset || 0));
+    params.push('limit=' + (f.limit || PAGE));
+    return Api.get('/dashboard/appointments?' + params.join('&'));
+  }
+
+  function getAppointments(filters) {
+    return getAppointmentsPage(filters).then(function (data) { return data.appointments; });
   }
 
   function getTodayAppointments() {
@@ -179,9 +220,16 @@ window.Store = (function () {
   }
 
   /* --------------------------------------------------------- patients --- */
-  function getPatients(query) {
-    const suffix = query ? '?query=' + encodeURIComponent(query) : '';
-    return Api.get('/dashboard/patients' + suffix).then(function (data) {
+  function getPatientsPage(filters) {
+    const f = filters || {};
+    const params = ['offset=' + (f.offset || 0), 'limit=' + (f.limit || PAGE)];
+    if (f.query) { params.push('query=' + encodeURIComponent(f.query)); }
+    return Api.get('/dashboard/patients?' + params.join('&'));
+  }
+
+  /* Every patient of this doctor (up to 500), for the booking form's list. */
+  function getPatients(query, limit) {
+    return getPatientsPage({ query: query, limit: limit || 500 }).then(function (data) {
       return data.patients;
     });
   }
@@ -197,7 +245,8 @@ window.Store = (function () {
 
   /* --------------------------------------------------------- schedule --- */
   function getSchedule() {
-    return Api.get('/dashboard/schedule').then(function (data) { return data.days; });
+    return Api.get('/dashboard/schedule', { cache: KEEP.schedule })
+      .then(function (data) { return data.days; });
   }
 
   function updateSchedule(days) {
@@ -208,7 +257,8 @@ window.Store = (function () {
   }
 
   function getLeave() {
-    return Api.get('/dashboard/leave').then(function (data) { return data.leave; });
+    return Api.get('/dashboard/leave', { cache: KEEP.schedule })
+      .then(function (data) { return data.leave; });
   }
 
   /* Blocking a date runs the backend cascade: appointments on it become
@@ -229,32 +279,33 @@ window.Store = (function () {
   /* How many appointments a date range would affect, for the warning shown
      before the doctor confirms. Nothing is cancelled by this call. */
   function getAppointmentsInRange(startDate, endDate) {
-    return getAppointments({ scope: 'upcoming' }).then(function (rows) {
-      return rows.filter(function (a) {
-        return a.date >= startDate && a.date <= endDate;
-      });
-    });
+    // The server reads only those dates; nothing outside them is sent.
+    return getAppointments({ scope: 'upcoming', start: startDate, end: endDate, limit: 500 });
   }
 
   /* ---------------------------------------------------- notifications --- */
   let unread = 0;
 
-  function getNotifications() {
-    return Api.get('/dashboard/notifications').then(function (data) {
-      unread = data.unread;
-      return data.notifications;
+  /* One page of messages, newest first: { notifications, unread, total, has_more }. */
+  function getNotificationsPage(offset, limit) {
+    return Api.get('/dashboard/notifications?offset=' + (offset || 0)
+                   + '&limit=' + (limit || PAGE)).then(function (data) {
+      if (data.unread !== unread) { unread = data.unread; changed(); }
+      return data;
     });
+  }
+
+  function getNotifications() {
+    return getNotificationsPage(0, 50).then(function (data) { return data.notifications; });
   }
 
   function getUnreadCount() { return unread; }
 
+  /* The unread count comes with the summary, which the dashboard asks for
+     anyway - there is no separate request for it. */
   function refreshUnreadCount() {
-    return Api.get('/dashboard/notifications').then(function (data) {
-      const before = unread;
-      unread = data.unread;
-      if (before !== unread) { changed(); }
-      return unread;
-    }).catch(function () { return unread; });
+    return getSummary().then(function () { return unread; })
+      .catch(function () { return unread; });
   }
 
   function markNotificationRead(id) {
@@ -292,8 +343,8 @@ window.Store = (function () {
     }
     const lower = needle.toLowerCase();
     return Promise.all([
-      getPatients(needle).catch(function () { return []; }),
-      getAppointments({ query: needle }).catch(function () { return []; })
+      getPatients(needle, 4).catch(function () { return []; }),
+      getAppointments({ query: needle, limit: 4 }).catch(function () { return []; })
     ]).then(function (results) {
       return {
         patients: results[0].slice(0, 4),
@@ -308,10 +359,13 @@ window.Store = (function () {
     doctor = null;
     clinic = null;
     unread = 0;
+    signature = null;
+    Api.forget();
   }
 
   return {
     STATUS: STATUS,
+    PAGE_SIZE: PAGE,
     ACTIVE_STATUSES: ACTIVE,
     CANCELLED_STATUSES: CANCELLED_ANY,
     label: function (status) { return LABELS[status] || status || 'Unknown'; },
@@ -323,6 +377,7 @@ window.Store = (function () {
     isoFromOffset: isoFromOffset,
 
     getDoctor: getDoctor,
+    setDoctor: setDoctor,
     getProfile: getProfile,
     getCachedDoctor: getCachedDoctor,
     changePassword: changePassword,
@@ -332,6 +387,7 @@ window.Store = (function () {
     getStats: getStats,
     getStatistics: getStatistics,
     getAppointments: getAppointments,
+    getAppointmentsPage: getAppointmentsPage,
     getTodayAppointments: getTodayAppointments,
     getQueue: getQueue,
     getAppointment: getAppointment,
@@ -342,6 +398,7 @@ window.Store = (function () {
     getAvailability: getAvailability,
 
     getPatients: getPatients,
+    getPatientsPage: getPatientsPage,
     getPatient: getPatient,
     createPatient: createPatient,
 
@@ -353,6 +410,7 @@ window.Store = (function () {
     getAppointmentsInRange: getAppointmentsInRange,
 
     getNotifications: getNotifications,
+    getNotificationsPage: getNotificationsPage,
     getUnreadCount: getUnreadCount,
     refreshUnreadCount: refreshUnreadCount,
     markNotificationRead: markNotificationRead,

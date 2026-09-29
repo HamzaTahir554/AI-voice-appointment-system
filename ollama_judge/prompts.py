@@ -136,3 +136,74 @@ FEW_SHOT = [
         }, ensure_ascii=False),
     },
 ]
+
+
+# --------------------------------------------------------------------------
+# Rewording a turn with no database result (voice calls)
+#
+# The Dialog Manager has already decided what to say - which question to ask,
+# which fee to quote. The model only makes it sound like a person on the
+# phone; response_validator.validate_rewording rejects any change of fact.
+# --------------------------------------------------------------------------
+PHRASE_SYSTEM_PROMPT = """You are the voice of a friendly woman receptionist at a doctor's clinic, on a phone call.
+
+You are given the reply the clinic system has decided to say. Say the SAME
+thing in a warm, natural, spoken way.
+
+Rules:
+- Write in the language you are told to write in, and only that language.
+- Keep the meaning exactly. If it asks a question, ask that same question.
+- Copy every number, time, day word (kal, parson, Friday...) and doctor name
+  exactly as written, digits as digits.
+- Add nothing: no new facts, no new question, no offers.
+- Never say something was booked, cancelled or confirmed unless the reply says so.
+- One or two short sentences. No lists, no emojis.
+- In Urdu and Roman Urdu speak as a woman (sakti hoon, karti hoon).
+
+Return ONLY JSON: {"response": "<what to say>"}"""
+
+_LANGUAGE_NAMES = {
+    "english": "English",
+    "roman_urdu": "Roman Urdu (Urdu written in English letters), not English",
+    "urdu": "Urdu in Urdu script",
+}
+
+
+def build_phrase_input(reference: str, language: str) -> str:
+    return (f'Reply to say: "{reference}"\n'
+            f"Write it in {_LANGUAGE_NAMES.get(language, language)}.")
+
+
+def _example(reference: str, language: str, answer: str) -> list[dict]:
+    return [{"role": "user", "content": build_phrase_input(reference, language)},
+            {"role": "assistant", "content": json.dumps({"response": answer}, ensure_ascii=False)}]
+
+
+# Examples only in the language being written: shown English examples, a 3B
+# model answers a Roman Urdu request in English (measured: 14 of 21 replies).
+# The names and numbers are not the clinic's, so copying them is caught.
+PHRASE_EXAMPLES = {
+    "roman_urdu": (
+        _example("Kis doctor ke liye appointment chahiye?", "roman_urdu",
+                 "Ji zaroor. Aap kis doctor se appointment lena chahenge?")
+        + _example("Dr Nadia ke paas parson subah 10 baje ka slot khali hai. Book kar doon?",
+                   "roman_urdu",
+                   "Ji, Dr Nadia ke paas parson subah 10 baje waqt khali hai. Kya main book kar doon?")
+        + _example("Dr Nadia ki consultation fee 1500 rupay hai.", "roman_urdu",
+                   "Ji, Dr Nadia ki fee 1500 rupay hai.")),
+    "english": (
+        _example("Which doctor would you like an appointment with?", "english",
+                 "Of course. Which doctor would you like to see?")
+        + _example("Dr Nadia has a slot the day after tomorrow at 10 AM. Shall I book it?", "english",
+                   "Dr Nadia is free the day after tomorrow at 10 AM. Would you like me to book it?")
+        + _example("Dr Nadia's consultation fee is 1500 rupees.", "english",
+                   "Dr Nadia's fee is 1500 rupees.")),
+    "urdu": (
+        _example("کس ڈاکٹر سے اپائنٹمنٹ چاہیے؟", "urdu",
+                 "جی ضرور، آپ کس ڈاکٹر سے ملنا چاہیں گے؟")
+        + _example("ڈاکٹر نادیہ کے پاس پرسوں صبح 10 بجے کا وقت خالی ہے۔ بک کر دوں؟", "urdu",
+                   "جی، ڈاکٹر نادیہ کے پاس پرسوں صبح 10 بجے وقت خالی ہے۔ کیا میں بک کر دوں؟")
+        + _example("ڈاکٹر نادیہ کی فیس 1500 روپے ہے۔", "urdu",
+                   "جی، ڈاکٹر نادیہ کی فیس 1500 روپے ہے۔")),
+}
+

@@ -1,0 +1,4232 @@
+{
+  "generated_at": "2026-09-29T11:46:39",
+  "command": "python.exe scripts/run_tests.py --quiet --output test_results_no_model",
+  "live": false,
+  "seconds": 26.46,
+  "totals": {
+    "total": 589,
+    "passed": 534,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 55,
+    "unexpected_success": 0,
+    "pass_rate": 1.0
+  },
+  "categories": {
+    "backend": {
+      "total": 61,
+      "passed": 61,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "unexpected_success": 0,
+      "pass_rate": 1.0
+    },
+    "dashboard": {
+      "total": 153,
+      "passed": 152,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 1,
+      "unexpected_success": 0,
+      "pass_rate": 1.0
+    },
+    "dialogue": {
+      "total": 111,
+      "passed": 111,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "unexpected_success": 0,
+      "pass_rate": 1.0
+    },
+    "end_to_end": {
+      "total": 25,
+      "passed": 25,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "unexpected_success": 0,
+      "pass_rate": 1.0
+    },
+    "firebase": {
+      "total": 40,
+      "passed": 31,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 9,
+      "unexpected_success": 0,
+      "pass_rate": 1.0
+    },
+    "intent": {
+      "total": 37,
+      "passed": 37,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "unexpected_success": 0,
+      "pass_rate": 1.0
+    },
+    "ollama": {
+      "total": 54,
+      "passed": 51,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 3,
+      "unexpected_success": 0,
+      "pass_rate": 1.0
+    },
+    "other": {
+      "total": 3,
+      "passed": 0,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 3,
+      "unexpected_success": 0,
+      "pass_rate": 0.0
+    },
+    "security": {
+      "total": 11,
+      "passed": 11,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "unexpected_success": 0,
+      "pass_rate": 1.0
+    },
+    "speech": {
+      "total": 94,
+      "passed": 55,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 39,
+      "unexpected_success": 0,
+      "pass_rate": 1.0
+    }
+  },
+  "tests": [
+    {
+      "id": "tests.test_admin_api.TestAddDoctor.test_a_bad_username_or_password_stops_the_whole_thing",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.5137,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestAddDoctor.test_a_colliding_first_name_is_reported_not_hidden",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0059,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestAddDoctor.test_a_doctor_can_be_given_an_account_while_being_added",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.4611,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestAddDoctor.test_a_patient_can_book_the_new_doctor_through_the_public_route",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0149,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestAddDoctor.test_a_refused_field_leaves_nothing_behind",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0094,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestAddDoctor.test_invalid_values_are_refused",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0062,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestAddDoctor.test_new_doctor_gets_the_next_id_the_clinic_and_a_schedule",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.5676,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestAddDoctor.test_required_fields_are_enforced",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0055,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestAddDoctor.test_the_voice_assistant_can_find_the_new_doctor_by_name",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.1716,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestAdminSeesDoctorWork.test_a_voice_booking_shows_up_in_the_administrators_view",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.4763,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestAdminSeesDoctorWork.test_an_unknown_doctor_is_a_404_everywhere",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0525,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestAdminSeesDoctorWork.test_blocking_a_date_for_a_doctor_cancels_and_queues_messages",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0089,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestAdminSeesDoctorWork.test_doctor_detail_carries_schedule_leave_and_appointments",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0263,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestAppointmentManagement.test_a_doctor_cannot_use_the_clinic_wide_routes",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.1715,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestAppointmentManagement.test_an_unknown_appointment_is_a_404",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0077,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestAppointmentManagement.test_every_doctors_appointments_are_listed_with_names",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0075,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestAppointmentManagement.test_filters_and_search",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0112,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestAppointmentManagement.test_reschedule_and_complete",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0102,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestAppointmentManagement.test_the_administrator_cancels_through_the_backend",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0062,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestAppointmentManagement.test_the_slot_is_free_for_the_voice_side_again",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0117,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestCredentials.test_a_doctor_cannot_change_their_own_username",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.1027,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestCredentials.test_a_doctor_cannot_touch_anybody_elses_credentials",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.105,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestCredentials.test_a_doctor_changes_their_own_password",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.3308,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestCredentials.test_a_stored_password_replaces_the_environment_one",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.1577,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestCredentials.test_a_username_cannot_shadow_somebody_else",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0156,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestCredentials.test_administrator_issues_a_username_and_password",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.1657,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestCredentials.test_changing_a_password_signs_that_account_out_elsewhere",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.1355,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestCredentials.test_the_administrator_changes_their_own_password",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.3522,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestCredentials.test_weak_passwords_and_bad_usernames_are_refused",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0577,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestDeactivate.test_a_deactivated_doctor_cannot_sign_in",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0131,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestDeactivate.test_a_deactivated_doctor_disappears_from_the_voice_matcher",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0074,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestDeactivate.test_activating_again_makes_the_doctor_bookable",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0079,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestDeactivate.test_deactivating_stops_new_bookings_but_keeps_the_diary",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0072,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestDirectory.test_doctor_rows_carry_clinic_workload_and_hours",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0062,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestDirectory.test_search_matches_name_specialization_and_qualification",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0079,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestDirectory.test_specialization_filter",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0037,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestDirectory.test_specialization_list_is_offered_for_the_filter",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0031,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestDirectory.test_summary_counts_the_seeded_clinic",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0038,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestDoctorAccountSettings.test_a_doctor_renaming_themselves_moves_their_spoken_name",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.009,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestDoctorAccountSettings.test_a_doctor_still_sees_only_their_own_data",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0042,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestDoctorAccountSettings.test_a_picture_that_is_not_an_image_is_refused",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0036,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestDoctorAccountSettings.test_an_oversized_picture_is_refused",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0055,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestDoctorAccountSettings.test_email_photo_and_alert_preferences_persist",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0059,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestDoctorAccountSettings.test_the_photo_can_be_removed",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0039,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestEditDoctor.test_an_impossible_working_day_is_refused",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0087,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestEditDoctor.test_editing_an_unknown_doctor_is_a_404",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0036,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestEditDoctor.test_edits_reach_the_documents_the_voice_assistant_reads",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0058,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestEditDoctor.test_renaming_a_doctor_renames_what_callers_can_say",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0056,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestEditDoctor.test_the_schedule_can_be_replaced_from_the_admin_side",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0069,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestLeaveScenario.test_a_backwards_date_range_is_refused",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0039,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestLeaveScenario.test_five_appointments_are_previewed_cancelled_and_kept",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0331,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestLeaveScenario.test_the_preview_is_read_only",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0046,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestLeaveScenario.test_the_preview_reports_a_quiet_day_honestly",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0027,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestRemoveAndRestore.test_remove_archives_and_keeps_every_appointment",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0125,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestRemoveAndRestore.test_restore_brings_the_record_back_deactivated",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0086,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestRoles.test_administrator_cannot_read_a_doctors_private_dashboard",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0074,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestRoles.test_administrator_id_is_never_a_doctor",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0029,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestRoles.test_administrator_signs_in_with_a_role",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0026,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestRoles.test_doctor_cannot_reach_the_administration_area",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0051,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestRoles.test_no_token_is_unauthorised",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0025,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestRoles.test_session_route_reports_the_role",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0027,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestRoles.test_wrong_administrator_password_is_refused",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0023,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestTheClinic.test_a_doctor_cannot_change_any_clinic_detail",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0101,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestTheClinic.test_a_doctor_cannot_reach_the_clinic_routes",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.005,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestTheClinic.test_an_empty_name_or_address_is_refused",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestTheClinic.test_an_old_database_with_two_clinics_can_be_consolidated",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0047,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestTheClinic.test_the_administrator_edits_the_name_and_address",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0027,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestTheClinic.test_the_new_name_appears_everywhere_at_once",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0111,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestTheClinic.test_there_is_exactly_one_clinic",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0026,
+      "message": ""
+    },
+    {
+      "id": "tests.test_admin_api.TestTheClinic.test_there_is_no_way_to_add_or_list_more",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.003,
+      "message": ""
+    },
+    {
+      "id": "tests.test_api.TestAppointmentEndpoints.test_book_then_refuse_the_same_slot",
+      "category": "end_to_end",
+      "status": "passed",
+      "seconds": 0.0048,
+      "message": ""
+    },
+    {
+      "id": "tests.test_api.TestAppointmentEndpoints.test_cancel_checks_ownership_and_keeps_the_record",
+      "category": "end_to_end",
+      "status": "passed",
+      "seconds": 0.0054,
+      "message": ""
+    },
+    {
+      "id": "tests.test_api.TestAppointmentEndpoints.test_doctor_leave_cancels_and_notifies",
+      "category": "end_to_end",
+      "status": "passed",
+      "seconds": 0.0046,
+      "message": ""
+    },
+    {
+      "id": "tests.test_api.TestAppointmentEndpoints.test_dry_run_check_writes_nothing",
+      "category": "end_to_end",
+      "status": "passed",
+      "seconds": 0.0015,
+      "message": ""
+    },
+    {
+      "id": "tests.test_api.TestAppointmentEndpoints.test_reschedule",
+      "category": "end_to_end",
+      "status": "passed",
+      "seconds": 0.003,
+      "message": ""
+    },
+    {
+      "id": "tests.test_api.TestConversationEndpoints.test_dialog_message",
+      "category": "end_to_end",
+      "status": "passed",
+      "seconds": 0.0112,
+      "message": ""
+    },
+    {
+      "id": "tests.test_api.TestConversationEndpoints.test_voice_message",
+      "category": "end_to_end",
+      "status": "passed",
+      "seconds": 0.0025,
+      "message": ""
+    },
+    {
+      "id": "tests.test_api.TestErrorsAreSafe.test_a_bad_date_is_reported_as_a_client_error",
+      "category": "end_to_end",
+      "status": "passed",
+      "seconds": 0.002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_api.TestErrorsAreSafe.test_a_malformed_request_is_422_without_internals",
+      "category": "end_to_end",
+      "status": "passed",
+      "seconds": 0.0016,
+      "message": ""
+    },
+    {
+      "id": "tests.test_api.TestErrorsAreSafe.test_an_unknown_appointment_is_404",
+      "category": "end_to_end",
+      "status": "passed",
+      "seconds": 0.0011,
+      "message": ""
+    },
+    {
+      "id": "tests.test_api.TestReadEndpoints.test_a_patients_appointments",
+      "category": "end_to_end",
+      "status": "passed",
+      "seconds": 0.002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_api.TestReadEndpoints.test_availability",
+      "category": "end_to_end",
+      "status": "passed",
+      "seconds": 0.0012,
+      "message": ""
+    },
+    {
+      "id": "tests.test_api.TestReadEndpoints.test_doctors_are_listed_and_fetched",
+      "category": "end_to_end",
+      "status": "passed",
+      "seconds": 0.0028,
+      "message": ""
+    },
+    {
+      "id": "tests.test_api.TestReadEndpoints.test_health",
+      "category": "end_to_end",
+      "status": "passed",
+      "seconds": 0.0016,
+      "message": ""
+    },
+    {
+      "id": "tests.test_appointments.TestAvailability.test_alternatives_are_nearest_to_the_requested_time",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0006,
+      "message": ""
+    },
+    {
+      "id": "tests.test_appointments.TestAvailability.test_doctor_unavailability_blocks_the_day",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_appointments.TestAvailability.test_invalid_date_is_rejected",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_appointments.TestAvailability.test_past_dates_are_rejected",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0003,
+      "message": ""
+    },
+    {
+      "id": "tests.test_appointments.TestAvailability.test_slots_are_generated_from_the_schedule",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_appointments.TestAvailability.test_sunday_has_no_schedule",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_appointments.TestBooking.test_a_different_doctor_may_use_the_same_time",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0008,
+      "message": ""
+    },
+    {
+      "id": "tests.test_appointments.TestBooking.test_booking_writes_a_confirmed_record",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0013,
+      "message": ""
+    },
+    {
+      "id": "tests.test_appointments.TestBooking.test_concurrent_bookings_yield_exactly_one_winner",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0012,
+      "message": ""
+    },
+    {
+      "id": "tests.test_appointments.TestBooking.test_dialog_offers_alternatives_when_the_slot_is_taken",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0009,
+      "message": ""
+    },
+    {
+      "id": "tests.test_appointments.TestBooking.test_double_booking_is_refused",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_appointments.TestCancellation.test_cancellation_keeps_the_record",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0003,
+      "message": ""
+    },
+    {
+      "id": "tests.test_appointments.TestCancellation.test_cancelled_slot_becomes_available_again",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0003,
+      "message": ""
+    },
+    {
+      "id": "tests.test_appointments.TestCancellation.test_cancelling_twice_is_refused",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0003,
+      "message": ""
+    },
+    {
+      "id": "tests.test_appointments.TestCancellation.test_dialog_cancellation_flow",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0019,
+      "message": ""
+    },
+    {
+      "id": "tests.test_appointments.TestCancellation.test_dialog_finds_the_appointment_from_patient_id",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0014,
+      "message": ""
+    },
+    {
+      "id": "tests.test_appointments.TestCancellation.test_unknown_id_is_reported_not_crashed",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_appointments.TestCheckAppointment.test_known_patient_hears_their_appointment",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0009,
+      "message": ""
+    },
+    {
+      "id": "tests.test_appointments.TestCheckAppointment.test_lookup_by_appointment_id",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0013,
+      "message": ""
+    },
+    {
+      "id": "tests.test_appointments.TestCheckAppointment.test_patient_with_no_appointments",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0008,
+      "message": ""
+    },
+    {
+      "id": "tests.test_appointments.TestInformationIntents.test_availability_question_lists_real_slots",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0009,
+      "message": ""
+    },
+    {
+      "id": "tests.test_appointments.TestInformationIntents.test_clinic_address_comes_from_the_record",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0008,
+      "message": ""
+    },
+    {
+      "id": "tests.test_appointments.TestInformationIntents.test_doctor_fee_comes_from_the_record",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0008,
+      "message": ""
+    },
+    {
+      "id": "tests.test_appointments.TestInformationIntents.test_unknown_doctor_is_not_invented",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0008,
+      "message": ""
+    },
+    {
+      "id": "tests.test_appointments.TestRescheduling.test_cannot_reschedule_a_cancelled_appointment",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_appointments.TestRescheduling.test_cannot_reschedule_onto_a_taken_slot",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_appointments.TestRescheduling.test_dialog_reschedule_flow",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0028,
+      "message": ""
+    },
+    {
+      "id": "tests.test_appointments.TestRescheduling.test_reschedule_moves_the_appointment",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestAvailability.test_booked_times_disappear",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0005,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestAvailability.test_dry_run_check_writes_nothing",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestAvailability.test_slots_follow_the_schedule",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestBookingValidation.test_duplicate_same_doctor_same_day",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestBookingValidation.test_malformed_date_is_rejected",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0003,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestBookingValidation.test_malformed_time_is_rejected",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0003,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestBookingValidation.test_nothing_is_written_when_validation_fails",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0003,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestBookingValidation.test_past_date_is_rejected",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestBookingValidation.test_successful_booking",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0005,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestBookingValidation.test_time_outside_the_schedule_is_rejected",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0005,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestBookingValidation.test_unknown_doctor_is_rejected",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0003,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestBookingValidation.test_unknown_patient_is_rejected",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0003,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestCancellation.test_another_patient_cannot_cancel_it",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0005,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestCancellation.test_cancel_changes_status_and_keeps_the_record",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestCancellation.test_cancelled_slot_is_free_again",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0005,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestCancellation.test_cancelling_twice_is_refused",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0005,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestCancellation.test_unknown_id",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestDoctorLeave.test_a_notification_is_queued_per_patient",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0006,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestDoctorLeave.test_blocking_a_day_cancels_every_appointment_on_it",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0006,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestDoctorLeave.test_further_bookings_are_refused",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestDoctorLeave.test_other_doctors_are_unaffected",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0005,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestDoctorLeave.test_records_are_not_deleted",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0005,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestDoubleBooking.test_concurrent_requests_yield_one_winner",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0018,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestDoubleBooking.test_different_doctors_share_a_time",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0005,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestDoubleBooking.test_refusal_offers_alternatives",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0005,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestDoubleBooking.test_second_booking_of_the_same_slot_is_refused",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0006,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestRescheduling.test_another_patient_cannot_move_it",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestRescheduling.test_cannot_move_a_cancelled_appointment",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0005,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestRescheduling.test_cannot_move_onto_a_taken_slot",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0006,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestRescheduling.test_reschedule_records_the_old_slot",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0005,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestResultContract.test_failure_results_are_not_silently_falsy",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestResultContract.test_failure_shape",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0003,
+      "message": ""
+    },
+    {
+      "id": "tests.test_backend.TestResultContract.test_success_shape",
+      "category": "backend",
+      "status": "passed",
+      "seconds": 0.0005,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dashboard_api.TestAppointmentActions.test_appointment_not_found",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0038,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dashboard_api.TestAppointmentActions.test_booking_from_the_dashboard_uses_the_backend_rules",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0063,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dashboard_api.TestAppointmentActions.test_cancel_keeps_the_record_and_changes_status",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0041,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dashboard_api.TestAppointmentActions.test_complete_then_completing_again_is_refused",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.005,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dashboard_api.TestAppointmentActions.test_reschedule_into_a_taken_slot_is_refused_by_the_existing_rules",
+      "category": "dashboard",
+      "status": "skipped",
+      "seconds": 0.0036,
+      "message": "the backend refuses two same-day bookings for one patient"
+    },
+    {
+      "id": "tests.test_dashboard_api.TestAppointmentActions.test_reschedule_moves_the_appointment",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0048,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dashboard_api.TestAuthentication.test_a_doctor_cannot_cancel_another_doctors_appointment",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0066,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dashboard_api.TestAuthentication.test_a_doctor_cannot_read_another_doctors_appointment",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0066,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dashboard_api.TestAuthentication.test_dashboard_requires_a_session",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0081,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dashboard_api.TestAuthentication.test_logout_ends_the_session",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0053,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dashboard_api.TestAuthentication.test_sign_in_returns_the_doctor_and_the_session_works",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0042,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dashboard_api.TestAuthentication.test_unknown_doctor_gets_the_same_answer_as_a_wrong_password",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0045,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dashboard_api.TestAuthentication.test_wrong_password_is_refused",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0029,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dashboard_api.TestDashboardData.test_appointments_carry_the_patient_name",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0068,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dashboard_api.TestDashboardData.test_filters_and_search",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0087,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dashboard_api.TestDashboardData.test_notifications_start_empty_and_never_leak_other_doctors",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0032,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dashboard_api.TestDashboardData.test_patients_are_limited_to_this_doctors_patients",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0065,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dashboard_api.TestDashboardData.test_summary_counts_come_from_real_appointments",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0055,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dashboard_api.TestLeaveCascade.test_blocking_a_day_cancels_appointments_and_queues_notifications",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0104,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dashboard_api.TestLeaveCascade.test_notifications_appear_for_the_doctor",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.01,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dashboard_api.TestLeaveCascade.test_removing_leave_reopens_the_day",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.007,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dashboard_api.TestProfileAndSchedule.test_a_doctor_cannot_edit_the_clinic",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0097,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dashboard_api.TestProfileAndSchedule.test_invalid_schedule_is_refused",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.003,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dashboard_api.TestProfileAndSchedule.test_profile_update_reaches_the_database",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0028,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dashboard_api.TestProfileAndSchedule.test_schedule_read_and_replace",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0043,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dashboard_api.TestProfileAndSchedule.test_the_profile_shows_the_one_clinic",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0036,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dashboard_api.TestVoiceAndDashboardShareTheSameData.test_dashboard_cancellation_is_visible_to_the_voice_side",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0086,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dashboard_api.TestVoiceAndDashboardShareTheSameData.test_voice_booking_appears_in_the_dashboard",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0049,
+      "message": ""
+    },
+    {
+      "id": "tests.test_data_safety.TestDemoUsesMemoryByDefault.test_demo_without_flags_never_selects_firestore",
+      "category": "security",
+      "status": "passed",
+      "seconds": 0.0147,
+      "message": ""
+    },
+    {
+      "id": "tests.test_data_safety.TestVoicePipelineStartup.test_interactive_start_does_not_plant_the_demo_appointment",
+      "category": "security",
+      "status": "passed",
+      "seconds": 0.0008,
+      "message": ""
+    },
+    {
+      "id": "tests.test_data_safety.TestVoicePipelineStartup.test_interactive_start_keeps_existing_appointments",
+      "category": "security",
+      "status": "passed",
+      "seconds": 0.0005,
+      "message": ""
+    },
+    {
+      "id": "tests.test_data_safety.TestVoicePipelineStartup.test_only_an_explicit_fresh_start_clears_the_diary",
+      "category": "security",
+      "status": "passed",
+      "seconds": 0.0004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestConfirmation.test_no_aborts_without_writing",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0059,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestConfirmation.test_nothing_is_written_before_confirmation",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0008,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestConfirmation.test_unclear_reply_re_asks_rather_than_assuming",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0012,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestConfirmation.test_urdu_yes_variants_are_understood",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0078,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestConfirmation.test_yes_books_the_appointment",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0012,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestContextAwareness.test_bare_date_word_fills_the_date_slot",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0012,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestContextAwareness.test_bare_doctor_name_fills_the_awaited_slot",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0012,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestContextAwareness.test_bare_number_fills_the_time_slot",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0016,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestConversationLogging.test_messages_are_stored_for_both_speakers",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0007,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestConversationLogging.test_phone_numbers_are_masked_in_the_transcript",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0009,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestConversationLogging.test_session_document_is_created",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0007,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestConversationalIntents.test_emergency_escalates_and_never_books",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0008,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestConversationalIntents.test_empty_input_is_handled_gracefully",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0003,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestConversationalIntents.test_goodbye_ends_the_conversation",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0007,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestConversationalIntents.test_greeting",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0008,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestDialogStateTracking.test_a_question_during_a_task_resumes_the_task",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0012,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestDialogStateTracking.test_cancel_and_information_states",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0012,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestDialogStateTracking.test_confirmation_has_its_own_state",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0008,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestDialogStateTracking.test_state_starts_idle_and_follows_the_intent",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0017,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestIntentSwitching.test_low_confidence_does_not_switch_intent",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0013,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestIntentSwitching.test_switch_from_booking_to_cancelling",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0014,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestMultiTurnBooking.test_full_conversation_books_an_appointment",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0026,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestMultiTurnBooking.test_never_asks_twice_for_a_known_slot",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0009,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestMultiTurnBooking.test_slots_are_collected_one_turn_at_a_time",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0017,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestMultilingualInput.test_booking_phrasings",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0031,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestMultilingualInput.test_urdu_script_booking",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0008,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestNoDeadEnds.test_a_real_reschedule_request_still_switches",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0014,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestNoDeadEnds.test_doctor_name_read_as_change_doctor_stays_in_the_booking",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0011,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestNoDeadEnds.test_no_to_the_id_question_ends_the_loop",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestPendingIntent.test_doctor_already_known_answers_immediately",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0008,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestPendingIntent.test_fee_question_is_resumed_after_naming_the_doctor",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestPendingIntent.test_qualification_question_is_resumed",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0012,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestPendingIntent.test_topic_switch_discards_the_parked_question",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0013,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestSessionIsolation.test_reset_clears_the_session",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0013,
+      "message": ""
+    },
+    {
+      "id": "tests.test_dialog.TestSessionIsolation.test_two_sessions_do_not_leak",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0012,
+      "message": ""
+    },
+    {
+      "id": "tests.test_emergency_safety.TestDialogueEscalates.test_escalation_is_immediate",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0008,
+      "message": ""
+    },
+    {
+      "id": "tests.test_emergency_safety.TestDialogueEscalates.test_it_interrupts_a_pending_confirmation",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0015,
+      "message": ""
+    },
+    {
+      "id": "tests.test_emergency_safety.TestEvidence.test_acute_danger_phrases_are_recognised",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_emergency_safety.TestEvidence.test_routine_sentences_are_not",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_emergency_safety.TestRouterOverride.test_a_confident_wrong_label_is_overridden",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_emergency_safety.TestRouterOverride.test_a_low_confidence_guess_is_overridden",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_emergency_safety.TestRouterOverride.test_it_can_be_switched_off",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_emergency_safety.TestRouterOverride.test_routine_sentences_keep_the_model_answer",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_entities.TestDateParsing.test_english_relative_dates",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_entities.TestDateParsing.test_explicit_dates",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_entities.TestDateParsing.test_next_weekday_skips_a_week",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_entities.TestDateParsing.test_no_date_returns_nothing",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_entities.TestDateParsing.test_roman_urdu_relative_dates",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_entities.TestDateParsing.test_urdu_script_relative_dates",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_entities.TestDateParsing.test_weekday_names",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_entities.TestOtherEntities.test_appointment_id",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0007,
+      "message": ""
+    },
+    {
+      "id": "tests.test_entities.TestOtherEntities.test_combined_sentence",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_entities.TestOtherEntities.test_doctor_resolves_to_a_database_record",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0005,
+      "message": ""
+    },
+    {
+      "id": "tests.test_entities.TestOtherEntities.test_patient_name",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0007,
+      "message": ""
+    },
+    {
+      "id": "tests.test_entities.TestOtherEntities.test_phone_digits_are_not_read_as_a_time",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0006,
+      "message": ""
+    },
+    {
+      "id": "tests.test_entities.TestOtherEntities.test_phone_number_formats",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0012,
+      "message": ""
+    },
+    {
+      "id": "tests.test_entities.TestOtherEntities.test_unknown_doctor_is_not_extracted",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0005,
+      "message": ""
+    },
+    {
+      "id": "tests.test_entities.TestTimeParsing.test_24_hour_and_minutes",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_entities.TestTimeParsing.test_bare_hour_uses_the_clinic_heuristic",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_entities.TestTimeParsing.test_explicit_am_pm",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_entities.TestTimeParsing.test_lone_number_reply",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_entities.TestTimeParsing.test_no_time_returns_nothing",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_entities.TestTimeParsing.test_roman_urdu_oclock",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_entities.TestTimeParsing.test_urdu_digits",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_entities.TestTimeParsing.test_urdu_script_oclock",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_entities.TestValidators.test_appointment_id_validation",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_entities.TestValidators.test_date_validation",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_entities.TestValidators.test_past_date_detection",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_entities.TestValidators.test_time_validation",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_entities.TestYesNoDetection.test_english_no",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_entities.TestYesNoDetection.test_english_yes",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_entities.TestYesNoDetection.test_negation_beats_agreement",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_entities.TestYesNoDetection.test_unrelated_text_is_neither",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_entities.TestYesNoDetection.test_urdu_no",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_entities.TestYesNoDetection.test_urdu_yes",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_firebase.TestBackendSelection.test_config_detection_matches_env",
+      "category": "firebase",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_firebase.TestBackendSelection.test_falls_back_to_local_without_credentials",
+      "category": "firebase",
+      "status": "passed",
+      "seconds": 0.0002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_firebase.TestClinicService.test_clinic_for_doctor",
+      "category": "firebase",
+      "status": "passed",
+      "seconds": 0.0003,
+      "message": ""
+    },
+    {
+      "id": "tests.test_firebase.TestClinicService.test_missing_clinic_is_reported",
+      "category": "firebase",
+      "status": "passed",
+      "seconds": 0.0003,
+      "message": ""
+    },
+    {
+      "id": "tests.test_firebase.TestConversationService.test_logging_failure_does_not_raise",
+      "category": "firebase",
+      "status": "passed",
+      "seconds": 0.0005,
+      "message": ""
+    },
+    {
+      "id": "tests.test_firebase.TestConversationService.test_phone_masking",
+      "category": "firebase",
+      "status": "passed",
+      "seconds": 0.0002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_firebase.TestConversationService.test_session_lifecycle",
+      "category": "firebase",
+      "status": "passed",
+      "seconds": 0.0002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_firebase.TestDoctorService.test_bare_surname_reply",
+      "category": "firebase",
+      "status": "passed",
+      "seconds": 0.0004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_firebase.TestDoctorService.test_empty_query_fails",
+      "category": "firebase",
+      "status": "passed",
+      "seconds": 0.0003,
+      "message": ""
+    },
+    {
+      "id": "tests.test_firebase.TestDoctorService.test_find_by_full_name",
+      "category": "firebase",
+      "status": "passed",
+      "seconds": 0.0003,
+      "message": ""
+    },
+    {
+      "id": "tests.test_firebase.TestDoctorService.test_find_by_urdu_alias",
+      "category": "firebase",
+      "status": "passed",
+      "seconds": 0.0004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_firebase.TestDoctorService.test_find_inside_a_sentence",
+      "category": "firebase",
+      "status": "passed",
+      "seconds": 0.0004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_firebase.TestDoctorService.test_unknown_doctor_fails_rather_than_guessing",
+      "category": "firebase",
+      "status": "passed",
+      "seconds": 0.0004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_firebase.TestErrorHandling.test_backend_failure_surfaces_as_a_service_error",
+      "category": "firebase",
+      "status": "passed",
+      "seconds": 0.0003,
+      "message": ""
+    },
+    {
+      "id": "tests.test_firebase.TestErrorHandling.test_dialog_speaks_a_friendly_message_on_backend_failure",
+      "category": "firebase",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_firebase.TestPatientService.test_find_by_phone",
+      "category": "firebase",
+      "status": "passed",
+      "seconds": 0.001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_firebase.TestPatientService.test_get_or_create_does_not_duplicate",
+      "category": "firebase",
+      "status": "passed",
+      "seconds": 0.0003,
+      "message": ""
+    },
+    {
+      "id": "tests.test_firebase.TestPatientService.test_get_or_create_registers_a_new_caller",
+      "category": "firebase",
+      "status": "passed",
+      "seconds": 0.0004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_firebase.TestPatientService.test_invalid_phone_is_rejected",
+      "category": "firebase",
+      "status": "passed",
+      "seconds": 0.0003,
+      "message": ""
+    },
+    {
+      "id": "tests.test_firebase.TestPatientService.test_phone_normalisation",
+      "category": "firebase",
+      "status": "passed",
+      "seconds": 0.0003,
+      "message": ""
+    },
+    {
+      "id": "tests.test_firebase.TestRepositoryContract.test_get_missing_returns_none",
+      "category": "firebase",
+      "status": "passed",
+      "seconds": 0.0002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_firebase.TestRepositoryContract.test_query_filters",
+      "category": "firebase",
+      "status": "passed",
+      "seconds": 0.0002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_firebase.TestRepositoryContract.test_query_in_operator",
+      "category": "firebase",
+      "status": "passed",
+      "seconds": 0.0002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_firebase.TestRepositoryContract.test_reserve_slot_is_atomic",
+      "category": "firebase",
+      "status": "passed",
+      "seconds": 0.0002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_firebase.TestRepositoryContract.test_returned_documents_are_copies",
+      "category": "firebase",
+      "status": "passed",
+      "seconds": 0.0002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_firebase.TestRepositoryContract.test_set_and_get_round_trip",
+      "category": "firebase",
+      "status": "passed",
+      "seconds": 0.0002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_firebase.TestRepositoryContract.test_timestamps_are_added",
+      "category": "firebase",
+      "status": "passed",
+      "seconds": 0.0002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_firebase.TestRepositoryContract.test_update_requires_an_existing_document",
+      "category": "firebase",
+      "status": "passed",
+      "seconds": 0.0002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_firebase.TestScheduleService.test_slot_generation_respects_duration",
+      "category": "firebase",
+      "status": "passed",
+      "seconds": 0.0004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_firebase.TestScheduleService.test_unavailability_blocks_a_date",
+      "category": "firebase",
+      "status": "passed",
+      "seconds": 0.0003,
+      "message": ""
+    },
+    {
+      "id": "tests.test_firebase.TestScheduleService.test_weekday_of",
+      "category": "firebase",
+      "status": "passed",
+      "seconds": 0.0003,
+      "message": ""
+    },
+    {
+      "id": "tests.test_firestore_live.TestFirestoreLive.test_a_booking_is_persisted_and_read_back",
+      "category": "firebase",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "set RUN_LIVE_TESTS=1 to run against the real Firestore project"
+    },
+    {
+      "id": "tests.test_firestore_live.TestFirestoreLive.test_another_patient_cannot_cancel_it",
+      "category": "firebase",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "set RUN_LIVE_TESTS=1 to run against the real Firestore project"
+    },
+    {
+      "id": "tests.test_firestore_live.TestFirestoreLive.test_availability_is_read_from_the_real_schedule",
+      "category": "firebase",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "set RUN_LIVE_TESTS=1 to run against the real Firestore project"
+    },
+    {
+      "id": "tests.test_firestore_live.TestFirestoreLive.test_cancellation_changes_status_and_keeps_the_record",
+      "category": "firebase",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "set RUN_LIVE_TESTS=1 to run against the real Firestore project"
+    },
+    {
+      "id": "tests.test_firestore_live.TestFirestoreLive.test_concurrent_requests_for_one_slot_yield_one_booking",
+      "category": "firebase",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "set RUN_LIVE_TESTS=1 to run against the real Firestore project"
+    },
+    {
+      "id": "tests.test_firestore_live.TestFirestoreLive.test_connection_and_seeded_reference_data",
+      "category": "firebase",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "set RUN_LIVE_TESTS=1 to run against the real Firestore project"
+    },
+    {
+      "id": "tests.test_firestore_live.TestFirestoreLive.test_doctor_leave_cancels_the_day_and_queues_notifications",
+      "category": "firebase",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "set RUN_LIVE_TESTS=1 to run against the real Firestore project"
+    },
+    {
+      "id": "tests.test_firestore_live.TestFirestoreLive.test_invalid_requests_write_nothing",
+      "category": "firebase",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "set RUN_LIVE_TESTS=1 to run against the real Firestore project"
+    },
+    {
+      "id": "tests.test_firestore_live.TestFirestoreLive.test_reschedule_moves_it_and_frees_the_old_slot",
+      "category": "firebase",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "set RUN_LIVE_TESTS=1 to run against the real Firestore project"
+    },
+    {
+      "id": "tests.test_integration.TestFullBookingFlow.test_every_stage_runs_and_the_appointment_reaches_the_database",
+      "category": "end_to_end",
+      "status": "passed",
+      "seconds": 0.0028,
+      "message": ""
+    },
+    {
+      "id": "tests.test_integration.TestLLMSafety.test_good_llm_wording_is_used",
+      "category": "end_to_end",
+      "status": "passed",
+      "seconds": 0.0024,
+      "message": ""
+    },
+    {
+      "id": "tests.test_integration.TestLLMSafety.test_hallucinated_llm_wording_is_replaced",
+      "category": "end_to_end",
+      "status": "passed",
+      "seconds": 0.0025,
+      "message": ""
+    },
+    {
+      "id": "tests.test_integration.TestLLMSafety.test_llm_cannot_invent_a_booking_that_did_not_happen",
+      "category": "end_to_end",
+      "status": "passed",
+      "seconds": 0.0019,
+      "message": ""
+    },
+    {
+      "id": "tests.test_integration.TestLLMSafety.test_pipeline_works_with_ollama_down",
+      "category": "end_to_end",
+      "status": "passed",
+      "seconds": 0.0022,
+      "message": ""
+    },
+    {
+      "id": "tests.test_integration.TestScenarios.test_cancellation_end_to_end",
+      "category": "end_to_end",
+      "status": "passed",
+      "seconds": 0.0018,
+      "message": ""
+    },
+    {
+      "id": "tests.test_integration.TestScenarios.test_doctor_on_leave_is_reported",
+      "category": "end_to_end",
+      "status": "passed",
+      "seconds": 0.0017,
+      "message": ""
+    },
+    {
+      "id": "tests.test_integration.TestScenarios.test_low_confidence_clarifies_and_writes_nothing",
+      "category": "end_to_end",
+      "status": "passed",
+      "seconds": 0.0008,
+      "message": ""
+    },
+    {
+      "id": "tests.test_integration.TestScenarios.test_missing_date_is_asked_for",
+      "category": "end_to_end",
+      "status": "passed",
+      "seconds": 0.0008,
+      "message": ""
+    },
+    {
+      "id": "tests.test_integration.TestScenarios.test_missing_doctor_is_asked_for",
+      "category": "end_to_end",
+      "status": "passed",
+      "seconds": 0.0008,
+      "message": ""
+    },
+    {
+      "id": "tests.test_integration.TestScenarios.test_unavailable_slot_offers_alternatives",
+      "category": "end_to_end",
+      "status": "passed",
+      "seconds": 0.002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_intent_audit.TestEvaluationIntegrity.test_no_evaluation_phrase_is_in_the_training_corpus",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.005,
+      "message": ""
+    },
+    {
+      "id": "tests.test_intent_audit.TestEvaluationIntegrity.test_the_filter_covers_all_three_sets",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0008,
+      "message": ""
+    },
+    {
+      "id": "tests.test_intent_audit.TestEvaluationIntegrity.test_the_samajh_nahi_labels_agree",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0006,
+      "message": ""
+    },
+    {
+      "id": "setUpClass (tests.test_intent_audit.TestSafetyCriticalBoundaries)",
+      "category": "other",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "intent model not trained in this checkout"
+    },
+    {
+      "id": "tests.test_intents.TestConfidenceBands.test_bands_are_reported",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_intents.TestConfidenceBands.test_only_the_high_band_is_confident",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_intents.TestConfidencePolicy.test_above_threshold_is_used",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_intents.TestConfidencePolicy.test_below_threshold_is_unknown",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_intents.TestConfidencePolicy.test_empty_text_is_unknown",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_intents.TestConfidencePolicy.test_model_crash_degrades_to_unknown",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_intents.TestIntentMapping.test_change_date_maps_to_reschedule",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_intents.TestIntentMapping.test_every_trained_label_is_mapped",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0003,
+      "message": ""
+    },
+    {
+      "id": "tests.test_intents.TestIntentMapping.test_mbert_label_maps_to_canonical_intent",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_intents.TestIntentMapping.test_topic_is_exposed_for_information_intents",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_intents.TestIntentMapping.test_unmapped_label_becomes_unknown_not_a_crash",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_intents.TestLowConfidenceBehaviour.test_low_confidence_asks_for_clarification",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0009,
+      "message": ""
+    },
+    {
+      "id": "tests.test_intents.TestLowConfidenceBehaviour.test_low_confidence_creates_no_appointment",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0009,
+      "message": ""
+    },
+    {
+      "id": "tests.test_intents.TestLowConfidenceBehaviour.test_repeated_failure_falls_back_to_an_explicit_menu",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0016,
+      "message": ""
+    },
+    {
+      "id": "tests.test_intents.TestMediumConfidencePolicy.test_an_emergency_is_never_delayed_by_a_check",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0007,
+      "message": ""
+    },
+    {
+      "id": "tests.test_intents.TestMediumConfidencePolicy.test_high_confidence_acts_immediately",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0008,
+      "message": ""
+    },
+    {
+      "id": "tests.test_intents.TestMediumConfidencePolicy.test_medium_confidence_with_context_proceeds",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0009,
+      "message": ""
+    },
+    {
+      "id": "tests.test_intents.TestMediumConfidencePolicy.test_medium_confidence_without_context_asks_first",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0008,
+      "message": ""
+    },
+    {
+      "id": "tests.test_intents.TestMediumConfidencePolicy.test_medium_confidence_writes_nothing_to_the_database",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0008,
+      "message": ""
+    },
+    {
+      "id": "tests.test_intents.TestMediumConfidencePolicy.test_saying_no_to_the_check_abandons_the_guess",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_intents.TestMediumConfidencePolicy.test_saying_yes_to_the_check_starts_the_task",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_naturalness.TestAcknowledgements.test_acknowledgement_wording_rotates",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_naturalness.TestAcknowledgements.test_reply_is_acknowledged_after_the_caller_gives_information",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0013,
+      "message": ""
+    },
+    {
+      "id": "tests.test_naturalness.TestAcknowledgements.test_the_opening_question_is_not_acknowledged",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0008,
+      "message": ""
+    },
+    {
+      "id": "tests.test_naturalness.TestCorrections.test_a_correction_never_produces_an_error",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0016,
+      "message": ""
+    },
+    {
+      "id": "tests.test_naturalness.TestCorrections.test_changing_the_date_is_acknowledged_as_a_correction",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0017,
+      "message": ""
+    },
+    {
+      "id": "tests.test_naturalness.TestCorrections.test_the_corrected_value_actually_replaces_the_old_one",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0017,
+      "message": ""
+    },
+    {
+      "id": "tests.test_naturalness.TestDoctorReplacement.test_a_bare_refusal_is_not_a_replacement",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_naturalness.TestDoctorReplacement.test_a_plain_request_is_unaffected",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_naturalness.TestDoctorReplacement.test_english_replacement_has_the_opposite_word_order",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_naturalness.TestDoctorReplacement.test_roman_urdu_replacement",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_naturalness.TestDoctorReplacement.test_the_swap_carries_through_to_the_booking",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0016,
+      "message": ""
+    },
+    {
+      "id": "tests.test_naturalness.TestDoctorReplacement.test_urdu_script_replacement",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0005,
+      "message": ""
+    },
+    {
+      "id": "tests.test_naturalness.TestDoesNotReAsk.test_everything_in_one_sentence_goes_straight_to_confirmation",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_naturalness.TestDoesNotReAsk.test_two_details_at_once_leaves_only_one_question",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0008,
+      "message": ""
+    },
+    {
+      "id": "tests.test_naturalness.TestNoRepetition.test_asking_three_times_gives_three_wordings",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0017,
+      "message": ""
+    },
+    {
+      "id": "tests.test_naturalness.TestNoRepetition.test_confirmations_vary_too",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_naturalness.TestNoRepetition.test_every_question_has_more_than_one_phrasing",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_naturalness.TestVoiceFriendly.test_no_technical_words_reach_the_caller",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0038,
+      "message": ""
+    },
+    {
+      "id": "tests.test_naturalness.TestVoiceFriendly.test_replies_stay_short_enough_to_speak",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0014,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestFallbacks.test_booking_success",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestFallbacks.test_doctor_unavailable",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestFallbacks.test_every_fallback_passes_its_own_validator",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0003,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestFallbacks.test_formatting_helpers",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestFallbacks.test_slot_taken_offers_alternatives",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestJsonParsing.test_fenced_json",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestJsonParsing.test_json_with_surrounding_prose",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestJsonParsing.test_plain_json",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestJsonParsing.test_unparseable_returns_none",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestJudge.test_falls_back_on_unparseable_output",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestJudge.test_falls_back_when_ollama_is_down",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestJudge.test_llm_cannot_turn_a_failure_into_a_success",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0003,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestJudge.test_model_self_flagging_still_gets_validated",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestJudge.test_no_backend_operation_skips_the_llm",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestJudge.test_rejects_a_hallucinated_response",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestJudge.test_uses_a_valid_llm_response",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestLanguageDetection.test_detects_each_language",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestLanguageDetection.test_empty_defaults_to_english",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestLanguageStickiness.test_a_full_english_sentence_does_switch",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestLanguageStickiness.test_english_confirmation_does_not_switch_the_language",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestLanguageStickiness.test_override_wins_outright",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestLanguageStickiness.test_roman_urdu_keywords_are_a_signal",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestLanguageStickiness.test_short_replies_carry_no_signal",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestLanguageStickiness.test_urdu_script_is_always_a_signal",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestMultilingualTemplates.test_booking_confirmation_in_every_language",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestMultilingualTemplates.test_fallbacks_are_produced_in_the_callers_language",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestMultilingualTemplates.test_slot_lists_use_the_right_conjunction",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestMultilingualTemplates.test_spoken_time_per_language",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestMultilingualTemplates.test_translated_fallbacks_still_pass_the_validator",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0005,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestResponseValidator.test_ambiguous_time_that_matches_nothing_is_rejected",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestResponseValidator.test_claiming_success_after_failure_is_rejected",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestResponseValidator.test_empty_response_is_rejected",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestResponseValidator.test_faithful_success_response_passes",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestResponseValidator.test_invented_appointment_id_is_rejected",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestResponseValidator.test_invented_time_is_rejected",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestResponseValidator.test_offering_the_real_alternatives_passes",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestResponseValidator.test_real_appointment_id_passes",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestResponseValidator.test_reporting_a_failure_honestly_passes",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestResponseValidator.test_roman_urdu_time_is_accepted",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestResponseValidator.test_twelve_hour_form_is_not_double_counted",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestSpokenDatesAndLanguage.test_a_slot_that_is_already_taken_is_not_a_success_claim",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestSpokenDatesAndLanguage.test_a_wrong_day_of_month_is_rejected",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestSpokenDatesAndLanguage.test_a_wrong_weekday_is_rejected",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestSpokenDatesAndLanguage.test_every_deterministic_fallback_passes_in_its_language",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0096,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestSpokenDatesAndLanguage.test_kal_for_a_date_next_week_is_rejected",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestSpokenDatesAndLanguage.test_kal_for_tomorrow_is_accepted",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestSpokenDatesAndLanguage.test_raw_iso_dates_and_24_hour_baje_are_not_spoken",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0003,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestSpokenDatesAndLanguage.test_replies_in_the_wrong_language_are_rejected",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0003,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestSpokenDatesAndLanguage.test_the_urdu_word_for_clinic_is_not_kal",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestValidatorWithLanguage.test_a_real_24_hour_baje_is_still_rejected",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama.TestValidatorWithLanguage.test_translated_fallbacks_pass_with_the_language_given",
+      "category": "ollama",
+      "status": "passed",
+      "seconds": 0.0006,
+      "message": ""
+    },
+    {
+      "id": "tests.test_ollama_live.TestOllamaLive.test_a_failure_is_never_spoken_as_a_success",
+      "category": "ollama",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "set RUN_LIVE_TESTS=1 to run against the real Ollama server"
+    },
+    {
+      "id": "tests.test_ollama_live.TestOllamaLive.test_a_timeout_falls_back_to_the_deterministic_sentence",
+      "category": "ollama",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "set RUN_LIVE_TESTS=1 to run against the real Ollama server"
+    },
+    {
+      "id": "tests.test_ollama_live.TestOllamaLive.test_every_outcome_in_every_language_is_faithful",
+      "category": "ollama",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "set RUN_LIVE_TESTS=1 to run against the real Ollama server"
+    },
+    {
+      "id": "tests.test_performance.ApiBudgetTests.test_a_change_made_elsewhere_expires",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.085,
+      "message": ""
+    },
+    {
+      "id": "tests.test_performance.ApiBudgetTests.test_a_clinic_change_is_visible_on_the_next_request",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0107,
+      "message": ""
+    },
+    {
+      "id": "tests.test_performance.ApiBudgetTests.test_a_database_failure_is_a_plain_503",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_performance.ApiBudgetTests.test_a_doctor_cannot_mark_someone_elses_message",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0039,
+      "message": ""
+    },
+    {
+      "id": "tests.test_performance.ApiBudgetTests.test_a_doctor_rename_is_visible_on_the_next_request",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0124,
+      "message": ""
+    },
+    {
+      "id": "tests.test_performance.ApiBudgetTests.test_admin_statistics_match_the_reference",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0486,
+      "message": ""
+    },
+    {
+      "id": "tests.test_performance.ApiBudgetTests.test_admin_summary_counts_without_whole_collections",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0085,
+      "message": ""
+    },
+    {
+      "id": "tests.test_performance.ApiBudgetTests.test_admin_upcoming_page_does_not_read_the_past",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0074,
+      "message": ""
+    },
+    {
+      "id": "tests.test_performance.ApiBudgetTests.test_doctor_detail_reads_only_that_doctor",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0079,
+      "message": ""
+    },
+    {
+      "id": "tests.test_performance.ApiBudgetTests.test_doctor_register_counts_match",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0137,
+      "message": ""
+    },
+    {
+      "id": "tests.test_performance.ApiBudgetTests.test_doctor_statistics_match_the_reference_without_the_history",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0276,
+      "message": ""
+    },
+    {
+      "id": "tests.test_performance.ApiBudgetTests.test_every_admin_page_matches_the_old_list",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.6876,
+      "message": ""
+    },
+    {
+      "id": "tests.test_performance.ApiBudgetTests.test_every_doctor_page_matches_the_old_list",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.3216,
+      "message": ""
+    },
+    {
+      "id": "tests.test_performance.ApiBudgetTests.test_one_page_reads_a_page_not_the_history",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0077,
+      "message": ""
+    },
+    {
+      "id": "tests.test_performance.ApiBudgetTests.test_paging_never_leaks_another_doctors_rows",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0212,
+      "message": ""
+    },
+    {
+      "id": "tests.test_performance.ApiBudgetTests.test_patient_and_message_pages",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.1374,
+      "message": ""
+    },
+    {
+      "id": "tests.test_performance.ApiBudgetTests.test_profile_refuses_clinic_fields_before_writing_anything",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0039,
+      "message": ""
+    },
+    {
+      "id": "tests.test_performance.ApiBudgetTests.test_same_answers_when_no_index_is_deployed",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0537,
+      "message": ""
+    },
+    {
+      "id": "tests.test_performance.ApiBudgetTests.test_sign_in_reads_the_account_once_in_one_wave",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0039,
+      "message": ""
+    },
+    {
+      "id": "tests.test_performance.ApiBudgetTests.test_summary_reads_today_onwards_and_only_its_patients",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0059,
+      "message": ""
+    },
+    {
+      "id": "tests.test_performance.QueryHelperTests.test_pages_match_the_whole_list",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.6546,
+      "message": ""
+    },
+    {
+      "id": "tests.test_performance.QueryHelperTests.test_patients_are_fetched_in_batches_of_ids",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_performance.QueryHelperTests.test_same_answers_without_any_index",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0735,
+      "message": ""
+    },
+    {
+      "id": "tests.test_performance.QueryHelperTests.test_start_up_learns_exactly_the_missing_indexes",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0023,
+      "message": ""
+    },
+    {
+      "id": "tests.test_performance.QueryHelperTests.test_status_counts_add_up",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0012,
+      "message": ""
+    },
+    {
+      "id": "tests.test_performance.RepositoryTests.test_count_matches_the_query",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_performance.RepositoryTests.test_every_index_the_code_needs_is_declared",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0003,
+      "message": ""
+    },
+    {
+      "id": "tests.test_performance.RepositoryTests.test_get_many_returns_only_what_exists",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_performance.RepositoryTests.test_order_and_limit",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_performance.RepositoryTests.test_undeclared_composite_index_is_refused_like_firestore",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_performance.StatisticsEquivalenceTests.test_parts_equal_the_reference_for_every_period",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0025,
+      "message": ""
+    },
+    {
+      "id": "setUpClass (tests.test_roman_urdu.TestAgainstTrainedModel)",
+      "category": "other",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "intent model not trained in this checkout"
+    },
+    {
+      "id": "tests.test_roman_urdu.TestAppointmentEvidence.test_a_subject_alone_is_not_enough",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_roman_urdu.TestAppointmentEvidence.test_an_action_alone_is_not_enough",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_roman_urdu.TestAppointmentEvidence.test_booking_language_is_recognised",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0003,
+      "message": ""
+    },
+    {
+      "id": "tests.test_roman_urdu.TestAppointmentEvidence.test_other_intents_are_blocked",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0004,
+      "message": ""
+    },
+    {
+      "id": "tests.test_roman_urdu.TestAppointmentEvidence.test_unrelated_text_is_not_booking",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_roman_urdu.TestCorroborationPolicy.test_an_already_correct_prediction_is_untouched",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_roman_urdu.TestCorroborationPolicy.test_emergency_is_never_intercepted",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_roman_urdu.TestCorroborationPolicy.test_emergency_wording_is_never_turned_into_a_booking",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_roman_urdu.TestCorroborationPolicy.test_high_confidence_is_left_alone",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_roman_urdu.TestCorroborationPolicy.test_it_can_be_switched_off",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_roman_urdu.TestCorroborationPolicy.test_low_confidence_is_corrected",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_roman_urdu.TestCorroborationPolicy.test_medium_confidence_is_corrected",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_roman_urdu.TestCorroborationPolicy.test_the_router_marks_a_corroborated_result",
+      "category": "intent",
+      "status": "passed",
+      "seconds": 0.0002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_scenarios.TestConfidenceScenarios.test_medium_booking_with_details_is_not_second_guessed",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0011,
+      "message": ""
+    },
+    {
+      "id": "tests.test_scenarios.TestConfidenceScenarios.test_medium_cancel_without_context_asks_in_roman_urdu",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0008,
+      "message": ""
+    },
+    {
+      "id": "tests.test_scenarios.TestDoctorLeaveIsExplained.test_the_caller_hears_why_the_day_is_unavailable",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0017,
+      "message": ""
+    },
+    {
+      "id": "setUpClass (tests.test_scenarios.TestNaturalRomanUrduBookingWithRealModel)",
+      "category": "other",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "intent model not trained in this checkout"
+    },
+    {
+      "id": "tests.test_scenarios.TestRepeatRequest.test_a_repeat_is_not_acknowledged_as_new_information",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0013,
+      "message": ""
+    },
+    {
+      "id": "tests.test_scenarios.TestRepliesStayInRomanUrdu.test_alternatives_are_offered_in_roman_urdu_in_clock_order",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0022,
+      "message": ""
+    },
+    {
+      "id": "tests.test_scenarios.TestRepliesStayInRomanUrdu.test_appointment_lookup",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0009,
+      "message": ""
+    },
+    {
+      "id": "tests.test_scenarios.TestRepliesStayInRomanUrdu.test_cancel_confirmation_says_cancel_not_book",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0009,
+      "message": ""
+    },
+    {
+      "id": "tests.test_scenarios.TestRepliesStayInRomanUrdu.test_emergency",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0008,
+      "message": ""
+    },
+    {
+      "id": "tests.test_scenarios.TestRepliesStayInRomanUrdu.test_help_is_not_answered_as_a_misunderstanding",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0008,
+      "message": ""
+    },
+    {
+      "id": "tests.test_scenarios.TestSideQuestionsDuringATask.test_a_bare_doctor_name_is_still_a_slot_answer",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0012,
+      "message": ""
+    },
+    {
+      "id": "tests.test_scenarios.TestSideQuestionsDuringATask.test_asking_about_another_doctor_does_not_change_the_booking",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0013,
+      "message": ""
+    },
+    {
+      "id": "tests.test_scenarios.TestSideQuestionsDuringATask.test_the_question_is_answered_and_the_booking_resumes",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0017,
+      "message": ""
+    },
+    {
+      "id": "tests.test_scenarios.TestSlotsCorrectionsAndSwitching.test_a_correction_updates_the_date_without_restarting",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0017,
+      "message": ""
+    },
+    {
+      "id": "tests.test_scenarios.TestSlotsCorrectionsAndSwitching.test_everything_at_once_goes_straight_to_confirmation",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0009,
+      "message": ""
+    },
+    {
+      "id": "tests.test_scenarios.TestSlotsCorrectionsAndSwitching.test_slots_are_remembered_across_turns",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0018,
+      "message": ""
+    },
+    {
+      "id": "tests.test_scenarios.TestSlotsCorrectionsAndSwitching.test_switching_from_booking_to_cancelling",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0014,
+      "message": ""
+    },
+    {
+      "id": "tests.test_scenarios.TestTimeOnlyReschedule.test_the_original_day_is_kept",
+      "category": "dialogue",
+      "status": "passed",
+      "seconds": 0.0014,
+      "message": ""
+    },
+    {
+      "id": "tests.test_security.TestNoCredentialsInShareableFiles.test_credentials_are_never_interpolated_into_output",
+      "category": "security",
+      "status": "passed",
+      "seconds": 0.4607,
+      "message": ""
+    },
+    {
+      "id": "tests.test_security.TestNoCredentialsInShareableFiles.test_env_example_holds_placeholders_only",
+      "category": "security",
+      "status": "passed",
+      "seconds": 0.0067,
+      "message": ""
+    },
+    {
+      "id": "tests.test_security.TestNoCredentialsInShareableFiles.test_no_key_material_outside_the_secret_stores",
+      "category": "security",
+      "status": "passed",
+      "seconds": 0.6697,
+      "message": ""
+    },
+    {
+      "id": "tests.test_security.TestNoCredentialsInShareableFiles.test_the_pdf_report_contains_no_credentials",
+      "category": "security",
+      "status": "passed",
+      "seconds": 1.1827,
+      "message": ""
+    },
+    {
+      "id": "tests.test_security.TestSecretStoresAreIgnoredByGit.test_git_would_ignore_every_secret_store",
+      "category": "security",
+      "status": "passed",
+      "seconds": 0.0396,
+      "message": ""
+    },
+    {
+      "id": "tests.test_security.TestSecretStoresAreIgnoredByGit.test_gitignore_lists_the_required_patterns",
+      "category": "security",
+      "status": "passed",
+      "seconds": 0.0003,
+      "message": ""
+    },
+    {
+      "id": "tests.test_security.TestSecretStoresAreIgnoredByGit.test_shareable_files_are_not_ignored",
+      "category": "security",
+      "status": "passed",
+      "seconds": 0.0569,
+      "message": ""
+    },
+    {
+      "id": "tests.test_speech.AudioTests.test_a_click_is_not_speech",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0047,
+      "message": ""
+    },
+    {
+      "id": "tests.test_speech.AudioTests.test_formats",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_speech.AudioTests.test_mu_law_values_are_the_g711_ones",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_speech.AudioTests.test_silence_is_never_sent",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0174,
+      "message": ""
+    },
+    {
+      "id": "tests.test_speech.AudioTests.test_speech_opens_it_with_the_first_syllable_kept",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.021,
+      "message": ""
+    },
+    {
+      "id": "tests.test_speech.AudioTests.test_steady_background_noise_does_not_open_the_gate",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0289,
+      "message": ""
+    },
+    {
+      "id": "tests.test_speech.BatchSTTTests.test_nothing_is_sent_for_empty_or_tiny_audio",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0759,
+      "message": ""
+    },
+    {
+      "id": "tests.test_speech.BatchSTTTests.test_retry_policy",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.8589,
+      "message": ""
+    },
+    {
+      "id": "tests.test_speech.BatchSTTTests.test_silence_comes_back_as_no_speech",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0088,
+      "message": ""
+    },
+    {
+      "id": "tests.test_speech.BatchSTTTests.test_text_and_language_come_from_the_response_only",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0183,
+      "message": ""
+    },
+    {
+      "id": "tests.test_speech.KeytermTests.test_from_the_live_register_within_elevenlabs_limits",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0005,
+      "message": ""
+    },
+    {
+      "id": "tests.test_speech.KeytermTests.test_limits_and_switched_off_doctors",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_speech.KnownConfusionTests.test_availability_asked_in_urdu_script",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_speech.KnownConfusionTests.test_farewells_end_the_call_whatever_the_capitals",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_speech.KnownConfusionTests.test_no_labelled_example_changes",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_speech.KnownConfusionTests.test_yes_and_no_with_the_punctuation_speech_to_text_writes",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_speech.RealtimeSTTTests.test_a_dropped_connection_is_reported",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.1209,
+      "message": ""
+    },
+    {
+      "id": "tests.test_speech.RealtimeSTTTests.test_a_rate_limit_is_retried_once",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.4733,
+      "message": ""
+    },
+    {
+      "id": "tests.test_speech.RealtimeSTTTests.test_an_invalid_key_is_never_retried",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0387,
+      "message": ""
+    },
+    {
+      "id": "tests.test_speech.RealtimeSTTTests.test_not_configured",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0063,
+      "message": ""
+    },
+    {
+      "id": "tests.test_speech.RealtimeSTTTests.test_retries_stop_when_the_service_stays_down",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.4858,
+      "message": ""
+    },
+    {
+      "id": "tests.test_speech.RealtimeSTTTests.test_unreachable_service",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 4.4312,
+      "message": ""
+    },
+    {
+      "id": "tests.test_speech.RealtimeSTTTests.test_url_header_partial_and_committed",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0534,
+      "message": ""
+    },
+    {
+      "id": "tests.test_speech.TTSTests.test_a_sentence_is_never_started_twice",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0051,
+      "message": ""
+    },
+    {
+      "id": "tests.test_speech.TTSTests.test_an_invalid_voice_is_not_retried",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0049,
+      "message": ""
+    },
+    {
+      "id": "tests.test_speech.TTSTests.test_empty_text_and_missing_configuration",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0041,
+      "message": ""
+    },
+    {
+      "id": "tests.test_speech.TTSTests.test_only_fixed_phrases_are_cached",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0063,
+      "message": ""
+    },
+    {
+      "id": "tests.test_speech.TTSTests.test_rate_limit_retried_once_then_ok",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.4128,
+      "message": ""
+    },
+    {
+      "id": "tests.test_speech.TTSTests.test_streams_the_text_as_given",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0044,
+      "message": ""
+    },
+    {
+      "id": "tests.test_speech.TTSTests.test_timeouts_give_up_after_the_retry",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.4137,
+      "message": ""
+    },
+    {
+      "id": "tests.test_speech.VoiceCallTests.test_a_dropped_connection_reconnects_once_and_keeps_the_sentence",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_speech.VoiceCallTests.test_a_late_partial_does_not_cut_the_agent_off",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_speech.VoiceCallTests.test_a_session_closed_while_idle_loses_no_sentence",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_speech.VoiceCallTests.test_an_invalid_key_apologises_and_hangs_up",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_speech.VoiceCallTests.test_appointment_lookup",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_speech.VoiceCallTests.test_availability_comes_from_the_backend",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_speech.VoiceCallTests.test_barge_in_stops_the_agent",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_speech.VoiceCallTests.test_booking_by_voice",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_speech.VoiceCallTests.test_booking_confirmed_in_urdu_script",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_speech.VoiceCallTests.test_cancellation_by_voice",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_speech.VoiceCallTests.test_correction_and_intent_switch_keep_one_dialogue",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_speech.VoiceCallTests.test_critical_regression_mje_docter",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_speech.VoiceCallTests.test_fee_comes_from_the_database",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_speech.VoiceCallTests.test_goodbye_ends_and_cleans_up",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_speech.VoiceCallTests.test_keep_alive_holds_the_session_through_a_pause",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_speech.VoiceCallTests.test_noise_is_not_a_turn",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_speech.VoiceCallTests.test_rescheduling_by_voice",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_speech.VoiceCallTests.test_silence_between_turns_is_not_paid_for",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_speech.VoiceCallTests.test_speech_failure_leaves_the_reply_as_text",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_speech.VoiceCallTests.test_the_key_never_appears_in_events_or_logs",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_speech.VoiceCallTests.test_the_same_words_book_for_a_caller_with_no_appointment",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_speech.VoiceCallTests.test_twenty_turns_one_session_no_leaks",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_speech.VoiceSocketTests.test_a_call_over_the_socket",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_speech.VoiceSocketTests.test_not_configured_says_so_without_details",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_speech.VoiceSocketTests.test_the_token_is_required_when_configured",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_statistics.TestClinicStatistics.test_an_unknown_doctor_is_a_404",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.006,
+      "message": ""
+    },
+    {
+      "id": "tests.test_statistics.TestClinicStatistics.test_cancelling_moves_the_clinic_figures",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0099,
+      "message": ""
+    },
+    {
+      "id": "tests.test_statistics.TestClinicStatistics.test_each_doctor_row_matches_that_doctors_records",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0072,
+      "message": ""
+    },
+    {
+      "id": "tests.test_statistics.TestClinicStatistics.test_every_doctor_on_the_register_has_a_row",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0062,
+      "message": ""
+    },
+    {
+      "id": "tests.test_statistics.TestClinicStatistics.test_the_clinic_figures_are_every_doctor_added_up",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0067,
+      "message": ""
+    },
+    {
+      "id": "tests.test_statistics.TestClinicStatistics.test_the_figures_can_be_narrowed_to_one_doctor",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0063,
+      "message": ""
+    },
+    {
+      "id": "tests.test_statistics.TestClinicStatistics.test_today_for_the_whole_clinic",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0041,
+      "message": ""
+    },
+    {
+      "id": "tests.test_statistics.TestCounting.test_a_bad_period_is_refused_with_something_readable",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_statistics.TestCounting.test_a_month_that_ends_on_the_31st",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_statistics.TestCounting.test_an_unknown_status_is_counted_not_dropped",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_statistics.TestCounting.test_every_doctor_gets_a_row_even_with_nothing_booked",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_statistics.TestCounting.test_every_record_lands_in_exactly_one_bucket",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_statistics.TestCounting.test_february_in_a_leap_year",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_statistics.TestCounting.test_nothing_at_all",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_statistics.TestCounting.test_only_appointments_inside_the_period_are_counted",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_statistics.TestCounting.test_periods_cover_the_dates_people_mean",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_statistics.TestDoctorStatistics.test_a_backwards_custom_range_is_refused",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0044,
+      "message": ""
+    },
+    {
+      "id": "tests.test_statistics.TestDoctorStatistics.test_a_doctor_cannot_ask_for_somebody_elses_numbers",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0042,
+      "message": ""
+    },
+    {
+      "id": "tests.test_statistics.TestDoctorStatistics.test_a_doctor_cannot_reach_the_clinic_wide_figures",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0055,
+      "message": ""
+    },
+    {
+      "id": "tests.test_statistics.TestDoctorStatistics.test_a_doctor_is_counted_over_their_own_records_only",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0112,
+      "message": ""
+    },
+    {
+      "id": "tests.test_statistics.TestDoctorStatistics.test_completing_an_appointment_moves_it_between_the_figures",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.01,
+      "message": ""
+    },
+    {
+      "id": "tests.test_statistics.TestDoctorStatistics.test_the_figures_are_what_the_database_holds",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0052,
+      "message": ""
+    },
+    {
+      "id": "tests.test_statistics.TestDoctorStatistics.test_the_period_filter_changes_the_answer",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0108,
+      "message": ""
+    },
+    {
+      "id": "tests.test_statistics.TestDoctorStatistics.test_today_counts_only_today",
+      "category": "dashboard",
+      "status": "passed",
+      "seconds": 0.0046,
+      "message": ""
+    },
+    {
+      "id": "tests.test_voice_app.CommitStrategyTests.test_an_unknown_strategy_is_refused",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_voice_app.CommitStrategyTests.test_push_to_talk_commits_only_when_told",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_voice_app.CommitStrategyTests.test_voice_activity_is_the_default",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_voice_app.DeviceTests.test_an_unknown_device_is_named_as_not_found",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_voice_app.DeviceTests.test_empty_means_the_system_default_and_names_or_numbers_choose",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_voice_app.DeviceTests.test_no_microphone_at_all",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_voice_app.DeviceTests.test_no_speaker_is_reported_as_a_speaker_problem",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_voice_app.DeviceTests.test_the_listing_shows_both_kinds_and_the_defaults",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_voice_app.MicrophoneConversationTests.test_a_booking_is_made_once_even_when_ollama_and_tts_fail",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_voice_app.MicrophoneConversationTests.test_a_wording_that_changes_a_fact_is_never_spoken",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_voice_app.MicrophoneConversationTests.test_every_reply_is_worded_by_ollama_and_checked",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_voice_app.MicrophoneConversationTests.test_ollama_down_or_crashing_still_gets_an_answer",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_voice_app.MicrophoneConversationTests.test_push_to_talk_ends_the_sentence_on_the_key",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_voice_app.MicrophoneConversationTests.test_the_critical_sentence_is_spoken_as_ollama_worded_it",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_voice_app.MicrophoneConversationTests.test_the_key_stops_the_agent_mid_sentence",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_voice_app.MicrophoneConversationTests.test_the_microphone_is_deaf_while_the_agent_can_be_heard",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_voice_app.MicrophoneConversationTests.test_with_the_switch_off_slot_questions_do_not_go_to_ollama",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    },
+    {
+      "id": "tests.test_voice_app.MicrophoneTests.test_a_busy_device_is_reported_in_words",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.005,
+      "message": ""
+    },
+    {
+      "id": "tests.test_voice_app.MicrophoneTests.test_a_device_refusing_16khz_mono_is_recorded_natively_and_converted",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.2096,
+      "message": ""
+    },
+    {
+      "id": "tests.test_voice_app.MicrophoneTests.test_a_muted_or_blocked_microphone_is_noticed",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.3201,
+      "message": ""
+    },
+    {
+      "id": "tests.test_voice_app.MicrophoneTests.test_an_unplugged_microphone_is_noticed",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.3093,
+      "message": ""
+    },
+    {
+      "id": "tests.test_voice_app.MicrophoneTests.test_conversion_joins_blocks_seamlessly",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0099,
+      "message": ""
+    },
+    {
+      "id": "tests.test_voice_app.MicrophoneTests.test_push_to_talk_sends_even_quiet_speech",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0047,
+      "message": ""
+    },
+    {
+      "id": "tests.test_voice_app.MicrophoneTests.test_records_16khz_mono_in_20ms_pieces_without_conversion",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0898,
+      "message": ""
+    },
+    {
+      "id": "tests.test_voice_app.PhraseJudgeTests.test_a_rejected_wording_is_replaced_by_the_reference_with_the_reason",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_voice_app.PhraseJudgeTests.test_an_approved_wording_is_what_is_said",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_voice_app.PhraseJudgeTests.test_no_model_means_the_reference",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0,
+      "message": ""
+    },
+    {
+      "id": "tests.test_voice_app.PhraseJudgeTests.test_the_prompt_asks_for_the_reply_language_not_the_callers",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_voice_app.RewordingValidatorTests.test_every_changed_fact_is_caught",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0015,
+      "message": ""
+    },
+    {
+      "id": "tests.test_voice_app.RewordingValidatorTests.test_invented_numbers_and_new_questions_are_caught",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_voice_app.RewordingValidatorTests.test_programme_internals_and_rambling_are_caught",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_voice_app.RewordingValidatorTests.test_the_same_facts_in_other_words_pass",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0002,
+      "message": ""
+    },
+    {
+      "id": "tests.test_voice_app.RewordingValidatorTests.test_turning_the_sentence_onto_the_receptionist_is_caught",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0001,
+      "message": ""
+    },
+    {
+      "id": "tests.test_voice_app.SpeakerTests.test_a_speaker_that_cannot_open_says_so",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.0028,
+      "message": ""
+    },
+    {
+      "id": "tests.test_voice_app.SpeakerTests.test_a_speaker_that_stops_playing_does_not_mute_the_microphone_for_ever",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 1.2718,
+      "message": ""
+    },
+    {
+      "id": "tests.test_voice_app.SpeakerTests.test_phone_audio_is_converted_for_the_sound_card",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.3101,
+      "message": ""
+    },
+    {
+      "id": "tests.test_voice_app.SpeakerTests.test_stop_drops_what_has_not_been_played",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.3551,
+      "message": ""
+    },
+    {
+      "id": "tests.test_voice_app.SpeakerTests.test_the_reply_is_played_in_order_as_it_streams_in",
+      "category": "speech",
+      "status": "passed",
+      "seconds": 0.3859,
+      "message": ""
+    },
+    {
+      "id": "tests.test_voice_app.VoiceAppTests.test_a_whole_conversation_through_microphone_and_speaker",
+      "category": "speech",
+      "status": "skipped",
+      "seconds": 0.0,
+      "message": "needs the trained mBERT model (README step 4)"
+    }
+  ]
+}

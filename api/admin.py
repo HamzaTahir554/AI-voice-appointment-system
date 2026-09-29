@@ -32,12 +32,13 @@ from typing import Any
 from fastapi import APIRouter, Depends, Path, Query
 from pydantic import BaseModel, Field
 
-from api import auth
+from api import auth, data
 from api import dashboard as doctor_api
 from appointment_backend import statistics as stats
 from appointment_backend.api import backend, respond
 from api.dashboard import (account_public, clean_photo, decorate, fail,
-                           now_hhmm, ok, repo, unwrap, with_defaults)
+                           now_hhmm, ok, page_payload, repo, unwrap,
+                           with_defaults)
 from config import Collections, Status, TIMEZONE
 from firebase.appointment_service import ACTIVE_STATUSES
 from firebase.account_service import (AccountService, check_password_rules,
@@ -148,29 +149,33 @@ def status_of(doctor: dict) -> str:
 
 
 def blocked_today_ids() -> set:
+    """Doctors with today blocked - today's leave records only."""
+    rows = data.find(Collections.UNAVAILABILITY, [("date", "==", today_iso())])
+    return {r.get("doctor_id") for r in rows if r.get("active", True)}
+
+
+def workload(doctor_id: str, ahead: list[dict], total: int) -> dict:
+    """A doctor's counts: `total` from a count() aggregation, today and
+    upcoming from the appointments dated today or later."""
     today = today_iso()
-    rows = read(Collections.UNAVAILABILITY)
-    return {r.get("doctor_id") for r in rows
-            if r.get("date") == today and r.get("active", True)}
+    live = [a for a in ahead if a.get("doctor_id") == doctor_id
+            and a.get("status") in ACTIVE_STATUSES]
+    return {
+        "total": total,
+        "today": len([a for a in live if a.get("date") == today]),
+        "upcoming": len([a for a in live if str(a.get("date", "")) >= today]),
+    }
 
 
-def doctor_row(doctor: dict, clinic: dict | None, appointments: list[dict],
+def doctor_row(doctor: dict, clinic: dict | None, counts: dict,
                schedules: list[dict], blocked: set) -> dict:
-    today = today_iso()
     doctor_id = doctor.get("doctor_id")
-    mine = [a for a in appointments if a.get("doctor_id") == doctor_id]
-    live = [a for a in mine if a.get("status") in ACTIVE_STATUSES]
     hours = hours_of([s for s in schedules if s.get("doctor_id") == doctor_id])
     return {
         **with_defaults(doctor),
         "status": status_of(doctor),
         "clinic": clinic,
-        "appointments": {
-            "total": len(mine),
-            "today": len([a for a in live if a.get("date") == today]),
-            "upcoming": len([a for a in live
-                             if str(a.get("date", "")) >= today]),
-        },
+        "appointments": counts,
         "availability": {
             **hours,
             "on_leave_today": doctor_id in blocked,
@@ -179,6 +184,17 @@ def doctor_row(doctor: dict, clinic: dict | None, appointments: list[dict],
                          and bool(hours["working_days"]),
         },
     }
+
+
+def schedules_for(doctor_ids: list[str]) -> list[dict]:
+    """Schedule rows for these doctors only (`in` takes 30 values a query)."""
+    ids = [i for i in dict.fromkeys(doctor_ids) if i]
+    chunks = [ids[i:i + 30] for i in range(0, len(ids), 30)]
+    rows: list[dict] = []
+    for part in data.parallel(*[(lambda c=chunk: data.find(
+            Collections.SCHEDULES, [("doctor_id", "in", c)])) for chunk in chunks]):
+        rows.extend(part)
+    return rows
 
 
 # --------------------------------------------------------------------------
@@ -196,14 +212,19 @@ def _much_later(created: str | None, updated: str | None) -> bool:
     return gap.total_seconds() > 120
 
 
-def recent_activity(doctors: list[dict], limit: int = 8) -> list[dict]:
+ACTIVITY_LIMIT = 8
+
+
+def recent_activity(doctors: list[dict], notes: list[dict],
+                    limit: int = ACTIVITY_LIMIT) -> list[dict]:
     """What has changed lately.
 
     Only events the database actually records are listed: doctors carry
     `created_at` / `updated_at` from the moment they are managed here, and
     every patient message the cancellation cascade queues carries its own
     `created_at`. Appointment records have no creation timestamp, so no
-    "booked at" entry is invented for them.
+    "booked at" entry is invented for them. `notes` are the newest patient
+    messages - the only ones that can make the list.
     """
     events: list[dict] = []
     for doctor in doctors:
@@ -219,7 +240,7 @@ def recent_activity(doctors: list[dict], limit: int = 8) -> list[dict]:
                            "text": str(name) + " was updated"})
 
     names = {d.get("doctor_id"): d.get("name") for d in doctors}
-    for note in read(Collections.NOTIFICATIONS):
+    for note in notes:
         if not note.get("created_at"):
             continue
         events.append({
@@ -235,15 +256,33 @@ def recent_activity(doctors: list[dict], limit: int = 8) -> list[dict]:
     return events[:limit]
 
 
+def live_after(day: str) -> int:
+    """Live appointments dated after `day`: one count() aggregation (index:
+    status + date). Without the index, one read of the dates after `day`."""
+    return data.count(Collections.APPOINTMENTS,
+                      [("status", "in", list(ACTIVE_STATUSES)), ("date", ">", day)],
+                      prefer="range")
+
+
 @router.get("/summary", summary="Clinic-wide counters and recent activity")
 def summary(admin: str = Depends(auth.current_admin)) -> Any:
-    doctors = read(Collections.DOCTORS)
-    appointments = read(Collections.APPOINTMENTS)
+    """Counted by Firestore, not by downloading the clinic's appointments:
+    the totals are count() aggregations, and only today's appointments, the
+    doctors on leave today and the newest few messages are read - together,
+    in one round trip."""
     today, now = today_iso(), now_hhmm()
+    doctors, counts, today_rows, later, blocked, notes = data.parallel(
+        data.doctors,
+        lambda: data.count_by_status(statuses=(Status.COMPLETED, Status.CANCELLED,
+                                               Status.CANCELLED_BY_DOCTOR)),
+        lambda: data.appointments(date=today),
+        lambda: live_after(today),
+        blocked_today_ids,
+        lambda: data.find(Collections.NOTIFICATIONS, order_by="created_at",
+                          descending=True, limit=ACTIVITY_LIMIT))
 
     listed = [d for d in doctors if not d.get("archived")]
-    live = [a for a in appointments if a.get("status") in ACTIVE_STATUSES]
-    today_rows = [a for a in appointments if a.get("date") == today]
+    live_today = [a for a in today_rows if a.get("status") in ACTIVE_STATUSES]
 
     return ok({
         "date": today,
@@ -252,26 +291,20 @@ def summary(admin: str = Depends(auth.current_admin)) -> Any:
             "active": len([d for d in listed if d.get("active", True)]),
             "inactive": len([d for d in listed if not d.get("active", True)]),
             "archived": len([d for d in doctors if d.get("archived")]),
-            "on_leave_today": len(blocked_today_ids()),
+            "on_leave_today": len(blocked),
         },
         "appointments": {
-            "total": len(appointments),
+            "total": counts["total"],
             "today": len(today_rows),
-            "today_active": len([a for a in today_rows
-                                 if a.get("status") in ACTIVE_STATUSES]),
-            "upcoming": len([a for a in live
-                             if str(a.get("date", "")) > today
-                             or (a.get("date") == today
-                                 and str(a.get("time", "")) >= now)]),
-            "completed": len([a for a in appointments
-                              if a.get("status") == Status.COMPLETED]),
-            "cancelled": len([a for a in appointments
-                              if a.get("status") in (Status.CANCELLED,
-                                                     Status.CANCELLED_BY_DOCTOR)]),
+            "today_active": len(live_today),
+            "upcoming": later + len([a for a in live_today
+                                     if str(a.get("time", "")) >= now]),
+            "completed": counts[Status.COMPLETED],
+            "cancelled": counts[Status.CANCELLED] + counts[Status.CANCELLED_BY_DOCTOR],
         },
         "today": sorted(decorate(today_rows),
                         key=lambda a: str(a.get("time", ""))),
-        "activity": recent_activity(doctors),
+        "activity": recent_activity(doctors, notes),
     })
 
 
@@ -282,25 +315,24 @@ def summary(admin: str = Depends(auth.current_admin)) -> Any:
 def list_all_doctors(admin: str = Depends(auth.current_admin),
                      q: str | None = Query(None),
                      status: str = Query("listed"),
-                     specialization: str | None = Query(None)) -> Any:
-    doctors = read(Collections.DOCTORS)
-    clinic = unwrap(ClinicService(repo()).primary())
-    appointments = read(Collections.APPOINTMENTS)
-    schedules = read(Collections.SCHEDULES)
-    blocked = blocked_today_ids()
-
-    rows = [doctor_row(d, clinic, appointments, schedules, blocked)
-            for d in doctors]
+                     specialization: str | None = Query(None),
+                     offset: int = Query(0, ge=0),
+                     limit: int = Query(100, ge=1, le=500)) -> Any:
+    """Filtering and searching use the register (read once, cached for a
+    minute and dropped on any change to a doctor); the workload columns are
+    then worked out only for the doctors on this page."""
+    doctors = data.doctors()
+    rows = list(doctors)
 
     if status == "listed":
-        rows = [r for r in rows if r["status"] != "archived"]
+        rows = [d for d in rows if status_of(d) != "archived"]
     elif status in ("active", "inactive", "archived"):
-        rows = [r for r in rows if r["status"] == status]
+        rows = [d for d in rows if status_of(d) == status]
 
     if specialization:
         wanted = specialization.strip().lower()
-        rows = [r for r in rows
-                if str(r.get("specialization", "")).lower() == wanted]
+        rows = [d for d in rows
+                if str(d.get("specialization", "")).lower() == wanted]
 
     if q:
         needle = q.strip().lower()
@@ -311,12 +343,29 @@ def list_all_doctors(admin: str = Depends(auth.current_admin),
                 row.get("qualification"), row.get("phone"), row.get("email")])
             return needle in haystack
 
-        rows = [r for r in rows if matches(r)]
+        rows = [d for d in rows if matches(d)]
 
     rows.sort(key=lambda row: str(row.get("name", "")).lower())
+    page = rows[offset:offset + limit]
+    ids = [d.get("doctor_id") for d in page]
+
+    clinic, schedules, blocked, ahead, *totals = data.parallel(
+        data.clinic,
+        lambda: schedules_for(ids),
+        blocked_today_ids,
+        lambda: data.appointments(start=today_iso()),
+        *[(lambda d=doctor_id: data.count(Collections.APPOINTMENTS,
+                                          [("doctor_id", "==", d)]))
+          for doctor_id in ids])
+
+    listed = [doctor_row(d, clinic, workload(d.get("doctor_id"), ahead, total),
+                         schedules, blocked)
+              for d, total in zip(page, totals)]
     known = sorted({str(d.get("specialization")) for d in doctors
                     if d.get("specialization")})
-    return ok({"doctors": rows, "count": len(rows), "specializations": known})
+    return ok({**page_payload("doctors", listed, len(rows), offset, limit,
+                              len(rows) > offset + limit),
+               "specializations": known})
 
 
 # --------------------------------------------------------------------------
@@ -566,10 +615,8 @@ def set_status(body: StatusBody, doctor_id: str = Path(...),
     unwrap(DoctorService(repo()).update_doctor(doctor_id, fields), not_found=400)
 
     updated = doctor_or_404(doctor_id)
-    upcoming = [a for a in read(Collections.APPOINTMENTS,
-                                [("doctor_id", "==", doctor_id)])
-                if a.get("status") in ACTIVE_STATUSES
-                and str(a.get("date", "")) >= today_iso()]
+    upcoming = [a for a in data.appointments(doctor_id=doctor_id, start=today_iso())
+                if a.get("status") in ACTIVE_STATUSES]
     logger.info("doctor %s set active=%s by %s", doctor_id, body.active, admin)
     return ok({"doctor": with_defaults(updated),
                "status": status_of(updated),
@@ -590,7 +637,7 @@ def remove_doctor(doctor_id: str = Path(...),
     unwrap(DoctorService(repo()).update_doctor(doctor_id, {
         "active": False, "archived": True, "archived_at": now_stamp()}),
         not_found=400)
-    kept = len(read(Collections.APPOINTMENTS, [("doctor_id", "==", doctor_id)]))
+    kept = data.count(Collections.APPOINTMENTS, [("doctor_id", "==", doctor_id)])
     logger.info("doctor %s archived by %s", doctor_id, admin)
     return ok({"doctor_id": doctor_id, "status": "archived",
                "appointments_kept": kept,
@@ -625,32 +672,54 @@ def _cancelled_per_date(appointments: list[dict]) -> dict:
     return counts
 
 
+RECENT_SHOWN = 10
+UPCOMING_SHOWN = 20
+
+
 @router.get("/doctors/{doctor_id}", summary="One doctor, with schedule and workload")
 def doctor_detail(doctor_id: str = Path(...),
                   admin: str = Depends(auth.current_admin)) -> Any:
-    doctor = doctor_or_404(doctor_id)
-    clinic = unwrap(ClinicService(repo()).primary())
-    appointments = read(Collections.APPOINTMENTS)
-    schedules = read(Collections.SCHEDULES)
-    row = doctor_row(doctor, clinic, appointments, schedules, blocked_today_ids())
-
-    mine = decorate([a for a in appointments if a.get("doctor_id") == doctor_id])
-    mine.sort(key=lambda a: (str(a.get("date", "")), str(a.get("time", ""))))
+    """Everything the detail screen shows, read in one wave: this doctor's
+    record, schedule rows, leave, appointments from today on, the ten most
+    recent before today and a count of the rest - nothing of anybody else's.
+    """
     today = today_iso()
+    found, schedule_rows, leave, ahead, recent, total, clinic = data.parallel(
+        lambda: DoctorService(repo()).get_doctor(doctor_id),
+        lambda: data.find(Collections.SCHEDULES, [("doctor_id", "==", doctor_id)]),
+        lambda: unwrap(ScheduleService(repo()).list_unavailable(doctor_id)),
+        lambda: data.appointments(doctor_id=doctor_id, start=today),
+        lambda: data.page_by_date(
+            data.appointment_filters(doctor_id=doctor_id, before=today),
+            descending=True, limit=RECENT_SHOWN, with_total=False)[0],
+        lambda: data.count(Collections.APPOINTMENTS, [("doctor_id", "==", doctor_id)]),
+        data.clinic)
+    if not found.ok:
+        status = 503 if found.error == "BACKEND_UNAVAILABLE" else 404
+        raise fail(status, str(found.error).lower(), found.message or "No such doctor.")
+    doctor = found.data
+
+    blocked = {doctor_id} if any(r.get("date") == today and r.get("active", True)
+                                 for r in leave) else set()
+    row = doctor_row(doctor, clinic, workload(doctor_id, ahead, total),
+                     schedule_rows, blocked)
+
+    ahead.sort(key=data.sort_key)
+    upcoming = [a for a in ahead if a.get("status") in ACTIVE_STATUSES][:UPCOMING_SHOWN]
+    patients = data.patients_by_id(a.get("patient_id") for a in upcoming + recent)
+    active_rows = [r for r in schedule_rows if r.get("active", True)]
 
     return ok({
         "doctor": row,
         "clinic": row["clinic"],
-        "schedule": doctor_api.schedule(doctor_id)["data"]["days"],
-        "leave": doctor_api.leave(doctor_id)["data"]["leave"],
+        "schedule": doctor_api.week_from(active_rows),
+        "leave": leave,
         "appointments": {
-            "upcoming": [a for a in mine if str(a.get("date", "")) >= today
-                         and a.get("status") in ACTIVE_STATUSES][:20],
-            "recent": list(reversed([a for a in mine
-                                     if str(a.get("date", "")) < today]))[:10],
+            "upcoming": decorate(upcoming, patients),
+            "recent": decorate(recent, patients),
             "counts": row["appointments"],
-            # what each blocked date actually cancelled, for the leave list
-            "on_leave_dates": _cancelled_per_date(mine),
+            # what each blocked date (today or later) actually cancelled
+            "on_leave_dates": _cancelled_per_date(ahead),
         },
     })
 
@@ -661,10 +730,13 @@ def doctor_appointments(doctor_id: str = Path(...),
                         date: str | None = Query(None),
                         status: str | None = Query(None),
                         q: str | None = Query(None),
+                        offset: int = Query(0, ge=0),
+                        limit: int = Query(100, ge=1, le=doctor_api.PAGE_MAX),
                         admin: str = Depends(auth.current_admin)) -> Any:
     doctor_or_404(doctor_id)
-    return doctor_api.appointments(doctor_id=doctor_id, scope=scope, date=date,
-                                   status=status, query=q)
+    return ok(doctor_api.list_appointments(doctor_id, scope=scope, date=date,
+                                           status=status, query=q,
+                                           offset=offset, limit=limit))
 
 
 @router.get("/doctors/{doctor_id}/availability", summary="Free slots for a date")
@@ -792,9 +864,9 @@ class ClinicBody(BaseModel):
 
 def clinic_payload() -> dict:
     """The clinic, plus anything left over from before it was centralised."""
-    clinic = unwrap(ClinicService(repo()).primary())
-    doctors = [d for d in read(Collections.DOCTORS) if not d.get("archived")]
-    strays = [c for c in read(Collections.CLINICS)
+    clinic, everyone, records = data.parallel(data.clinic, data.doctors, data.clinics)
+    doctors = [d for d in everyone if not d.get("archived")]
+    strays = [c for c in records
               if c.get("clinic_id") != clinic.get("clinic_id")
               and c.get("active", True)]
     misfiled = [d for d in doctors
@@ -876,47 +948,69 @@ def all_appointments(admin: str = Depends(auth.current_admin),
                      status: str | None = Query(None),
                      scope: str = Query("all"),
                      q: str | None = Query(None),
+                     offset: int = Query(0, ge=0),
                      limit: int = Query(200, ge=1, le=1000)) -> Any:
+    """One page of the clinic's diary, newest first.
+
+    The doctor and the date window are Firestore filters and the page is
+    read in date order, so opening "Upcoming" reads the next page of
+    appointments rather than the clinic's entire history. A text search
+    reads the window once and pages what matched.
+    """
     today, now = today_iso(), now_hhmm()
-    names = {d.get("doctor_id"): d.get("name") for d in read(Collections.DOCTORS)}
-    rows = decorate(read(Collections.APPOINTMENTS))
-    for row in rows:
-        row["doctor_name"] = names.get(row.get("doctor_id")) or row.get("doctor_id")
-
-    if doctor_id:
-        rows = [a for a in rows if a.get("doctor_id") == doctor_id.upper()]
-    if date:
-        rows = [a for a in rows if a.get("date") == date]
+    names = data.doctor_names()
+    doctor_list = [{"doctor_id": key, "name": value}
+                   for key, value in sorted(names.items(), key=lambda pair: str(pair[1]))]
+    window = {"doctor_id": doctor_id.upper() if doctor_id else None, "date": date}
+    checks = []
     if status:
-        rows = [a for a in rows if a.get("status") == status]
-
+        checks.append(lambda a: a.get("status") == status)
     if scope == "today":
-        rows = [a for a in rows if a.get("date") == today]
+        if date and date != today:
+            return ok({**page_payload("appointments", [], 0, offset, limit, False),
+                       "doctors": doctor_list})
+        window["date"] = today
     elif scope == "upcoming":
-        rows = [a for a in rows
-                if a.get("status") in ACTIVE_STATUSES
-                and (str(a.get("date", "")) > today
-                     or (a.get("date") == today and str(a.get("time", "")) >= now))]
+        if not date:
+            window["start"] = today
+        checks.append(lambda a: a.get("status") in ACTIVE_STATUSES
+                      and (str(a.get("date", "")) > today
+                           or (a.get("date") == today
+                               and str(a.get("time", "")) >= now)))
     elif scope == "past":
-        rows = [a for a in rows if str(a.get("date", "")) < today]
+        if not date:
+            window["before"] = today
+        checks.append(lambda a: str(a.get("date", "")) < today)
     elif scope == "cancelled":
-        rows = [a for a in rows if a.get("status") in (Status.CANCELLED,
-                                                       Status.CANCELLED_BY_DOCTOR)]
+        checks.append(lambda a: a.get("status") in (Status.CANCELLED,
+                                                    Status.CANCELLED_BY_DOCTOR))
+    where = (lambda a: all(check(a) for check in checks)) if checks else None
+    filters = data.appointment_filters(**window)
+
+    def named(rows: list[dict]) -> list[dict]:
+        for row in rows:
+            row["doctor_name"] = names.get(row.get("doctor_id")) or row.get("doctor_id")
+        return rows
 
     if q:
         needle = q.strip().lower()
+        rows = named(decorate([a for a in data.find(Collections.APPOINTMENTS, filters)
+                               if where is None or where(a)]))
         rows = [a for a in rows
                 if needle in " ".join(str(value or "").lower() for value in [
                     a.get("patient_name"), a.get("patient_phone"),
                     a.get("appointment_id"), a.get("doctor_name"),
                     a.get("doctor_id"), a.get("date")])]
+        data.in_order(rows, descending=True)
+        payload = page_payload("appointments", rows[offset:offset + limit], len(rows),
+                               offset, limit, len(rows) > offset + limit)
+    else:
+        page, has_more, total = data.page_by_date(filters, offset=offset, limit=limit,
+                                                  descending=True, where=where)
+        payload = page_payload("appointments", named(decorate(page)), total,
+                               offset, limit, has_more)
 
-    rows.sort(key=lambda a: (str(a.get("date", "")), str(a.get("time", ""))),
-              reverse=True)
-    return ok({"appointments": rows[:limit], "count": len(rows),
-               "doctors": [{"doctor_id": key, "name": value}
-                           for key, value in sorted(names.items(),
-                                                    key=lambda pair: str(pair[1]))]})
+    return ok({**payload, "doctors": doctor_list})
 
 
 @router.get("/statistics", summary="Appointment counts for the whole clinic")
@@ -930,25 +1024,52 @@ def clinic_statistics(admin: str = Depends(auth.current_admin),
     With `doctor_id` the totals narrow to that one doctor while the
     doctor-wise table still lists everybody, so the administrator can compare
     one against the rest.
+
+    Only the records dated inside the period are read (one date-range
+    query). All-time figures - and the per-doctor table for "all time" - are
+    count() aggregations, so the clinic's history is never downloaded.
     """
-    doctors = [d for d in read(Collections.DOCTORS) if not d.get("archived")]
-    appointments = read(Collections.APPOINTMENTS)
-
-    selected = None
-    if doctor_id:
-        selected = doctor_or_404(doctor_id)
-        scoped = [a for a in appointments if a.get("doctor_id") == doctor_id.upper()]
-    else:
-        scoped = appointments
-
     try:
-        payload = stats.statistics(scoped, doctors=None, period=period,
-                                   start=start, end=end)
-        window = payload["period"]
-        payload["doctors"] = stats.per_doctor(
-            stats.in_period(appointments, window["start"], window["end"]), doctors)
+        window = stats.resolve_period(period, start, end)
     except ValueError as problem:
         raise fail(400, "invalid_period", str(problem))
+
+    wanted = doctor_id.upper() if doctor_id else None
+    doctors = [d for d in data.doctors() if not d.get("archived")]
+    day = today_iso()
+    bounded = bool(window["start"] or window["end"])
+    covers_today = bounded and (window["start"] or "") <= day <= (window["end"] or "9999")
+
+    groups = {"__scope__": [("doctor_id", "==", wanted)] if wanted else []}
+    if not bounded:
+        groups.update({d.get("doctor_id"): [("doctor_id", "==", d.get("doctor_id"))]
+                       for d in doctors})
+    calls = [lambda: data.counts_by_status_for(groups),
+             (lambda: doctor_or_404(wanted)) if wanted else (lambda: None)]
+    if bounded:
+        calls.append(lambda: data.appointments(start=window["start"], end=window["end"]))
+    if not covers_today:
+        calls.append(lambda: data.appointments(date=day))
+    results = data.parallel(*calls)
+
+    counts, selected = results[0], results[1]
+    clinic_rows = results[2] if bounded else None
+    today_rows = ([a for a in clinic_rows if a.get("date") == day] if covers_today
+                  else results[-1])
+
+    def scoped(rows):
+        return [a for a in rows if a.get("doctor_id") == wanted] if wanted else rows
+
+    scope_counts = counts["__scope__"]
+    payload = stats.statistics_from_parts(
+        window, scoped(clinic_rows) if bounded else None, scoped(today_rows),
+        stats.summarise_counts(scope_counts["total"], scope_counts), day)
+    if bounded:
+        payload["doctors"] = stats.per_doctor(clinic_rows, doctors)
+    else:
+        payload["doctors"] = stats.per_doctor_from_summaries(
+            {key: stats.summarise_counts(value["total"], value)
+             for key, value in counts.items() if key != "__scope__"}, doctors)
 
     payload["doctor"] = ({"doctor_id": selected.get("doctor_id"),
                           "name": selected.get("name")} if selected else None)
@@ -964,8 +1085,7 @@ def appointment_details(appointment_id: str = Path(...),
         raise fail(404, "not_found", "No appointment with that ID.")
     appointment = (result.data or {}).get("appointment") or result.data
     row = decorate([appointment])[0]
-    names = {d.get("doctor_id"): d.get("name") for d in read(Collections.DOCTORS)}
-    row["doctor_name"] = names.get(row.get("doctor_id"))
+    row["doctor_name"] = data.doctor_names().get(row.get("doctor_id"))
     return ok(row)
 
 
@@ -1010,7 +1130,6 @@ def leave_preview(doctor_id: str = Path(...),
                   start_date: str = Query(...),
                   end_date: str | None = Query(None),
                   admin: str = Depends(auth.current_admin)) -> Any:
-    doctor = doctor_or_404(doctor_id)
     start = start_date
     end = end_date or start_date
     if end < start:
@@ -1026,9 +1145,12 @@ def leave_preview(doctor_id: str = Path(...),
 
     wanted = {(first + timedelta(days=offset)).isoformat()
               for offset in range((last - first).days + 1)}
-    affected = [a for a in decorate(read(Collections.APPOINTMENTS,
-                                         [("doctor_id", "==", doctor_id)]))
-                if a.get("date") in wanted and a.get("status") in ACTIVE_STATUSES]
+    # Only this doctor's appointments on those dates are read.
+    doctor, window = data.parallel(
+        lambda: doctor_or_404(doctor_id),
+        lambda: data.appointments(doctor_id=doctor_id, start=start, end=end))
+    affected = decorate([a for a in window if a.get("date") in wanted
+                         and a.get("status") in ACTIVE_STATUSES])
     affected.sort(key=lambda a: (str(a.get("date", "")), str(a.get("time", ""))))
 
     by_date: dict = {}

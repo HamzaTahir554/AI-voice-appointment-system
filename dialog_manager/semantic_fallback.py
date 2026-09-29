@@ -201,3 +201,132 @@ def corroborate_booking(text: str, intent_result) -> str | None:
 
     evidence = appointment_evidence(text)
     return Intent.BOOK_APPOINTMENT if evidence["supports_booking"] else None
+
+
+# --------------------------------------------------------------------------
+# Known confusions
+#
+# Three places where the classifier is confidently wrong on the way callers
+# actually speak, found by running the voice layer's test sentences through
+# mBERT (docs/VOICE.md, "Language checks"):
+#
+#   "Allah Hafiz"                                -> thank_you 0.87 (the call never ends)
+#   "ڈاکٹر احمد کل دستیاب ہیں؟"                    -> clinic_timing 0.97
+#   "Meri appointment Friday ko 5 baje kar dein" -> book_appointment 0.66
+#
+# The first two are corrected here, and only when the words leave no doubt;
+# any competing vocabulary and the rule declines. The third is genuinely
+# ambiguous - the training data labels "Mera appointment Saturday ko rakh
+# dein" a booking - so it is only evidence (`moves_own_appointment`), and the
+# Dialog Manager decides with the caller's diary in hand: someone who already
+# has an appointment is moving it, someone who has none is booking one.
+# The classifier is not retrained, and the confidence threshold is untouched.
+# --------------------------------------------------------------------------
+_PUNCTUATION = re.compile(r"[.,!?;:\u061f\u06d4\u060c\"'()-]+")
+
+_FAREWELL = re.compile(
+    r"allah\s*ha[fp][ie]z|khuda\s*ha[fp][ie]z|fi\s*amanillah|good\s*bye|bye(\s*bye)?|"
+    r"alvida|take\s*care"
+    r"|\u0627\u0644\u0644\u06c1\s*\u062d\u0627\u0641\u0638"        # allah hafiz
+    r"|\u062e\u062f\u0627\s*\u062d\u0627\u0641\u0638"              # khuda hafiz
+    r"|\u0627\u0644\u0648\u062f\u0627\u0639", re.I)                  # alvida
+# Words that may sit around a farewell without making it anything else.
+_COURTESY = re.compile(
+    r"\b(thank\s*you|thanks|thank\s*u|shukriya|shukria|shukriyah|bohat|bohot|bahut|"
+    r"buhat|jazak\s*allah(\s*khair)?|ok|okay|theek\s*hai|ji|jee|acha|achha|"
+    r"sir|madam|aap\s*ka|ap\s*ka|phir|milte\s*hain|and|aur)\b"
+    r"|\u0634\u06a9\u0631\u06cc\u06c1|\u0628\u06c1\u062a|\u062c\u06cc"  # shukriya, bohat, ji
+    r"|\u0622\u067e\s*\u06a9\u0627|\u0679\u06be\u06cc\u06a9\s*\u06c1\u06d2",  # aap ka, theek hai
+    re.I)
+
+_OWN_APPOINTMENT = re.compile(
+    r"\b(meri|mera|mere|meray|hamari|humari|my|our)\s+(appointment|apointment|"
+    r"appointmnt|booking)\b"
+    r"|\u0645\u06cc\u0631\u06cc\s+(\u0627\u067e\u0627\u0626\u0646\u0679\u0645\u0646\u0679|\u0628\u06a9\u0646\u06af)",
+    re.I)
+_NEW_WHEN = re.compile(
+    r"\b(kal|parson|parso|aaj|aj|today|tomorrow|monday|tuesday|wednesday|thursday|"
+    r"friday|saturday|sunday|somwar|mangal|budh|jumerat|jumma|juma|hafta|itwar|"
+    r"subah|shaam|sham|dopahar|morning|evening|afternoon|agle|next)\b"
+    r"|\b\d{1,2}\s*(baje|bje|am|pm)\b|\b\d{1,2}:\d{2}\b"
+    r"|\u06a9\u0644|\u067e\u0631\u0633\u0648\u06ba|\u0622\u062c|\u0628\u062c\u06d2"  # kal, parson, aaj, baje
+    r"|\u062c\u0645\u0639\u06c1|\u0635\u0628\u062d|\u0634\u0627\u0645",            # jumma, subah, shaam
+    re.I)
+_MOVE_VERB = re.compile(
+    r"\b(kar\s*d[eo]in|kar\s*do|kardo|kardein|kar\s*dijiye|kar\s*den|kr\s*d[eo]|"
+    r"rakh\s*d[eo]in|rakh\s*do|shift|move|change|badal\w*|postpone)\b"
+    r"|\u06a9\u0631\s*\u062f\u06cc\u06ba|\u06a9\u0631\s*\u062f\u0648"          # kar dein, kar do
+    r"|\u0631\u06a9\u06be\s*\u062f\u06cc\u06ba|\u0628\u062f\u0644",             # rakh dein, badal
+    re.I)
+_NEW_BOOKING_VERB = re.compile(
+    r"\b(book|laga\w*|lagwa\w*|banwa\w*|chahiye|chahie|chaiye|leni|lena|nayi|naya|new)\b"
+    r"|\u0686\u0627\u06c1\u06cc\u06d2|\u0644\u06af\u0627",                     # chahiye, laga
+    re.I)
+
+# "When is the doctor available?" is a question about hours (clinic timing),
+# not about one day, so a when-word stands the availability rule down.
+_WHEN_QUESTION = re.compile(r"\b(kab|when|kis\s+waqt|kitne\s+baje)\b|\u06a9\u0628", re.I)
+
+_DOCTOR_WORD = re.compile(
+    r"\b(doctor|docter|dr|daktar|doc)\b|\u0688\u0627\u06a9\u0679\u0631", re.I)
+_AVAILABLE = re.compile(
+    r"\bavailab\w*\b"
+    r"|\u062f\u0633\u062a\u06cc\u0627\u0628"                                   # dastiyab
+    r"|\u0627\u0648\u06cc\u0644\u06cc\u0628\u0644|\u0627\u06cc\u0648\u06cc\u0644\u06cc\u0628\u0644"  # available, transliterated
+    r"|\u0627\u0648\u0627\u0626\u0644\u06cc\u0628\u0644",
+    re.I)
+
+
+def _clean(text: str) -> str:
+    return " ".join(_PUNCTUATION.sub(" ", _normalize(text)).lower().split())
+
+
+def correct_known_confusion(text: str, intent_result) -> str | None:
+    """
+    The intent a known, confident mistake should have been, else None.
+
+    Never touches an emergency, and never changes an answer that is already
+    the corrected intent.
+    """
+    if intent_result is None or intent_result.intent == Intent.EMERGENCY:
+        return None
+    cleaned = _clean(text)
+    if not cleaned:
+        return None
+
+    # 1. A farewell, and nothing but courtesy around it, is goodbye - even
+    #    when "thank you" is in it, and whatever the capitalisation.
+    if intent_result.intent != Intent.GOODBYE and _FAREWELL.search(cleaned):
+        rest = _COURTESY.sub(" ", _FAREWELL.sub(" ", cleaned))
+        if not rest.strip():
+            return Intent.GOODBYE
+
+    # 2. "Is Dr Ahmed available tomorrow?" in Urdu script, or with
+    #    "available" written out in Urdu letters, which the classifier reads
+    #    as clinic hours or does not recognise at all. A yes/no question about
+    #    a particular day - never a "when" question.
+    if (intent_result.intent in (Intent.CLINIC_INFORMATION, Intent.UNKNOWN)
+            and _DOCTOR_WORD.search(cleaned) and _AVAILABLE.search(cleaned)
+            and _NEW_WHEN.search(cleaned)
+            and not _WHEN_QUESTION.search(cleaned)
+            and not _BLOCKERS["fee"].search(cleaned)
+            and not _BLOCKERS["location"].search(cleaned)
+            and not _BLOCKERS["cancel"].search(cleaned)):
+        return Intent.DOCTOR_AVAILABILITY
+    return None
+
+
+def moves_own_appointment(text: str) -> bool:
+    """
+    "Meri appointment Friday ko 5 baje kar dein": the caller's own
+    appointment, a new day or time, and a verb that puts it there - with no
+    word of a NEW booking ("book", "laga", "chahiye") and none of cancelling.
+
+    Evidence only. Whether it means move or book depends on whether the caller
+    has an appointment to move, which only the Dialog Manager knows.
+    """
+    cleaned = _clean(text)
+    return bool(cleaned and _OWN_APPOINTMENT.search(cleaned)
+                and _NEW_WHEN.search(cleaned) and _MOVE_VERB.search(cleaned)
+                and not _NEW_BOOKING_VERB.search(cleaned)
+                and not _BLOCKERS["cancel"].search(cleaned))

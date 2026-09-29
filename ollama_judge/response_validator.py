@@ -347,3 +347,124 @@ def validate_llm_response(response: str, result,
         logger.warning("rejected LLM response: %s | text=%.120s",
                        "; ".join(problems), response)
     return ValidationReport(not problems, problems)
+
+
+# --------------------------------------------------------------------------
+# Turns with no database result (voice calls, VOICE_OLLAMA_EVERY_TURN)
+#
+# A slot question, a greeting or a fee answer has no backend result to check
+# a generated sentence against - that is why the text pipeline does not send
+# them to the model. The Dialog Manager's own sentence for the turn is the
+# reference instead: the model may change the WORDS, never the facts in it
+# (numbers, times, days, doctors), never claim something was done, and never
+# ask a question the Dialog Manager is not waiting for an answer to.
+# The facts must be the SAME, not just a subset: a number written as a word
+# ("chaar baje", "teen hazaar") cannot be checked, so a reply that leaves a
+# number out is rejected too and the reference is spoken instead.
+# --------------------------------------------------------------------------
+_URDU_DIGITS = str.maketrans("۰۱۲۳۴۵۶۷۸۹٠١٢٣٤٥٦٧٨٩", "01234567890123456789")
+_NUMBER = re.compile(r"\d+")
+# A name is capitalised: "Dr Ahmed", not the "doctor se" of "kis doctor se".
+_DOCTOR = re.compile(r"\b(?i:dr\.?|doctor|daktar)\s+([A-Z][a-z]+)|ڈاکٹر\s+([؀-ۿ]+)")
+_QUESTION = re.compile(r"[?؟]")
+_I_AM = re.compile(r"\b(?:hoon|hun|hoo)\b|ہوں", re.I)
+# Programme internals a caller must never hear.
+_INTERNALS = re.compile(r"[_{}\[\]<>]|\bintent\b|\bconfidence\b|\bbackend\b|\bjson\b", re.I)
+
+
+def _numbers(text: str) -> set[str]:
+    return {n.lstrip("0") or "0" for n in _NUMBER.findall(text.translate(_URDU_DIGITS))}
+
+
+def _day_words(text: str) -> set[str]:
+    words = {m.group(0).lower() for m in _RELATIVE_DAY.finditer(text)}
+    names = _weekday_words()
+    for token in re.findall(r"[A-Za-z]+|[؀-ۿ]+", text):
+        key = token.lower() if token.isascii() else token
+        if key in names:
+            words.add(key)
+    return words
+
+
+def _doctors(text: str) -> set[str]:
+    return {(m.group(1) or m.group(2)).lower() for m in _DOCTOR.finditer(text)}
+
+
+def _claims_success(text: str) -> bool:
+    if _NEGATIONS.search(text):
+        return False
+    for match in _SUCCESS_WORDS.finditer(text):
+        if not _NOT_A_CLAIM.search(text[max(0, match.start() - 20):match.start()]):
+            return True
+    return False
+
+
+def validate_rewording(response: str, reference: str,
+                       language: str | None = None) -> ValidationReport:
+    """Check the model's wording of a turn against the Dialog Manager's own
+    sentence for it (`reference`), which is what is spoken if this fails."""
+    if not response or not response.strip():
+        return ValidationReport(False, ["empty response"])
+    problems: list[str] = []
+
+    if len(response) > max(2 * len(reference), len(reference) + 60):
+        problems.append("much longer than the reply it rewords")
+    if _INTERNALS.search(response):
+        problems.append("contains programme internals")
+    iso = _ISO_DATE.search(response)
+    if iso:
+        problems.append(f"reads out a raw ISO date {iso.group(1)!r}")
+    if language in ("roman_urdu", "urdu"):
+        awkward = _UNNATURAL_24H.search(response)
+        if awkward:
+            problems.append(f"unnatural 24-hour time {awkward.group(0)!r}")
+
+    invented = sorted(_numbers(response) - _numbers(reference))
+    if invented:
+        problems.append(f"numbers not in the original reply: {invented}")
+    dropped = sorted(_numbers(reference) - _numbers(response))
+    if dropped:
+        problems.append(f"leaves out number(s) {dropped}")
+
+    allowed = set()
+    for _, readings in extract_times(reference):
+        allowed |= readings
+    changed = [surface for surface, readings in extract_times(response)
+               if not readings & allowed]
+    if changed:
+        problems.append(f"time(s) not in the original reply: {changed}")
+
+    for name, found in (("day", _day_words), ("doctor", _doctors)):
+        said, meant = found(response), found(reference)
+        if said - meant:
+            problems.append(f"{name}(s) not in the original reply: {sorted(said - meant)}")
+        if meant - said:
+            problems.append(f"leaves out {name}(s) {sorted(meant - said)}")
+
+    # "khali hai" -> "khali nahi hai" keeps every fact above and reverses
+    # the meaning: the negations must be the reference's, no more, no fewer.
+    if len(_NEGATIONS.findall(response)) != len(_NEGATIONS.findall(reference)):
+        problems.append("adds or removes a negation (nahi / not)")
+    # The model turning the sentence onto itself: "apna khayal rakhiye ga"
+    # (take care of yourself) came back as "main apna khayal rakhti hoon".
+    if len(_I_AM.findall(response)) > len(_I_AM.findall(reference)):
+        problems.append("adds a statement about the receptionist herself")
+
+    if _claims_success(response) and not _claims_success(reference):
+        problems.append("claims something was done; nothing was done this turn")
+
+    asks, asked = bool(_QUESTION.search(response)), bool(_QUESTION.search(reference))
+    if asked and not asks:
+        problems.append("drops the question the caller has to answer")
+    elif asks and not asked:
+        problems.append("asks a question the conversation is not waiting for")
+
+    if language is not None:
+        mismatch = _language_problem(response, language)
+        if mismatch:
+            problems.append(mismatch)
+
+    if problems:
+        logger.warning("rejected LLM rewording: %s | text=%.120s",
+                       "; ".join(problems), response)
+    return ValidationReport(not problems, problems)

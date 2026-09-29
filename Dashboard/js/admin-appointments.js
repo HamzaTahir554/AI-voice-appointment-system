@@ -21,7 +21,11 @@ window.Pages.adminAppointments = (function () {
 
   let filters = { scope: 'upcoming', doctor_id: '', status: '', date: '', q: '' };
   let doctors = [];
-  let shown = 20;
+  let shown = 20;               // how many rows a reload should bring back
+  let rows = [];                // every row loaded so far, in order
+  let ticket = 0;               // answers to an older request are dropped
+  const PAGE = 20;
+  const MOST = 1000;
 
   /* ---------------------------------------------------------- actions --- */
   function cancel(appointment) {
@@ -343,15 +347,25 @@ window.Pages.adminAppointments = (function () {
     load();
   }
 
+  function request(offset, limit) {
+    return AdminStore.getAllAppointments({
+      scope: filters.scope, doctor_id: filters.doctor_id,
+      date: filters.date, status: filters.status, q: filters.q,
+      offset: offset, limit: limit
+    });
+  }
+
+  /* One page from the server. A new filter starts at the first page, a
+     reload after an action re-reads the rows already on screen, and "Load
+     more" asks only for the next page. */
   function load(options) {
     const config = options || {};
     const body = document.getElementById('appointments-body');
     if (!body) { return; }
+    const mine = ++ticket;
 
-    AdminStore.getAllAppointments({
-      scope: filters.scope, doctor_id: filters.doctor_id,
-      date: filters.date, status: filters.status, q: filters.q
-    }).then(function (data) {
+    request(0, Math.min(MOST, Math.max(PAGE, shown))).then(function (data) {
+      if (mine !== ticket) { return; }
       doctors = data.doctors || [];
       const slot = document.getElementById('appointments-toolbar');
       const focused = document.activeElement
@@ -366,34 +380,55 @@ window.Pages.adminAppointments = (function () {
         }
       }
 
-      const rows = data.appointments;
-      if (!rows.length) {
-        UI.mount(body, UI.empty({
-          icon: 'calendar',
-          title: 'Nothing matches that',
-          message: 'Try another filter, or a different date.'
-        }));
-        return;
-      }
-
-      const visible = rows.slice(0, shown);
-      const parts = [table(visible)];
-      if (rows.length > visible.length) {
-        parts.push(UI.el('div', { class: 'card-body row-between wrap' }, [
-          UI.el('span', {
-            class: 'muted small',
-            text: 'Showing ' + visible.length + ' of ' + rows.length + ' appointments'
-          }),
-          UI.el('button', {
-            class: 'btn btn-secondary btn-sm', type: 'button',
-            onClick: function () { shown += 20; load(); }
-          }, 'Load more')
-        ]));
-      }
-      UI.mount(body, parts);
+      rows = data.appointments;
+      paint(body, data);
     }).catch(function (error) {
+      if (mine !== ticket) { return; }
       UI.mount(body, UI.apiError(error, function () { load(); }));
     });
+  }
+
+  function loadMore(body, button) {
+    const mine = ++ticket;
+    UI.setButtonLoading(button, true);
+    request(rows.length, PAGE).then(function (data) {
+      if (mine !== ticket) { return; }
+      rows = rows.concat(data.appointments);
+      shown = rows.length;
+      paint(body, data);
+    }).catch(function (error) {
+      if (mine !== ticket) { return; }
+      UI.setButtonLoading(button, false);
+      UI.toast(error.message || 'Could not load more appointments.', 'error');
+    });
+  }
+
+  function paint(body, data) {
+    if (!rows.length) {
+      UI.mount(body, UI.empty({
+        icon: 'calendar',
+        title: 'Nothing matches that',
+        message: 'Try another filter, or a different date.'
+      }));
+      return;
+    }
+
+    const parts = [table(rows)];
+    if (data.has_more) {
+      const more = UI.el('button', {
+        class: 'btn btn-secondary btn-sm', type: 'button',
+        onClick: function () { loadMore(body, more); }
+      }, 'Load more');
+      parts.push(UI.el('div', { class: 'card-body row-between wrap' }, [
+        UI.el('span', {
+          class: 'muted small',
+          text: 'Showing ' + rows.length
+            + (data.total !== null ? ' of ' + data.total : '') + ' appointments'
+        }),
+        more
+      ]));
+    }
+    UI.mount(body, parts);
   }
 
   return { render: render };

@@ -81,7 +81,10 @@ class Collections:
 # --------------------------------------------------------------------------
 # Ollama (local LLM used as judge + response writer, never as the database)
 # --------------------------------------------------------------------------
-OLLAMA_BASE_URL = os.environ.get("OLLAMA_BASE_URL", "http://localhost:11434")
+# 127.0.0.1, not "localhost": on Windows "localhost" is tried as IPv6 (::1)
+# first, Ollama listens on IPv4 only, and the refused attempt cost ~2.1 s on
+# EVERY request here (measured: 2,236-2,316 ms vs 191 ms for the same call).
+OLLAMA_BASE_URL = os.environ.get("OLLAMA_BASE_URL", "http://127.0.0.1:11434")
 OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "llama3.2")
 OLLAMA_TIMEOUT = float(os.environ.get("OLLAMA_TIMEOUT", 30))
 # Low temperature: this model rewrites facts it is given, it does not invent.
@@ -107,6 +110,101 @@ RESPONSE_LANGUAGE = os.environ.get("RESPONSE_LANGUAGE", "auto").lower()
 
 # Prefix for generated appointment IDs.
 APPOINTMENT_ID_PREFIX = os.environ.get("APPOINTMENT_ID_PREFIX", "APT")
+
+# --------------------------------------------------------------------------
+# Speech: ElevenLabs speech-to-text and text-to-speech (speech/)
+#
+# Server-side only. The key is read here and sent to ElevenLabs in a request
+# header; it is never logged, never returned by the API and never reaches the
+# dashboard. Every model and voice is chosen here, nowhere else.
+# --------------------------------------------------------------------------
+def _flag(name: str, default: bool) -> bool:
+    value = os.environ.get(name)
+    if value is None or value.strip() == "":
+        return default
+    return value.strip().lower() in ("1", "true", "yes", "on")
+
+
+def _codes(name: str, default: str = "") -> list[str]:
+    return [c.strip() for c in os.environ.get(name, default).split(",") if c.strip()]
+
+
+ELEVENLABS_API_KEY = os.environ.get("ELEVENLABS_API_KEY", "").strip()
+ELEVENLABS_API_URL = os.environ.get("ELEVENLABS_API_URL",
+                                    "https://api.elevenlabs.io").rstrip("/")
+# Realtime transcription for calls; the batch model for whole recordings.
+ELEVENLABS_STT_MODEL = os.environ.get("ELEVENLABS_STT_MODEL", "scribe_v2_realtime")
+ELEVENLABS_STT_BATCH_MODEL = os.environ.get("ELEVENLABS_STT_BATCH_MODEL", "scribe_v2")
+# ISO 639-1/3 code the caller is expected to speak ("ur"), or empty to let
+# ElevenLabs detect it. Secondary languages cover code-switching ("en").
+ELEVENLABS_STT_LANGUAGE = os.environ.get("ELEVENLABS_STT_LANGUAGE", "ur").strip()
+ELEVENLABS_STT_SECONDARY_LANGUAGES = _codes("ELEVENLABS_STT_SECONDARY_LANGUAGES")
+# The caller's audio as it arrives: telephony is 8 kHz mu-law (ulaw_8000);
+# pcm_16000 for a microphone or a test file.
+ELEVENLABS_STT_AUDIO_FORMAT = os.environ.get("ELEVENLABS_STT_AUDIO_FORMAT", "ulaw_8000")
+# End of turn: how long a pause (seconds) ElevenLabs waits before committing
+# what the caller said. Long enough that "Mujhe Dr Ahmed... se kal" stays one
+# sentence, short enough that the reply is not held up.
+ELEVENLABS_STT_SILENCE_SECS = float(os.environ.get("ELEVENLABS_STT_SILENCE_SECS", 0.8))
+# Audio is sent in chunks of this length (ms): small enough not to add delay,
+# large enough not to flood the socket with 20 ms telephony frames.
+ELEVENLABS_STT_CHUNK_MS = int(os.environ.get("ELEVENLABS_STT_CHUNK_MS", 100))
+# Keyterm prompting (doctor names, specialisations, the clinic). ElevenLabs
+# charges extra for it and allows 50 terms of 20 characters in realtime, so
+# it is off unless switched on.
+ELEVENLABS_STT_KEYTERMS = _flag("ELEVENLABS_STT_KEYTERMS", False)
+
+# Chosen by measurement (docs/VOICE.md, section 9): the same time to first
+# audio as eleven_flash_v2_5 (~0.82 s), Urdu support, and the times and
+# negations in its speech were heard back correctly where Flash's were not.
+ELEVENLABS_TTS_MODEL = os.environ.get("ELEVENLABS_TTS_MODEL", "eleven_v3_conversational")
+ELEVENLABS_VOICE_ID = os.environ.get("ELEVENLABS_VOICE_ID", "").strip()
+# ulaw_8000 plays straight into a phone call; pcm_16000 / mp3_44100_128 for a
+# browser or a file.
+ELEVENLABS_TTS_OUTPUT_FORMAT = os.environ.get("ELEVENLABS_TTS_OUTPUT_FORMAT", "ulaw_8000")
+# Optional language to enforce on the TTS model (ISO 639-1); empty = the
+# model decides. Not accepted by the multilingual_v2 models.
+ELEVENLABS_TTS_LANGUAGE = os.environ.get("ELEVENLABS_TTS_LANGUAGE", "").strip()
+
+ELEVENLABS_TIMEOUT = float(os.environ.get("ELEVENLABS_TIMEOUT", 15))
+# Temporary failures (timeout, rate limit, 5xx, dropped connection) are tried
+# again this many times; an invalid key or voice never is.
+ELEVENLABS_MAX_RETRIES = int(os.environ.get("ELEVENLABS_MAX_RETRIES", 1))
+# false asks ElevenLabs not to retain the request (zero-retention mode, which
+# the account has to be allowed to use).
+ELEVENLABS_ENABLE_LOGGING = _flag("ELEVENLABS_ENABLE_LOGGING", True)
+
+# Shared secret a telephony bridge presents to /voice/call. When empty, only
+# connections from this machine are accepted.
+VOICE_GATEWAY_TOKEN = os.environ.get("VOICE_GATEWAY_TOKEN", "").strip()
+
+# --------------------------------------------------------------------------
+# Microphone voice mode (voice_app.py): the computer's microphone and speaker
+# stand in for the phone line until Asterisk/SIP is connected.
+# --------------------------------------------------------------------------
+# Input / output device: a number or part of the name from
+# `python voice_app.py --list-devices`; empty = the system default.
+MICROPHONE_DEVICE = os.environ.get("MICROPHONE_DEVICE", "").strip()
+SPEAKER_DEVICE = os.environ.get("SPEAKER_DEVICE", "").strip()
+# "vad": speak naturally, the end of a sentence is detected.
+# "push_to_talk": press SPACE to start speaking and SPACE again to stop.
+VOICE_INPUT_MODE = os.environ.get("VOICE_INPUT_MODE", "vad").strip().lower() or "vad"
+# Print every stage of every turn (transcript, intent, action, judge, timings).
+VOICE_DEBUG = _flag("VOICE_DEBUG", False)
+# What the microphone sends to speech-to-text: 16 kHz 16-bit mono, which
+# every sound card records natively or through Windows' own resampler.
+VOICE_MIC_FORMAT = os.environ.get("VOICE_MIC_FORMAT", "pcm_16000")
+# What the speaker plays: a sound card needs PCM, and 22.05 kHz sounds better
+# than the phone line's 8 kHz mu-law.
+VOICE_TTS_OUTPUT_FORMAT = os.environ.get("VOICE_TTS_OUTPUT_FORMAT", "pcm_22050")
+# Keep listening while the agent speaks, so the caller can interrupt it. Only
+# with headphones: through loudspeakers the microphone hears the agent.
+# Off: the microphone is muted while the agent speaks (half duplex).
+VOICE_BARGE_IN = _flag("VOICE_BARGE_IN", False)
+# Every reply of a voice call is worded by Ollama and checked by the
+# validator; off = only the turns with a database result go to Ollama (the
+# behaviour of the text pipeline).
+VOICE_OLLAMA_EVERY_TURN = _flag("VOICE_OLLAMA_EVERY_TURN", True)
 
 
 # --------------------------------------------------------------------------

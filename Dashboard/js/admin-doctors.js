@@ -22,6 +22,8 @@ window.Pages.adminDoctors = (function () {
   ];
 
   let filters = { q: '', status: 'listed', specialization: '' };
+  const PAGE = 50;
+  let listLimit = PAGE;         // doctors shown; the workload columns are worked out for these only
   let specializations = [];
   let clinicName = '';
   let container = null;
@@ -228,6 +230,7 @@ window.Pages.adminDoctors = (function () {
       clearTimeout(timer);
       timer = setTimeout(function () {
         filters.q = search.value.trim();
+        listLimit = PAGE;
         load({ keepFocus: true });
       }, 220);
     });
@@ -240,6 +243,7 @@ window.Pages.adminDoctors = (function () {
     }));
     status.addEventListener('change', function () {
       filters.status = status.value;
+      listLimit = PAGE;
       load();
     });
 
@@ -253,6 +257,7 @@ window.Pages.adminDoctors = (function () {
       })));
     specialization.addEventListener('change', function () {
       filters.specialization = specialization.value;
+      listLimit = PAGE;
       load();
     });
 
@@ -291,7 +296,8 @@ window.Pages.adminDoctors = (function () {
     if (!body) { return; }
 
     AdminStore.getDoctors({
-      q: filters.q, status: filters.status, specialization: filters.specialization
+      q: filters.q, status: filters.status, specialization: filters.specialization,
+      limit: listLimit
     }).then(function (data) {
       specializations = data.specializations || [];
       const first = data.doctors[0];
@@ -328,6 +334,21 @@ window.Pages.adminDoctors = (function () {
         return;
       }
       UI.mount(body, table(data.doctors, function () { load(); }));
+      if (data.has_more) {
+        const more = UI.el('button', {
+          class: 'btn btn-secondary btn-sm', type: 'button',
+          onClick: function () {
+            UI.setButtonLoading(more, true);
+            listLimit += PAGE;
+            load();
+          }
+        }, 'Load more');
+        body.appendChild(UI.el('div', { class: 'card-body row-between wrap' }, [
+          UI.el('span', { class: 'muted small',
+                          text: 'Showing ' + data.doctors.length + ' of ' + data.total + ' doctors' }),
+          more
+        ]));
+      }
     }).catch(function (error) {
       UI.mount(body, UI.apiError(error, function () { load(); }));
     });

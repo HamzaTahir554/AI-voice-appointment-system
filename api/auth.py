@@ -84,16 +84,30 @@ def _accounts():
     return AccountService()
 
 
-def verify(doctor_id: str, password: str) -> bool:
+_UNREAD = object()
+
+
+def _stored(account_id: str, record) -> dict | None:
+    """The account record: the one the caller already read, or a fresh read."""
+    if record is not _UNREAD:
+        return record
+    found = _accounts().get(account_id)
+    return found.data if found.ok else None
+
+
+def verify(doctor_id: str, password: str, record=_UNREAD) -> bool:
     """Constant-time password check for a doctor.
 
     The stored credential wins. Only an account that has never had one set
     falls back to the environment password, so changing a password here
-    actually takes effect.
+    actually takes effect. Pass `record` when the account has already been
+    read, so it is not read again.
     """
-    accounts = _accounts()
-    if accounts.has_password(doctor_id):
-        return accounts.verify(doctor_id, password)
+    from firebase.account_service import AccountService
+
+    stored = _stored(doctor_id, record)
+    if stored and stored.get("password_hash"):
+        return AccountService.matches(stored, password)
     expected = configured_password(doctor_id)
     if not expected or password is None:
         return False
@@ -109,12 +123,14 @@ def admin_configured() -> bool:
     return bool(os.environ.get("SUPERADMIN_PASSWORD")) or         _accounts().has_password(admin_id())
 
 
-def verify_admin(user_id: str, password: str) -> bool:
+def verify_admin(user_id: str, password: str, record=_UNREAD) -> bool:
+    from firebase.account_service import AccountService
+
     if str(user_id).strip().upper() != admin_id():
         return False
-    accounts = _accounts()
-    if accounts.has_password(admin_id()):
-        return accounts.verify(admin_id(), password)
+    stored = _stored(admin_id(), record)
+    if stored and stored.get("password_hash"):
+        return AccountService.matches(stored, password)
     expected = os.environ.get("SUPERADMIN_PASSWORD")
     if not expected or password is None:
         return False

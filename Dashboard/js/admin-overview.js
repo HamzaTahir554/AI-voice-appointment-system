@@ -274,6 +274,10 @@ window.Pages.adminOverview = (function () {
   function render(container) {
     UI.mount(container, UI.loading('Loading the clinic overview...'));
 
+    /* The statistics do not depend on the summary, so both are asked for
+       now; the card below picks up the same request when it is drawn. */
+    AdminStore.getStatistics(statsState).catch(function () { /* shown by the card */ });
+
     AdminStore.getSummary().then(function (summary) {
       const stats = statsCard();
       UI.mount(container, [

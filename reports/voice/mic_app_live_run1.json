@@ -1,0 +1,169 @@
+{
+  "session_id": "VOICE_20260929_065142",
+  "mode": "vad",
+  "end_reason": "goodbye",
+  "microphone": {
+    "device": "Virtual microphone (synthetic caller)",
+    "rate": 16000,
+    "overflows": 0
+  },
+  "speaker": {
+    "device": "VG248 (NVIDIA High Definition A",
+    "format": "pcm_22050",
+    "output_latency_ms": 200.0,
+    "underruns": 0
+  },
+  "models": {
+    "stt": "scribe_v2_realtime",
+    "tts": "eleven_v3_conversational",
+    "ollama": "llama3.2",
+    "ollama_every_turn": true
+  },
+  "warm_up": {
+    "mbert_load_ms": 9124,
+    "ollama_load_ms": 5891
+  },
+  "turns": [
+    {
+      "transcript": "مجھے doctor کے پاس جانا ہے۔",
+      "intent": "book_appointment",
+      "action": "ask_for_doctor",
+      "response": "Ji zaroor, aap kis doctor se appointment lena chahenge?",
+      "response_source": "ollama",
+      "spoken": true,
+      "tts_error": null,
+      "latency": {
+        "speech_end_to_transcript_ms": 1391.0,
+        "pipeline_ms": 875.0,
+        "tts_first_byte_ms": 738.2,
+        "speech_end_to_agent_audio_ms": 3000.0,
+        "mbert_ms": 25.4,
+        "dialog_ms": 7.4,
+        "database_ms": 0.1,
+        "llm_ms": 838.6,
+        "speaker_start_ms": 32.0,
+        "speaker_output_latency_ms": 200.0
+      },
+      "appointment_id": null
+    },
+    {
+      "transcript": "Doctor Ahmed.",
+      "intent": "book_appointment",
+      "action": "ask_for_date",
+      "response": "Bilkul, aap kis din aana convenient rahega?",
+      "response_source": "ollama",
+      "spoken": true,
+      "tts_error": null,
+      "latency": {
+        "speech_end_to_transcript_ms": 1485.0,
+        "pipeline_ms": 875.0,
+        "tts_first_byte_ms": 628.5,
+        "speech_end_to_agent_audio_ms": 2985.0,
+        "mbert_ms": 14.1,
+        "dialog_ms": 0.5,
+        "database_ms": 0.0,
+        "llm_ms": 858.3,
+        "speaker_start_ms": 15.0,
+        "speaker_output_latency_ms": 200.0
+      },
+      "appointment_id": null
+    },
+    {
+      "transcript": "Calcutta.",
+      "intent": "book_appointment",
+      "action": "ask_for_date",
+      "response": "Aap kis din aana chahenge?",
+      "response_source": "ollama",
+      "spoken": true,
+      "tts_error": null,
+      "latency": {
+        "speech_end_to_transcript_ms": 1437.0,
+        "pipeline_ms": 1000.0,
+        "tts_first_byte_ms": 664.8,
+        "speech_end_to_agent_audio_ms": 3109.0,
+        "mbert_ms": 30.7,
+        "dialog_ms": 0.5,
+        "database_ms": 0.0,
+        "llm_ms": 965.0,
+        "speaker_start_ms": 16.0,
+        "speaker_output_latency_ms": 200.0
+      },
+      "appointment_id": null
+    },
+    {
+      "transcript": "شام 5 بجے۔",
+      "intent": "book_appointment",
+      "action": "ask_for_date",
+      "response": "Ji. Konsa din theek rahega aap ke liye?",
+      "response_source": "fallback",
+      "spoken": true,
+      "tts_error": null,
+      "latency": {
+        "speech_end_to_transcript_ms": 1344.0,
+        "pipeline_ms": 859.0,
+        "tts_first_byte_ms": 734.0,
+        "speech_end_to_agent_audio_ms": 2938.0,
+        "mbert_ms": 19.1,
+        "dialog_ms": 0.5,
+        "database_ms": 0.0,
+        "llm_ms": 829.9,
+        "speaker_start_ms": 0.0,
+        "speaker_output_latency_ms": 200.0
+      },
+      "appointment_id": null
+    },
+    {
+      "transcript": "ہاں، کر دیں۔",
+      "intent": "book_appointment",
+      "action": "ask_for_date",
+      "response": "Acha. Kis din aana convenient rahega?",
+      "response_source": "fallback",
+      "spoken": true,
+      "tts_error": null,
+      "latency": {
+        "speech_end_to_transcript_ms": 1484.0,
+        "pipeline_ms": 891.0,
+        "tts_first_byte_ms": 726.5,
+        "speech_end_to_agent_audio_ms": 3109.0,
+        "mbert_ms": 20.5,
+        "dialog_ms": 0.5,
+        "database_ms": 0.0,
+        "llm_ms": 866.0,
+        "speaker_start_ms": 16.0,
+        "speaker_output_latency_ms": 200.0
+      },
+      "appointment_id": null
+    },
+    {
+      "transcript": "شکریہ۔ اللہ حافظ۔",
+      "intent": "goodbye",
+      "action": "end_conversation",
+      "response": "Khuda hafiz, apna khayal rakhiye ga.",
+      "response_source": "ollama",
+      "spoken": true,
+      "tts_error": null,
+      "latency": {
+        "speech_end_to_transcript_ms": 1437.0,
+        "pipeline_ms": 875.0,
+        "tts_first_byte_ms": 619.9,
+        "speech_end_to_agent_audio_ms": 2937.0,
+        "mbert_ms": 22.1,
+        "dialog_ms": 0.5,
+        "database_ms": 0.0,
+        "llm_ms": 857.2,
+        "speaker_start_ms": 0.0,
+        "speaker_output_latency_ms": 200.0
+      },
+      "appointment_id": null
+    }
+  ],
+  "usage": {
+    "turns": 6,
+    "stt_audio_ms_sent": 15980,
+    "stt_audio_ms_held_back": 29080,
+    "tts_characters": 292,
+    "tts_requests": 7,
+    "tts_cache_hits": 0,
+    "stt_reconnects": 0
+  }
+}

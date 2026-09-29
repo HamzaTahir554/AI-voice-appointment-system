@@ -11,13 +11,15 @@ single edit to the Dialog Manager: only `INTENT_MAPPING` in config.py changes.
 """
 from __future__ import annotations
 
-import importlib
 import logging
 import sys
+import threading
+import time
 from dataclasses import dataclass, field
 from typing import Any, Protocol
 
-from dialog_manager.semantic_fallback import corroborate_booking, escalate_emergency
+from dialog_manager.semantic_fallback import (corroborate_booking, correct_known_confusion,
+                                               escalate_emergency)
 
 from config import (
     EMERGENCY_SAFETY_NET,
@@ -26,11 +28,57 @@ from config import (
     INFO_TOPIC,
     INTENT_MAPPING,
     INTENT_MODEL_DIR,
+    INTENT_SRC_DIR,
     Intent,
-    add_intent_module_to_path,
 )
 
 logger = logging.getLogger(__name__)
+_LOAD_LOCK = threading.Lock()      # see IntentRouter._load
+
+
+def _import_intent_inference(src_dir):
+    """
+    intent_detection/src/inference.py, loaded as a private module.
+
+    The intent module is a sibling project with its own `config.py`, which
+    inference.py imports as plain `config`. It used to be imported by putting
+    src/ on sys.path and swapping sys.modules["config"] for the duration. That
+    swap is process-wide: while torch imported (seconds), any other thread
+    importing a project module got the intent module's `config` - the API
+    loads mBERT on a background thread at start-up, and the test suite caught
+    a module importing the wrong `config` in that window.
+
+    Here each file of src/ is loaded under a private name ("_intent_src_config")
+    and the modules loaded this way resolve their sibling imports to each
+    other; sys.path and this project's `config` are never touched.
+    """
+    import builtins
+    import importlib.util
+    from pathlib import Path
+
+    src_dir = Path(src_dir)
+    siblings = {path.stem for path in src_dir.glob("*.py")}
+    loaded: dict[str, Any] = {}
+
+    def private_import(name, globals=None, locals=None, fromlist=(), level=0):
+        if level == 0 and name in siblings:
+            if name not in loaded:
+                loaded[name] = load(name)
+            return loaded[name]
+        return builtins.__import__(name, globals, locals, fromlist, level)
+
+    def load(name):
+        private = f"_intent_src_{name}"
+        spec = importlib.util.spec_from_file_location(private, src_dir / f"{name}.py")
+        module = importlib.util.module_from_spec(spec)
+        # Every `import` the module runs - at load time or later inside a
+        # function - goes through private_import.
+        module.__dict__["__builtins__"] = {**builtins.__dict__, "__import__": private_import}
+        sys.modules[private] = module          # a private name: shadows nothing
+        spec.loader.exec_module(module)
+        return module
+
+    return load("inference")
 
 
 class IntentDetector(Protocol):
@@ -87,40 +135,28 @@ class MBertIntentDetector:
         if eager:
             self._load()
 
-    # Module names that exist in BOTH this project and intent_detection/src.
-    # `config` in particular would otherwise resolve to our root config.py and
-    # break the intent module's imports.
-    _SHADOWED = ("config", "inference", "dataset", "preprocess")
-
     def _load(self):
         if self._predictor is not None:
             return self._predictor
-        add_intent_module_to_path()
+        with _LOAD_LOCK:                     # two threads must not load it twice
+            if self._predictor is None:
+                self._load_locked()
+        return self._predictor
 
-        # Import the intent module against ITS OWN `config`, then put ours
-        # back. Without this swap `from config import MAX_LENGTH` inside
-        # inference.py picks up this project's config.py and fails.
-        saved = {name: sys.modules.pop(name)
-                 for name in self._SHADOWED if name in sys.modules}
+    def _load_locked(self) -> None:
         try:
-            inference = importlib.import_module("inference")
-            predictor_cls = inference.IntentPredictor
+            predictor_cls = _import_intent_inference(INTENT_SRC_DIR).IntentPredictor
         except Exception as exc:                            # pragma: no cover
             raise RuntimeError(
                 "Could not import the intent detection module from "
                 f"{self.model_dir}. Train it first: "
                 "python intent_detection/src/train.py") from exc
-        finally:
-            for name in self._SHADOWED:
-                sys.modules.pop(name, None)
-            sys.modules.update(saved)
 
         # threshold=0.0 so the *Dialog Manager* owns the confidence policy;
         # otherwise the intent module would hide the raw prediction from us.
         self._predictor = predictor_cls(model_dir=self.model_dir, threshold=0.0)
         logger.info("mBERT loaded from %s on %s",
                     self.model_dir, self._predictor.device)
-        return self._predictor
 
     @property
     def is_loaded(self) -> bool:
@@ -145,17 +181,27 @@ class IntentRouter:
                  use_emergency_safety_net: bool | None = None):
         self.detector = detector or MBertIntentDetector()
         self.threshold = threshold
+        # How long the last prediction took, per thread: a voice call reports
+        # it as the mBERT stage of its latency.
+        self._timing = threading.local()
         self.mapping = mapping or INTENT_MAPPING
         self.use_semantic_fallback = use_semantic_fallback
         self.use_emergency_safety_net = (EMERGENCY_SAFETY_NET if use_emergency_safety_net is None
                                          else use_emergency_safety_net)
 
     # ------------------------------------------------------------------
+    @property
+    def last_predict_ms(self) -> float | None:
+        """The model's time for the last utterance classified in this thread."""
+        return getattr(self._timing, "last_ms", None)
+
     def route(self, text: str) -> IntentResult:
         """Classify one utterance. Never raises - a model failure is UNKNOWN."""
+        self._timing.last_ms = None
         if not text or not text.strip():
             return IntentResult(Intent.UNKNOWN, "empty", 0.0, True)
 
+        started = time.perf_counter()
         try:
             prediction = self.detector.predict(text)
         except Exception as exc:                            # pragma: no cover
@@ -163,6 +209,7 @@ class IntentRouter:
             logger.error("intent detection failed: %s", exc)
             return IntentResult(Intent.UNKNOWN, "error", 0.0, True)
 
+        self._timing.last_ms = (time.perf_counter() - started) * 1000
         raw = prediction.get("intent", "unknown")
         confidence = float(prediction.get("confidence", 0.0))
         below = confidence < self.threshold
@@ -198,6 +245,16 @@ class IntentRouter:
             return result
 
         if self.use_semantic_fallback:
+            # A known, confident mistake (a farewell read as thanks, a move
+            # read as a new booking, availability asked in Urdu script).
+            corrected = correct_known_confusion(text, result)
+            if corrected is not None:
+                logger.info("known confusion: %s (%.2f) -> %s for %r",
+                            result.raw_intent, confidence, corrected, text)
+                result.intent = corrected
+                result.below_threshold = False
+                result.corroborated = True
+                return result
             corroborated = corroborate_booking(text, result)
             if corroborated is not None:
                 logger.info("semantic fallback: %s (%.2f) -> %s for %r",

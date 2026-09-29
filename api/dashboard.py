@@ -21,6 +21,7 @@ pipeline keeps using them exactly as before.
 """
 from __future__ import annotations
 
+import hashlib
 import logging
 from datetime import datetime, timedelta
 from typing import Any
@@ -28,7 +29,7 @@ from typing import Any
 from fastapi import APIRouter, Depends, Header, HTTPException, Path, Query
 from pydantic import BaseModel, Field
 
-from api import auth
+from api import auth, data
 from appointment_backend import statistics as stats
 from appointment_backend.api import backend, respond
 from config import Collections, Status, TIMEZONE
@@ -86,33 +87,12 @@ def now_hhmm() -> str:
     return datetime.now(TIMEZONE).strftime("%H:%M")
 
 
-def patient_index() -> dict:
-    """patient_id -> record, read once per request rather than per row."""
-    try:
-        return {p.get("patient_id"): p for p in repo().query(Collections.PATIENTS)}
-    except Exception as exc:                                  # pragma: no cover
-        logger.error("could not read patients: %s", exc)
-        return {}
-
-
 def decorate(appointments: list[dict], patients: dict | None = None) -> list[dict]:
-    """Attach the patient's name and phone; the dashboard shows people, not ids."""
-    patients = patients if patients is not None else patient_index()
-    rows = []
-    for appointment in appointments:
-        patient = patients.get(appointment.get("patient_id")) or {}
-        rows.append({**appointment,
-                     "patient_name": patient.get("name") or "Unknown patient",
-                     "patient_phone": patient.get("phone") or ""})
-    return rows
+    """Attach the patient's name and phone; the dashboard shows people, not ids.
 
-
-def doctor_appointments(doctor_id: str, date: str | None = None) -> list[dict]:
-    result = backend().get_doctor_appointments(doctor_id, date)
-    if not result.success:
-        raise fail(503, result.error_code or "backend_unavailable",
-                   result.error_message or "Could not read appointments.")
-    return list(result.data.get("appointments", []))
+    Only the patients on these rows are read, in one batch - never the whole
+    patients collection."""
+    return data.with_patients(appointments, patients)
 
 
 def is_active(appointment: dict) -> bool:
@@ -183,38 +163,67 @@ class LoginRequest(BaseModel):
         return str(self.user_id or self.doctor_id or "").strip()
 
 
-def resolve_account(typed: str) -> tuple[str, str]:
-    """(account_id, role) for whatever somebody typed into the ID box: their
-    username, the administrator id, or a doctor id."""
+def _unreachable(*results) -> None:
+    """A database that cannot be read must not look like a wrong password -
+    nor let the starting password stand in for a stored one."""
+    if any(r is not None and not r.ok and r.error == "BACKEND_UNAVAILABLE"
+           for r in results):
+        raise fail(503, "backend_unavailable",
+                   "The appointment system database is unreachable. Please try again.")
+
+
+def resolve_account(typed: str) -> tuple[str, str, dict | None, Any]:
+    """(account_id, role, account record, doctor lookup) for whatever
+    somebody typed into the ID box: their username, the administrator id, or
+    a doctor id.
+
+    The username, the account and the doctor record are read together, in
+    one round trip; the account record is then reused for the password check
+    and the reply instead of being read three more times.
+    """
     text = str(typed or "").strip()
     if not text:
-        return "", ""
-    found = AccountService(repo()).find_by_username(text.lower())
-    if found.ok:
-        return (str(found.data.get("account_id") or "").upper(),
-                found.data.get("role") or auth.ROLE_DOCTOR)
+        return "", "", None, None
+    upper = text.upper()
+    accounts = AccountService(repo())
+    calls = [lambda: accounts.find_by_username(text.lower()),
+             lambda: accounts.get(upper)]
+    if not auth.is_admin_id(text):
+        calls.append(lambda: DoctorService(repo()).get_doctor(upper))
+    results = data.parallel(*calls)
+    by_name, by_id = results[0], results[1]
+    doctor = results[2] if len(results) > 2 else None
+    _unreachable(by_name, by_id, doctor)
+
+    if by_name.ok:
+        account = str(by_name.data.get("account_id") or "").upper()
+        role = by_name.data.get("role") or auth.ROLE_DOCTOR
+        if role != auth.ROLE_ADMIN and account != upper:
+            doctor = DoctorService(repo()).get_doctor(account)
+            _unreachable(doctor)
+        return account, role, by_name.data, doctor
+    record = by_id.data if by_id.ok else None
     if auth.is_admin_id(text):
-        return auth.admin_id(), auth.ROLE_ADMIN
-    return text.upper(), auth.ROLE_DOCTOR
+        return auth.admin_id(), auth.ROLE_ADMIN, record, None
+    return upper, auth.ROLE_DOCTOR, record, doctor
 
 
 @auth_router.post("/login", summary="Sign in to the dashboard")
 def login(request: LoginRequest) -> Any:
-    account, role = resolve_account(request.typed())
+    account, role, record, doctor = resolve_account(request.typed())
 
     # The administrator is checked first: the id is reserved and never
     # resolved against the doctors collection.
     if role == auth.ROLE_ADMIN:
-        if not auth.verify_admin(account, request.password):
+        if not auth.verify_admin(account, request.password, record):
             if not auth.admin_configured():
                 logger.error("no SUPERADMIN_PASSWORD configured: "
                              "refusing every administrator sign-in")
             raise fail(401, "invalid_credentials", "Invalid ID or password.")
         session = auth.create_session(account, auth.ROLE_ADMIN)
-        return ok({**session, "admin": admin_account(account)})
+        return ok({**session, "admin": admin_account(account, record)})
 
-    doctor = DoctorService(repo()).get_doctor(account) if account else None
-    ok_password = auth.verify(account, request.password) if account else False
+    ok_password = auth.verify(account, request.password, record) if account else False
 
     # The same answer whether the id or the password was wrong, so the form
     # cannot be used to discover which doctor ids exist.
@@ -231,24 +240,35 @@ def login(request: LoginRequest) -> Any:
 
     session = auth.create_session(account, auth.ROLE_DOCTOR)
     return ok({**session, "doctor": with_defaults(doctor.data),
-               "account": account_public(account)})
+               "account": account_public(account, record=record)})
 
 
-def admin_account(account_id: str) -> dict:
+_UNREAD = object()
+
+
+def _account_record(account_id: str, record) -> dict | None:
+    if record is not _UNREAD:
+        return record
+    found = AccountService(repo()).get(account_id)
+    return found.data if found.ok else None
+
+
+def admin_account(account_id: str, record=_UNREAD) -> dict:
+    stored = _account_record(account_id, record) or {}
     return {"account_id": account_id, "name": "Administrator",
             "role": auth.ROLE_ADMIN,
-            "username": AccountService(repo()).username_of(account_id) or account_id}
+            "username": stored.get("username") or account_id}
 
 
-def account_public(account_id: str, role: str = auth.ROLE_DOCTOR) -> dict:
-    """What the interface may know about a sign-in account: never a hash."""
-    service = AccountService(repo())
-    found = service.get(account_id)
-    record = AccountService.public(found.data if found.ok else None)
-    record["account_id"] = account_id
-    record["role"] = record.get("role") or role
-    record["username"] = record.get("username") or account_id
-    return record
+def account_public(account_id: str, role: str = auth.ROLE_DOCTOR,
+                   record=_UNREAD) -> dict:
+    """What the interface may know about a sign-in account: never a hash.
+    Pass `record` when the account has already been read."""
+    public = AccountService.public(_account_record(account_id, record))
+    public["account_id"] = account_id
+    public["role"] = public.get("role") or role
+    public["username"] = public.get("username") or account_id
+    return public
 
 
 @auth_router.post("/logout", summary="End the session")
@@ -292,23 +312,54 @@ def session(account: dict = Depends(auth.current_account)) -> Any:
     if account["role"] == auth.ROLE_ADMIN:
         return ok({"role": account["role"],
                    "admin": admin_account(account["account_id"])})
-    doctor = unwrap(DoctorService(repo()).get_doctor(account["account_id"]))
+    found, stored = data.parallel(
+        lambda: DoctorService(repo()).get_doctor(account["account_id"]),
+        lambda: AccountService(repo()).get(account["account_id"]))
+    doctor = unwrap(found)
     return ok({"role": account["role"],
                "doctor_id": account["account_id"],
                "doctor": with_defaults(doctor),
-               "account": account_public(account["account_id"])})
+               "account": account_public(account["account_id"],
+                                         record=stored.data if stored.ok else None)})
 
 
 # --------------------------------------------------------------------------
 # Home
 # --------------------------------------------------------------------------
+def unread_count(doctor_id: str) -> int:
+    """Notifications the doctor has not opened, counted without reading
+    them: all of theirs minus the ones marked read."""
+    mine = [("doctor_id", "==", doctor_id)]
+    everything, read = data.parallel(
+        lambda: data.count(Collections.NOTIFICATIONS, mine),
+        lambda: data.count(Collections.NOTIFICATIONS,
+                           mine + [("read_by_doctor", "==", True)]))
+    return max(0, everything - read)
+
+
+def diary_signature(rows: list[dict]) -> str:
+    """Changes whenever an appointment from today on is added, moved,
+    cancelled or completed, so the page knows when its other figures need
+    reading again - without asking the database anything extra."""
+    parts = sorted(f"{r.get('appointment_id')}|{r.get('date')}|{r.get('time')}|"
+                   f"{r.get('status')}" for r in rows)
+    return hashlib.sha1("/".join(parts).encode("utf-8")).hexdigest()[:16]
+
+
 @router.get("/summary", summary="Counters, today's list and the queue")
 def summary(doctor_id: str = Depends(auth.current_doctor)) -> Any:
+    """Only today and what is still to come: the query starts at today, so
+    the doctor's history is never read here, and the unread-message count
+    rides along in the same round trip."""
     today = today_iso()
-    patients = patient_index()
-    todays = decorate(doctor_appointments(doctor_id, today), patients)
-    upcoming = [a for a in decorate(doctor_appointments(doctor_id), patients)
-                if a.get("date", "") > today and is_active(a)]
+    ahead, unread = data.parallel(
+        lambda: data.appointments(doctor_id=doctor_id, start=today),
+        lambda: unread_count(doctor_id))
+    ahead.sort(key=data.sort_key)
+    todays = [a for a in ahead if a.get("date") == today]
+    upcoming = [a for a in ahead if a.get("date", "") > today and is_active(a)]
+    patients = data.patients_by_id(a.get("patient_id") for a in todays + upcoming[:8])
+    todays = decorate(todays, patients)
 
     now = now_hhmm()
     # The backend has no check-in state, so "waiting" is derived: an active
@@ -330,7 +381,9 @@ def summary(doctor_id: str = Depends(auth.current_doctor)) -> Any:
         "stats": stats,
         "today": todays,
         "queue": sorted(waiting, key=lambda a: a.get("time", "")),
-        "upcoming": upcoming[:8],
+        "upcoming": decorate(upcoming[:8], patients),
+        "unread_notifications": unread,
+        "signature": diary_signature(ahead),
         "generated_at": datetime.now(TIMEZONE).isoformat(timespec="seconds"),
     })
 
@@ -345,49 +398,122 @@ def doctor_statistics(doctor_id: str = Depends(auth.current_doctor),
                       end: str | None = Query(None)) -> Any:
     """Counted from this doctor's own appointment records. The signed-in
     doctor id comes from the session, never from the request, so there is no
-    way to ask for somebody else's numbers."""
+    way to ask for somebody else's numbers.
+
+    Only the records dated inside the period are read; the all-time figures
+    come from count() aggregations, so the doctor's history is never
+    downloaded to count it."""
     try:
-        return ok(stats.statistics(doctor_appointments(doctor_id),
-                                   period=period, start=start, end=end))
+        window = stats.resolve_period(period, start, end)
     except ValueError as problem:
         raise fail(400, "invalid_period", str(problem))
+    return ok(period_statistics(window, doctor_id=doctor_id))
+
+
+def period_statistics(window: dict, doctor_id: str | None = None) -> dict:
+    """statistics() for one doctor (or the whole clinic), read narrowly:
+    the period's records, today's records and the all-time counts, together."""
+    day = today_iso()
+    bounded = bool(window["start"] or window["end"])
+    covers_today = bounded and (window["start"] or "") <= day <= (window["end"] or "9999")
+    mine = [("doctor_id", "==", doctor_id)] if doctor_id else []
+
+    calls = [lambda: data.count_by_status(mine)]
+    if bounded:
+        calls.append(lambda: data.appointments(doctor_id=doctor_id,
+                                               start=window["start"], end=window["end"]))
+    if not covers_today:
+        calls.append(lambda: data.appointments(doctor_id=doctor_id, date=day))
+    results = data.parallel(*calls)
+
+    counts = results[0]
+    period_rows = results[1] if bounded else None
+    today_rows = ([a for a in period_rows if a.get("date") == day] if covers_today
+                  else results[-1])
+    all_time = stats.summarise_counts(counts["total"], counts)
+    return stats.statistics_from_parts(window, period_rows, today_rows, all_time, day)
 
 
 # --------------------------------------------------------------------------
 # Appointments
 # --------------------------------------------------------------------------
+PAGE_MAX = 500
+CANCELLED_ANY = (Status.CANCELLED, Status.CANCELLED_BY_DOCTOR)
+
+
+def page_payload(key: str, rows: list[dict], total: int | None, offset: int,
+                 limit: int, has_more: bool) -> dict:
+    """One page of a list. `count` and `total` are how many match in all
+    (None when that could only be known by reading everything); `rows` is
+    just this page."""
+    return {key: rows, "count": total, "total": total, "returned": len(rows),
+            "offset": offset, "limit": limit, "has_more": has_more}
+
+
+def list_appointments(doctor_id: str, scope: str = "all", date: str | None = None,
+                      status: str | None = None, query: str | None = None,
+                      start: str | None = None, end: str | None = None,
+                      offset: int = 0, limit: int = 100) -> dict:
+    """One page of one doctor's appointments, oldest first.
+
+    The doctor and the dates go to Firestore, so only this doctor's records
+    in the requested window are read, and only as far as the page needs.
+    Status filters are applied as the rows arrive. A text search has to look
+    at every row in the window (Firestore has no substring search), so it
+    reads the window once and then pages what matched.
+    """
+    today = today_iso()
+    window = {"doctor_id": doctor_id, "date": date, "start": start, "end": end}
+    checks = []
+    if scope == "today":
+        if date and date != today:
+            return page_payload("appointments", [], 0, offset, limit, False)
+        window["date"] = today
+    elif scope == "upcoming":
+        window["start"] = max(start or today, today)
+        checks += [lambda a: a.get("date", "") >= today, is_active]
+    elif scope == "completed":
+        checks.append(lambda a: a.get("status") == Status.COMPLETED)
+    elif scope == "cancelled":
+        checks.append(lambda a: a.get("status") in CANCELLED_ANY)
+    elif scope == "past":
+        window["before"] = today
+        checks.append(lambda a: a.get("date", "") < today)
+    if status:
+        checks.append(lambda a: a.get("status") == status)
+    where = (lambda a: all(check(a) for check in checks)) if checks else None
+    filters = data.appointment_filters(**window)
+
+    if query:
+        needle = query.strip().lower()
+        rows = decorate([a for a in data.find(Collections.APPOINTMENTS, filters)
+                         if where is None or where(a)])
+        rows = [a for a in rows if needle in str(a.get("patient_name", "")).lower()
+                or needle in str(a.get("appointment_id", "")).lower()
+                or needle in str(a.get("date", ""))
+                or needle in str(a.get("patient_phone", ""))]
+        rows.sort(key=data.sort_key)
+        return page_payload("appointments", rows[offset:offset + limit], len(rows),
+                            offset, limit, len(rows) > offset + limit)
+
+    page, has_more, total = data.page_by_date(filters, offset=offset, limit=limit,
+                                              where=where)
+    return page_payload("appointments", decorate(page), total, offset, limit, has_more)
+
+
 @router.get("/appointments", summary="This doctor's appointments")
 def appointments(doctor_id: str = Depends(auth.current_doctor),
                  scope: str = Query("all"),
                  date: str | None = Query(None),
                  status: str | None = Query(None),
-                 query: str | None = Query(None)) -> Any:
-    today = today_iso()
-    rows = decorate(doctor_appointments(doctor_id, date))
-
-    if scope == "today":
-        rows = [a for a in rows if a.get("date") == today]
-    elif scope == "upcoming":
-        rows = [a for a in rows if a.get("date", "") >= today and is_active(a)]
-    elif scope == "completed":
-        rows = [a for a in rows if a.get("status") == Status.COMPLETED]
-    elif scope == "cancelled":
-        rows = [a for a in rows if a.get("status") in (Status.CANCELLED, Status.CANCELLED_BY_DOCTOR)]
-    elif scope == "past":
-        rows = [a for a in rows if a.get("date", "") < today]
-
-    if status:
-        rows = [a for a in rows if a.get("status") == status]
-
-    if query:
-        needle = query.strip().lower()
-        rows = [a for a in rows if needle in str(a.get("patient_name", "")).lower()
-                or needle in str(a.get("appointment_id", "")).lower()
-                or needle in str(a.get("date", ""))
-                or needle in str(a.get("patient_phone", ""))]
-
-    rows.sort(key=lambda a: (a.get("date", ""), a.get("time", "")))
-    return ok({"appointments": rows, "count": len(rows)})
+                 query: str | None = Query(None),
+                 start: str | None = Query(None),
+                 end: str | None = Query(None),
+                 offset: int = Query(0, ge=0),
+                 limit: int = Query(100, ge=1, le=PAGE_MAX)) -> Any:
+    return ok(list_appointments(doctor_id, scope=scope, date=date, status=status,
+                                query=query, start=start, end=end,
+                                offset=offset, limit=limit))
 
 
 @router.get("/appointments/{appointment_id}", summary="One appointment")
@@ -462,14 +588,20 @@ def availability(date: str = Query(...), doctor_id: str = Depends(auth.current_d
 # --------------------------------------------------------------------------
 @router.get("/patients", summary="Patients this doctor has seen or will see")
 def patients(doctor_id: str = Depends(auth.current_doctor),
-             query: str | None = Query(None)) -> Any:
-    index = patient_index()
-    mine = doctor_appointments(doctor_id)
+             query: str | None = Query(None),
+             offset: int = Query(0, ge=0),
+             limit: int = Query(100, ge=1, le=PAGE_MAX)) -> Any:
+    """A doctor's patients are the people in their diary. Firestore cannot
+    group or de-duplicate, so this doctor's appointments are read (nobody
+    else's) and then only the patients among them are fetched, in one batch
+    - not the clinic's whole patient list."""
+    mine = data.appointments(doctor_id=doctor_id)
     today = today_iso()
 
     grouped: dict[str, list[dict]] = {}
     for appointment in mine:
         grouped.setdefault(appointment.get("patient_id"), []).append(appointment)
+    index = data.patients_by_id(grouped.keys())
 
     rows = []
     for patient_id, appointments_for in grouped.items():
@@ -495,15 +627,19 @@ def patients(doctor_id: str = Depends(auth.current_doctor),
                 or needle in str(r["phone"])]
 
     rows.sort(key=lambda r: r["name"])
-    return ok({"patients": rows, "count": len(rows)})
+    return ok(page_payload("patients", rows[offset:offset + limit], len(rows),
+                           offset, limit, len(rows) > offset + limit))
 
 
 @router.get("/patients/{patient_id}", summary="One patient and their history with this doctor")
 def patient_details(patient_id: str = Path(...),
                     doctor_id: str = Depends(auth.current_doctor)) -> Any:
-    record = unwrap(PatientService(repo()).get_patient(patient_id))
-    mine = [a for a in doctor_appointments(doctor_id)
-            if a.get("patient_id") == patient_id]
+    found, mine = data.parallel(
+        lambda: PatientService(repo()).get_patient(patient_id),
+        lambda: data.find(Collections.APPOINTMENTS,
+                          [("doctor_id", "==", doctor_id),
+                           ("patient_id", "==", patient_id)]))
+    record = unwrap(found)
     if not mine:
         raise fail(403, "not_your_patient",
                    "This patient has no appointments with you.")
@@ -540,16 +676,24 @@ def create_patient(body: PatientBody, doctor_id: str = Depends(auth.current_doct
 # --------------------------------------------------------------------------
 # Profile
 # --------------------------------------------------------------------------
-def clinic_for(doctor: dict) -> dict | None:
-    result = ClinicService(repo()).get_clinic_for_doctor(doctor)
-    return result.data if result.ok else None
+def clinic_or_none() -> dict | None:
+    try:
+        return data.clinic()
+    except Exception as exc:                                  # pragma: no cover
+        logger.error("could not read the clinic: %s", exc)
+        return None
 
 
 @router.get("/profile", summary="Doctor profile and clinic")
 def profile(doctor_id: str = Depends(auth.current_doctor)) -> Any:
-    doctor = unwrap(DoctorService(repo()).get_doctor(doctor_id))
-    return ok({"doctor": with_defaults(doctor), "clinic": clinic_for(doctor),
-               "account": account_public(doctor_id),
+    found, stored, clinic = data.parallel(
+        lambda: DoctorService(repo()).get_doctor(doctor_id),
+        lambda: AccountService(repo()).get(doctor_id),
+        clinic_or_none)
+    doctor = unwrap(found)
+    return ok({"doctor": with_defaults(doctor), "clinic": clinic,
+               "account": account_public(doctor_id,
+                                         record=stored.data if stored.ok else None),
                "editable": {"clinic": False}})
 
 
@@ -574,6 +718,13 @@ class ProfileBody(BaseModel):
 
 @router.patch("/profile", summary="Update the doctor profile and clinic")
 def update_profile(body: ProfileBody, doctor_id: str = Depends(auth.current_doctor)) -> Any:
+    # There is one clinic and it belongs to the whole practice, not to any
+    # one doctor: its name, address and phone are the administrator's to set.
+    # Refused before anything is written, so a mixed request changes nothing.
+    if any(value is not None for value in [body.clinic_name, body.clinic_address,
+                                           body.clinic_city, body.clinic_phone]):
+        raise fail(403, "clinic_readonly",
+                   "Clinic details are managed by your clinic administrator.")
     service = services()
     doctor_fields = {k: v for k, v in {
         "name": body.name, "specialization": body.specialization,
@@ -594,20 +745,14 @@ def update_profile(body: ProfileBody, doctor_id: str = Depends(auth.current_doct
         doctor_fields["notification_prefs"] = clean_prefs(body.notification_prefs)
 
     if doctor_fields:
-        unwrap(service["doctors"].update_doctor(doctor_id, doctor_fields))
+        # The update reads the record back, so it is not read a second time.
+        doctor = unwrap(service["doctors"].update_doctor(doctor_id, doctor_fields))
+    else:
+        doctor = unwrap(service["doctors"].get_doctor(doctor_id))
 
-    doctor = unwrap(service["doctors"].get_doctor(doctor_id))
-    # There is one clinic and it belongs to the whole practice, not to any
-    # one doctor: its name, address and phone are the administrator's to set.
-    if any(value is not None for value in [body.clinic_name, body.clinic_address,
-                                           body.clinic_city, body.clinic_phone]):
-        raise fail(403, "clinic_readonly",
-                   "Clinic details are managed by your clinic administrator.")
-
-    clinic = clinic_for(doctor)
-
+    clinic, account = data.parallel(clinic_or_none, lambda: account_public(doctor_id))
     return ok({"doctor": with_defaults(doctor), "clinic": clinic,
-               "account": account_public(doctor_id),
+               "account": account,
                "editable": {"clinic": False}})
 
 
@@ -616,7 +761,12 @@ def update_profile(body: ProfileBody, doctor_id: str = Depends(auth.current_doct
 # --------------------------------------------------------------------------
 @router.get("/schedule", summary="Weekly working pattern")
 def schedule(doctor_id: str = Depends(auth.current_doctor)) -> Any:
-    rows = unwrap(ScheduleService(repo()).get_schedules(doctor_id))
+    return ok({"days": week_from(unwrap(ScheduleService(repo()).get_schedules(doctor_id)))})
+
+
+def week_from(rows: list[dict]) -> list[dict]:
+    """The working week as the schedule screens show it, from the doctor's
+    active schedule rows."""
     by_day: dict[str, list[dict]] = {day: [] for day in WEEKDAY_NAMES}
     for row in rows:
         if row.get("day") in by_day:
@@ -624,11 +774,10 @@ def schedule(doctor_id: str = Depends(auth.current_doctor)) -> Any:
                 "start": row.get("start_time"), "end": row.get("end_time"),
                 "slot_duration": row.get("slot_duration", 20),
             })
-    days = [{"day": day,
+    return [{"day": day,
              "available": bool(by_day[day]),
              "sessions": sorted(by_day[day], key=lambda s: str(s.get("start")))}
             for day in WEEKDAY_NAMES]
-    return ok({"days": days})
 
 
 class SessionBody(BaseModel):
@@ -719,21 +868,40 @@ def remove_leave(date: str = Path(...), doctor_id: str = Depends(auth.current_do
 # Notifications
 # --------------------------------------------------------------------------
 @router.get("/notifications", summary="Messages queued for this doctor's patients")
-def notifications(doctor_id: str = Depends(auth.current_doctor)) -> Any:
-    service = NotificationService(repo())
-    rows = unwrap(service.list_for_doctor(doctor_id))
-    return ok({"notifications": rows,
-               "unread": sum(1 for r in rows if not r.get("read_by_doctor"))})
+def notifications(doctor_id: str = Depends(auth.current_doctor),
+                  offset: int = Query(0, ge=0),
+                  limit: int = Query(50, ge=1, le=200)) -> Any:
+    """Newest first, one page at a time. When that page already holds every
+    message, the total and the unread figure are taken from it; otherwise
+    Firestore counts them (two count() queries) instead of the rest being
+    downloaded."""
+    mine = [("doctor_id", "==", doctor_id)]
+    rows = data.find(Collections.NOTIFICATIONS, mine, order_by="created_at",
+                     descending=True, limit=offset + limit + 1)
+    has_more = len(rows) > offset + limit
+    if has_more:
+        total, read = data.parallel(
+            lambda: data.count(Collections.NOTIFICATIONS, mine),
+            lambda: data.count(Collections.NOTIFICATIONS,
+                               mine + [("read_by_doctor", "==", True)]))
+        unread = max(0, total - read)
+    else:
+        total = len(rows)
+        unread = sum(1 for r in rows if not r.get("read_by_doctor"))
+    return ok({**page_payload("notifications", rows[offset:offset + limit], total,
+                              offset, limit, has_more),
+               "unread": unread})
 
 
 @router.post("/notifications/{notification_id}/read", summary="Mark one as read")
 def read_notification(notification_id: str = Path(...),
                       doctor_id: str = Depends(auth.current_doctor)) -> Any:
-    service = NotificationService(repo())
-    existing = unwrap(service.list_for_doctor(doctor_id, limit=200))
-    if not any(r.get("notification_id") == notification_id for r in existing):
+    # One read to prove the message is this doctor's, instead of listing
+    # all of theirs to look for it.
+    existing = repo().get(Collections.NOTIFICATIONS, notification_id)
+    if not existing or existing.get("doctor_id") != doctor_id:
         raise fail(404, "not_found", "No such notification.")
-    return ok(unwrap(service.mark_read(notification_id)))
+    return ok(unwrap(NotificationService(repo()).mark_read(notification_id)))
 
 
 @router.post("/notifications/read-all", summary="Mark every notification as read")

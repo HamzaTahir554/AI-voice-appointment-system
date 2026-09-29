@@ -24,12 +24,14 @@ from __future__ import annotations
 import argparse
 import logging
 import sys
+import time
 from typing import Any
 
 from config import (
     Action, OLLAMA_TRANSLATE, RESPONSE_LANGUAGE, use_utf8_stdout,
 )
 from dialog_manager.dialog_manager import DialogManager
+from firebase import metrics as db_metrics
 from firebase.firebase_config import get_repository, init_repository
 from ollama_judge.judge import OllamaJudge
 from ollama_judge.language import (
@@ -73,7 +75,8 @@ class VoicePipeline:
                  judge: OllamaJudge | None = None,
                  repository=None, use_llm: bool = True,
                  translate: bool = OLLAMA_TRANSLATE,
-                 response_language: str = RESPONSE_LANGUAGE):
+                 response_language: str = RESPONSE_LANGUAGE,
+                 phrase_every_turn: bool = False):
         self.repo = repository or get_repository() or init_repository()
         self.dialog = dialog_manager or DialogManager(repository=self.repo)
         self.judge = judge or OllamaJudge()
@@ -82,6 +85,9 @@ class VoicePipeline:
         # 'auto' follows the caller; otherwise every reply is forced
         # into this language.
         self.response_language = response_language
+        # Voice calls: turns with no database result are worded by the model
+        # too, checked against the Dialog Manager's sentence for the turn.
+        self.phrase_every_turn = phrase_every_turn
 
     # ------------------------------------------------------------------
     @property
@@ -97,7 +103,17 @@ class VoicePipeline:
         Never raises: any failure below degrades to the Dialog Manager's own
         deterministic wording so the call keeps going.
         """
+        # Where the time goes, for the voice latency report: mBERT, the
+        # database, the Dialog Manager's own logic, and the LLM.
+        started = time.perf_counter()
+        counter = db_metrics.current() or db_metrics.begin()
+        db_before = counter.seconds
         turn = self.dialog.process_message(session_id, text, patient_id)
+        database_ms = (counter.seconds - db_before) * 1000
+        mbert_ms = getattr(getattr(self.dialog, "router", None), "last_predict_ms", None)
+        dialog_ms = ((time.perf_counter() - started) * 1000 - database_ms
+                     - (mbert_ms or 0.0))
+        llm_ms = None
 
         deterministic = turn["response"]
         backend_result = turn.pop("_backend_result_obj", None)
@@ -185,6 +201,7 @@ class VoicePipeline:
         }
 
         if self.use_llm:
+            llm_started = time.perf_counter()
             try:
                 if backend_result is not None and turn["action"] in _BACKEND_ACTIONS:
                     # A real operation happened: let the judge phrase it, then
@@ -197,7 +214,13 @@ class VoicePipeline:
                         backend_result=backend_result,
                         language=language)
                     final_response = verdict.response
-                    judge_info = {"used": True, **verdict.to_dict()}
+                    judge_info = {"used": True, **verdict.to_dict(),
+                                  "llm_raw": verdict.llm_raw}
+                elif self.phrase_every_turn:
+                    verdict = self.judge.phrase(deterministic, text, language)
+                    final_response = verdict.response
+                    judge_info = {"used": verdict.source == "ollama", **verdict.to_dict(),
+                                  "llm_raw": verdict.llm_raw}
                 elif self.translate and language != "english":
                     # No database operation (a question, a greeting): the only
                     # value the LLM adds is saying it in the caller's language.
@@ -217,6 +240,8 @@ class VoicePipeline:
                               "decision": "approved",
                               "reason": f"judge error: {exc}",
                               "validation_problems": []}
+            if judge_info["reason"] != "no LLM stage for this turn":
+                llm_ms = (time.perf_counter() - llm_started) * 1000
 
         return {
             "success": bool(backend_result.success) if backend_result else True,
@@ -236,6 +261,8 @@ class VoicePipeline:
             "slots": turn.get("slots", {}),
             "backend_result": turn.get("backend_result"),
             "judge": judge_info,
+            "timings": {"mbert_ms": mbert_ms, "dialog_ms": dialog_ms,
+                        "database_ms": database_ms, "llm_ms": llm_ms},
         }
 
     # ------------------------------------------------------------------

@@ -203,19 +203,19 @@ function is one backend call, so a change in the API is a change in one file:
 store.js                                admin-store.js
 getSummary()        /dashboard/summary  getSummary()      /admin/summary
 getStatistics(f)    /dashboard/statistics   getStatistics(f)  /admin/statistics
-getAppointments(f)  /dashboard/appointments
+getAppointmentsPage(f) /dashboard/appointments   (one page)
 getAppointment(id)  /dashboard/appointments/{id}
 createAppointment() POST   ...          getDoctors(f)     /admin/doctors
 cancelAppointment() POST   .../cancel   getDoctor(id)     /admin/doctors/{id}
 rescheduleAppointment()                 createDoctor(d)   POST   /admin/doctors
 completeAppointment()                   updateDoctor(id)  PATCH  /admin/doctors/{id}
 getAvailability(date)                   setActive(id, on) POST   .../status
-getPatients(q) · getPatient(id)         removeDoctor(id)  DELETE /admin/doctors/{id}
+getPatientsPage(f) · getPatient(id)     removeDoctor(id)  DELETE /admin/doctors/{id}
 createPatient(d)                        restoreDoctor(id) POST   .../restore
 getProfile() · updateDoctorProfile(p)   getSchedule(id) · setSchedule(id, days)
 getSchedule() · updateSchedule(days)    getLeave(id) · addLeave(id, e) · removeLeave(id, d)
 getLeave() · addLeave() · removeLeave() getAppointments(id, f)
-getNotifications()
+getNotificationsPage(offset)            getAllAppointments(f)  /admin/appointments (one page)
 ```
 
 ---
@@ -239,11 +239,42 @@ Settings.
 
 ## Keeping up to date
 
-There is no websocket. While the dashboard is open it re-reads the summary and
-the unread count every 30 seconds, and only when the tab is visible and no
-dialog is open, so a phone booking shows up on its own without interrupting
-anything. Firestore's own listeners live on the server side (the Admin SDK),
-which is why the browser does not subscribe directly.
+There is no websocket and no Firestore listener anywhere in the system: the
+browser has no Firebase access by design, and the API reads on request. While
+the dashboard is open it refreshes every 30 seconds, only when the tab is
+visible and no dialog is open, so a voice booking shows up on its own without
+interrupting anything.
+
+That refresh is **one request**. `/dashboard/summary` carries today's diary,
+the unread-message count, and a short signature of every appointment from
+today on. The page it redraws reuses that same answer, and the statistics
+card is asked for again only when the signature has changed (or its minute is
+up), so a quiet diary costs one small read every 30 seconds.
+
+---
+
+## Loading data
+
+- **Lists come a page at a time.** Appointments, patients, messages and the
+  doctor register load 20 (register: 50) rows; *Load more* asks the server
+  for the next page only and appends it. The server reads only as far as
+  that page (see `docs/PERFORMANCE.md`).
+- **Opening the dashboard** uses the doctor record the sign-in already
+  returned; it does not fetch the profile first.
+- **Two identical requests at once become one** (`api.js`), and a few
+  answers may be reused for a short time:
+
+  | Answer | Reused for |
+  |---|---|
+  | Summary (doctor and administrator) | 3 seconds - just long enough for the refresh and the page it redraws to share it |
+  | Statistics | 60 s (doctor), 25 s (administrator); sooner when the diary changes |
+  | Profile, working week, leave | 2 minutes / 1 minute |
+  | Doctor register, clinic | 20 seconds / 1 minute |
+  | Appointment lists, patients, messages | never - read again every time |
+
+- **Any change forgets all of it.** Every POST, PATCH or DELETE, signing out
+  and signing in clears whatever was being reused, so an edit is never
+  followed by an older answer. Nothing is kept in browser storage.
 
 ---
 
@@ -269,7 +300,7 @@ Destructive actions ask first; every write shows a loading state and a toast.
 |---|---|
 | Authentication | Prototype session (see above), not Firebase Auth |
 | Patient notifications | Queued in Firebase; SMS and calls not connected |
-| Real-time | 30-second polling, not push |
+| Real-time | 30-second polling (one request), not push |
 | Appointment reason / notes | Not stored by the backend, so not shown |
 | Patient demographics | Only name and phone exist in the database |
 | Doctor photo | Stored inside the doctor record as a small image; there is no file storage service in this project |
@@ -294,6 +325,12 @@ python scripts/run_tests.py                        # the whole offline suite
   through the public route, deactivating refuses new bookings while keeping the
   diary, removing archives instead of deleting, restoring works, and the
   administrator's schedule and leave writes are the doctor's own ones.
+- `tests/test_performance.py` - with 720 appointments and 400 patients in
+  the store: which documents each screen reads (no whole collections, one
+  page reads a page), that every page of every list joins up to exactly the
+  old unpaged answer, that the statistics equal a count over every record,
+  that the answers are identical when no Firestore index is deployed, and
+  that an edit is visible on the very next request.
 
 The interface itself was driven in headless Chrome against a running API:
 sign-in for both roles, every page, adding a doctor, viewing, editing,

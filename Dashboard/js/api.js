@@ -11,6 +11,14 @@
    the local development service when the page is opened straight from disk.
    A deployment that needs a different address sets `avas.api` in
    localStorage; nothing in the interface reads or prints it.
+
+   Reads are shared and, where a caller asks, briefly remembered:
+     - two identical GETs in flight at once become one request;
+     - `Api.get(path, { cache: ms })` answers again from memory for `ms`;
+     - ANY change sent to the server (POST, PATCH, DELETE), signing out, or a
+       new session forgets everything remembered, so an edit is never
+       followed by an old answer. Appointments are only ever remembered for
+       seconds; see store.js for what each screen uses.
    ========================================================================== */
 window.Api = (function () {
   'use strict';
@@ -34,11 +42,31 @@ window.Api = (function () {
   let base = detectBase();
 
 
+  /* ------------------------------------------------ shared reads --- */
+  const inFlight = new Map();     // path -> promise of the parsed answer
+  const remembered = new Map();   // path -> { until, value }
+  let generation = 0;             // bumped by every change: late answers are not kept
+
+  function copy(value) {
+    if (value === null || typeof value !== 'object') { return value; }
+    try { return structuredClone(value); } catch (error) { return JSON.parse(JSON.stringify(value)); }
+  }
+
+  function forget(prefix) {
+    generation += 1;
+    if (!prefix) { remembered.clear(); return; }
+    Array.from(remembered.keys()).forEach(function (key) {
+      if (key.indexOf(prefix) === 0) { remembered.delete(key); }
+    });
+  }
+
   function token() {
     try { return sessionStorage.getItem(TOKEN_KEY) || ''; } catch (error) { return ''; }
   }
 
   function setToken(value) {
+    forget();
+    inFlight.clear();
     try {
       if (value) { sessionStorage.setItem(TOKEN_KEY, value); }
       else { sessionStorage.removeItem(TOKEN_KEY); }
@@ -112,19 +140,53 @@ window.Api = (function () {
     return payload && payload.data !== undefined ? payload.data : payload;
   }
 
+  /* A GET: shared with an identical one already on its way, and answered
+     from memory when the caller allowed it and the copy is young enough.
+     Every caller gets its own copy, so one screen editing what it received
+     cannot change what another is shown. */
+  function get(path, options) {
+    const config = Object.assign({}, options);
+    const now = Date.now();
+    const kept = remembered.get(path);
+    if (config.cache && kept && kept.until > now) {
+      return Promise.resolve(copy(kept.value));
+    }
+    let pending = inFlight.get(path);
+    if (!pending) {
+      const startedIn = generation;
+      pending = request(path, config).then(function (value) {
+        if (config.cache && startedIn === generation) {
+          remembered.set(path, { until: Date.now() + config.cache, value: value });
+        }
+        return value;
+      });
+      const done = function () { if (inFlight.get(path) === pending) { inFlight.delete(path); } };
+      pending.then(done, done);
+      inFlight.set(path, pending);
+    }
+    return pending.then(copy);
+  }
+
+  /* Anything that changes data: whatever was remembered may now be wrong. */
+  function change(path, options) {
+    forget();
+    return request(path, options).finally(function () { forget(); });
+  }
+
   return {
     token: token,
     setToken: setToken,
     hasToken: function () { return !!token(); },
-    get: function (path, options) { return request(path, Object.assign({}, options)); },
+    get: get,
+    forget: forget,
     post: function (path, body, options) {
-      return request(path, Object.assign({ method: 'POST', body: body }, options));
+      return change(path, Object.assign({ method: 'POST', body: body }, options));
     },
     patch: function (path, body, options) {
-      return request(path, Object.assign({ method: 'PATCH', body: body }, options));
+      return change(path, Object.assign({ method: 'PATCH', body: body }, options));
     },
     del: function (path, options) {
-      return request(path, Object.assign({ method: 'DELETE' }, options));
+      return change(path, Object.assign({ method: 'DELETE' }, options));
     }
   };
 })();
