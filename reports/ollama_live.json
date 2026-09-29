@@ -4,9 +4,9 @@
   "llm_wording_accepted": 3,
   "fallback_used": 18,
   "latency_seconds": {
-    "median": 4.12,
-    "max": 13.85,
-    "min": 3.56
+    "median": 1.11,
+    "max": 6.23,
+    "min": 0.9
   },
   "responses": [
     {
@@ -15,7 +15,7 @@
       "source": "fallback",
       "decision": "approved",
       "reason": "model produced no sentence",
-      "seconds": 13.85,
+      "seconds": 6.23,
       "response": "4:00 PM is already taken. Dr Ahmed Khan has 4:20 PM or 5:00 PM free - which suits?",
       "rejected_llm_text": null,
       "problems": []
@@ -26,7 +26,7 @@
       "source": "fallback",
       "decision": "approved",
       "reason": "model produced no sentence",
-      "seconds": 3.77,
+      "seconds": 1.0,
       "response": "shaam 4 baje ka slot already booked hai. shaam 4:20 baje ya shaam 5 baje available hai. Aap kaunsa prefer karenge?",
       "rejected_llm_text": null,
       "problems": []
@@ -37,7 +37,7 @@
       "source": "fallback",
       "decision": "approved",
       "reason": "model produced no sentence",
-      "seconds": 3.74,
+      "seconds": 1.01,
       "response": "شام 4 بجے کا وقت پہلے سے بک ہے۔ شام 4:20 بجے یا شام 5 بجے خالی ہیں۔ آپ کون سا پسند کریں گے؟",
       "rejected_llm_text": null,
       "problems": []
@@ -47,8 +47,8 @@
       "language": "english",
       "source": "fallback",
       "decision": "approved",
-      "reason": "Doctor is not available on Monday.",
-      "seconds": 3.91,
+      "reason": "Doctor's availability could not be confirmed.",
+      "seconds": 1.11,
       "response": "Sorry, Dr Ahmed Khan is not at the clinic Monday, 21 September. Another day?",
       "rejected_llm_text": null,
       "problems": []
@@ -58,8 +58,8 @@
       "language": "roman_urdu",
       "source": "fallback",
       "decision": "approved",
-      "reason": "model produced no sentence",
-      "seconds": 3.56,
+      "reason": "Doctor is not available on the requested date.",
+      "seconds": 1.02,
       "response": "Maazrat, Dr Ahmed Khan Peer 21 tareekh clinic nahi aa rahe. Koi aur din dekhein?",
       "rejected_llm_text": null,
       "problems": []
@@ -69,8 +69,8 @@
       "language": "urdu",
       "source": "fallback",
       "decision": "approved",
-      "reason": "Doctor is not available on 2026-09-21.",
-      "seconds": 6.13,
+      "reason": "model produced no sentence",
+      "seconds": 0.9,
       "response": "معذرت، Dr Ahmed Khan پیر 21 تاریخ کلینک نہیں آ رہے۔ کوئی اور دن دیکھیں؟",
       "rejected_llm_text": null,
       "problems": []
@@ -81,7 +81,7 @@
       "source": "fallback",
       "decision": "needs_correction",
       "reason": "validator rejected the generated response",
-      "seconds": 4.12,
+      "seconds": 1.67,
       "response": "Done. Your appointment with Dr Ahmed Khan is confirmed for Monday, 21 September at 4:00 PM. The appointment ID is APT7C3D91.",
       "rejected_llm_text": "Ji bilkul. Aapki Dr Ahmed Khan ke saath 21 September ko 4 baje ki appointment confirm ho gayi hai.",
       "problems": [
@@ -94,7 +94,7 @@
       "source": "ollama",
       "decision": "approved",
       "reason": "Backend confirmed the booking.",
-      "seconds": 4.18,
+      "seconds": 1.29,
       "response": "Ji bilkul. Aapki Dr Ahmed Khan ke saath 21 September ko 4 baje ki appointment confirm ho gayi hai.",
       "rejected_llm_text": null,
       "problems": []
@@ -105,7 +105,7 @@
       "source": "fallback",
       "decision": "needs_correction",
       "reason": "validator rejected the generated response",
-      "seconds": 4.21,
+      "seconds": 1.28,
       "response": "جی ہو گئی۔ آپ کی اپائنٹمنٹ Dr Ahmed Khan کے ساتھ پیر 21 تاریخ شام 4 بجے کنفرم ہو گئی ہے۔ آئی ڈی APT7C3D91 ہے۔",
       "rejected_llm_text": "Ji bilkul. Aapki Dr Ahmed Khan ke saath 21 September ko 4 baje ki appointment confirm ho gayi hai.",
       "problems": [
@@ -118,7 +118,7 @@
       "source": "fallback",
       "decision": "approved",
       "reason": "model produced no sentence",
-      "seconds": 4.01,
+      "seconds": 1.13,
       "response": "4:00 PM is already taken. Dr Ahmed Khan has 4:20 PM or 5:00 PM free - which suits?",
       "rejected_llm_text": null,
       "problems": []
@@ -129,7 +129,7 @@
       "source": "fallback",
       "decision": "approved",
       "reason": "model produced no sentence",
-      "seconds": 3.8,
+      "seconds": 1.01,
       "response": "shaam 4 baje ka slot already booked hai. shaam 4:20 baje ya shaam 5 baje available hai. Aap kaunsa prefer karenge?",
       "rejected_llm_text": null,
       "problems": []
@@ -140,7 +140,7 @@
       "source": "fallback",
       "decision": "approved",
       "reason": "model produced no sentence",
-      "seconds": 3.75,
+      "seconds": 1.01,
       "response": "شام 4 بجے کا وقت پہلے سے بک ہے۔ شام 4:20 بجے یا شام 5 بجے خالی ہیں۔ آپ کون سا پسند کریں گے؟",
       "rejected_llm_text": null,
       "problems": []
@@ -150,8 +150,8 @@
       "language": "english",
       "source": "fallback",
       "decision": "approved",
-      "reason": "Doctor is not available on the requested date.",
-      "seconds": 6.28,
+      "reason": "model produced no sentence",
+      "seconds": 1.0,
       "response": "Sorry, Dr Ahmed Khan is not at the clinic Monday, 21 September. Another day?",
       "rejected_llm_text": null,
       "problems": []
@@ -161,8 +161,8 @@
       "language": "roman_urdu",
       "source": "fallback",
       "decision": "approved",
-      "reason": "Doctor's availability could not be confirmed.",
-      "seconds": 3.74,
+      "reason": "Doctor is not available on the requested date.",
+      "seconds": 1.01,
       "response": "Maazrat, Dr Ahmed Khan Peer 21 tareekh clinic nahi aa rahe. Koi aur din dekhein?",
       "rejected_llm_text": null,
       "problems": []
@@ -173,7 +173,7 @@
       "source": "fallback",
       "decision": "approved",
       "reason": "model produced no sentence",
-      "seconds": 3.58,
+      "seconds": 0.91,
       "response": "معذرت، Dr Ahmed Khan پیر 21 تاریخ کلینک نہیں آ رہے۔ کوئی اور دن دیکھیں؟",
       "rejected_llm_text": null,
       "problems": []
@@ -184,7 +184,7 @@
       "source": "ollama",
       "decision": "approved",
       "reason": "Backend confirmed the cancellation.",
-      "seconds": 4.04,
+      "seconds": 1.2,
       "response": "Your appointment with Dr Ahmed Khan has been cancelled.",
       "rejected_llm_text": null,
       "problems": []
@@ -195,8 +195,8 @@
       "source": "ollama",
       "decision": "approved",
       "reason": "Backend confirmed the cancellation.",
-      "seconds": 4.18,
-      "response": "Ji bilkul. Aapki appointment Dr Ahmed Khan ke saath 21 September ko 4 baje ki cancel ho gayi hai.",
+      "seconds": 1.33,
+      "response": "Ji bilkul. Aapki appointment Dr Ahmed Khan ke saath 21 September ko 4 baje ki cancellation confirm ho gayi hai.",
       "rejected_llm_text": null,
       "problems": []
     },
@@ -206,9 +206,9 @@
       "source": "fallback",
       "decision": "needs_correction",
       "reason": "validator rejected the generated response",
-      "seconds": 4.19,
+      "seconds": 1.03,
       "response": "جی، آپ کی پیر 21 تاریخ والی اپائنٹمنٹ Dr Ahmed Khan کے ساتھ منسوخ کر دی ہے۔",
-      "rejected_llm_text": "Aapki appointment cancel ki gayi hai. Kya aap kisi aur date aur samay par appointment book karna chahte hain?",
+      "rejected_llm_text": "Aapki appointment cancel kar di gayi hai.",
       "problems": [
         "reply is not in Urdu script although Urdu was requested"
       ]
@@ -219,10 +219,11 @@
       "source": "fallback",
       "decision": "needs_correction",
       "reason": "validator rejected the generated response",
-      "seconds": 4.67,
+      "seconds": 1.62,
       "response": "Done, I have moved it to Tuesday, 22 September at 5:00 PM.",
-      "rejected_llm_text": "Ji bilkul. Aapki appointment Dr Ahmed Khan ke saath 22 September ko 5 baje kiya gaya hai.",
+      "rejected_llm_text": "Ji bilkul. Aapki appointment Dr Ahmed Khan ke saath 2026-09-22 ko 5 baje kiya gaya hai.",
       "problems": [
+        "reads out a raw ISO date '2026-09-22'",
         "reply is in Roman Urdu although English was requested"
       ]
     },
@@ -232,10 +233,11 @@
       "source": "fallback",
       "decision": "needs_correction",
       "reason": "validator rejected the generated response",
-      "seconds": 7.14,
+      "seconds": 1.55,
       "response": "Ho gaya, appointment Mangal 22 tareekh shaam 5 baje par shift kar di hai.",
-      "rejected_llm_text": "Ji bilkul. Aapki appointment kal 5 baje rescheduled ho gayi hai. Aap 22 September ko 5 baje Dr Ahmed Khan ke saath meeting kar sakte hain.",
+      "rejected_llm_text": "Ji bilkul. Aapki appointment kal 5 baje rescheduled ho gayi hai. Kal 17 baje Dr Ahmed Khan ke saath meeting hoga.",
       "problems": [
+        "unnatural 24-hour time '17 baje' - Urdu says 'shaam 5 baje', not '17 baje'",
         "says 'kal' but the backend date is 2026-09-21"
       ]
     },
@@ -245,11 +247,10 @@
       "source": "fallback",
       "decision": "needs_correction",
       "reason": "validator rejected the generated response",
-      "seconds": 4.48,
+      "seconds": 1.46,
       "response": "ہو گیا، اپائنٹمنٹ منگل 22 تاریخ شام 5 بجے پر منتقل کر دی ہے۔",
-      "rejected_llm_text": "Ji bilkul. Aapki appointment kal 5 baje 17:00 ke liye confirm ho gayi hai.",
+      "rejected_llm_text": "Ji bilkul. Aapki appointment Dr Ahmed Khan ke saath 22 September ko 5 baje kiya gaya hai.",
       "problems": [
-        "says 'kal' but the backend date is 2026-09-21",
         "reply is not in Urdu script although Urdu was requested"
       ]
     }

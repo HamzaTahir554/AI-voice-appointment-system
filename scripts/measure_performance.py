@@ -158,17 +158,28 @@ def main() -> int:
             samples = [timed(judge.judge, text, intent, 0.95, {}, result, language="roman_urdu")[0]
                        for _ in range(3)]
             stages["ollama_judge_roman_urdu"] = summarise(samples)
+            # Voice calls: every other reply is reworded and checked too.
+            samples = [timed(judge.phrase, "Theek hai. Dr Ahmed ke liye kis din appointment "
+                                           "chahiye?", "Dr Ahmed", "roman_urdu")[0]
+                       for _ in range(5)]
+            stages["ollama_phrase_roman_urdu"] = summarise(samples)
 
     for name in ("firestore_live.json", "ollama_live.json"):
         path = REPO / "reports" / name
         if path.exists():
             report.setdefault("from_live_test_runs", {})[name] = json.loads(path.read_text(encoding="utf-8"))
 
-    for stage, reason in (("speech_to_text", "no STT integration exists in the codebase "
-                                             "(faster-whisper is installed but not wired in)"),
-                          ("text_to_speech", "no TTS integration exists in the codebase"),
-                          ("telephony_asterisk_sip", "no Asterisk/SIP integration exists in the codebase")):
-        stages[stage] = {"status": "not measured", "reason": reason}
+    # Speech needs an ElevenLabs key and costs credits, so it is measured by
+    # its own script; this report points at those results rather than
+    # repeating them.
+    for stage, source in (("speech_to_text", "stt.json"), ("text_to_speech", "tts.json")):
+        path = REPO / "reports" / "voice" / source
+        stages[stage] = ({"status": "measured by scripts/voice_benchmark.py",
+                          "results": f"reports/voice/{source}"} if path.exists() else
+                         {"status": "not measured",
+                          "reason": "run scripts/voice_benchmark.py (needs ELEVENLABS_API_KEY)"})
+    stages["telephony_asterisk_sip"] = {"status": "not measured",
+                                        "reason": "no Asterisk/SIP integration exists in the codebase"}
 
     REPORT.parent.mkdir(exist_ok=True)
     REPORT.write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8")
